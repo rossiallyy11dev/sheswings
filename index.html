@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHE SWINGS - Where Champions Connect</title>
+    <title>SHE SWINGS 2027 - Where Champions Connect</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & Oswald -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            blue: '#2B8AC4',
+                        stripe: {
+                            purple: '#635BFF',
+                            dark: '#0A0D14',
+                            cardBg: '#121723',
+                            accentBlue: '#2B8AC4',
                             lightBlue: '#54B2E6',
-                            sky: '#E8F5FC',
-                            navy: '#0C3248',
-                            darkBlue: '#1C5B82'
+                            sky: '#F1F8FC',
+                            slateBg: '#F8FAFC'
                         }
                     },
                     fontFamily: {
@@ -34,157 +38,250 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        .sessions-bg { background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%); }
+        
+        /* Stripe gradient mesh accent */
+        .sessions-hero-gradient {
+            background: radial-gradient(circle at 80% 20%, rgba(84, 178, 230, 0.15) 0%, rgba(255, 255, 255, 0) 60%),
+                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0C3248 0%, #2B8AC4 50%, #54B2E6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dark-card-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
     </style>
 </head>
-<body class="font-sans text-slate-900 bg-white antialiased flex flex-col min-h-screen">
+<body class="font-sans text-slate-900 bg-white antialiased selection:bg-stripe-accentBlue selection:text-white">
 
-    <!-- ==================== STRIPE SESSIONS NAV BAR ==================== -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+    <!-- ==================== STRIPE SESSIONS NAVIGATION BAR ==================== -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
                 <a href="#" class="font-heading text-2xl font-bold tracking-wider text-slate-900 uppercase">
-                    SHE <span class="text-brand-blue">SWINGS</span>
+                    SHE <span class="text-stripe-accentBlue">SWINGS</span>
                 </a>
-                <nav class="flex items-center gap-8">
-                    <a href="#about" class="text-sm font-medium text-slate-700 hover:text-brand-blue transition-colors hidden sm:block">About</a>
-                    <a href="#agenda" class="text-sm font-medium text-slate-700 hover:text-brand-blue transition-colors hidden sm:block">Agenda</a>
-                    <a href="#speakers" class="text-sm font-medium text-slate-700 hover:text-brand-blue transition-colors hidden sm:block">Speakers</a>
-                    <a href="#contact" class="text-sm font-medium text-slate-700 hover:text-brand-blue transition-colors">Contact</a>
-                    <a href="#register" class="bg-brand-blue text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-sm hover:bg-brand-darkBlue transition duration-200">
+
+                <!-- Center Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-stripe-accentBlue transition-colors">About</a>
+                    <a href="#agenda" class="hover:text-stripe-accentBlue transition-colors">Agenda</a>
+                    <a href="#speakers" class="hover:text-stripe-accentBlue transition-colors">Speakers</a>
+                    <a href="#sponsors" class="hover:text-stripe-accentBlue transition-colors">Sponsors</a>
+                    <a href="#contact" class="hover:text-stripe-accentBlue transition-colors">Contact</a>
+                </nav>
+
+                <!-- Right CTA -->
+                <div class="flex items-center gap-4">
+                    <a href="#register" class="bg-stripe-accentBlue hover:bg-slate-900 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md">
                         Register
                     </a>
-                </nav>
+                </div>
+
             </div>
         </div>
     </header>
 
-    <main class="flex-grow">
+    <main>
         <!-- ==================== HERO SECTION ==================== -->
-        <section id="home" class="sessions-bg pt-12 pb-16 md:pt-20 md:pb-24 px-6 lg:px-8">
+        <section class="sessions-hero-gradient pt-16 pb-20 md:pt-24 md:pb-32 px-6 lg:px-8 border-b border-slate-200/60">
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 space-y-6">
-                        <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-slate-900 uppercase">
+                    
+                    <!-- Left Column: Copy & Actions -->
+                    <div class="lg:col-span-7 space-y-8">
+                        
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stripe-sky border border-stripe-lightBlue/30 text-stripe-accentBlue text-xs font-semibold tracking-wide uppercase">
+                            <span class="w-2 h-2 rounded-full bg-stripe-accentBlue animate-pulse"></span>
+                            Annual Event • October 2027
+                        </div>
+
+                        <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-slate-900 uppercase">
                             SHE SWINGS:<br>
                             WHERE CHAMPIONS<br>
-                            <span class="text-brand-lightBlue">CONNECT.</span>
+                            <span class="gradient-text">CONNECT.</span>
                         </h1>
-                        <p class="text-lg text-slate-600 max-w-xl leading-relaxed">
-                            Empowering female golfers to connect, build community, and elevate their game.
+
+                        <p class="text-lg sm:text-xl text-slate-600 max-w-xl font-normal leading-relaxed">
+                            Join female golfers, industry leaders, and game-changers for two days of skill building, mentorship, and championship networking.
                         </p>
-                        <div class="pt-4">
-                            <a href="#register" class="inline-block px-8 py-3.5 rounded-full border-2 border-brand-lightBlue text-brand-blue font-bold text-sm tracking-wider uppercase hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300">
-                                REGISTER NOW
+
+                        <div class="flex flex-wrap items-center gap-4 pt-2">
+                            <a href="#register" class="bg-stripe-accentBlue hover:bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-200 shadow-md hover:shadow-lg">
+                                Register for 2027
+                            </a>
+                            <a href="#agenda" class="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-200">
+                                View Agenda
                             </a>
                         </div>
+
                     </div>
-                    <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                        <div class="w-full max-w-sm h-80 bg-brand-sky border-2 border-brand-lightBlue/30 rounded-3xl flex flex-col items-center justify-center p-8 text-center shadow-sm">
-                            <span class="font-heading text-xl font-bold text-brand-blue uppercase tracking-wide">
-                                [ YOUR LOGO HERE ]
-                            </span>
-                            <p class="text-xs text-slate-500 mt-2">Replace with your artwork file</p>
+
+                    <!-- Right Column: Visual Graphic Container -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl space-y-6">
+                            <div class="aspect-video w-full bg-stripe-sky rounded-2xl border-2 border-dashed border-stripe-lightBlue/40 flex flex-col items-center justify-center p-6 text-center">
+                                <i class="fa-solid fa-golf-ball-tee text-4xl text-stripe-accentBlue mb-3"></i>
+                                <span class="font-heading text-lg font-bold text-slate-900 uppercase">Event Logo Graphic</span>
+                                <span class="text-xs text-slate-500 mt-1">Upload hero graphic file here</span>
+                            </div>
+
+                            <div class="space-y-3 pt-2 border-t border-slate-100">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-slate-500 font-medium">Dates</span>
+                                    <span class="text-slate-900 font-semibold">October 10–11, 2027</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-slate-500 font-medium">Location</span>
+                                    <span class="text-slate-900 font-semibold">Lake Oswego, OR</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-slate-500 font-medium">Venue</span>
+                                    <span class="text-slate-900 font-semibold">Oswego Lake Country Club</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- ==================== EVENT DETAILS BANNER ==================== -->
-        <section class="bg-[#F6F5F8] py-16 border-y border-slate-200">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-left">
+        <!-- ==================== STRIPE SESSIONS DARK METADATA SECTION ==================== -->
+        <section class="bg-stripe-dark text-white py-20 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-16 items-start">
                     <div>
-                        <p class="text-3xl sm:text-4xl font-normal text-slate-900 tracking-tight leading-snug">
-                            October 10–11,<br>2027
-                        </p>
+                        <span class="text-xs font-bold text-stripe-lightBlue tracking-widest uppercase">EVENT DETAILS</span>
+                        <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight uppercase mt-2">
+                            OCTOBER 10–11, 2027
+                        </h2>
                     </div>
                     <div>
-                        <p class="text-3xl sm:text-4xl font-normal text-slate-900 tracking-tight leading-snug">
-                            Oswego Lake Country Club,<br>Lake Oswego, OR
-                        </p>
+                        <span class="text-xs font-bold text-stripe-lightBlue tracking-widest uppercase">VENUE & LOCATION</span>
+                        <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight uppercase mt-2">
+                            OSWEGO LAKE COUNTRY CLUB
+                        </h2>
+                        <p class="text-slate-400 mt-3 text-lg">Lake Oswego, Oregon</p>
                     </div>
                 </div>
+
+                <!-- Stats Counters -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-slate-800">
+                    <div class="bg-stripe-cardBg p-6 rounded-2xl dark-card-border">
+                        <p class="font-heading text-4xl font-bold text-stripe-lightBlue">250+</p>
+                        <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-2">Expected Attendees</p>
+                    </div>
+                    <div class="bg-stripe-cardBg p-6 rounded-2xl dark-card-border">
+                        <p class="font-heading text-4xl font-bold text-stripe-lightBlue">16</p>
+                        <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-2">Speakers & Coaches</p>
+                    </div>
+                    <div class="bg-stripe-cardBg p-6 rounded-2xl dark-card-border">
+                        <p class="font-heading text-4xl font-bold text-stripe-lightBlue">2 Days</p>
+                        <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-2">Clinics & Keynotes</p>
+                    </div>
+                    <div class="bg-stripe-cardBg p-6 rounded-2xl dark-card-border">
+                        <p class="font-heading text-4xl font-bold text-stripe-lightBlue">18</p>
+                        <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-2">Holes Championship Golf</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- ==================== ABOUT / BENEFITS GRID ==================== -->
+        <!-- ==================== ABOUT & TRACKS SECTION ==================== -->
         <section id="about" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                
                 <div class="max-w-3xl mb-16">
-                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 tracking-wider uppercase mb-4">
-                        WHY ATTEND SHE SWINGS
+                    <span class="text-xs font-bold text-stripe-accentBlue tracking-widest uppercase">WHAT TO EXPECT</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 tracking-wider uppercase mt-2">
+                        DESIGNED FOR IMPACT ON & OFF THE COURSE
                     </h2>
-                    <p class="text-lg text-slate-600 leading-relaxed">
-                        A two-day gathering bringing together players, industry leaders, and innovators to share insights and build lasting networks on and off the course.
+                    <p class="text-lg text-slate-600 mt-4 leading-relaxed">
+                        Whether you are refining your tournament play, expanding your professional network, or discovering brand sponsorship opportunities, She Swings brings together everything you need.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/60 hover:shadow-md transition-shadow">
-                        <span class="text-xs font-bold text-brand-blue tracking-widest uppercase block mb-3">TRACK 01</span>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 uppercase">Master Your Game</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Refine swing mechanics, course strategy, and mental stamina through hands-on clinic sessions.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Track 1 -->
+                    <div class="bg-stripe-slateBg p-8 rounded-3xl border border-slate-200/80 hover:shadow-lg transition-all duration-300">
+                        <span class="px-3 py-1 rounded-full bg-stripe-sky text-stripe-accentBlue text-xs font-bold tracking-wider uppercase">TRACK 01</span>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mt-6 mb-3 uppercase">Master Your Swing</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Hands-on clinics with LPGA certified professionals covering swing mechanics, putting accuracy, and course management strategy.
+                        </p>
                     </div>
 
-                    <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/60 hover:shadow-md transition-shadow">
-                        <span class="text-xs font-bold text-brand-blue tracking-widest uppercase block mb-3">TRACK 02</span>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 uppercase">Community & Leadership</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Build valuable relationships with fellow women executives, founders, and passionate athletes.</p>
+                    <!-- Track 2 -->
+                    <div class="bg-stripe-slateBg p-8 rounded-3xl border border-slate-200/80 hover:shadow-lg transition-all duration-300">
+                        <span class="px-3 py-1 rounded-full bg-stripe-sky text-stripe-accentBlue text-xs font-bold tracking-wider uppercase">TRACK 02</span>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mt-6 mb-3 uppercase">Community & Leadership</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Connect with fellow women leaders, business executives, and passionate players in a collaborative environment.
+                        </p>
                     </div>
 
-                    <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/60 hover:shadow-md transition-shadow">
-                        <span class="text-xs font-bold text-brand-blue tracking-widest uppercase block mb-3">TRACK 03</span>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 uppercase">Sponsorship & Career</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Connect with brand partners, industry sponsors, and career development advocates.</p>
+                    <!-- Track 3 -->
+                    <div class="bg-stripe-slateBg p-8 rounded-3xl border border-slate-200/80 hover:shadow-lg transition-all duration-300">
+                        <span class="px-3 py-1 rounded-full bg-stripe-sky text-stripe-accentBlue text-xs font-bold tracking-wider uppercase">TRACK 03</span>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mt-6 mb-3 uppercase">Sponsorship & Growth</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Explore mentorship programs, brand partnerships, and career growth pathways tailored for female sports executives.
+                        </p>
                     </div>
+
                 </div>
+
             </div>
         </section>
 
-        <!-- ==================== STATS / IMPACT COUNTER ==================== -->
-        <section class="bg-slate-900 text-white py-20">
+        <!-- ==================== FEATURED SESSIONS / AGENDA ==================== -->
+        <section id="agenda" class="py-24 bg-stripe-slateBg border-y border-slate-200/80">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div>
-                        <p class="font-heading text-4xl sm:text-5xl font-bold text-brand-lightBlue">200+</p>
-                        <p class="text-sm text-slate-400 mt-2 uppercase tracking-wider">Attendees</p>
-                    </div>
-                    <div>
-                        <p class="font-heading text-4xl sm:text-5xl font-bold text-brand-lightBlue">12</p>
-                        <p class="text-sm text-slate-400 mt-2 uppercase tracking-wider">Keynote Speakers</p>
-                    </div>
-                    <div>
-                        <p class="font-heading text-4xl sm:text-5xl font-bold text-brand-lightBlue">2 Days</p>
-                        <p class="text-sm text-slate-400 mt-2 uppercase tracking-wider">Immersive Event</p>
-                    </div>
-                    <div>
-                        <p class="font-heading text-4xl sm:text-5xl font-bold text-brand-lightBlue">18</p>
-                        <p class="text-sm text-slate-400 mt-2 uppercase tracking-wider">Championship Holes</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== AGENDA / SCHEDULE HIGHLIGHTS ==================== -->
-        <section id="agenda" class="py-24 bg-slate-50 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
                     <div>
-                        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 tracking-wider uppercase mb-3">
+                        <span class="text-xs font-bold text-stripe-accentBlue tracking-widest uppercase">SCHEDULE</span>
+                        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 tracking-wider uppercase mt-2">
                             FEATURED SESSIONS
                         </h2>
-                        <p class="text-slate-600 text-lg">Curated keynotes, clinics, and networking receptions.</p>
                     </div>
                 </div>
 
-                <div class="space-y-6 max-w-4xl">
-                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-                        <div>
-                            <span class="text-xs font-bold text-brand-blue uppercase tracking-widest">DAY 01 • 9:00 AM</span>
-                            <h3 class="font-heading text-xl font-bold text-slate-900 mt-1 uppercase">Opening Keynote: Elevating Women's Golf</h3>
-                            <p class="text-slate-600 text-sm mt-1">Keynote discussion on industry expansion and leadership on the course.</p>
+                <!-- Agenda Items -->
+                <div class="space-y-4 max-w-4xl">
+                    
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-stripe-accentBlue transition-colors">
+                        <div class="space-y-1">
+                            <span class="text-xs font-bold text-stripe-accentBlue uppercase tracking-widest">DAY 01 • 9:00 AM</span>
+                            <h3 class="font-heading text-xl font-bold text-slate-900 uppercase">Opening Keynote: The Future of Women's Golf</h3>
+                            <p class="text-slate-600 text-sm">Keynote address on industry growth, representation, and community leadership.</p>
                         </div>
-                        <span class="px-4 py-2 rounded-full bg-brand-sky text-brand-blue text-xs font-bold uppercase self-start sm:self-center whitespace-nowrap">Main Stage</span>
+                        <span class="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase self-start sm:self-center whitespace-nowrap">Main Stage</span>
                     </div>
+
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-stripe-accentBlue transition-colors">
+                        <div class="space-y-1">
+                            <span class="text-xs font-bold text-stripe-accentBlue uppercase tracking-widest">DAY 01 • 11:30 AM</span>
+                            <h3 class="font-heading text-xl font-bold text-slate-900 uppercase">Pro Swing Mechanics & Ball Flight Analysis</h3>
+                            <p class="text-slate-600 text-sm">Interactive clinic on driving distance, wedge control, and stance optimization.</p>
+                        </div>
+                        <span class="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase self-start sm:self-center whitespace-nowrap">Driving Range</span>
+                    </div>
+
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-stripe-accentBlue transition-colors">
+                        <div class="space-y-1">
+                            <span class="text-xs font-bold text-stripe-accentBlue uppercase tracking-widest">DAY 02 • 4:30 PM</span>
+                            <h3 class="font-heading text-xl font-bold text-slate-900 uppercase">Sponsor Gala & Tournament Reception</h3>
+                            <p class="text-slate-600 text-sm">Networking reception, awards presentation, and closing executive dinner.</p>
+                        </div>
+                        <span class="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase self-start sm:self-center whitespace-nowrap">Clubhouse
