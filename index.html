@@ -10,8 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
         tailwind.config = {
@@ -35,65 +33,29 @@
         }
     </script>
     <style>
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Hero subtle gradient overlay */
-        .hero-bg {
-            background: linear-gradient(180deg, #F0F7FC 0%, #FFFFFF 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            bottom: -5%;
-            right: -10%;
-            width: 70%;
-            height: 80%;
-            background: radial-gradient(circle at 60% 60%, rgba(220, 240, 252, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
-            border-radius: 50%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Ticker Animation for Footer Banner */
-        @keyframes banner-slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .animate-ticker {
-            display: flex;
-            width: 200%;
-            animation: banner-slide 20s linear infinite;
-        }
-
-        .animate-ticker:hover {
-            animation-play-state: paused;
+        html { scroll-behavior: smooth; }
+        
+        /* Stripe Sessions subtle gradient background */
+        .sessions-bg {
+            background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 bg-white antialiased flex flex-col min-h-screen selection:bg-brand-lightBlue selection:text-white">
+<body class="font-sans text-slate-900 bg-white antialiased flex flex-col min-h-screen">
 
-    <!-- ==================== STRIPE SESSIONS-STYLE NAVIGATION BAR ==================== -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sky-100 transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- ==================== STRIPE SESSIONS NAV BAR ==================== -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-                <!-- Left: Text Brand Logo -->
-                <div class="flex items-center">
-                    <a href="#" class="font-heading text-2xl font-bold tracking-wider text-slate-900 hover:text-brand-blue transition-colors uppercase">
-                        SHE <span class="text-brand-blue">SWINGS</span>
-                    </a>
-                </div>
+                <!-- Brand Logo (Left) -->
+                <a href="#" class="font-heading text-2xl font-bold tracking-wider text-slate-900 uppercase">
+                    SHE <span class="text-brand-blue">SWINGS</span>
+                </a>
 
-                <!-- Right: Contact & Register CTA -->
-                <nav class="flex items-center gap-6 sm:gap-8">
-                    <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition-colors">Contact</a>
+                <!-- Contact & Register Button (Right) -->
+                <nav class="flex items-center gap-8">
+                    <a href="#contact" class="text-sm font-medium text-slate-700 hover:text-brand-blue transition-colors">Contact</a>
                     <a href="#register" class="bg-brand-blue text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-sm hover:bg-brand-darkBlue transition duration-200">
                         Register
                     </a>
@@ -105,56 +67,39 @@
 
     <main class="flex-grow">
         <!-- ==================== HERO SECTION ==================== -->
-        <section id="home" class="hero-bg pt-8 pb-12 md:pt-16 md:pb-16 px-4 sm:px-6 lg:px-8 relative">
-            <div class="max-w-7xl mx-auto relative z-10">
+        <section id="home" class="sessions-bg pt-12 pb-16 md:pt-20 md:pb-24 px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
-                    <!-- Left Column: Copy & Action -->
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        
-                        <!-- Headline -->
-                        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight uppercase font-bold text-slate-900">
-                            <span class="text-brand-lightBlue">SHE SWINGS:</span><br>
+                    <!-- Left Column: Title & CTA -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-slate-900 uppercase">
+                            SHE SWINGS:<br>
                             WHERE CHAMPIONS<br>
-                            CONNECT.
+                            <span class="text-brand-lightBlue">CONNECT.</span>
                         </h1>
 
-                        <!-- Body Paragraph -->
-                        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                            She Swings: where champions connect. We empower female golfers to connect, build community, and elevate their game.
+                        <p class="text-lg text-slate-600 max-w-xl leading-relaxed">
+                            Empowering female golfers to connect, build community, and elevate their game.
                         </p>
 
-                        <!-- Primary Action Button -->
-                        <div class="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start items-center">
-                            <a href="#register" class="px-8 py-3.5 rounded-full border-2 border-brand-lightBlue text-brand-blue font-bold text-sm tracking-wider uppercase hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                        <div class="pt-4">
+                            <a href="#register" class="inline-block px-8 py-3.5 rounded-full border-2 border-brand-lightBlue text-brand-blue font-bold text-sm tracking-wider uppercase hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300">
                                 REGISTER NOW
                             </a>
                         </div>
                     </div>
 
-                    <!-- Right Column: Visual Graphic Cutout -->
-                    <div class="lg:col-span-5 relative flex justify-center items-center">
-                        <div class="relative w-full max-w-md lg:max-w-none flex justify-center">
-                            
-                            <!-- Stylized Golf Course Background Graphic -->
-                            <div class="absolute inset-0 flex items-end justify-between pointer-events-none opacity-40 -z-10">
-                                <div class="text-slate-300 text-6xl">
-                                    <i class="fa-solid fa-tree"></i>
-                                    <i class="fa-solid fa-tree -ml-4"></i>
-                                </div>
-                                <div class="text-brand-lightBlue text-5xl mb-12 mr-6">
-                                    <i class="fa-solid fa-flag"></i>
-                                </div>
-                            </div>
-
-                            <!-- Image Container -->
-                            <div class="relative z-10 filter drop-shadow-xl hover:scale-105 transition-transform duration-500">
-                                <img src="https://images.unsplash.com/photo-1593111774601-dfbce32d56a9?auto=format&fit=crop&w=800&q=80" 
-                                     alt="Female Golfer Graphic" 
-                                     class="max-h-[420px] w-auto object-contain rounded-2xl"
-                                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-72 h-80 bg-brand-sky rounded-3xl flex flex-col items-center justify-center border-2 border-brand-lightBlue text-brand-blue p-6 text-center\'><i class=\'fa-solid fa-user-ninja text-7xl mb-4\'></i><span class=\'font-heading text-xl font-bold uppercase\'>Female Golfer Graphic</span></div>';" />
-                            </div>
-
+                    <!-- Right Column: Logo / Graphic Slot -->
+                    <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                        <div class="w-full max-w-sm h-80 bg-brand-sky border-2 border-brand-lightBlue/30 rounded-3xl flex flex-col items-center justify-center p-8 text-center shadow-sm">
+                            <!-- Placeholder for your uploaded logo image -->
+                            <span class="font-heading text-xl font-bold text-brand-blue uppercase tracking-wide">
+                                [ YOUR LOGO HERE ]
+                            </span>
+                            <p class="text-xs text-slate-500 mt-2">
+                                Replace this container with your image file
+                            </p>
                         </div>
                     </div>
 
@@ -162,21 +107,21 @@
             </div>
         </section>
 
-        <!-- ==================== STRIPE SESSIONS-STYLE EVENT DETAILS BAR ==================== -->
+        <!-- ==================== EVENT DETAILS BANNER (STRIPE SESSIONS STYLE) ==================== -->
         <section class="bg-[#F6F5F8] py-16 border-y border-slate-200">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center text-left">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-left">
                     
-                    <!-- Left: Date -->
-                    <div class="space-y-1">
-                        <p class="text-2xl sm:text-3xl font-normal text-[#1E1B29] tracking-tight leading-snug">
+                    <!-- Date Column -->
+                    <div>
+                        <p class="text-3xl sm:text-4xl font-normal text-slate-900 tracking-tight leading-snug">
                             October 10–11,<br>2027
                         </p>
                     </div>
 
-                    <!-- Right: Venue & Location -->
-                    <div class="space-y-1">
-                        <p class="text-2xl sm:text-3xl font-normal text-[#1E1B29] tracking-tight leading-snug">
+                    <!-- Location Column -->
+                    <div>
+                        <p class="text-3xl sm:text-4xl font-normal text-slate-900 tracking-tight leading-snug">
                             Oswego Lake Country Club,<br>Lake Oswego, OR
                         </p>
                     </div>
@@ -187,92 +132,40 @@
 
         <!-- ==================== BENEFITS SECTION ==================== -->
         <section id="swings" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 
-                <!-- Section Header -->
                 <div class="text-center mb-16">
-                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 tracking-wider uppercase">
+                    <h2 class="font-heading text-3xl font-bold text-slate-900 tracking-wider uppercase">
                         BENEFITS
                     </h2>
-                    <div class="w-16 h-1 bg-brand-lightBlue mx-auto mt-3 rounded-full"></div>
+                    <div class="w-12 h-1 bg-brand-lightBlue mx-auto mt-3 rounded-full"></div>
                 </div>
 
-                <!-- 3 Column Feature Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
-                    
-                    <!-- Benefit 1 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full bg-brand-sky flex items-center justify-center mb-6 text-brand-blue text-3xl group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-inner">
-                            <i class="fa-solid fa-golf-ball-tee"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 tracking-wide">
-                            Master Your Game
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed max-w-xs">
-                            Learn how to elevate your golf skills, refine your technique, and build confidence on every course.
-                        </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 text-center">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 uppercase">Master Your Game</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Elevate your golf skills, refine your technique, and build confidence on every course.</p>
                     </div>
 
-                    <!-- Benefit 2 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full bg-brand-sky flex items-center justify-center mb-6 text-brand-blue text-3xl group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-inner">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 tracking-wide">
-                            Community
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed max-w-xs">
-                            Manage social relationships and connect with like-minded female golfers in a supportive network.
-                        </p>
+                    <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 text-center">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 uppercase">Community</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Connect with like-minded female golfers in a supportive and empowering network.</p>
                     </div>
 
-                    <!-- Benefit 3 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full bg-brand-sky flex items-center justify-center mb-6 text-brand-blue text-3xl group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-inner">
-                            <i class="fa-solid fa-handshake"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 tracking-wide">
-                            Connect
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed max-w-xs">
-                            We honor your experience and work with sponsors and mentors for your golf commitments.
-                        </p>
+                    <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 text-center">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3 uppercase">Connect</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Access opportunities, sponsors, and mentors to support your golf journey.</p>
                     </div>
-
                 </div>
+
             </div>
         </section>
     </main>
 
-    <!-- ==================== FOOTER BANNER ==================== -->
-    <footer class="bg-brand-blue text-white overflow-hidden py-4 shadow-inner border-t border-brand-darkBlue">
-        <div class="relative w-full">
-            <div class="animate-ticker whitespace-nowrap flex items-center font-heading text-xl sm:text-2xl font-bold tracking-widest uppercase">
-                
-                <div class="flex items-center gap-8 justify-around min-w-full">
-                    <span>SHE SWINGS</span>
-                    <i class="fa-solid fa-golf-ball-tee text-brand-sky text-sm"></i>
-                    <span>SHE SWINGS</span>
-                    <i class="fa-solid fa-golf-ball-tee text-brand-sky text-sm"></i>
-                    <span>SHE SWINGS</span>
-                    <i class="fa-solid fa-golf-ball-tee text-brand-sky text-sm"></i>
-                    <span>SHE SWINGS</span>
-                    <i class="fa-solid fa-golf-ball-tee text-brand-sky text-sm"></i>
-                </div>
-
-                <div class="flex items-center gap-8 justify-around min-w-full">
-                    <span>SHE SWINGS</span>
-                    <i class="fa-solid fa-golf-ball-tee text-brand-sky text-sm"></i>
-                    <span>SHE SWINGS</span>
-                    <i class="fa-solid fa-golf-ball-tee text-brand-sky text-sm"></i>
-                    <span>SHE SWINGS</span>
-                    <i class="fa-solid fa-golf-ball-tee text-brand-sky text-sm"></i>
-                    <span>SHE SWINGS</span>
-                    <i class="fa-solid fa-golf-ball-tee text-brand-sky text-sm"></i>
-                </div>
-
-            </div>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white py-6 text-center font-heading text-sm font-bold tracking-widest uppercase">
+        SHE SWINGS &copy; 2027
     </footer>
+
 </body>
 </html>
