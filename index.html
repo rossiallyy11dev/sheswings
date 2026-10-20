@@ -79,64 +79,27 @@
 </head>
 <body class="font-sans text-slate-800 bg-white antialiased flex flex-col min-h-screen selection:bg-brand-lightBlue selection:text-white">
 
-    <!-- ==================== NAVIGATION BAR ==================== -->
+    <!-- ==================== STRIPE SESSIONS-STYLE NAVIGATION BAR ==================== -->
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sky-100 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-                <!-- Left Nav Links -->
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="#home" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition-colors">Home</a>
-                    <a href="#swings" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition-colors">Benefits</a>
-                    <a href="#details" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition-colors">Details</a>
-                </nav>
-
-                <!-- Center Logo Emblem -->
-                <div class="flex-shrink-0 flex items-center justify-center">
-                    <a href="#" class="group relative flex items-center justify-center">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-brand-lightBlue to-brand-blue p-0.5 shadow-md group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
-                            <div class="w-full h-full bg-white rounded-full flex items-center justify-center p-1 relative overflow-hidden border-2 border-brand-lightBlue">
-                                <!-- Female Golfer SVG Logo -->
-                                <svg class="w-10 h-10 text-brand-blue" viewBox="0 0 100 100" fill="currentColor">
-                                    <!-- Inner Circle Frame -->
-                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#2B8AC4" stroke-width="2"/>
-                                    <!-- Decorative Crest Waves -->
-                                    <path d="M10 65 Q 35 50 50 65 T 90 65" fill="none" stroke="#54B2E6" stroke-width="1.5" opacity="0.6"/>
-                                    <!-- Golfer Silhouette -->
-                                    <path d="M48 22 A 4 4 0 1 1 52 22 A 4 4 0 1 1 48 22 M 53 28 C 50 28, 46 32, 45 37 L 42 47 L 46 48 L 48 41 L 50 52 L 46 68 L 50 68 L 54 54 L 56 68 L 60 68 L 56 50 L 59 40 L 64 45 L 67 43 L 61 36 C 59 31, 56 28, 53 28 Z" fill="#1C5B82"/>
-                                    <!-- Golf Club Line -->
-                                    <path d="M64 45 L 35 18" stroke="#1C5B82" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M33 16 L 38 20" stroke="#1C5B82" stroke-width="3" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                        </div>
+                <!-- Left: Text Brand Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="font-heading text-2xl font-bold tracking-wider text-slate-900 hover:text-brand-blue transition-colors uppercase">
+                        SHE <span class="text-brand-blue">SWINGS</span>
                     </a>
                 </div>
 
-                <!-- Right Nav CTA Button -->
-                <nav class="hidden md:flex items-center gap-6">
+                <!-- Right: Contact & Register CTA -->
+                <nav class="flex items-center gap-6 sm:gap-8">
                     <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition-colors">Contact</a>
                     <a href="#register" class="bg-brand-blue text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-sm hover:bg-brand-darkBlue transition duration-200">
                         Register
                     </a>
                 </nav>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button type="button" id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="p-2 rounded-lg text-slate-600 hover:text-brand-blue hover:bg-brand-sky focus:outline-none">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
             </div>
-        </div>
-
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
-            <a href="#home" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-brand-sky hover:text-brand-blue">Home</a>
-            <a href="#swings" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-brand-sky hover:text-brand-blue">Benefits</a>
-            <a href="#details" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-brand-sky hover:text-brand-blue">Details</a>
-            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-brand-sky hover:text-brand-blue">Contact</a>
-            <a href="#register" class="block text-center bg-brand-blue text-white py-2.5 rounded-full font-semibold text-sm shadow-sm hover:bg-brand-darkBlue transition duration-200">Register</a>
         </div>
     </header>
 
@@ -296,13 +259,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            var menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
