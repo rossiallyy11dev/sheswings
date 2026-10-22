@@ -37,19 +37,16 @@
             justify-content: space-between;
             align-items: center;
             
-            /* Dimensions & Rounded Corners */
             width: 100%;
             max-width: 1400px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 60px auto;
             padding: 12px 28px;
             border-radius: 16px;
             
-            /* Translucent Background & Frosted Glass Blur */
             background-color: rgba(238, 236, 240, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             
-            /* Subtle Border & Elevation */
             border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
             
@@ -112,7 +109,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 32px;
+            margin-bottom: 48px;
             gap: 40px;
         }
 
@@ -137,7 +134,7 @@
         .meta-item {
             font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
-            line-height: 1.35;
+            line-height: 1.4;
             color: #2D2C35;
             font-weight: 400;
         }
@@ -145,13 +142,14 @@
         /* Rounded Hero Banner Box */
         .hero-banner-container {
             width: 100%;
-            height: 480px;
+            height: 520px;
             background-color: #E8E8EC;
             border-radius: 28px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .hero-banner-image {
@@ -175,10 +173,10 @@
                 gap: 24px;
             }
             .hero-meta-group {
-                gap: 24px;
+                gap: 32px;
             }
             .hero-banner-container {
-                height: 300px;
+                height: 320px;
             }
         }
     </style>
@@ -202,3 +200,20 @@
             </h1>
             
             <div class="hero-meta-group">
+                <div class="meta-item">
+                    October 10–11,<br>2027
+                </div>
+                <div class="meta-item">
+                    Oswego Lake Country Club,<br>Lake Oswego, Oregon
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Banner Container (Place your image inside src) -->
+        <div class="hero-banner-container">
+            <img src="logo.png" alt="SHE Swings Banner" class="hero-banner-image">
+        </div>
+    </main>
+
+</body>
+</html>
