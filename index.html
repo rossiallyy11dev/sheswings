@@ -3,179 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHE SWINGS 2027</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & JetBrains Mono for that clean engineering aesthetic -->
+    <title>SHE Swings | The Premier Women's Golf & Networking Experience</title>
+    <!-- Google Fonts: Archivo Narrow & Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        sessions: {
-                            bg: '#FBFBFD',
-                            text: '#111827',
-                            muted: '#6B7280',
-                            accent: '#0066FF',
-                            border: '#E5E7EB'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --text-main: #0A0908;
+            --text-muted: #555555;
+            --accent-blue: #3A86FF;
+            --accent-light: #E0F2FE;
+            --border-color: #E5E7EB;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6, .nav-logo {
+            font-family: 'Archivo Narrow', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        /* Sticky Navigation Bar */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(248, 249, 250, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 48px;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Roboto', sans-serif;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .btn-primary {
+            background-color: var(--text-main);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #333333;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 100px 48px 80px 48px;
+            gap: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3.5rem, 6vw, 6rem);
+            line-height: 0.95;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero-meta {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            font-weight: 400;
+        }
+
+        .hero-meta strong {
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--text-main);
+            color: var(--white);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .hero-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 48px;
+            max-width: 1300px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        section p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        /* Agenda Grid */
+        .agenda-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .agenda-day {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            border-radius: 12px;
+        }
+
+        .agenda-day h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .agenda-day .date-label {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+            font-family: 'Archivo Narrow', sans-serif;
+        }
+
+        .agenda-day ul {
+            list-style: none;
+        }
+
+        .agenda-day li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .agenda-day li:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-main);
+            color: var(--white);
+            padding: 60px 48px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: #AAAAAA;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 60px 24px;
+            }
+            .agenda-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                padding: 20px 24px;
+            }
+            section {
+                padding: 60px 24px;
             }
         }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        body { background-color: #FBFBFD; color: #111827; }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-blue-500 selection:text-white">
+<body>
 
-    <!-- ==================== STICKY NAV ==================== -->
-    <header class="sticky top-0 z-50 bg-[#FBFBFD]/90 backdrop-blur-md border-b border-sessions-border">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="font-mono font-medium tracking-tight text-sm uppercase text-black">
-                SHE SWINGS
-            </a>
-            
-            <div class="flex items-center gap-6">
-                <a href="#contact" class="text-sm font-medium text-sessions-muted hover:text-black transition-colors">Contact</a>
-                <a href="#register" class="bg-black hover:bg-sessions-accent text-white px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-colors">
-                    Register
-                </a>
-            </div>
-        </div>
+    <!-- Navigation Bar -->
+    <header>
+        <a href="#" class="nav-logo">SHE Swings</a>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#agenda">Agenda</a>
+            <a href="#passes">Passes</a>
+            <a href="#contact">Contact</a>
+            <a href="#register" class="btn-primary">Register</a>
+        </nav>
     </header>
 
-    <main>
-        <!-- ==================== HERO SECTION ==================== -->
-        <section class="pt-20 pb-24 px-6 border-b border-sessions-border">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-                    
-                    <!-- Left Headline -->
-                    <div class="lg:col-span-8 space-y-6">
-                        <h1 class="text-5xl sm:text-7xl font-normal tracking-tight text-black leading-[1.08]">
-                            She Swings:<br>
-                            Where champions connect.
-                        </h1>
-                        <p class="text-lg sm:text-xl text-sessions-muted font-normal max-w-xl leading-relaxed">
-                            We empower female golfers to connect, build community, and elevate their game. Join us for our annual gathering.
-                        </p>
-                        <div class="pt-4 flex items-center gap-4">
-                            <a href="#register" class="inline-flex items-center justify-center bg-black hover:bg-sessions-accent text-white px-6 py-3 rounded-full text-sm font-medium transition-colors">
-                                Register now
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right Side: Minimalist Graphic / Meta Card -->
-                    <div class="lg:col-span-4">
-                        <div class="p-8 rounded-2xl bg-white border border-sessions-border shadow-sm space-y-4">
-                            <div class="font-mono text-xs uppercase tracking-wider text-sessions-muted">Event Overview</div>
-                            <div class="text-sm font-medium text-black leading-relaxed">
-                                Two immersive days dedicated to skill building, professional networking, and community growth.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== DETAILS BAR (SPLIT DATES & LOCATION) ==================== -->
-        <section class="py-20 px-6 border-b border-sessions-border">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
-                    
-                    <!-- Dates -->
-                    <div class="space-y-3">
-                        <span class="font-mono text-xs uppercase tracking-wider text-sessions-muted">Dates</span>
-                        <p class="text-3xl sm:text-4xl font-normal text-black tracking-tight">
-                            October 10–11, 2027
-                        </p>
-                    </div>
-
-                    <!-- Location -->
-                    <div class="space-y-3">
-                        <span class="font-mono text-xs uppercase tracking-wider text-sessions-muted">Location</span>
-                        <p class="text-3xl sm:text-4xl font-normal text-black tracking-tight">
-                            Oswego Lake Country Club<br>
-                            <span class="text-sessions-muted text-xl sm:text-2xl mt-1 block">Lake Oswego, OR</span>
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== AGENDA / TRACKS ==================== -->
-        <section class="py-24 px-6 border-b border-sessions-border">
-            <div class="max-w-7xl mx-auto">
-                <div class="max-w-xl mb-16">
-                    <span class="font-mono text-xs uppercase tracking-wider text-sessions-muted">Agenda</span>
-                    <h2 class="text-3xl sm:text-4xl font-normal text-black tracking-tight mt-2">
-                        Designed for impact.
-                    </h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-8 bg-white rounded-2xl border border-sessions-border">
-                        <div class="font-mono text-xs text-sessions-accent mb-4">01 / CLINIC</div>
-                        <h3 class="text-xl font-medium text-black mb-2">Master Your Game</h3>
-                        <p class="text-sm text-sessions-muted leading-relaxed">Refine swing mechanics and course strategy with elite instructors.</p>
-                    </div>
-
-                    <div class="p-8 bg-white rounded-2xl border border-sessions-border">
-                        <div class="font-mono text-xs text-sessions-accent mb-4">02 / COMMUNITY</div>
-                        <h3 class="text-xl font-medium text-black mb-2">Network & Connect</h3>
-                        <p class="text-sm text-sessions-muted leading-relaxed">Build lasting professional relationships in a supportive environment.</p>
-                    </div>
-
-                    <div class="p-8 bg-white rounded-2xl border border-sessions-border">
-                        <div class="font-mono text-xs text-sessions-accent mb-4">03 / GROWTH</div>
-                        <h3 class="text-xl font-medium text-black mb-2">Sponsorships</h3>
-                        <p class="text-sm text-sessions-muted leading-relaxed">Explore brand partnerships and career opportunities in sports.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== REGISTRATION / CONTACT ==================== -->
-        <section id="register" class="py-24 px-6">
-            <div class="max-w-3xl mx-auto text-center space-y-6">
-                <h2 class="text-4xl sm:text-5xl font-normal text-black tracking-tight">
-                    Join us in October 2027.
-                </h2>
-                <p class="text-sessions-muted text-lg">
-                    Secure your registration for the upcoming She Swings event.
-                </p>
-                <div class="pt-4">
-                    <a href="#" class="inline-block bg-black hover:bg-sessions-accent text-white px-8 py-4 rounded-full text-sm font-medium transition-colors">
-                        Register for She Swings
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer id="contact" class="py-12 px-6 border-t border-sessions-border text-xs text-sessions-muted font-mono">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>&copy; 2027 She Swings. All rights reserved.</div>
-            <div class="flex items-center gap-6">
-                <a href="#" class="hover:text-black transition-colors">Privacy</a>
-                <a href="#" class="hover:text-black transition-colors">Terms</a>
+    <!-- Hero Section -->
+    <section class="hero" style="border-top: none; padding-top: 60px;">
+        <div class="hero-content">
+            <h1>Where champions connect</h1>
+            <p class="hero-meta"><strong>October 10–11, 2027</strong><br>Oswego Lake Country Club, Lake Oswego, Oregon</p>
+            <div class="hero-cta-group">
+                <a href="#register" class="btn-primary">Register Now</a>
+                <a href="#about" class="btn-secondary">Learn More</a>
             </div>
         </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <!-- Replace logo.png with your actual circular badge image file name -->
+                <img src="logo.png" alt="SHE Swings Logo">
+                <p>An inaugural all-women golf and networking experience benefiting Friends of the Children – Portland.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Sessions</h2>
+        <p>Every leader, builder, and operator is reckoning with the pressure to scale higher, forge deeper connections, and lead change across industries. SHE Swings is where executive women, founders, and community champions tackle what's ahead together on the course and in the room.</p>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda">
+        <h2>Agenda at a glance</h2>
+        <p>Two curated days of championship golf, executive keynotes, panels, and high-impact networking.</p>
+        
+        <div class="agenda-grid">
+            <div class="agenda-day">
+                <span class="date-label">Day 1 • October 10</span>
+                <h3>Opening & Executive Summit</h3>
+                <ul>
+                    <li>Welcome Breakfast & Registration</li>
+                    <li>Opening Keynote: Leadership on & off the Course</li>
+                    <li>Panel: Scaling Impact in the Pacific Northwest</li>
+                    <li>Opening Reception & Sunset Mixer</li>
+                </ul>
+            </div>
+            <div class="agenda-day">
+                <span class="date-label">Day 2 • October 11</span>
+                <h3>The Championship Tournament</h3>
+                <ul>
+                    <li>Tournament Briefing & Putting Clinic</li>
+                    <li>18-Hole Scramble at Oswego Lake Country Club</li>
+                    <li>On-Course Experiences & Tastings</li>
+                    <li>Awards Luncheon & Closing Celebration</li>
+                </ul>
+            </div>
+            <div class="agenda-day">
+                <span class="date-label">Beneficiary</span>
+                <h3>Community Impact</h3>
+                <ul>
+                    <li>100% of proceeds support Friends of the Children – Portland</li>
+                    <li>Mentorship & Professional Development Focus</li>
+                    <li>Empowering the next generation of women leaders</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2027 SHE Swings LLC. All rights reserved. For support, email: registration@sheswings.com</p>
     </footer>
 
 </body>
