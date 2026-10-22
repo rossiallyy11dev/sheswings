@@ -22,14 +22,14 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #0A0A0E;
-            padding: 0 16px 60px 16px; /* Tight side margins for full-width layout */
+            padding: 0 16px 60px 16px;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Full-Width Floating Translucent Nav Container */
+        /* Seamless Top Nav / Floating Box on Scroll */
         .navbar {
             position: sticky;
-            top: 12px;
+            top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -39,17 +39,28 @@
             
             width: 100%;
             margin: 0 auto 48px auto;
-            padding: 12px 24px;
+            padding: 24px 8px 24px 12px; /* Minimal right padding pushes buttons right */
             border-radius: 16px;
             
+            /* Start clean and borderless at top */
+            background-color: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border: 1px solid transparent;
+            box-shadow: none;
+            
+            transition: all 0.25s ease-in-out;
+        }
+
+        /* Shaded Floating Box State (Triggered on scroll) */
+        .navbar.scrolled {
+            top: 12px;
+            padding: 12px 16px 12px 20px;
             background-color: rgba(238, 236, 240, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            
             border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-            
-            transition: all 0.3s ease;
         }
 
         .brand-logo {
@@ -108,7 +119,7 @@
             align-items: flex-start;
             margin-bottom: 40px;
             gap: 40px;
-            padding: 0 8px; /* Slight alignment padding with banner */
+            padding: 0 12px;
         }
 
         .hero-headline {
@@ -121,11 +132,12 @@
             color: #120924;
         }
 
-        /* Metadata alignment on right side */
+        /* Inward Pushed Metadata Group */
         .hero-meta-group {
             display: flex;
             gap: 48px;
             padding-top: 16px;
+            margin-right: 8%; /* Pushes date and location inward towards center */
         }
 
         .meta-item {
@@ -162,8 +174,7 @@
                 padding: 0 12px 40px 12px;
             }
             .navbar {
-                top: 8px;
-                padding: 10px 16px;
+                padding: 16px 8px;
             }
             .hero-header-row {
                 flex-direction: column;
@@ -172,6 +183,7 @@
             }
             .hero-meta-group {
                 gap: 32px;
+                margin-right: 0;
             }
             .hero-banner-container {
                 height: 320px;
@@ -181,8 +193,8 @@
 </head>
 <body>
 
-    <!-- Full-Width Sticky Floating Shaded Nav Bar -->
-    <header class="navbar">
+    <!-- Sticky Floating Nav Bar -->
+    <header class="navbar" id="navbar">
         <a href="#" class="brand-logo">SHE Swings</a>
         <div class="nav-right">
             <a href="#contact" class="nav-link">Contact</a>
@@ -212,6 +224,18 @@
             <img src="logo.png" alt="SHE Swings Banner" class="hero-banner-image">
         </div>
     </main>
+
+    <!-- Script to toggle floating navbar box on scroll -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 </body>
 </html>
