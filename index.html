@@ -22,14 +22,14 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #0A0A0E;
-            padding: 0 40px 60px 40px;
+            padding: 0 16px 60px 16px; /* Tight side margins for full-width layout */
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Floating Translucent Nav Container */
+        /* Full-Width Floating Translucent Nav Container */
         .navbar {
             position: sticky;
-            top: 16px;
+            top: 12px;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -38,9 +38,8 @@
             align-items: center;
             
             width: 100%;
-            max-width: 1400px;
-            margin: 0 auto 60px auto;
-            padding: 12px 28px;
+            margin: 0 auto 48px auto;
+            padding: 12px 24px;
             border-radius: 16px;
             
             background-color: rgba(238, 236, 240, 0.85);
@@ -97,10 +96,9 @@
             background-color: #2D1F47;
         }
 
-        /* Hero Main Layout */
+        /* Full-Width Hero Main Layout */
         .hero-section {
             width: 100%;
-            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -108,17 +106,18 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 48px;
+            margin-bottom: 40px;
             gap: 40px;
+            padding: 0 8px; /* Slight alignment padding with banner */
         }
 
         .hero-headline {
             font-family: 'Archivo Narrow', sans-serif;
-            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            font-size: clamp(3.2rem, 5.8vw, 6rem);
             font-weight: 700;
             line-height: 0.95;
             letter-spacing: -0.03em;
-            max-width: 800px;
+            max-width: 850px;
             color: #120924;
         }
 
@@ -137,10 +136,10 @@
             font-weight: 400;
         }
 
-        /* Rounded Hero Banner Box */
+        /* Full-Width Rounded Hero Banner Box */
         .hero-banner-container {
             width: 100%;
-            height: 520px;
+            height: 560px;
             background-color: #E8E8EC;
             border-radius: 28px;
             overflow: hidden;
@@ -160,15 +159,16 @@
         /* Responsive adjustments */
         @media (max-width: 900px) {
             body {
-                padding: 0 20px 40px 20px;
+                padding: 0 12px 40px 12px;
             }
             .navbar {
-                top: 10px;
-                padding: 10px 20px;
+                top: 8px;
+                padding: 10px 16px;
             }
             .hero-header-row {
                 flex-direction: column;
                 gap: 24px;
+                padding: 0;
             }
             .hero-meta-group {
                 gap: 32px;
@@ -181,7 +181,7 @@
 </head>
 <body>
 
-    <!-- Sticky Floating Shaded Nav Bar -->
+    <!-- Full-Width Sticky Floating Shaded Nav Bar -->
     <header class="navbar">
         <a href="#" class="brand-logo">SHE Swings</a>
         <div class="nav-right">
@@ -190,7 +190,7 @@
         </div>
     </header>
 
-    <!-- Main Hero Section -->
+    <!-- Main Full-Width Hero Section -->
     <main class="hero-section">
         <div class="hero-header-row">
             <h1 class="hero-headline">
@@ -207,7 +207,7 @@
             </div>
         </div>
 
-        <!-- Hero Banner Container -->
+        <!-- Full-Width Hero Banner Container -->
         <div class="hero-banner-container">
             <img src="logo.png" alt="SHE Swings Banner" class="hero-banner-image">
         </div>
