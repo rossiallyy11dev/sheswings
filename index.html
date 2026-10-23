@@ -173,31 +173,30 @@
         /* About Section */
         .about-section {
             width: 100%;
-            max-width: 1300px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 0 12px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 80px;
+            display: flex;
+            justify-content: space-between;
             align-items: flex-start;
+            gap: 60px;
         }
 
         .about-title {
-            font-family: 'Archivo Narrow', sans-serif;
-            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
             font-weight: 700;
             color: #555555;
             letter-spacing: -0.02em;
-            line-height: 1.05;
+            line-height: 1.1;
+            flex: 0 0 35%;
         }
 
         .about-content {
             display: flex;
             flex-direction: column;
             gap: 32px;
+            flex: 0 0 58%;
         }
 
         .about-text {
@@ -227,9 +226,13 @@
             .hero-banner-container {
                 height: 320px;
             }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
+            .about-section {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .about-title, .about-content {
+                flex: none;
+                width: 100%;
             }
         }
     </style>
@@ -271,15 +274,13 @@
 
         <!-- About Section -->
         <section class="about-section" id="about">
-            <div class="about-grid">
-                <h2 class="about-title">About SHE Swings</h2>
-                <div class="about-content">
-                    <p class="about-text">
-                        Every swing on the course is a step toward empowering our community. SHE Swings brings together leaders, changemakers, and golf enthusiasts for an exclusive all-women golf and networking experience at Oswego Lake Country Club—supporting the incredible mission of Friends of the Children – Portland.
-                    </p>
-                    <div>
-                        <a href="#register" class="btn-register">Register</a>
-                    </div>
+            <h2 class="about-title">About SHE Swings</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Every swing on the course is a step toward empowering our community. SHE Swings brings together leaders, changemakers, and golf enthusiasts for an exclusive all-women golf and networking experience at Oswego Lake Country Club—supporting the incredible mission of Friends of the Children – Portland.
+                </p>
+                <div>
+                    <a href="#register" class="btn-register">Register</a>
                 </div>
             </div>
         </section>
