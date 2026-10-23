@@ -202,7 +202,7 @@
             flex: 0 0 58%;
         }
 
-        /* Diagonal Scroll-Driven Gradient Text Mask (165deg) */
+        /* True Diagonal Scroll-Driven Gradient Text Mask (120deg) */
         .about-text {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(1.4rem, 2.2vw, 2.2rem);
@@ -213,8 +213,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            /* Angled fallback gradient */
-            background: linear-gradient(165deg, #555555 35%, rgba(85, 85, 85, 0.25) 70%);
+            /* 120deg diagonal cut across text block */
+            background: linear-gradient(120deg, #555555 35%, rgba(85, 85, 85, 0.25) 70%);
         }
 
         @media (max-width: 900px) {
@@ -319,18 +319,17 @@
                 const rect = aboutText.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
                 
-                // Tracks paragraph position relative to viewport height for fluid scrubbing
                 const startPoint = windowHeight * 0.9;
                 const endPoint = windowHeight * 0.2;
                 
                 let progress = (startPoint - rect.top) / (startPoint - endPoint);
                 progress = Math.min(Math.max(progress, 0), 1);
                 
-                // Diagonal angle (165deg) so the right edge fades slightly ahead of the left edge
-                const solidStop = 25 + (progress * 75);
+                // Scrub diagonal gradient stop on scroll
+                const solidStop = 20 + (progress * 80);
                 const fadeStop = solidStop + 30;
                 
-                aboutText.style.background = `linear-gradient(165deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.25) ${fadeStop}%)`;
+                aboutText.style.background = `linear-gradient(120deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.25) ${fadeStop}%)`;
                 aboutText.style.webkitBackgroundClip = 'text';
                 aboutText.style.webkitTextFillColor = 'transparent';
             }
