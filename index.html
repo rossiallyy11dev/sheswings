@@ -202,7 +202,7 @@
             flex: 0 0 58%;
         }
 
-        /* Refined Gradient Text Fade (Solid top, fading smoothly on bottom half) */
+        /* Scroll-Driven Gradient Text Mask */
         .about-text {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(1.4rem, 2.2vw, 2.2rem);
@@ -210,11 +210,9 @@
             letter-spacing: -0.02em;
             font-weight: 400;
             max-width: 720px;
-            
-            /* Holds solid dark color for the first 45%, then smoothly transitions down */
-            background: linear-gradient(180deg, #555555 45%, rgba(85, 85, 85, 0.3) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         @media (max-width: 900px) {
@@ -292,7 +290,7 @@
         <section class="about-section" id="about">
             <h2 class="about-title">About SHE Swings</h2>
             <div class="about-content">
-                <p class="about-text">
+                <p class="about-text" id="aboutText">
                     Every swing on the course is a step toward empowering our community. SHE Swings brings together leaders, changemakers, and golf enthusiasts for an exclusive all-women golf and networking experience at Oswego Lake Country Club—supporting the incredible mission of Friends of the Children – Portland.
                 </p>
                 <div>
@@ -304,8 +302,9 @@
 
     <script>
         const nav = document.getElementById('navbar');
+        const aboutText = document.getElementById('aboutText');
 
-        window.addEventListener('scroll', () => {
+        function updateScrollEffects() {
             if (nav) {
                 if (window.scrollY > 20) {
                     nav.classList.add('scrolled');
@@ -313,7 +312,30 @@
                     nav.classList.remove('scrolled');
                 }
             }
-        });
+
+            if (aboutText) {
+                const rect = aboutText.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Calculates progress as paragraph rises into view from 85% to 35% viewport height
+                const startPoint = windowHeight * 0.85;
+                const endPoint = windowHeight * 0.35;
+                
+                let progress = (startPoint - rect.top) / (startPoint - endPoint);
+                progress = Math.min(Math.max(progress, 0), 1);
+                
+                // Maps progress: initial top-half fade (~10% cut-off) moves down to 100% (fully revealed)
+                const fadeStart = 10 + (progress * 90);
+                const fadeEnd = fadeStart + 25;
+                
+                aboutText.style.background = `linear-gradient(180deg, #555555 ${fadeStart}%, rgba(85, 85, 85, 0.25) ${fadeEnd}%)`;
+                aboutText.style.webkitBackgroundClip = 'text';
+                aboutText.style.webkitTextFillColor = 'transparent';
+            }
+        }
+
+        window.addEventListener('scroll', updateScrollEffects);
+        window.addEventListener('load', updateScrollEffects);
     </script>
 
 </body>
