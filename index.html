@@ -173,7 +173,7 @@
             padding: 20px;
         }
 
-        /* Section Dividers: Generous space above, tight space below */
+        /* Section Dividers */
         .section-divider {
             width: 100%;
             height: 1px;
@@ -181,7 +181,7 @@
             margin: 120px 0 16px 0;
         }
 
-        /* Generic Section Layout - Uniform 2-column flex setup */
+        /* Generic Section Layout */
         .content-section {
             width: 100%;
             max-width: 100%;
@@ -190,10 +190,9 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            gap: 7vw;
         }
 
-        /* Single line unbroken title with fixed width anchor */
+        /* Fixed width title column locks all right content to the exact same starting X-coordinate */
         .section-title {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(2rem, 3.2vw, 3.2rem);
@@ -202,7 +201,8 @@
             letter-spacing: -0.02em;
             line-height: 1.1;
             white-space: nowrap;
-            flex: 0 0 320px;
+            flex: 0 0 420px; /* Fixed width prevents title length from shifting alignment */
+            padding-right: 40px;
         }
 
         .section-right-content {
@@ -222,7 +222,7 @@
             color: #555555;
         }
 
-        /* Special Guest Subtext - Directly aligned with "Monday, Oct 11" column */
+        /* Special Guest Intro Text */
         .guest-intro-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.05rem;
@@ -233,7 +233,7 @@
             margin: 0;
         }
 
-        /* Single Media Container for Cheyenne Woods - Aligned directly under intro text */
+        /* Single Media Container for Cheyenne Woods */
         .guest-media-container {
             width: 100%;
             max-width: 540px;
@@ -277,7 +277,7 @@
             display: block;
         }
 
-        /* Agenda Section Specific Layout */
+        /* Agenda Section Layout */
         .agenda-list {
             display: flex;
             flex-direction: column;
@@ -376,8 +376,10 @@
             .section-title {
                 white-space: normal;
                 flex: none;
+                width: 100%;
+                padding-right: 0;
             }
-            .section-title, .section-right-content {
+            .section-right-content {
                 flex: none;
                 width: 100%;
             }
