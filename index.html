@@ -192,7 +192,7 @@
             align-items: flex-start;
         }
 
-        /* Fixed width title column locks all right content to the exact same starting X-coordinate */
+        /* Title Column - 480px width creates a wide, Stripe-like gap before description content */
         .section-title {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(2rem, 3.2vw, 3.2rem);
@@ -201,8 +201,8 @@
             letter-spacing: -0.02em;
             line-height: 1.1;
             white-space: nowrap;
-            flex: 0 0 420px; /* Fixed width prevents title length from shifting alignment */
-            padding-right: 40px;
+            flex: 0 0 480px; 
+            padding-right: 48px;
         }
 
         .section-right-content {
