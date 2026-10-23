@@ -173,8 +173,16 @@
             padding: 20px;
         }
 
-        /* About Section */
-        .about-section {
+        /* Section Dividers */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.08);
+            margin: 80px 0;
+        }
+
+        /* Generic Section Layout */
+        .content-section {
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
@@ -186,7 +194,7 @@
         }
 
         /* Single line unbroken title */
-        .about-title {
+        .section-title {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(2rem, 3.2vw, 3.2rem);
             font-weight: 400;
@@ -197,14 +205,14 @@
             flex: 0 0 auto;
         }
 
-        .about-content {
+        .section-right-content {
             display: flex;
             flex-direction: column;
             gap: 36px;
             flex: 1;
         }
 
-        .about-text {
+        .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
             line-height: 1.35;
@@ -236,6 +244,85 @@
             display: block;
         }
 
+        /* Agenda Section Specific Layout */
+        .agenda-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 750px;
+        }
+
+        .agenda-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 36px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .agenda-row:first-child {
+            padding-top: 0;
+        }
+
+        .agenda-date-col {
+            flex: 0 0 220px;
+        }
+
+        .agenda-date {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #555555;
+            margin-bottom: 8px;
+        }
+
+        .agenda-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background-color: #E8E8EC;
+            color: #555555;
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+
+        .agenda-events-col {
+            flex: 1;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555555;
+            font-weight: 400;
+        }
+
+        .agenda-note {
+            font-style: italic;
+            margin-top: 8px;
+            opacity: 0.8;
+        }
+
+        /* Special Guest Grid */
+        .guest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 710px;
+        }
+
+        .guest-card {
+            background-color: #E8E8EC;
+            border-radius: 20px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #555555;
+        }
+
         @media (max-width: 900px) {
             body {
                 padding: 0 12px 40px 12px;
@@ -258,19 +345,26 @@
             .hero-banner-container {
                 height: 320px;
             }
-            .about-section {
+            .content-section {
                 flex-direction: column;
                 gap: 24px;
             }
-            .about-title {
+            .section-title {
                 white-space: normal;
             }
-            .about-title, .about-content {
+            .section-title, .section-right-content {
                 flex: none;
                 width: 100%;
             }
-            .about-text {
+            .section-text, .agenda-list, .guest-grid {
                 max-width: 100%;
+            }
+            .agenda-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .agenda-date-col {
+                flex: none;
             }
             .about-media-container {
                 max-width: 100%;
@@ -315,10 +409,10 @@
         </section>
 
         <!-- About Section -->
-        <section class="about-section" id="about">
-            <h2 class="about-title">About SHE Swings</h2>
-            <div class="about-content">
-                <p class="about-text">
+        <section class="content-section" id="about">
+            <h2 class="section-title">About SHE Swings</h2>
+            <div class="section-right-content">
+                <p class="section-text">
                     Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
@@ -327,6 +421,62 @@
                 <div class="about-media-container">
                     <!-- Replace src with your media asset -->
                     <img src="event-media-placeholder.jpg" alt="SHE Swings Event Media" class="about-media-image">
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Agenda at a Glance Section -->
+        <section class="content-section" id="agenda">
+            <h2 class="section-title">Agenda at a glance</h2>
+            <div class="section-right-content">
+                <div class="agenda-list">
+                    <div class="agenda-row">
+                        <div class="agenda-date-col">
+                            <div class="agenda-date">Sunday, Oct 10</div>
+                            <div class="agenda-tag">Day 1</div>
+                        </div>
+                        <div class="agenda-events-col">
+                            <div>Welcome & Registration</div>
+                            <div>Opening keynote</div>
+                            <div>Fireside chat with special guest</div>
+                            <div>Welcome reception</div>
+                            <div class="agenda-note">*Special training opportunities coming soon</div>
+                        </div>
+                    </div>
+
+                    <div class="agenda-row">
+                        <div class="agenda-date-col">
+                            <div class="agenda-date">Monday, Oct 11</div>
+                            <div class="agenda-tag">Day 2</div>
+                        </div>
+                        <div class="agenda-events-col">
+                            <div>Tournament breakfast & briefing</div>
+                            <div>18-hole championship play</div>
+                            <div>Networking luncheon</div>
+                            <div>Fireside chat with special guest</div>
+                            <div>Awards celebration</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Special Guest Section -->
+        <section class="content-section" id="guests">
+            <h2 class="section-title">Special Guest</h2>
+            <div class="section-right-content">
+                <p class="section-text">
+                    Special guests from the world's leading businesses and organizations join us at SHE Swings. 2027 announcements coming soon.
+                </p>
+                <div class="guest-grid">
+                    <div class="guest-card">Guest 1</div>
+                    <div class="guest-card">Guest 2</div>
+                    <div class="guest-card">Guest 3</div>
+                    <div class="guest-card">Guest 4</div>
                 </div>
             </div>
         </section>
