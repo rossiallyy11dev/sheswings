@@ -202,7 +202,7 @@
             flex: 0 0 58%;
         }
 
-        /* Scroll-Driven Gradient Text Mask */
+        /* Diagonal Scroll-Driven Gradient Text Mask (165deg) */
         .about-text {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(1.4rem, 2.2vw, 2.2rem);
@@ -213,8 +213,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            /* Default fallback gradient */
-            background: linear-gradient(180deg, #555555 40%, rgba(85, 85, 85, 0.25) 75%);
+            /* Angled fallback gradient */
+            background: linear-gradient(165deg, #555555 35%, rgba(85, 85, 85, 0.25) 70%);
         }
 
         @media (max-width: 900px) {
@@ -326,11 +326,11 @@
                 let progress = (startPoint - rect.top) / (startPoint - endPoint);
                 progress = Math.min(Math.max(progress, 0), 1);
                 
-                // Maps progress so fade threshold travels cleanly down the lines as you scroll
-                const solidStop = 30 + (progress * 70);
+                // Diagonal angle (165deg) so the right edge fades slightly ahead of the left edge
+                const solidStop = 25 + (progress * 75);
                 const fadeStop = solidStop + 30;
                 
-                aboutText.style.background = `linear-gradient(180deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.2) ${fadeStop}%)`;
+                aboutText.style.background = `linear-gradient(165deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.25) ${fadeStop}%)`;
                 aboutText.style.webkitBackgroundClip = 'text';
                 aboutText.style.webkitTextFillColor = 'transparent';
             }
