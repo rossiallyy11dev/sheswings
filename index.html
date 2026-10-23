@@ -202,7 +202,7 @@
             flex: 0 0 58%;
         }
 
-        /* Subtle Gradient Text Fade (Top to Bottom) */
+        /* Refined Gradient Text Fade (Solid top, fading smoothly on bottom half) */
         .about-text {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(1.4rem, 2.2vw, 2.2rem);
@@ -211,8 +211,8 @@
             font-weight: 400;
             max-width: 720px;
             
-            /* Gradient Mask on Text */
-            background: linear-gradient(180deg, #555555 55%, rgba(85, 85, 85, 0.35) 100%);
+            /* Holds solid dark color for the first 45%, then smoothly transitions down */
+            background: linear-gradient(180deg, #555555 45%, rgba(85, 85, 85, 0.3) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
