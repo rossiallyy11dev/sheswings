@@ -202,7 +202,7 @@
             flex: 0 0 58%;
         }
 
-        /* True Diagonal Scroll-Driven Gradient Text Mask (120deg) */
+        /* Diagonal Scroll-Driven Gradient Text Mask (165deg) */
         .about-text {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(1.4rem, 2.2vw, 2.2rem);
@@ -213,8 +213,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            /* 120deg diagonal cut across text block */
-            background: linear-gradient(120deg, #555555 35%, rgba(85, 85, 85, 0.25) 70%);
+            /* Steep diagonal angle to match Stripe Sessions reference screenshot */
+            background: linear-gradient(165deg, #555555 18%, rgba(85, 85, 85, 0.22) 58%);
         }
 
         @media (max-width: 900px) {
@@ -319,17 +319,18 @@
                 const rect = aboutText.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
                 
-                const startPoint = windowHeight * 0.9;
-                const endPoint = windowHeight * 0.2;
+                // Calculates progress as paragraph rises into viewport
+                const startPoint = windowHeight * 0.85;
+                const endPoint = windowHeight * 0.25;
                 
                 let progress = (startPoint - rect.top) / (startPoint - endPoint);
                 progress = Math.min(Math.max(progress, 0), 1);
                 
-                // Scrub diagonal gradient stop on scroll
-                const solidStop = 20 + (progress * 80);
-                const fadeStop = solidStop + 30;
+                // Maps progress to diagonal gradient stops (165deg) matching the reference screenshot
+                const solidStop = 18 + (progress * 70);
+                const fadeStop = solidStop + 40;
                 
-                aboutText.style.background = `linear-gradient(120deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.25) ${fadeStop}%)`;
+                aboutText.style.background = `linear-gradient(165deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.22) ${fadeStop}%)`;
                 aboutText.style.webkitBackgroundClip = 'text';
                 aboutText.style.webkitTextFillColor = 'transparent';
             }
