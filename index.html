@@ -182,17 +182,19 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            gap: 36px;
+            gap: 5vw;
         }
 
+        /* Single line unbroken title like "About Sessions" */
         .about-title {
             font-family: 'Roboto', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 3.2vw, 3.2rem);
             font-weight: 400;
             color: #555555;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            flex: 0 0 280px;
+            white-space: nowrap;
+            flex: 0 0 auto;
         }
 
         .about-content {
@@ -237,6 +239,9 @@
             .about-section {
                 flex-direction: column;
                 gap: 24px;
+            }
+            .about-title {
+                white-space: normal;
             }
             .about-title, .about-content {
                 flex: none;
