@@ -21,10 +21,8 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #555555;
-            padding: 0 24px 80px 24px;
+            padding: 0 16px 60px 16px;
             -webkit-font-smoothing: antialiased;
-            max-width: 1440px;
-            margin: 0 auto;
         }
 
         /* Seamless Top Nav / Floating Box on Scroll */
@@ -144,7 +142,7 @@
             display: flex;
             gap: 48px;
             padding-top: 16px;
-            margin-right: 4%;
+            margin-right: 8%;
         }
 
         .meta-item {
@@ -194,34 +192,34 @@
             color: #555555;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            flex: 0 0 30%;
+            flex: 0 0 35%;
         }
 
         .about-content {
             display: flex;
             flex-direction: column;
             gap: 28px;
-            flex: 0 0 65%;
-            padding-right: 24px;
+            flex: 0 0 58%;
         }
 
-        /* Exact Stripe-style Sized Text and Diagonal Scroll-Driven Gradient Mask */
+        /* True Diagonal Scroll-Driven Gradient Text Mask (120deg) */
         .about-text {
             font-family: 'Roboto', sans-serif;
-            font-size: clamp(1.5rem, 2.4vw, 2.4rem);
-            line-height: 1.2;
+            font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+            line-height: 1.25;
             letter-spacing: -0.02em;
             font-weight: 400;
-            max-width: 760px;
+            max-width: 720px;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            background: linear-gradient(158deg, #555555 42%, rgba(85, 85, 85, 0.25) 72%);
+            /* 120deg diagonal cut across text block */
+            background: linear-gradient(120deg, #555555 35%, rgba(85, 85, 85, 0.25) 70%);
         }
 
         @media (max-width: 900px) {
             body {
-                padding: 0 16px 40px 16px;
+                padding: 0 12px 40px 12px;
             }
             .navbar {
                 padding: 16px 0;
@@ -248,7 +246,6 @@
             .about-title, .about-content {
                 flex: none;
                 width: 100%;
-                padding-right: 0;
             }
             .about-text {
                 max-width: 100%;
@@ -329,10 +326,10 @@
                 progress = Math.min(Math.max(progress, 0), 1);
                 
                 // Scrub diagonal gradient stop on scroll
-                const solidStop = 25 + (progress * 70);
+                const solidStop = 20 + (progress * 80);
                 const fadeStop = solidStop + 30;
                 
-                aboutText.style.background = `linear-gradient(158deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.25) ${fadeStop}%)`;
+                aboutText.style.background = `linear-gradient(120deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.25) ${fadeStop}%)`;
                 aboutText.style.webkitBackgroundClip = 'text';
                 aboutText.style.webkitTextFillColor = 'transparent';
             }
