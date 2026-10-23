@@ -222,6 +222,17 @@
             color: #555555;
         }
 
+        /* Smaller Subtext Paragraph aligned with Agenda Event column */
+        .guest-intro-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            font-weight: 400;
+            color: #555555;
+            max-width: 530px;
+            margin-left: 220px; /* Matches .agenda-date-col width to line up with event schedule */
+        }
+
         /* Media Container matched to exact max-width of text paragraph */
         .about-media-container {
             width: 100%;
@@ -322,6 +333,7 @@
             gap: 20px;
             width: 100%;
             max-width: 710px;
+            margin-left: 220px;
         }
 
         .guest-card {
@@ -370,8 +382,9 @@
                 flex: none;
                 width: 100%;
             }
-            .section-text, .agenda-list, .guest-grid {
+            .section-text, .agenda-list, .guest-grid, .guest-intro-text {
                 max-width: 100%;
+                margin-left: 0;
             }
             .agenda-row {
                 flex-direction: column;
@@ -489,8 +502,8 @@
         <section class="content-section" id="guests">
             <h2 class="section-title">Special Guest</h2>
             <div class="section-right-content">
-                <p class="section-text">
-                    Special guests from the world's leading businesses and organizations join us at SHE Swings. 2027 announcements coming soon.
+                <p class="guest-intro-text">
+                    We are honored to welcome professional golfer Cheyenne Woods. Beyond her accomplishments on the LPGA Tour and Ladies European Tour, Cheyenne is a passionate advocate for diversity in golf and empowering youth through sport.
                 </p>
                 <div class="guest-grid">
                     <div class="guest-card">Guest 1</div>
