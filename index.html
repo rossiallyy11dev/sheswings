@@ -112,7 +112,7 @@
             background-color: #0099D8;
         }
 
-        /* Hero Layout - Restored */
+        /* Hero Layout */
         .hero-section {
             width: 100%;
             margin: 0 auto 100px auto;
@@ -202,24 +202,19 @@
             flex: 0 0 58%;
         }
 
-        /* Scaled Up & Fog/Fade Text Effect */
+        /* Subtle Gradient Text Fade (Top to Bottom) */
         .about-text {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(1.4rem, 2.2vw, 2.2rem);
             line-height: 1.25;
             letter-spacing: -0.02em;
-            color: #555555;
             font-weight: 400;
             max-width: 720px;
-            /* Fog mist effect applied directly to text */
-            opacity: 0.35;
-            filter: blur(1px);
-            transition: opacity 0.35s ease, filter 0.35s ease;
-        }
-
-        .about-text.revealed {
-            opacity: 1;
-            filter: blur(0);
+            
+            /* Gradient Mask on Text */
+            background: linear-gradient(180deg, #555555 55%, rgba(85, 85, 85, 0.35) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         @media (max-width: 900px) {
@@ -297,7 +292,7 @@
         <section class="about-section" id="about">
             <h2 class="about-title">About SHE Swings</h2>
             <div class="about-content">
-                <p class="about-text" id="aboutText">
+                <p class="about-text">
                     Every swing on the course is a step toward empowering our community. SHE Swings brings together leaders, changemakers, and golf enthusiasts for an exclusive all-women golf and networking experience at Oswego Lake Country Club—supporting the incredible mission of Friends of the Children – Portland.
                 </p>
                 <div>
@@ -309,7 +304,6 @@
 
     <script>
         const nav = document.getElementById('navbar');
-        const aboutText = document.getElementById('aboutText');
 
         window.addEventListener('scroll', () => {
             if (nav) {
@@ -317,16 +311,6 @@
                     nav.classList.add('scrolled');
                 } else {
                     nav.classList.remove('scrolled');
-                }
-            }
-
-            if (aboutText) {
-                const rect = aboutText.getBoundingClientRect();
-                // When text enters comfortably into view, remove the fog/fade effect
-                if (rect.top < window.innerHeight * 0.75) {
-                    aboutText.classList.add('revealed');
-                } else {
-                    aboutText.classList.remove('revealed');
                 }
             }
         });
