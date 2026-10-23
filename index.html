@@ -222,15 +222,37 @@
             color: #555555;
         }
 
-        /* Smaller Subtext Paragraph aligned with Agenda Event column */
+        /* Subtext Paragraph lined up with agenda date column */
         .guest-intro-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.05rem;
             line-height: 1.5;
             font-weight: 400;
             color: #555555;
-            max-width: 530px;
-            margin-left: 220px; /* Matches .agenda-date-col width to line up with event schedule */
+            max-width: 710px;
+            margin-left: 0;
+        }
+
+        /* Single Media Container for Cheyenne Woods */
+        .guest-media-container {
+            width: 100%;
+            max-width: 710px;
+            height: 460px;
+            background-color: #E8E8EC;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-left: 0;
+        }
+
+        .guest-media-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Media Container matched to exact max-width of text paragraph */
@@ -326,29 +348,6 @@
             opacity: 0.8;
         }
 
-        /* Special Guest Grid */
-        .guest-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            width: 100%;
-            max-width: 710px;
-            margin-left: 220px;
-        }
-
-        .guest-card {
-            background-color: #E8E8EC;
-            border-radius: 20px;
-            aspect-ratio: 1 / 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: #555555;
-        }
-
         @media (max-width: 900px) {
             body {
                 padding: 0 12px 40px 12px;
@@ -382,9 +381,8 @@
                 flex: none;
                 width: 100%;
             }
-            .section-text, .agenda-list, .guest-grid, .guest-intro-text {
+            .section-text, .agenda-list, .guest-intro-text, .guest-media-container {
                 max-width: 100%;
-                margin-left: 0;
             }
             .agenda-row {
                 flex-direction: column;
@@ -393,7 +391,7 @@
             .agenda-date-col {
                 flex: none;
             }
-            .about-media-container {
+            .about-media-container, .guest-media-container {
                 max-width: 100%;
                 height: 280px;
             }
@@ -505,11 +503,9 @@
                 <p class="guest-intro-text">
                     We are honored to welcome professional golfer Cheyenne Woods. Beyond her accomplishments on the LPGA Tour and Ladies European Tour, Cheyenne is a passionate advocate for diversity in golf and empowering youth through sport.
                 </p>
-                <div class="guest-grid">
-                    <div class="guest-card">Guest 1</div>
-                    <div class="guest-card">Guest 2</div>
-                    <div class="guest-card">Guest 3</div>
-                    <div class="guest-card">Guest 4</div>
+                <div class="guest-media-container">
+                    <!-- Replace src with Cheyenne Woods headshot/photo -->
+                    <img src="cheyenne-woods-placeholder.jpg" alt="Cheyenne Woods" class="guest-media-image">
                 </div>
             </div>
         </section>
