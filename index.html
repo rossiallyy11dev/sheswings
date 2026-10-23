@@ -202,7 +202,7 @@
             flex: 0 0 58%;
         }
 
-        /* Diagonal Scroll-Driven Gradient Text Mask (165deg) */
+        /* Static Diagonal Gradient Text Mask (165deg) */
         .about-text {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(1.4rem, 2.2vw, 2.2rem);
@@ -210,11 +210,10 @@
             letter-spacing: -0.02em;
             font-weight: 400;
             max-width: 720px;
+            background: linear-gradient(165deg, #555555 35%, rgba(85, 85, 85, 0.25) 75%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            /* Steep diagonal angle to match Stripe Sessions reference screenshot */
-            background: linear-gradient(165deg, #555555 18%, rgba(85, 85, 85, 0.22) 58%);
         }
 
         @media (max-width: 900px) {
@@ -304,9 +303,8 @@
 
     <script>
         const nav = document.getElementById('navbar');
-        const aboutText = document.getElementById('aboutText');
 
-        function updateScrollEffects() {
+        function updateNavbar() {
             if (nav) {
                 if (window.scrollY > 20) {
                     nav.classList.add('scrolled');
@@ -314,31 +312,10 @@
                     nav.classList.remove('scrolled');
                 }
             }
-
-            if (aboutText) {
-                const rect = aboutText.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                // Calculates progress as paragraph rises into viewport
-                const startPoint = windowHeight * 0.85;
-                const endPoint = windowHeight * 0.25;
-                
-                let progress = (startPoint - rect.top) / (startPoint - endPoint);
-                progress = Math.min(Math.max(progress, 0), 1);
-                
-                // Maps progress to diagonal gradient stops (165deg) matching the reference screenshot
-                const solidStop = 18 + (progress * 70);
-                const fadeStop = solidStop + 40;
-                
-                aboutText.style.background = `linear-gradient(165deg, #555555 ${solidStop}%, rgba(85, 85, 85, 0.22) ${fadeStop}%)`;
-                aboutText.style.webkitBackgroundClip = 'text';
-                aboutText.style.webkitTextFillColor = 'transparent';
-            }
         }
 
-        window.addEventListener('scroll', updateScrollEffects);
-        window.addEventListener('load', updateScrollEffects);
-        window.addEventListener('resize', updateScrollEffects);
+        window.addEventListener('scroll', updateNavbar);
+        window.addEventListener('load', updateNavbar);
     </script>
 
 </body>
