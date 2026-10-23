@@ -23,6 +23,20 @@
             color: #555555;
             padding: 0 16px 60px 16px;
             -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        /* Fog Overlay Effect that fades out on scroll */
+        .fog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 600px;
+            pointer-events: none;
+            z-index: 900;
+            background: radial-gradient(ellipse at 80% 0%, rgba(255, 255, 255, 0.75) 0%, rgba(248, 248, 250, 0) 70%);
+            transition: opacity 0.3s ease-out;
         }
 
         /* Seamless Top Nav / Floating Box on Scroll */
@@ -135,7 +149,7 @@
             letter-spacing: -0.03em;
             max-width: 850px;
             color: #555555;
-            margin-left: -3px; /* Slightly pulls optical alignment left */
+            margin-left: -3px;
         }
 
         .hero-meta-group {
@@ -198,16 +212,19 @@
         .about-content {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 28px;
             flex: 0 0 58%;
         }
 
+        /* Compacted Paragraph to Match Stripe Sessions Reference */
         .about-text {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.15rem;
-            line-height: 1.6;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            letter-spacing: -0.015em;
             color: #555555;
             font-weight: 400;
+            max-width: 580px;
         }
 
         @media (max-width: 900px) {
@@ -240,10 +257,15 @@
                 flex: none;
                 width: 100%;
             }
+            .about-text {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+
+    <div class="fog-overlay" id="fogOverlay"></div>
 
     <header class="navbar" id="navbar">
         <a href="#" class="brand-logo">
@@ -295,12 +317,22 @@
     <script>
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
+            const fog = document.getElementById('fogOverlay');
+            
             if (nav) {
                 if (window.scrollY > 20) {
                     nav.classList.add('scrolled');
                 } else {
                     nav.classList.remove('scrolled');
                 }
+            }
+
+            if (fog) {
+                // Smoothly reduces opacity as you scroll down
+                const scrollPos = window.scrollY;
+                const maxScroll = 400;
+                const opacity = Math.max(0, 1 - (scrollPos / maxScroll));
+                fog.style.opacity = opacity;
             }
         });
     </script>
