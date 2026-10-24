@@ -192,7 +192,7 @@
             align-items: flex-start;
         }
 
-        /* Title Column - 480px width creates a wide, Stripe-like gap before description content */
+        /* Title Column - Fixed 480px width */
         .section-title {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(2rem, 3.2vw, 3.2rem);
@@ -347,6 +347,132 @@
             opacity: 0.8;
         }
 
+        /* Sponsor Callout Card */
+        .sponsor-card {
+            width: 100%;
+            max-width: 540px;
+            background-color: #EEEEF2;
+            border-radius: 16px;
+            padding: 24px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            margin-top: 8px;
+        }
+
+        .sponsor-card-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #555555;
+            margin-bottom: 6px;
+        }
+
+        .sponsor-card-link {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #00AAEE;
+            text-decoration: none;
+        }
+
+        .sponsor-card-link:hover {
+            text-decoration: underline;
+        }
+
+        .sponsor-arrow-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #E2E2E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555555;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .sponsor-arrow-btn:hover {
+            background-color: #D6D6DD;
+        }
+
+        /* FAQ Accordion Styling */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 680px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 24px 0;
+        }
+
+        .faq-item:first-child {
+            padding-top: 0;
+        }
+
+        .faq-item details {
+            width: 100%;
+        }
+
+        .faq-item summary {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #555555;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-toggle-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #E8E8EC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #555555;
+            flex-shrink: 0;
+            margin-left: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item details[open] .faq-toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.975rem;
+            line-height: 1.6;
+            color: #555555;
+            padding-top: 16px;
+            font-weight: 400;
+        }
+
+        .faq-answer ul {
+            margin: 12px 0 16px 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 6px;
+        }
+
         @media (max-width: 900px) {
             body {
                 padding: 0 12px 40px 12px;
@@ -383,7 +509,7 @@
                 flex: none;
                 width: 100%;
             }
-            .section-text, .agenda-list, .guest-intro-text, .guest-media-container {
+            .section-text, .agenda-list, .guest-intro-text, .guest-media-container, .sponsor-card, .faq-list {
                 max-width: 100%;
             }
             .agenda-row {
@@ -508,6 +634,82 @@
                 <div class="guest-media-container">
                     <!-- Replace src with Cheyenne Woods photo -->
                     <img src="Cheyenne Woods" alt="Cheyenne Woods" class="guest-media-image">
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sponsors Section -->
+        <section class="content-section" id="sponsors">
+            <h2 class="section-title">Sponsors</h2>
+            <div class="section-right-content">
+                <p class="guest-intro-text">
+                    SHE Swings connects your organization with corporate leaders, decision-makers, and community advocates dedicated to empowering youth through sport.
+                </p>
+                <div class="guest-media-container">
+                    <!-- Replace src with sponsor banner/photo -->
+                    <img src="sponsor-media-placeholder.jpg" alt="Sponsors at SHE Swings" class="guest-media-image">
+                </div>
+                <div class="sponsor-card">
+                    <div>
+                        <div class="sponsor-card-title">Interested in becoming a sponsor?</div>
+                        <a href="#prospectus" class="sponsor-card-link">See prospectus</a>
+                    </div>
+                    <a href="#prospectus" class="sponsor-arrow-btn">→</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- FAQ Section -->
+        <section class="content-section" id="faqs">
+            <h2 class="section-title">FAQs</h2>
+            <div class="section-right-content">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <details open>
+                            <summary>
+                                Can I request an accessibility accommodation to attend the event?
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>We're happy to make any reasonable accommodations you might need to attend SHE Swings.</p>
+                                <p>The following are available on-site:</p>
+                                <ul>
+                                    <li>Accessible course navigation & cart assistance</li>
+                                    <li>Lactation room</li>
+                                    <li>Vegetarian, vegan, and gluten-free options at all meals</li>
+                                </ul>
+                                <p>To request accommodations not listed, email us at least 30 days before the event.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>
+                                Is there a minimum age requirement to attend?
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>SHE Swings is open to participants and guests of all ages. However, players registered for full 18-hole championship play must be 18 years or older unless accompanied by an adult guardian.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary>
+                                What is the dress code for the tournament and reception?
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>Standard golf attire (collared shirts, soft-spiked golf shoes, slacks or golf skirts) is required on the course. Smart casual attire is recommended for the welcome reception and awards luncheon.</p>
+                            </div>
+                        </details>
+                    </div>
                 </div>
             </div>
         </section>
