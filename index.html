@@ -36,9 +36,8 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 1200px;
             margin: 0 auto 48px auto;
-            padding: 24px 0;
+            padding: 24px 0 24px 0;
             border-radius: 16px;
             background-color: transparent;
             backdrop-filter: none;
@@ -117,12 +116,6 @@
             background-color: #0099D8;
         }
 
-        /* Main Wrapper */
-        .main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         /* Hero Layout */
         .hero-section {
             width: 100%;
@@ -195,11 +188,15 @@
         /* Generic Section Layout */
         .content-section {
             width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
         }
 
+        /* Title Column */
         .section-title {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(2rem, 3.2vw, 3.2rem);
@@ -482,6 +479,14 @@
             font-weight: 400;
         }
 
+        .faq-answer ul {
+            margin: 12px 0 16px 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 6px;
+        }
+
         .faq-answer a {
             color: #00AAEE;
             text-decoration: none;
@@ -491,9 +496,9 @@
             text-decoration: underline;
         }
 
-        /* ------------------------------------------------ */
-        /* REGISTRATION PAGE VIEW (Stripe Sessions Aesthetic) */
-        /* ------------------------------------------------ */
+        /* ------------------------------------ */
+        /* REGISTRATION PAGE / FORM STYLING    */
+        /* ------------------------------------ */
         .registration-page {
             display: none;
             width: 100%;
@@ -506,81 +511,53 @@
             display: block;
         }
 
-        .reg-hero-container {
+        .reg-hero-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 60px;
-            margin-bottom: 24px;
-        }
-
-        .reg-title-col {
-            flex: 1;
-            padding-top: 20px;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .reg-title {
-            font-size: clamp(3.2rem, 5.5vw, 5.2rem);
-            font-weight: 500;
-            line-height: 0.98;
-            letter-spacing: -0.035em;
-            color: #1C0A35;
-        }
-
-        .reg-image-container {
-            width: 520px;
-            height: 380px;
-            border-radius: 24px;
-            overflow: hidden;
-            background-color: #E2E2E8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .reg-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .image-placeholder-text {
-            font-size: 0.95rem;
-            color: #777788;
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.8rem);
             font-weight: 400;
-            text-align: center;
-            padding: 20px;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: #1A1A1A;
+            flex: 1;
+        }
+
+        .reg-art-banner {
+            width: 480px;
+            height: 220px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #18032d 0%, #3a0066 35%, #e12727 65%, #ff8c00 100%);
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         .reg-meta-bar {
             display: flex;
-            gap: 120px;
+            gap: 80px;
             padding-bottom: 32px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             margin-bottom: 48px;
-            padding-top: 10px;
         }
 
         .reg-meta-item {
-            font-size: 1.05rem;
-            color: #2D2040;
-            line-height: 1.45;
-            font-weight: 400;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.4;
         }
 
-        .form-container {
-            width: 100%;
-            max-width: 100%;
-        }
-
+        /* Form Grid Layout */
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px 40px;
+            gap: 28px 36px;
             margin-bottom: 48px;
         }
 
@@ -597,52 +574,44 @@
         .form-label {
             font-size: 0.9rem;
             font-weight: 500;
-            color: #1C0A35;
+            color: #333333;
         }
 
         .form-label span.req {
-            color: #1C0A35;
+            color: #111;
         }
 
         .form-input, .form-select {
             width: 100%;
-            height: 52px;
-            padding: 0 18px;
-            border-radius: 10px;
-            border: 1px solid #E0E0E8;
-            background-color: #F3F3F7;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 8px;
+            border: 1px solid #D0D0D8;
+            background-color: #FAFAFC;
             font-family: 'Roboto', sans-serif;
             font-size: 1rem;
-            color: #1A0B2E;
+            color: #333;
             outline: none;
             transition: border-color 0.2s, background-color 0.2s;
         }
 
         .form-input:focus, .form-select:focus {
-            border-color: #1C0A35;
+            border-color: #00AAEE;
             background-color: #FFFFFF;
         }
 
-        .form-select {
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml;utf8,<svg fill='%231C0A35' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-        }
-
+        /* Order Summary Section */
         .order-summary-section {
             border-top: 1px solid rgba(0, 0, 0, 0.08);
-            padding-top: 40px;
-            margin-top: 48px;
+            padding-top: 36px;
+            margin-top: 40px;
         }
 
         .summary-title {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 400;
-            color: #1C0A35;
-            margin-bottom: 28px;
-            letter-spacing: -0.02em;
+            color: #1A1A1A;
+            margin-bottom: 24px;
         }
 
         .summary-row {
@@ -650,35 +619,35 @@
             justify-content: space-between;
             align-items: center;
             padding: 16px 0;
-            font-size: 1.1rem;
-            color: #2D2040;
+            font-size: 1.05rem;
+            color: #444;
         }
 
         .summary-row.total {
             border-top: 1px solid #E0E0E6;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 500;
-            color: #1C0A35;
-            padding-top: 24px;
-            margin-top: 12px;
+            color: #111;
+            padding-top: 20px;
+            margin-top: 8px;
         }
 
         .btn-submit-reg {
             background-color: #1C0A35;
             color: #FFFFFF;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 500;
-            padding: 16px 48px;
+            padding: 14px 44px;
             border-radius: 999px;
             border: none;
             cursor: pointer;
             transition: background-color 0.2s;
             float: right;
-            margin-top: 32px;
+            margin-top: 24px;
         }
 
         .btn-submit-reg:hover {
-            background-color: #31135C;
+            background-color: #2F1254;
         }
 
         /* Modal Overlay for Payment */
@@ -746,7 +715,7 @@
             .navbar {
                 padding: 16px 0;
             }
-            .hero-header-row {
+            .hero-header-row, .reg-hero-row {
                 flex-direction: column;
                 gap: 24px;
                 padding: 0;
@@ -754,9 +723,16 @@
             .hero-headline {
                 margin-left: 0;
             }
-            .hero-meta-group {
+            .hero-meta-group, .reg-meta-bar {
                 gap: 32px;
                 margin-right: 0;
+            }
+            .reg-art-banner {
+                width: 100%;
+                height: 160px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
             }
             .hero-banner-container {
                 height: 320px;
@@ -789,27 +765,11 @@
                 max-width: 100%;
                 height: 280px;
             }
-            .reg-hero-container {
-                flex-direction: column;
-                gap: 28px;
-            }
-            .reg-image-container {
-                width: 100%;
-                height: 240px;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .reg-meta-bar {
-                gap: 32px;
-                flex-direction: column;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <header class="navbar" id="navbar">
         <a onclick="showPage('home')" class="brand-logo">
             <span class="bold-text">SHE</span> <span class="light-text">Swings</span>
@@ -820,347 +780,271 @@
         </div>
     </header>
 
-    <div class="main-container">
-
-        <!-- LANDING PAGE VIEW -->
-        <main id="home-page">
-            <!-- Hero Section -->
-            <section class="hero-section">
-                <div class="hero-header-row">
-                    <h1 class="hero-headline">
-                        Making a difference<br>on and off the course
-                    </h1>
-                    
-                    <div class="hero-meta-group">
-                        <div class="meta-item">
-                            October 10–11,<br>2027
-                        </div>
-                        <div class="meta-item">
-                            Oswego Lake Country Club,<br>Lake Oswego, Oregon
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hero-banner-container">
-                    <img src="SHE Swings Official Logo.png" alt="SHE Swings Banner" class="hero-banner-image">
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section class="content-section" id="about">
-                <h2 class="section-title">About SHE Swings</h2>
-                <div class="section-right-content">
-                    <p class="section-text">
-                        Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
-                    </p>
-                    <div>
-                        <button onclick="showPage('register')" class="btn-register">Register</button>
-                    </div>
-                    <div class="about-media-container">
-                        <img src="event-media-placeholder.jpg" alt="SHE Swings Event Media" class="about-media-image">
-                    </div>
-                </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- Agenda Section -->
-            <section class="content-section" id="agenda">
-                <h2 class="section-title">Agenda at a glance</h2>
-                <div class="section-right-content">
-                    <div class="agenda-list">
-                        <div class="agenda-row">
-                            <div class="agenda-date-col">
-                                <div class="agenda-date">Sunday, Oct 10</div>
-                                <div class="agenda-tag">
-                                    <span class="rhombus-icon"></span>
-                                    Day 1
-                                </div>
-                            </div>
-                            <div class="agenda-events-col">
-                                <div>Welcome & Registration</div>
-                                <div>Opening keynote</div>
-                                <div>Fireside chat with special guest</div>
-                                <div>Welcome reception</div>
-                                <div class="agenda-note">*Special training opportunities coming soon</div>
-                            </div>
-                        </div>
-
-                        <div class="agenda-row">
-                            <div class="agenda-date-col">
-                                <div class="agenda-date">Monday, Oct 11</div>
-                                <div class="agenda-tag">
-                                    <span class="rhombus-icon"></span>
-                                    Day 2
-                                </div>
-                            </div>
-                            <div class="agenda-events-col">
-                                <div>Tournament breakfast & briefing</div>
-                                <div>18-hole championship play</div>
-                                <div>Networking luncheon</div>
-                                <div>Fireside chat with special guest</div>
-                                <div>Awards celebration</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- Special Guest Section -->
-            <section class="content-section" id="guests">
-                <h2 class="section-title">Special Guest</h2>
-                <div class="section-right-content">
-                    <p class="guest-intro-text">
-                        We are honored to welcome professional golfer Cheyenne Woods. Beyond her accomplishments on the LPGA Tour and Ladies European Tour, Cheyenne is a passionate advocate for diversity in golf and empowering youth through sport.
-                    </p>
-                    <div class="guest-media-container">
-                        <img src="Cheyenne Woods" alt="Cheyenne Woods" class="guest-media-image">
-                    </div>
-                </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- Sponsors Section -->
-            <section class="content-section" id="sponsors">
-                <h2 class="section-title">Sponsors</h2>
-                <div class="section-right-content">
-                    <p class="guest-intro-text">
-                        SHE Swings connects your organization with an influential audience of business and community leaders committed to social impact.
-                    </p>
-                    <div class="sponsor-media-container">
-                        <img src="FOTC_pic 1.jpeg" alt="Sponsors at SHE Swings" class="guest-media-image" style="object-position: 43% center;">
-                    </div>
-                    <div class="sponsor-card">
-                        <div>
-                            <div class="sponsor-card-title">Interested in becoming a sponsor?</div>
-                            <a href="SHE Swings Sponsorship Deck.pdf" target="_blank" class="sponsor-card-link">View sponsorship opportunities</a>
-                        </div>
-                        <a href="SHE Swings Sponsorship Deck.pdf" target="_blank" class="sponsor-arrow-btn">→</a>
-                    </div>
-                </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- FAQ Section -->
-            <section class="content-section" id="faqs">
-                <h2 class="section-title">FAQs</h2>
-                <div class="section-right-content">
-                    <div class="faq-list">
-                        <div class="faq-item">
-                            <details name="faq-accordion">
-                                <summary>
-                                    Is there a minimum age requirement to attend?
-                                    <span class="faq-toggle-icon">+</span>
-                                </summary>
-                                <div class="faq-answer">
-                                    <p>SHE Swings is open to participants and guests of all ages. However, players registered for full 18-hole championship play must be 18 years or older unless accompanied by an adult guardian.</p>
-                                </div>
-                            </details>
-                        </div>
-
-                        <div class="faq-item">
-                            <details name="faq-accordion">
-                                <summary>
-                                    Do I need to bring my own golf clubs?
-                                    <span class="faq-toggle-icon">+</span>
-                                </summary>
-                                <div class="faq-answer">
-                                    <p>Bringing your own set of clubs is recommended, but rental sets are available through the Oswego Lake Country Club pro shop. Please let us know in advance if you will need rental clubs so we can reserve a set for you.</p>
-                                </div>
-                            </details>
-                        </div>
-
-                        <div class="faq-item">
-                            <details name="faq-accordion">
-                                <summary>
-                                    What is the dress code for the tournament and reception?
-                                    <span class="faq-toggle-icon">+</span>
-                                </summary>
-                                <div class="faq-answer">
-                                    <p>Standard golf attire (collared shirts, soft-spiked golf shoes, slacks or golf skirts) is required on the course. Smart casual attire is recommended for the welcome reception and awards luncheon.</p>
-                                </div>
-                            </details>
-                        </div>
-
-                        <div class="faq-item">
-                            <details name="faq-accordion">
-                                <summary>
-                                    Can I modify or cancel my registration?
-                                    <span class="faq-toggle-icon">+</span>
-                                </summary>
-                                <div class="faq-answer">
-                                    <p>Yes, registration modifications or cancellations can be processed up to 14 days prior to the event. Player substitutions within a registered team are welcome up until the day of the event.</p>
-                                </div>
-                            </details>
-                        </div>
-
-                        <div class="faq-item">
-                            <details name="faq-accordion">
-                                <summary>
-                                    I have additional questions that weren't covered here. Who can I contact?
-                                    <span class="faq-toggle-icon">+</span>
-                                </summary>
-                                <div class="faq-answer">
-                                    <p>For any further questions regarding registration, sponsorships, or general event details, please reach out directly to Mike Lee at <a href="mailto:mikelee23@mac.com">mikelee23@mac.com</a>.</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- REGISTRATION PAGE VIEW -->
-        <div id="register-page" class="registration-page">
-            <div class="reg-hero-container">
-                <div class="reg-title-col">
-                    <h1 class="reg-title">Register for<br>SHE Swings<br>2027</h1>
-                </div>
+    <!-- LANDING PAGE VIEW -->
+    <main id="home-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-header-row">
+                <h1 class="hero-headline">
+                    Making a difference<br>on and off the course
+                </h1>
                 
-                <!-- Image Container Placeholder -->
-                <div class="reg-image-container">
-                    <!-- Replace src with your image URL when ready -->
-                    <!-- <img src="your-image.jpg" alt="SHE Swings 2027"> -->
-                    <div class="image-placeholder-text">[ Image space reserved ]</div>
+                <div class="hero-meta-group">
+                    <div class="meta-item">
+                        October 10–11,<br>2027
+                    </div>
+                    <div class="meta-item">
+                        Oswego Lake Country Club,<br>Lake Oswego, Oregon
+                    </div>
                 </div>
             </div>
 
-            <!-- Meta Information Bar -->
-            <div class="reg-meta-bar">
-                <div class="reg-meta-item">
-                    October 10–11,<br>2027
+            <div class="hero-banner-container">
+                <img src="SHE Swings Official Logo.png" alt="SHE Swings Banner" class="hero-banner-image">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="content-section" id="about">
+            <h2 class="section-title">About SHE Swings</h2>
+            <div class="section-right-content">
+                <p class="section-text">
+                    Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
+                </p>
+                <div>
+                    <button onclick="showPage('register')" class="btn-register">Register</button>
                 </div>
-                <div class="reg-meta-item">
-                    Oswego Lake Country Club,<br>Lake Oswego, Oregon
+                <div class="about-media-container">
+                    <img src="event-media-placeholder.jpg" alt="SHE Swings Event Media" class="about-media-image">
                 </div>
             </div>
+        </section>
 
-            <!-- Registration Form -->
-            <div class="form-container">
-                <form id="registration-form" onsubmit="handleFormSubmit(event)">
-                    <div class="form-grid">
-                        
-                        <div class="form-group">
-                            <label class="form-label">First name<span class="req">*</span></label>
-                            <input type="text" class="form-input" required>
+        <div class="section-divider"></div>
+
+        <!-- Agenda Section -->
+        <section class="content-section" id="agenda">
+            <h2 class="section-title">Agenda at a glance</h2>
+            <div class="section-right-content">
+                <div class="agenda-list">
+                    <div class="agenda-row">
+                        <div class="agenda-date-col">
+                            <div class="agenda-date">Sunday, Oct 10</div>
+                            <div class="agenda-tag">
+                                <span class="rhombus-icon"></span>
+                                Day 1
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Last name<span class="req">*</span></label>
-                            <input type="text" class="form-input" required>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label class="form-label">Business email<span class="req">*</span></label>
-                            <input type="email" class="form-input" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Phone number<span class="req">*</span></label>
-                            <input type="tel" class="form-input" placeholder="+1 (555) 000-0000" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Country/region<span class="req">*</span></label>
-                            <select class="form-select" required>
-                                <option value="US">United States</option>
-                                <option value="CA">Canada</option>
-                                <option value="UK">United Kingdom</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">State<span class="req">*</span></label>
-                            <select class="form-select" required>
-                                <option value="">Select state</option>
-                                <option value="OR">Oregon</option>
-                                <option value="WA">Washington</option>
-                                <option value="CA">California</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Postal code<span class="req">*</span></label>
-                            <input type="text" class="form-input" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Company/organization<span class="req">*</span></label>
-                            <input type="text" class="form-input" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Company/organization website<span class="req">*</span></label>
-                            <input type="url" class="form-input" placeholder="https://" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Industry<span class="req">*</span></label>
-                            <select class="form-select" required>
-                                <option value="">Select industry</option>
-                                <option value="tech">Technology</option>
-                                <option value="finance">Finance / Sports</option>
-                                <option value="nonprofit">Non-Profit / Community</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Job level<span class="req">*</span></label>
-                            <select class="form-select" required>
-                                <option value="">Select job level</option>
-                                <option value="executive">Executive / C-Suite</option>
-                                <option value="director">Director / Manager</option>
-                                <option value="professional">Professional / Individual Contributor</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Job function<span class="req">*</span></label>
-                            <select class="form-select" required>
-                                <option value="">Select job function</option>
-                                <option value="leadership">Executive Leadership</option>
-                                <option value="marketing">Marketing & Partnerships</option>
-                                <option value="operations">Operations</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Job title<span class="req">*</span></label>
-                            <input type="text" class="form-input" required>
-                        </div>
-
-                    </div>
-
-                    <!-- Order Summary Section -->
-                    <div class="order-summary-section">
-                        <h2 class="summary-title">Order summary</h2>
-                        
-                        <div class="summary-row">
-                            <span>SHE Swings 2027 Registration Fee</span>
-                            <span>$1.00</span>
-                        </div>
-
-                        <div class="summary-row total">
-                            <span>Total</span>
-                            <span>$1.00</span>
-                        </div>
-
-                        <div style="overflow: hidden; clear: both;">
-                            <button type="submit" class="btn-submit-reg">Register</button>
+                        <div class="agenda-events-col">
+                            <div>Welcome & Registration</div>
+                            <div>Opening keynote</div>
+                            <div>Fireside chat with special guest</div>
+                            <div>Welcome reception</div>
+                            <div class="agenda-note">*Special training opportunities coming soon</div>
                         </div>
                     </div>
-                </form>
+
+                    <div class="agenda-row">
+                        <div class="agenda-date-col">
+                            <div class="agenda-date">Monday, Oct 11</div>
+                            <div class="agenda-tag">
+                                <span class="rhombus-icon"></span>
+                                Day 2
+                            </div>
+                        </div>
+                        <div class="agenda-events-col">
+                            <div>Tournament breakfast & briefing</div>
+                            <div>18-hole championship play</div>
+                            <div>Networking luncheon</div>
+                            <div>Fireside chat with special guest</div>
+                            <div>Awards celebration</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Special Guest Section -->
+        <section class="content-section" id="guests">
+            <h2 class="section-title">Special Guest</h2>
+            <div class="section-right-content">
+                <p class="guest-intro-text">
+                    We are honored to welcome professional golfer Cheyenne Woods. Beyond her accomplishments on the LPGA Tour and Ladies European Tour, Cheyenne is a passionate advocate for diversity in golf and empowering youth through sport.
+                </p>
+                <div class="guest-media-container">
+                    <img src="Cheyenne Woods" alt="Cheyenne Woods" class="guest-media-image">
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sponsors Section -->
+        <section class="content-section" id="sponsors">
+            <h2 class="section-title">Sponsors</h2>
+            <div class="section-right-content">
+                <p class="guest-intro-text">
+                    SHE Swings connects your organization with an influential audience of business and community leaders committed to social impact.
+                </p>
+                <div class="sponsor-media-container">
+                    <img src="FOTC_pic 1.jpeg" alt="Sponsors at SHE Swings" class="guest-media-image" style="object-position: 43% center;">
+                </div>
+                <div class="sponsor-card">
+                    <div>
+                        <div class="sponsor-card-title">Interested in becoming a sponsor?</div>
+                        <a href="SHE Swings Sponsorship Deck.pdf" target="_blank" class="sponsor-card-link">View sponsorship opportunities</a>
+                    </div>
+                    <a href="SHE Swings Sponsorship Deck.pdf" target="_blank" class="sponsor-arrow-btn">→</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- FAQ Section -->
+        <section class="content-section" id="faqs">
+            <h2 class="section-title">FAQs</h2>
+            <div class="section-right-content">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <details name="faq-accordion">
+                            <summary>
+                                Is there a minimum age requirement to attend?
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>SHE Swings is open to participants and guests of all ages. However, players registered for full 18-hole championship play must be 18 years or older unless accompanied by an adult guardian.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details name="faq-accordion">
+                            <summary>
+                                Do I need to bring my own golf clubs?
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>Bringing your own set of clubs is recommended, but rental sets are available through the Oswego Lake Country Club pro shop. Please let us know in advance if you will need rental clubs so we can reserve a set for you.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details name="faq-accordion">
+                            <summary>
+                                What is the dress code for the tournament and reception?
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>Standard golf attire (collared shirts, soft-spiked golf shoes, slacks or golf skirts) is required on the course. Smart casual attire is recommended for the welcome reception and awards luncheon.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details name="faq-accordion">
+                            <summary>
+                                Can I modify or cancel my registration?
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>Yes, registration modifications or cancellations can be processed up to 14 days prior to the event. Player substitutions within a registered team are welcome up until the day of the event.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details name="faq-accordion">
+                            <summary>
+                                I have additional questions that weren't covered here. Who can I contact?
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>For any further questions regarding registration, sponsorships, or general event details, please reach out directly to Mike Lee at <a href="mailto:mikelee23@mac.com">mikelee23@mac.com</a>.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- REGISTRATION PAGE VIEW -->
+    <div id="register-page" class="registration-page">
+        <div class="reg-hero-row">
+            <h1 class="reg-title">Register for<br>SHE Swings 2027</h1>
+            <div class="reg-art-banner"></div>
+        </div>
+
+        <div class="reg-meta-bar">
+            <div class="reg-meta-item">
+                October 10–11, 2027
+            </div>
+            <div class="reg-meta-item">
+                Oswego Lake Country Club,<br>Lake Oswego, Oregon
             </div>
         </div>
 
+        <form id="registration-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">First name<span class="req">*</span></label>
+                    <input type="text" class="form-input" required placeholder="First name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Last name<span class="req">*</span></label>
+                    <input type="text" class="form-input" required placeholder="Last name">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Business email<span class="req">*</span></label>
+                    <input type="email" class="form-input" required placeholder="name@company.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone number<span class="req">*</span></label>
+                    <input type="tel" class="form-input" required placeholder="(555) 000-0000">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Company / Organization<span class="req">*</span></label>
+                    <input type="text" class="form-input" required placeholder="Company name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Job title<span class="req">*</span></label>
+                    <input type="text" class="form-input" required placeholder="Your job title">
+                </div>
+
+                <div class="form-group full-width">
+                    <label class="form-label">Registration Type<span class="req">*</span></label>
+                    <select class="form-select" required>
+                        <option value="tournament">Full Tournament & Reception Participant ($1.00)</option>
+                        <option value="reception">Reception & Luncheon Pass Only ($1.00)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="order-summary-section">
+                <h2 class="summary-title">Order summary</h2>
+                <div class="summary-row">
+                    <span>SHE Swings 2027 Tournament Pass</span>
+                    <span>$1.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$1.00</span>
+                </div>
+
+                <div style="overflow: hidden; clear: both;">
+                    <button type="submit" class="btn-submit-reg">Proceed to Payment</button>
+                </div>
+            </div>
+        </form>
     </div>
 
-    <!-- Payment Modal -->
+    <!-- PAYMENT MODAL -->
     <div id="payment-modal" class="modal-overlay">
         <div class="payment-modal">
             <div class="modal-header">
@@ -1195,7 +1079,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-submit-reg" style="width: 100%; height: 52px; font-size: 1.05rem; float: none; margin-top: 0;">Pay $1.00 & Confirm</button>
+                <button type="submit" class="btn-register" style="width: 100%; height: 48px; font-size: 1.05rem;">Pay $1.00 & Register</button>
             </form>
         </div>
     </div>
@@ -1243,7 +1127,7 @@
 
         function handlePaymentSubmit(e) {
             e.preventDefault();
-            alert('Registration and payment of $1.00 successful! Thank you for registering.');
+            alert('Registration and payment of $1.00 successful! Thank you for registering for SHE Swings 2027.');
             closeModal();
             showPage('home');
         }
