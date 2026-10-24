@@ -248,6 +248,21 @@
             margin: 8px 0 0 0;
         }
 
+        /* Wider Media Container for Sponsors Section (Matches FAQ width: 680px) */
+        .sponsor-media-container {
+            width: 100%;
+            max-width: 680px;
+            height: 480px;
+            background-color: #E8E8EC;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin: 8px 0 0 0;
+        }
+
         .guest-media-image {
             width: 100%;
             height: 100%;
@@ -347,10 +362,10 @@
             opacity: 0.8;
         }
 
-        /* Sponsor Callout Card */
+        /* Sponsor Callout Card (Matches FAQ width: 680px) */
         .sponsor-card {
             width: 100%;
-            max-width: 540px;
+            max-width: 680px;
             background-color: #EEEEF2;
             border-radius: 16px;
             padding: 24px 28px;
@@ -509,7 +524,7 @@
                 flex: none;
                 width: 100%;
             }
-            .section-text, .agenda-list, .guest-intro-text, .guest-media-container, .sponsor-card, .faq-list {
+            .section-text, .agenda-list, .guest-intro-text, .guest-media-container, .sponsor-media-container, .sponsor-card, .faq-list {
                 max-width: 100%;
             }
             .agenda-row {
@@ -519,7 +534,7 @@
             .agenda-date-col {
                 flex: none;
             }
-            .about-media-container, .guest-media-container {
+            .about-media-container, .guest-media-container, .sponsor-media-container {
                 max-width: 100%;
                 height: 280px;
             }
@@ -647,7 +662,7 @@
                 <p class="guest-intro-text">
                     SHE Swings connects your organization with corporate leaders, decision-makers, and community advocates dedicated to empowering youth through sport.
                 </p>
-                <div class="guest-media-container">
+                <div class="sponsor-media-container">
                     <img src="FOTC_pic 1.jpeg" alt="Sponsors at SHE Swings" class="guest-media-image" style="object-position: 43% center;">
                 </div>
                 <div class="sponsor-card">
