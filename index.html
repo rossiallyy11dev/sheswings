@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -64,6 +64,7 @@
             color: #555555;
             text-decoration: none;
             letter-spacing: -0.02em;
+            cursor: pointer;
         }
 
         .brand-logo .bold-text {
@@ -87,6 +88,7 @@
             color: #555555;
             text-decoration: none;
             transition: opacity 0.2s ease;
+            cursor: pointer;
         }
 
         .nav-link:hover {
@@ -106,6 +108,8 @@
             transition: background-color 0.2s ease, opacity 0.2s ease;
             display: inline-block;
             text-align: center;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-register:hover {
@@ -192,7 +196,7 @@
             align-items: flex-start;
         }
 
-        /* Title Column - Fixed 480px width */
+        /* Title Column */
         .section-title {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(2rem, 3.2vw, 3.2rem);
@@ -222,7 +226,6 @@
             color: #555555;
         }
 
-        /* Special Guest Intro Text */
         .guest-intro-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.05rem;
@@ -233,7 +236,6 @@
             margin: 0;
         }
 
-        /* Single Media Container for Cheyenne Woods */
         .guest-media-container {
             width: 100%;
             max-width: 540px;
@@ -248,7 +250,6 @@
             margin: 8px 0 0 0;
         }
 
-        /* Perfectly tuned Media Container for Sponsors Section (785px width) */
         .sponsor-media-container {
             width: 100%;
             max-width: 785px;
@@ -270,7 +271,6 @@
             display: block;
         }
 
-        /* About Media Container */
         .about-media-container {
             width: 100%;
             max-width: 710px;
@@ -324,7 +324,6 @@
             margin-bottom: 8px;
         }
 
-        /* Stripe-style Pill Tag with Rhombus Icon */
         .agenda-tag {
             display: inline-flex;
             align-items: center;
@@ -362,7 +361,7 @@
             opacity: 0.8;
         }
 
-        /* Sponsor Callout Card (785px width) */
+        /* Sponsor Callout Card */
         .sponsor-card {
             width: 100%;
             max-width: 785px;
@@ -414,7 +413,7 @@
             background-color: #D6D6DD;
         }
 
-        /* FAQ Accordion Styling (785px width) */
+        /* FAQ Accordion Styling */
         .faq-list {
             display: flex;
             flex-direction: column;
@@ -497,6 +496,218 @@
             text-decoration: underline;
         }
 
+        /* ------------------------------------ */
+        /* REGISTRATION PAGE / FORM STYLING    */
+        /* ------------------------------------ */
+        .registration-page {
+            display: none;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+
+        .registration-page.active {
+            display: block;
+        }
+
+        .reg-hero-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .reg-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.8rem);
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: #1A1A1A;
+            flex: 1;
+        }
+
+        .reg-art-banner {
+            width: 480px;
+            height: 220px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #18032d 0%, #3a0066 35%, #e12727 65%, #ff8c00 100%);
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .reg-meta-bar {
+            display: flex;
+            gap: 80px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            margin-bottom: 48px;
+        }
+
+        .reg-meta-item {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Form Grid Layout */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px 36px;
+            margin-bottom: 48px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333333;
+        }
+
+        .form-label span.req {
+            color: #111;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 8px;
+            border: 1px solid #D0D0D8;
+            background-color: #FAFAFC;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #333;
+            outline: none;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .form-input:focus, .form-select:focus {
+            border-color: #00AAEE;
+            background-color: #FFFFFF;
+        }
+
+        /* Order Summary Section */
+        .order-summary-section {
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding-top: 36px;
+            margin-top: 40px;
+        }
+
+        .summary-title {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .summary-row.total {
+            border-top: 1px solid #E0E0E6;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #111;
+            padding-top: 20px;
+            margin-top: 8px;
+        }
+
+        .btn-submit-reg {
+            background-color: #1C0A35;
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            font-weight: 500;
+            padding: 14px 44px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            float: right;
+            margin-top: 24px;
+        }
+
+        .btn-submit-reg:hover {
+            background-color: #2F1254;
+        }
+
+        /* Modal Overlay for Payment */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .payment-modal {
+            background: #FFFFFF;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 460px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #111;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .pay-amount-badge {
+            background: #F0F4FF;
+            color: #00AAEE;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
         @media (max-width: 900px) {
             body {
                 padding: 0 12px 40px 12px;
@@ -504,7 +715,7 @@
             .navbar {
                 padding: 16px 0;
             }
-            .hero-header-row {
+            .hero-header-row, .reg-hero-row {
                 flex-direction: column;
                 gap: 24px;
                 padding: 0;
@@ -512,9 +723,16 @@
             .hero-headline {
                 margin-left: 0;
             }
-            .hero-meta-group {
+            .hero-meta-group, .reg-meta-bar {
                 gap: 32px;
                 margin-right: 0;
+            }
+            .reg-art-banner {
+                width: 100%;
+                height: 160px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
             }
             .hero-banner-container {
                 height: 320px;
@@ -553,16 +771,17 @@
 <body>
 
     <header class="navbar" id="navbar">
-        <a href="#" class="brand-logo">
+        <a onclick="showPage('home')" class="brand-logo">
             <span class="bold-text">SHE</span> <span class="light-text">Swings</span>
         </a>
         <div class="nav-right">
-            <a href="#contact" class="nav-link">Contact</a>
-            <a href="#register" class="btn-register">Register</a>
+            <a onclick="showPage('home'); document.getElementById('faqs').scrollIntoView();" class="nav-link">Contact</a>
+            <button onclick="showPage('register')" class="btn-register">Register</button>
         </div>
     </header>
 
-    <main>
+    <!-- LANDING PAGE VIEW -->
+    <main id="home-page">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-header-row">
@@ -593,10 +812,9 @@
                     Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
-                    <a href="#register" class="btn-register">Register</a>
+                    <button onclick="showPage('register')" class="btn-register">Register</button>
                 </div>
                 <div class="about-media-container">
-                    <!-- Replace src with your media asset -->
                     <img src="event-media-placeholder.jpg" alt="SHE Swings Event Media" class="about-media-image">
                 </div>
             </div>
@@ -604,7 +822,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Agenda at a Glance Section -->
+        <!-- Agenda Section -->
         <section class="content-section" id="agenda">
             <h2 class="section-title">Agenda at a glance</h2>
             <div class="section-right-content">
@@ -656,7 +874,6 @@
                     We are honored to welcome professional golfer Cheyenne Woods. Beyond her accomplishments on the LPGA Tour and Ladies European Tour, Cheyenne is a passionate advocate for diversity in golf and empowering youth through sport.
                 </p>
                 <div class="guest-media-container">
-                    <!-- Replace src with Cheyenne Woods photo -->
                     <img src="Cheyenne Woods" alt="Cheyenne Woods" class="guest-media-image">
                 </div>
             </div>
@@ -691,8 +908,6 @@
             <h2 class="section-title">FAQs</h2>
             <div class="section-right-content">
                 <div class="faq-list">
-                    
-                    <!-- Question 1 -->
                     <div class="faq-item">
                         <details name="faq-accordion">
                             <summary>
@@ -705,7 +920,6 @@
                         </details>
                     </div>
 
-                    <!-- Question 2 -->
                     <div class="faq-item">
                         <details name="faq-accordion">
                             <summary>
@@ -718,7 +932,6 @@
                         </details>
                     </div>
 
-                    <!-- Question 3 -->
                     <div class="faq-item">
                         <details name="faq-accordion">
                             <summary>
@@ -731,7 +944,6 @@
                         </details>
                     </div>
 
-                    <!-- Question 4 -->
                     <div class="faq-item">
                         <details name="faq-accordion">
                             <summary>
@@ -744,7 +956,6 @@
                         </details>
                     </div>
 
-                    <!-- Question 5 -->
                     <div class="faq-item">
                         <details name="faq-accordion">
                             <summary>
@@ -756,15 +967,126 @@
                             </div>
                         </details>
                     </div>
-
                 </div>
             </div>
         </section>
     </main>
 
-    <script>
-        const nav = document.getElementById('navbar');
+    <!-- REGISTRATION PAGE VIEW -->
+    <div id="register-page" class="registration-page">
+        <div class="reg-hero-row">
+            <h1 class="reg-title">Register for<br>SHE Swings 2027</h1>
+            <div class="reg-art-banner"></div>
+        </div>
 
+        <div class="reg-meta-bar">
+            <div class="reg-meta-item">
+                October 10–11, 2027
+            </div>
+            <div class="reg-meta-item">
+                Oswego Lake Country Club,<br>Lake Oswego, Oregon
+            </div>
+        </div>
+
+        <form id="registration-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">First name<span class="req">*</span></label>
+                    <input type="text" class="form-input" required placeholder="First name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Last name<span class="req">*</span></label>
+                    <input type="text" class="form-input" required placeholder="Last name">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Business email<span class="req">*</span></label>
+                    <input type="email" class="form-input" required placeholder="name@company.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone number<span class="req">*</span></label>
+                    <input type="tel" class="form-input" required placeholder="(555) 000-0000">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Company / Organization<span class="req">*</span></label>
+                    <input type="text" class="form-input" required placeholder="Company name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Job title<span class="req">*</span></label>
+                    <input type="text" class="form-input" required placeholder="Your job title">
+                </div>
+
+                <div class="form-group full-width">
+                    <label class="form-label">Registration Type<span class="req">*</span></label>
+                    <select class="form-select" required>
+                        <option value="tournament">Full Tournament & Reception Participant ($1.00)</option>
+                        <option value="reception">Reception & Luncheon Pass Only ($1.00)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="order-summary-section">
+                <h2 class="summary-title">Order summary</h2>
+                <div class="summary-row">
+                    <span>SHE Swings 2027 Tournament Pass</span>
+                    <span>$1.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$1.00</span>
+                </div>
+
+                <div style="overflow: hidden; clear: both;">
+                    <button type="submit" class="btn-submit-reg">Proceed to Payment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- PAYMENT MODAL -->
+    <div id="payment-modal" class="modal-overlay">
+        <div class="payment-modal">
+            <div class="modal-header">
+                <div class="modal-title">Complete Payment</div>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+
+            <div class="pay-amount-badge">
+                <span>Total Due:</span>
+                <span>$1.00 USD</span>
+            </div>
+
+            <form onsubmit="handlePaymentSubmit(event)">
+                <div class="form-group" style="margin-bottom: 16px;">
+                    <label class="form-label">Cardholder Name</label>
+                    <input type="text" class="form-input" required placeholder="Name on card">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 16px;">
+                    <label class="form-label">Card Information</label>
+                    <input type="text" class="form-input" required placeholder="1234 5678 9012 3456">
+                </div>
+
+                <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label class="form-label">MM / YY</label>
+                        <input type="text" class="form-input" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label class="form-label">CVC</label>
+                        <input type="text" class="form-input" placeholder="CVC" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-register" style="width: 100%; height: 48px; font-size: 1.05rem;">Pay $1.00 & Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sticky Header Effect
+        const nav = document.getElementById('navbar');
         function updateNavbar() {
             if (nav) {
                 if (window.scrollY > 20) {
@@ -774,10 +1096,41 @@
                 }
             }
         }
-
         window.addEventListener('scroll', updateNavbar);
         window.addEventListener('load', updateNavbar);
-    </script>
 
+        // View Switcher (Landing Page vs Registration Page)
+        function showPage(page) {
+            const homePage = document.getElementById('home-page');
+            const regPage = document.getElementById('register-page');
+
+            if (page === 'register') {
+                homePage.style.display = 'none';
+                regPage.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                homePage.style.display = 'block';
+                regPage.classList.remove('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Form Submission & Payment Trigger
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('payment-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('payment-modal').classList.remove('active');
+        }
+
+        function handlePaymentSubmit(e) {
+            e.preventDefault();
+            alert('Registration and payment of $1.00 successful! Thank you for registering for SHE Swings 2027.');
+            closeModal();
+            showPage('home');
+        }
+    </script>
 </body>
 </html>
