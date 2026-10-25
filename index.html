@@ -21,25 +21,24 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #555555;
-            padding: 0 0 60px 0 !important;
+            padding: 0 0 60px 0;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* True Locked Edge-to-Edge Navbar */
+        /* Full Edge-to-Edge Navbar (Stripe Style) */
         .navbar {
-            position: sticky !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            z-index: 1000 !important;
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 0 48px 0 !important;
-            padding: 24px 40px !important;
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 0 0 40px 0;
+            padding: 24px 24px;
             background-color: transparent;
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
@@ -49,27 +48,27 @@
         }
 
         .navbar.scrolled {
-            top: 0 !important;
-            padding: 14px 40px !important;
-            background-color: rgba(238, 236, 240, 0.85) !important;
+            top: 0;
+            padding: 14px 24px;
+            background-color: rgba(238, 236, 240, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
-        /* Consistent Inset Padding for Content Sections */
+        /* Tight Edge-to-Edge Inset Padding */
         .hero-section, .content-section, .registration-page {
-            padding-left: 40px !important;
-            padding-right: 40px !important;
-            width: 100% !important;
+            padding-left: 24px;
+            padding-right: 24px;
+            width: 100%;
         }
 
         /* Brand Logo */
         .brand-logo {
             font-family: 'Roboto', sans-serif;
             font-size: 1.25rem;
-            color: #555555;
+            color: #1A0B2E;
             text-decoration: none;
             letter-spacing: -0.02em;
             cursor: pointer;
@@ -93,7 +92,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
             font-weight: 400;
-            color: #555555;
+            color: #1A0B2E;
             text-decoration: none;
             transition: opacity 0.2s ease;
             cursor: pointer;
@@ -109,8 +108,8 @@
             font-size: 0.95rem;
             font-weight: 400;
             color: #FFFFFF;
-            background-color: #00AAEE;
-            padding: 9px 28px;
+            background-color: #1A0B2E;
+            padding: 10px 28px;
             border-radius: 999px;
             text-decoration: none;
             transition: background-color 0.2s ease, opacity 0.2s ease;
@@ -121,7 +120,7 @@
         }
 
         .btn-register:hover {
-            background-color: #0099D8;
+            background-color: #31135C;
         }
 
         /* Hero Layout */
@@ -146,7 +145,7 @@
             line-height: 1.0;
             letter-spacing: -0.03em;
             max-width: 850px;
-            color: #555555;
+            color: #1A0B2E;
             margin-left: -3px;
         }
 
@@ -154,14 +153,13 @@
             display: flex;
             gap: 48px;
             padding-top: 16px;
-            margin-right: 8%;
         }
 
         .meta-item {
             font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
             line-height: 1.4;
-            color: #555555;
+            color: #1A0B2E;
             font-weight: 400;
         }
 
@@ -187,10 +185,10 @@
 
         /* Section Dividers */
         .section-divider {
-            width: 100%;
+            width: calc(100% - 48px);
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
-            margin: 120px 0 16px 0;
+            margin: 120px auto 16px auto;
         }
 
         /* Generic Section Layout */
@@ -199,7 +197,7 @@
             max-width: 100%;
             margin: 0 auto;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: flex-start;
         }
 
@@ -208,12 +206,11 @@
             font-family: 'Roboto', sans-serif;
             font-size: clamp(2rem, 3.2vw, 3.2rem);
             font-weight: 400;
-            color: #555555;
+            color: #1A0B2E;
             letter-spacing: -0.02em;
             line-height: 1.1;
             white-space: nowrap;
-            flex: 0 0 480px; 
-            padding-right: 48px;
+            flex: 0 0 320px; 
         }
 
         .section-right-content {
@@ -221,16 +218,16 @@
             flex-direction: column;
             gap: 28px;
             flex: 1;
+            max-width: 850px;
         }
 
         .section-text {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.6rem;
-            line-height: 1.35;
+            font-size: 1.5rem;
+            line-height: 1.4;
             letter-spacing: -0.015em;
             font-weight: 400;
-            max-width: 710px;
-            color: #555555;
+            color: #1A0B2E;
         }
 
         .guest-intro-text {
@@ -238,14 +235,14 @@
             font-size: 1.05rem;
             line-height: 1.5;
             font-weight: 400;
-            color: #555555;
-            max-width: 540px;
+            color: #1A0B2E;
+            max-width: 750px;
             margin: 0;
         }
 
         .guest-media-container {
             width: 100%;
-            max-width: 540px;
+            max-width: 750px;
             height: 440px;
             background-color: #E8E8EC;
             border-radius: 20px;
@@ -259,7 +256,7 @@
 
         .sponsor-media-container {
             width: 100%;
-            max-width: 785px;
+            max-width: 850px;
             height: 500px;
             background-color: #E8E8EC;
             border-radius: 20px;
@@ -280,7 +277,7 @@
 
         .about-media-container {
             width: 100%;
-            max-width: 710px;
+            max-width: 850px;
             height: 460px;
             background-color: #E8E8EC;
             border-radius: 20px;
@@ -304,7 +301,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 750px;
+            max-width: 850px;
         }
 
         .agenda-row {
@@ -327,7 +324,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1.35rem;
             font-weight: 500;
-            color: #555555;
+            color: #1A0B2E;
             margin-bottom: 8px;
         }
 
@@ -338,7 +335,7 @@
             font-size: 0.825rem;
             font-weight: 400;
             background-color: rgba(255, 255, 255, 0.7);
-            color: #555555;
+            color: #1A0B2E;
             padding: 3px 10px 3px 8px;
             border-radius: 6px;
             border: 1px solid rgba(0, 0, 0, 0.12);
@@ -358,7 +355,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1.1rem;
             line-height: 1.6;
-            color: #555555;
+            color: #1A0B2E;
             font-weight: 400;
         }
 
@@ -371,7 +368,7 @@
         /* Sponsor Callout Card */
         .sponsor-card {
             width: 100%;
-            max-width: 785px;
+            max-width: 850px;
             background-color: #EEEEF2;
             border-radius: 16px;
             padding: 24px 28px;
@@ -386,7 +383,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1.1rem;
             font-weight: 500;
-            color: #555555;
+            color: #1A0B2E;
             margin-bottom: 6px;
         }
 
@@ -410,7 +407,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #555555;
+            color: #1A0B2E;
             text-decoration: none;
             font-size: 1.1rem;
             transition: background-color 0.2s ease;
@@ -425,7 +422,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 785px;
+            max-width: 850px;
         }
 
         .faq-item {
@@ -445,7 +442,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1.1rem;
             font-weight: 500;
-            color: #555555;
+            color: #1A0B2E;
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -467,7 +464,7 @@
             align-items: center;
             justify-content: center;
             font-size: 0.9rem;
-            color: #555555;
+            color: #1A0B2E;
             flex-shrink: 0;
             margin-left: 16px;
             transition: transform 0.2s ease;
@@ -481,7 +478,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 0.975rem;
             line-height: 1.6;
-            color: #555555;
+            color: #1A0B2E;
             padding-top: 16px;
             font-weight: 400;
         }
@@ -496,7 +493,7 @@
         }
 
         /* ------------------------------------------------ */
-        /* REGISTRATION PAGE VIEW (Exact Stripe Aesthetics) */
+        /* REGISTRATION PAGE VIEW                           */
         /* ------------------------------------------------ */
         .registration-page {
             display: none;
@@ -562,7 +559,7 @@
 
         .reg-meta-item {
             font-size: 1.05rem;
-            color: #2D2040;
+            color: #1A0B2E;
             line-height: 1.45;
             font-weight: 400;
         }
@@ -587,10 +584,6 @@
         .form-label {
             font-size: 0.9rem;
             font-weight: 500;
-            color: #1A0B2E;
-        }
-
-        .form-label span.req {
             color: #1A0B2E;
         }
 
@@ -710,7 +703,7 @@
             align-items: center;
             padding: 16px 0;
             font-size: 1.1rem;
-            color: #2D2040;
+            color: #1A0B2E;
         }
 
         .summary-row.total {
@@ -798,10 +791,6 @@
         }
 
         @media (max-width: 900px) {
-            .navbar, .hero-section, .content-section, .registration-page {
-                padding-left: 16px !important;
-                padding-right: 16px !important;
-            }
             .hero-header-row {
                 flex-direction: column;
                 gap: 24px;
@@ -812,7 +801,6 @@
             }
             .hero-meta-group {
                 gap: 32px;
-                margin-right: 0;
             }
             .hero-banner-container {
                 height: 320px;
@@ -825,13 +813,10 @@
                 white-space: normal;
                 flex: none;
                 width: 100%;
-                padding-right: 0;
             }
             .section-right-content {
                 flex: none;
                 width: 100%;
-            }
-            .section-text, .agenda-list, .guest-intro-text, .guest-media-container, .sponsor-media-container, .sponsor-card, .faq-list {
                 max-width: 100%;
             }
             .agenda-row {
@@ -880,7 +865,7 @@
             <span class="bold-text">SHE</span> <span class="light-text">Swings</span>
         </a>
         <div class="nav-right">
-            <a onclick="showPage('home'); setTimeout(() => document.getElementById('faqs').scrollIntoView(), 10);" class="nav-link">Contact</a>
+            <a onclick="showPage('home'); setTimeout(() => document.getElementById('faqs').scrollIntoView(), 10);" class="nav-link">FAQs</a>
             <button onclick="showPage('register')" class="btn-register">Register</button>
         </div>
     </header>
@@ -911,7 +896,7 @@
 
         <!-- About Section -->
         <section class="content-section" id="about">
-            <h2 class="section-title">About SHE Swings</h2>
+            <h2 class="section-title">About Sessions</h2>
             <div class="section-right-content">
                 <p class="section-text">
                     Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
@@ -1103,27 +1088,27 @@
             <form id="registration-form" onsubmit="handleFormSubmit(event)">
                 <div class="form-grid">
                     <div class="form-group">
-                        <label class="form-label">First name<span class="req">*</span></label>
+                        <label class="form-label">First name*</label>
                         <input type="text" class="form-input" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Last name<span class="req">*</span></label>
+                        <label class="form-label">Last name*</label>
                         <input type="text" class="form-input" required>
                     </div>
 
                     <div class="form-group full-width">
-                        <label class="form-label">Business email<span class="req">*</span></label>
+                        <label class="form-label">Business email*</label>
                         <input type="email" class="form-input" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Phone number<span class="req">*</span></label>
+                        <label class="form-label">Phone number*</label>
                         <input type="tel" class="form-input" placeholder="+1 (424) 242-4242" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Country/region<span class="req">*</span></label>
+                        <label class="form-label">Country/region*</label>
                         <select class="form-select" required>
                             <option value="US">United States</option>
                             <option value="CA">Canada</option>
@@ -1132,7 +1117,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">State<span class="req">*</span></label>
+                        <label class="form-label">State*</label>
                         <select class="form-select" required>
                             <option value="">Select state</option>
                             <option value="OR">Oregon</option>
@@ -1142,22 +1127,22 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Postal code<span class="req">*</span></label>
+                        <label class="form-label">Postal code*</label>
                         <input type="text" class="form-input" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Company/organization<span class="req">*</span></label>
+                        <label class="form-label">Company/organization*</label>
                         <input type="text" class="form-input" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Company/organization website<span class="req">*</span></label>
+                        <label class="form-label">Company/organization website*</label>
                         <input type="url" class="form-input" placeholder="https://" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Industry<span class="req">*</span></label>
+                        <label class="form-label">Industry*</label>
                         <select class="form-select" required>
                             <option value="">Select industry</option>
                             <option value="tech">Technology</option>
@@ -1168,7 +1153,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Job level<span class="req">*</span></label>
+                        <label class="form-label">Job level*</label>
                         <select class="form-select" required>
                             <option value="">Select job level</option>
                             <option value="executive">Executive / C-Suite</option>
@@ -1178,7 +1163,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Job function<span class="req">*</span></label>
+                        <label class="form-label">Job function*</label>
                         <select class="form-select" required>
                             <option value="">Select job function</option>
                             <option value="leadership">Executive Leadership</option>
@@ -1188,7 +1173,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Job title<span class="req">*</span></label>
+                        <label class="form-label">Job title*</label>
                         <input type="text" class="form-input" required>
                         <div class="field-subtext">Enter your title as you'd like it printed on your badge.</div>
                     </div>
