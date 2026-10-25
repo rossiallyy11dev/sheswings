@@ -19,7 +19,7 @@
 
         body {
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #FFFFFF;
+            background-color: #F8F8FA;
             color: #555555;
             padding: 0;
             -webkit-font-smoothing: antialiased;
@@ -38,7 +38,7 @@
             align-items: center;
             width: 100%;
             margin: 0 0 40px 0;
-            padding: 24px 40px;
+            padding: 24px 24px;
             background-color: transparent;
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
@@ -49,7 +49,7 @@
 
         .navbar.scrolled {
             top: 0;
-            padding: 14px 40px;
+            padding: 14px 24px;
             background-color: rgba(238, 236, 240, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -59,8 +59,8 @@
 
         /* Edge-to-Edge Inset Padding */
         .hero-section, .content-section, .registration-page {
-            padding-left: 40px;
-            padding-right: 40px;
+            padding-left: 24px;
+            padding-right: 24px;
             width: 100%;
         }
 
@@ -186,7 +186,7 @@
 
         /* Section Dividers */
         .section-divider {
-            width: calc(100% - 80px);
+            width: calc(100% - 48px);
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
             margin: 120px auto 16px auto;
@@ -735,17 +735,18 @@
         }
 
         /* ------------------------------------------------ */
-        /* STRIPE-SESSIONS EXACT MATCH FULL-WIDTH DARK FOOTER*/
+        /* STRIPE-SESSIONS EXACT MATCH DARK FOOTER          */
         /* ------------------------------------------------ */
         .site-footer {
-            background-color: #06010D;
+            background-color: #08020F;
             color: #FFFFFF;
-            width: 100%;
-            margin-top: 120px;
-            padding: 48px 48px 80px 48px;
+            padding: 48px 48px 64px 48px;
+            margin-top: 140px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 580px;
+            width: 100%;
         }
 
         /* TOP ROW: Brand at Top Left, Metadata at Top Right */
@@ -754,7 +755,6 @@
             justify-content: space-between;
             align-items: flex-start;
             width: 100%;
-            margin-bottom: 120px;
         }
 
         .footer-brand {
@@ -793,26 +793,21 @@
             line-height: 1.0;
             letter-spacing: -0.03em;
             color: #FFFFFF;
-            max-width: 850px;
+            max-width: 780px;
             margin: 0;
         }
 
         .footer-right-col {
             display: flex;
             flex-direction: column;
-            gap: 0;
-            width: 420px;
+            gap: 32px;
+            width: 380px;
             flex-shrink: 0;
         }
 
         .footer-section-group {
             border-top: 1px solid rgba(255, 255, 255, 0.15);
             padding-top: 16px;
-            margin-bottom: 24px;
-        }
-
-        .footer-section-group:last-child {
-            margin-bottom: 0;
         }
 
         .footer-section-title {
@@ -840,6 +835,13 @@
         .footer-link:hover {
             opacity: 0.7;
             text-decoration: underline;
+        }
+
+        /* Footer Media Container (Optional Graphic Space Below Footer) */
+        .footer-media-container {
+            width: 100%;
+            height: 200px;
+            background-color: #FFFFFF;
         }
 
         /* Payment Modal */
@@ -966,7 +968,8 @@
                 gap: 24px;
             }
             .site-footer {
-                padding: 32px 24px;
+                padding: 40px 24px;
+                min-height: auto;
             }
             .footer-top-row {
                 flex-direction: column;
@@ -1347,7 +1350,7 @@
         </div>
     </div>
 
-    <!-- STRIPE-SESSIONS EXACT MATCH FULL-WIDTH DARK FOOTER -->
+    <!-- STRIPE-SESSIONS EXACT MATCH DARK FOOTER -->
     <footer class="site-footer">
         <div class="footer-top-row">
             <a onclick="showPage('home')" class="footer-brand">
@@ -1384,6 +1387,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Footer White Space Container -->
+    <div class="footer-media-container"></div>
 
     <!-- Payment Modal -->
     <div id="payment-modal" class="modal-overlay">
@@ -1431,7 +1437,7 @@
         function updateNavbar() {
             if (nav) {
                 if (window.scrollY > 20) {
-                    nav.classList.0add ? nav.classList.add('scrolled') : nav.className += ' scrolled';
+                    nav.classList.add('scrolled');
                 } else {
                     nav.classList.remove('scrolled');
                 }
