@@ -753,19 +753,25 @@
         .site-footer {
             background-color: #06010D;
             color: #FFFFFF;
-            padding: 80px 48px 120px 48px;
+            padding: 80px 60px 140px 60px;
             margin-top: 140px;
-            display: flex;
-            flex-direction: column;
             width: 100%;
         }
 
-        .footer-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 160px;
+        .footer-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 500px;
+            gap: 60px;
+            align-items: start;
             width: 100%;
+        }
+
+        .footer-left-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            min-height: 480px;
         }
 
         .footer-brand {
@@ -776,27 +782,6 @@
             display: inline-block;
             cursor: pointer;
             letter-spacing: -0.01em;
-        }
-
-        .footer-event-details {
-            display: flex;
-            gap: 80px;
-            text-align: left;
-        }
-
-        .footer-meta-item {
-            font-size: 0.95rem;
-            color: #FFFFFF;
-            line-height: 1.45;
-            font-weight: 400;
-            max-width: 220px;
-        }
-
-        .footer-bottom-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            width: 100%;
         }
 
         .footer-headline {
@@ -811,14 +796,27 @@
         .footer-right-col {
             display: flex;
             flex-direction: column;
+            width: 100%;
+        }
+
+        .footer-meta-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
-            width: 380px;
-            flex-shrink: 0;
+            margin-bottom: 120px;
+        }
+
+        .footer-meta-item {
+            font-size: 0.95rem;
+            color: #FFFFFF;
+            line-height: 1.45;
+            font-weight: 400;
         }
 
         .footer-section-group {
             border-top: 1px solid rgba(255, 255, 255, 0.15);
             padding-top: 16px;
+            margin-bottom: 40px;
         }
 
         .footer-section-title {
@@ -978,21 +976,17 @@
                 flex-direction: column;
                 gap: 24px;
             }
-            .footer-top-row {
-                flex-direction: column;
-                gap: 32px;
+            .footer-grid-layout {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .footer-meta-row {
+                grid-template-columns: 1fr;
+                gap: 24px;
                 margin-bottom: 60px;
             }
-            .footer-event-details {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .footer-bottom-row {
-                flex-direction: column;
-                gap: 48px;
-            }
-            .footer-right-col {
-                width: 100%;
+            .site-footer {
+                padding: 60px 24px;
             }
         }
     </style>
@@ -1358,24 +1352,24 @@
 
     <!-- STRIPE-STYLE EXACT MATCH DARK FOOTER -->
     <footer class="site-footer">
-        <div class="footer-top-row">
-            <a onclick="showPage('home')" class="footer-brand">
-                <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
-            </a>
-            <div class="footer-event-details">
-                <div class="footer-meta-item">
-                    October 10–11,<br>2027
-                </div>
-                <div class="footer-meta-item">
-                    Oswego Lake Country Club,<br>Lake Oswego, Oregon
-                </div>
+        <div class="footer-grid-layout">
+            <div class="footer-left-col">
+                <a onclick="showPage('home')" class="footer-brand">
+                    <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
+                </a>
+                <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
             </div>
-        </div>
-
-        <div class="footer-bottom-row">
-            <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
 
             <div class="footer-right-col">
+                <div class="footer-meta-row">
+                    <div class="footer-meta-item">
+                        October 10–11,<br>2027
+                    </div>
+                    <div class="footer-meta-item">
+                        Oswego Lake Country Club,<br>Lake Oswego, Oregon
+                    </div>
+                </div>
+
                 <div class="footer-section-group">
                     <div class="footer-section-title">Get help</div>
                     <div class="footer-link-list">
