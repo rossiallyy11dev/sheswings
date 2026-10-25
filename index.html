@@ -735,15 +735,14 @@
         }
 
         /* ------------------------------------------------ */
-        /* STRIPE-SESSIONS EXACT MATCH INSET DARK FOOTER    */
+        /* STRIPE-SESSIONS EXACT MATCH FULL-WIDTH DARK FOOTER*/
         /* ------------------------------------------------ */
         .site-footer {
             background-color: #06010D;
             color: #FFFFFF;
-            width: calc(100% - 48px);
-            margin: 100px auto 40px auto;
-            border-radius: 28px;
-            padding: 48px 48px 72px 48px;
+            width: 100%;
+            margin-top: 120px;
+            padding: 48px 48px 80px 48px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -789,12 +788,12 @@
         }
 
         .footer-headline {
-            font-size: clamp(2.8rem, 5vw, 5.2rem);
+            font-size: clamp(3rem, 5.5vw, 5.5rem);
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: -0.03em;
             color: #FFFFFF;
-            max-width: 720px;
+            max-width: 850px;
             margin: 0;
         }
 
@@ -802,7 +801,7 @@
             display: flex;
             flex-direction: column;
             gap: 0;
-            width: 380px;
+            width: 420px;
             flex-shrink: 0;
         }
 
@@ -967,8 +966,6 @@
                 gap: 24px;
             }
             .site-footer {
-                width: calc(100% - 32px);
-                margin: 60px auto 24px auto;
                 padding: 32px 24px;
             }
             .footer-top-row {
@@ -1350,7 +1347,7 @@
         </div>
     </div>
 
-    <!-- STRIPE-SESSIONS EXACT MATCH INSET DARK FOOTER -->
+    <!-- STRIPE-SESSIONS EXACT MATCH FULL-WIDTH DARK FOOTER -->
     <footer class="site-footer">
         <div class="footer-top-row">
             <a onclick="showPage('home')" class="footer-brand">
@@ -1434,7 +1431,7 @@
         function updateNavbar() {
             if (nav) {
                 if (window.scrollY > 20) {
-                    nav.classList.add('scrolled');
+                    nav.classList.0add ? nav.classList.add('scrolled') : nav.className += ' scrolled';
                 } else {
                     nav.classList.remove('scrolled');
                 }
