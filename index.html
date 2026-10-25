@@ -21,7 +21,7 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #555555;
-            padding: 0 0 60px 0;
+            padding: 0 0 0 0;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
@@ -735,24 +735,25 @@
         }
 
         /* ------------------------------------------------ */
-        /* STRIPE-STYLE DARK FOOTER                         */
+        /* STRIPE-STYLE EDGE-TO-EDGE DARK FOOTER            */
         /* ------------------------------------------------ */
         .site-footer {
-            background-color: #0F051D;
+            background-color: #08020F;
             color: #FFFFFF;
-            padding: 80px 24px 100px 24px;
-            margin-top: 120px;
+            padding: 100px 24px 120px 24px;
+            margin-top: 140px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            position: relative;
+            width: 100%;
         }
 
         .footer-left-col {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            max-width: 650px;
+            flex: 1;
+            padding-right: 40px;
         }
 
         .footer-brand {
@@ -760,14 +761,15 @@
             font-weight: 700;
             color: #FFFFFF;
             text-decoration: none;
-            margin-bottom: 80px;
+            margin-bottom: 120px;
             display: inline-block;
+            cursor: pointer;
         }
 
         .footer-headline {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+            font-size: clamp(3rem, 5.5vw, 5.5rem);
             font-weight: 400;
-            line-height: 1.05;
+            line-height: 1.0;
             letter-spacing: -0.03em;
             color: #FFFFFF;
         }
@@ -775,46 +777,48 @@
         .footer-right-col {
             display: flex;
             flex-direction: column;
-            gap: 48px;
-            min-width: 320px;
-            padding-top: 10px;
+            gap: 40px;
+            width: 420px;
+            flex-shrink: 0;
         }
 
         .footer-event-details {
             display: flex;
             gap: 48px;
+            margin-bottom: 24px;
         }
 
         .footer-meta-item {
             font-size: 0.95rem;
-            color: #E0E0EC;
+            color: #FFFFFF;
             line-height: 1.45;
+            font-weight: 400;
         }
 
         .footer-section-group {
             border-top: 1px solid rgba(255, 255, 255, 0.15);
-            padding-top: 24px;
+            padding-top: 20px;
         }
 
         .footer-section-title {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            color: #8C8C9E;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            color: #7E7E91;
+            margin-bottom: 10px;
+            letter-spacing: 0.02em;
         }
 
         .footer-link-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
         }
 
         .footer-link {
             color: #FFFFFF;
             text-decoration: none;
             font-size: 1.05rem;
+            font-weight: 400;
             transition: opacity 0.2s ease;
         }
 
@@ -953,6 +957,12 @@
             .footer-event-details {
                 flex-direction: column;
                 gap: 24px;
+            }
+            .footer-left-col {
+                padding-right: 0;
+            }
+            .footer-brand {
+                margin-bottom: 40px;
             }
         }
     </style>
@@ -1316,7 +1326,7 @@
         </div>
     </div>
 
-    <!-- STRIPE-STYLE DARK FOOTER -->
+    <!-- STRIPE-STYLE EDGE-TO-EDGE DARK FOOTER -->
     <footer class="site-footer">
         <div class="footer-left-col">
             <a onclick="showPage('home')" class="footer-brand">
@@ -1336,14 +1346,14 @@
             </div>
 
             <div class="footer-section-group">
-                <div class="footer-section-title">Get help</div>
+                <div class="footer-section-title">GET HELP</div>
                 <div class="footer-link-list">
                     <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
                 </div>
             </div>
 
             <div class="footer-section-group">
-                <div class="footer-section-title">Links</div>
+                <div class="footer-section-title">LINKS</div>
                 <div class="footer-link-list">
                     <a href="https://walterprod.com" target="_blank" class="footer-link">Walterprod.com</a>
                     <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
