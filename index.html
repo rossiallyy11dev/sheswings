@@ -21,17 +21,11 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #555555;
-            padding: 0 40px 60px 40px;
+            padding: 0 0 60px 0; /* Remove body side padding so nav can stretch fully edge-to-edge */
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Consistent Edge-to-Edge Padding for Navbar, Hero, Sections, and Registration Page */
-        .navbar, .hero-section, .content-section, .registration-page {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        /* Seamless Top Nav */
+        /* True Edge-to-Edge Navbar */
         .navbar {
             position: sticky;
             top: 0;
@@ -43,8 +37,7 @@
             align-items: center;
             width: 100%;
             margin: 0 0 48px 0;
-            padding-top: 24px;
-            padding-bottom: 24px;
+            padding: 24px 40px; /* Padding lives inside the nav so logo/button touch the 40px inset */
             background-color: transparent;
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
@@ -55,17 +48,19 @@
 
         .navbar.scrolled {
             top: 0;
-            padding-top: 14px;
-            padding-bottom: 14px;
+            padding: 14px 40px;
             background-color: rgba(238, 236, 240, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-            /* Add horizontal breathing room when it floats into view on scroll */
-            padding-left: 20px;
-            padding-right: 20px;
-            border-radius: 16px;
+        }
+
+        /* Consistent Edge-to-Edge Padding for Hero, Sections, and Registration Page */
+        .hero-section, .content-section, .registration-page {
+            padding-left: 40px;
+            padding-right: 40px;
+            width: 100%;
         }
 
         /* Brand Logo */
@@ -743,8 +738,13 @@
         }
 
         @media (max-width: 900px) {
-            body {
-                padding: 0 16px 40px 16px;
+            .hero-section, .content-section, .registration-page {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .navbar {
+                padding-left: 16px;
+                padding-right: 16px;
             }
             .hero-header-row {
                 flex-direction: column;
