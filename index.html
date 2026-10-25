@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* Full Edge-to-Edge Navbar (Stripe Style) */
+        /* Full Edge-to-Edge Navbar */
         .navbar {
             position: sticky;
             top: 0;
@@ -57,7 +57,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
-        /* Tight Edge-to-Edge Inset Padding */
+        /* Edge-to-Edge Inset Padding */
         .hero-section, .content-section, .registration-page {
             padding-left: 24px;
             padding-right: 24px;
@@ -68,7 +68,7 @@
         .brand-logo {
             font-family: 'Roboto', sans-serif;
             font-size: 1.25rem;
-            color: #1A0B2E;
+            color: #555555;
             text-decoration: none;
             letter-spacing: -0.02em;
             cursor: pointer;
@@ -92,7 +92,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
             font-weight: 400;
-            color: #1A0B2E;
+            color: #555555;
             text-decoration: none;
             transition: opacity 0.2s ease;
             cursor: pointer;
@@ -108,8 +108,8 @@
             font-size: 0.95rem;
             font-weight: 400;
             color: #FFFFFF;
-            background-color: #1A0B2E;
-            padding: 10px 28px;
+            background-color: #00AAEE;
+            padding: 9px 28px;
             border-radius: 999px;
             text-decoration: none;
             transition: background-color 0.2s ease, opacity 0.2s ease;
@@ -120,7 +120,7 @@
         }
 
         .btn-register:hover {
-            background-color: #31135C;
+            background-color: #0099D8;
         }
 
         /* Hero Layout */
@@ -145,7 +145,7 @@
             line-height: 1.0;
             letter-spacing: -0.03em;
             max-width: 850px;
-            color: #1A0B2E;
+            color: #555555;
             margin-left: -3px;
         }
 
@@ -153,13 +153,14 @@
             display: flex;
             gap: 48px;
             padding-top: 16px;
+            margin-right: 8%;
         }
 
         .meta-item {
             font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
             line-height: 1.4;
-            color: #1A0B2E;
+            color: #555555;
             font-weight: 400;
         }
 
@@ -197,20 +198,21 @@
             max-width: 100%;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-start;
         }
 
-        /* Title Column */
+        /* Title Column - Restored Original Alignment & Width */
         .section-title {
             font-family: 'Roboto', sans-serif;
             font-size: clamp(2rem, 3.2vw, 3.2rem);
             font-weight: 400;
-            color: #1A0B2E;
+            color: #555555;
             letter-spacing: -0.02em;
             line-height: 1.1;
             white-space: nowrap;
-            flex: 0 0 320px; 
+            flex: 0 0 480px; 
+            padding-right: 48px;
         }
 
         .section-right-content {
@@ -218,16 +220,16 @@
             flex-direction: column;
             gap: 28px;
             flex: 1;
-            max-width: 850px;
         }
 
         .section-text {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.5rem;
-            line-height: 1.4;
+            font-size: 1.6rem;
+            line-height: 1.35;
             letter-spacing: -0.015em;
             font-weight: 400;
-            color: #1A0B2E;
+            max-width: 710px;
+            color: #555555;
         }
 
         .guest-intro-text {
@@ -235,14 +237,14 @@
             font-size: 1.05rem;
             line-height: 1.5;
             font-weight: 400;
-            color: #1A0B2E;
-            max-width: 750px;
+            color: #555555;
+            max-width: 540px;
             margin: 0;
         }
 
         .guest-media-container {
             width: 100%;
-            max-width: 750px;
+            max-width: 540px;
             height: 440px;
             background-color: #E8E8EC;
             border-radius: 20px;
@@ -256,7 +258,7 @@
 
         .sponsor-media-container {
             width: 100%;
-            max-width: 850px;
+            max-width: 785px;
             height: 500px;
             background-color: #E8E8EC;
             border-radius: 20px;
@@ -277,7 +279,7 @@
 
         .about-media-container {
             width: 100%;
-            max-width: 850px;
+            max-width: 710px;
             height: 460px;
             background-color: #E8E8EC;
             border-radius: 20px;
@@ -301,7 +303,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 850px;
+            max-width: 750px;
         }
 
         .agenda-row {
@@ -324,7 +326,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1.35rem;
             font-weight: 500;
-            color: #1A0B2E;
+            color: #555555;
             margin-bottom: 8px;
         }
 
@@ -335,7 +337,7 @@
             font-size: 0.825rem;
             font-weight: 400;
             background-color: rgba(255, 255, 255, 0.7);
-            color: #1A0B2E;
+            color: #555555;
             padding: 3px 10px 3px 8px;
             border-radius: 6px;
             border: 1px solid rgba(0, 0, 0, 0.12);
@@ -355,7 +357,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1.1rem;
             line-height: 1.6;
-            color: #1A0B2E;
+            color: #555555;
             font-weight: 400;
         }
 
@@ -368,7 +370,7 @@
         /* Sponsor Callout Card */
         .sponsor-card {
             width: 100%;
-            max-width: 850px;
+            max-width: 785px;
             background-color: #EEEEF2;
             border-radius: 16px;
             padding: 24px 28px;
@@ -383,7 +385,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1.1rem;
             font-weight: 500;
-            color: #1A0B2E;
+            color: #555555;
             margin-bottom: 6px;
         }
 
@@ -407,7 +409,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #1A0B2E;
+            color: #555555;
             text-decoration: none;
             font-size: 1.1rem;
             transition: background-color 0.2s ease;
@@ -422,7 +424,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 850px;
+            max-width: 785px;
         }
 
         .faq-item {
@@ -442,7 +444,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1.1rem;
             font-weight: 500;
-            color: #1A0B2E;
+            color: #555555;
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -464,7 +466,7 @@
             align-items: center;
             justify-content: center;
             font-size: 0.9rem;
-            color: #1A0B2E;
+            color: #555555;
             flex-shrink: 0;
             margin-left: 16px;
             transition: transform 0.2s ease;
@@ -478,7 +480,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 0.975rem;
             line-height: 1.6;
-            color: #1A0B2E;
+            color: #555555;
             padding-top: 16px;
             font-weight: 400;
         }
@@ -559,7 +561,7 @@
 
         .reg-meta-item {
             font-size: 1.05rem;
-            color: #1A0B2E;
+            color: #555555;
             line-height: 1.45;
             font-weight: 400;
         }
@@ -703,7 +705,7 @@
             align-items: center;
             padding: 16px 0;
             font-size: 1.1rem;
-            color: #1A0B2E;
+            color: #555555;
         }
 
         .summary-row.total {
@@ -801,6 +803,7 @@
             }
             .hero-meta-group {
                 gap: 32px;
+                margin-right: 0;
             }
             .hero-banner-container {
                 height: 320px;
@@ -813,10 +816,13 @@
                 white-space: normal;
                 flex: none;
                 width: 100%;
+                padding-right: 0;
             }
             .section-right-content {
                 flex: none;
                 width: 100%;
+            }
+            .section-text, .agenda-list, .guest-intro-text, .guest-media-container, .sponsor-media-container, .sponsor-card, .faq-list {
                 max-width: 100%;
             }
             .agenda-row {
