@@ -748,12 +748,12 @@
         }
 
         /* ------------------------------------------------ */
-        /* STRIPE-STYLE EDGE-TO-EDGE DARK FOOTER            */
+        /* STRIPE-STYLE EXACT MATCH DARK FOOTER            */
         /* ------------------------------------------------ */
         .site-footer {
-            background-color: #08020F;
+            background-color: #06010D;
             color: #FFFFFF;
-            padding: 80px 24px 80px 24px;
+            padding: 80px 48px 120px 48px;
             margin-top: 140px;
             display: flex;
             flex-direction: column;
@@ -764,7 +764,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 120px;
+            margin-bottom: 160px;
             width: 100%;
         }
 
@@ -775,11 +775,13 @@
             text-decoration: none;
             display: inline-block;
             cursor: pointer;
+            letter-spacing: -0.01em;
         }
 
         .footer-event-details {
             display: flex;
-            gap: 60px;
+            gap: 80px;
+            text-align: left;
         }
 
         .footer-meta-item {
@@ -787,6 +789,7 @@
             color: #FFFFFF;
             line-height: 1.45;
             font-weight: 400;
+            max-width: 220px;
         }
 
         .footer-bottom-row {
@@ -809,22 +812,21 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
-            width: 420px;
+            width: 380px;
             flex-shrink: 0;
         }
 
         .footer-section-group {
             border-top: 1px solid rgba(255, 255, 255, 0.15);
-            padding-top: 20px;
+            padding-top: 16px;
         }
 
         .footer-section-title {
-            font-size: 0.85rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 400;
             color: #7E7E91;
-            margin-bottom: 10px;
-            letter-spacing: 0.02em;
-            text-transform: lowercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.01em;
         }
 
         .footer-link-list {
@@ -836,7 +838,7 @@
         .footer-link {
             color: #FFFFFF;
             text-decoration: none;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 400;
             transition: opacity 0.2s ease;
         }
@@ -846,22 +848,11 @@
             text-decoration: underline;
         }
 
-        /* Footer Media Container (Pic #3 Style) */
+        /* Footer White Space Container */
         .footer-media-container {
             width: 100%;
-            height: 480px;
-            background-color: #08020F;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer-media-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            height: 240px;
+            background-color: #FFFFFF;
         }
 
         /* Payment Modal */
@@ -990,6 +981,7 @@
             .footer-top-row {
                 flex-direction: column;
                 gap: 32px;
+                margin-bottom: 60px;
             }
             .footer-event-details {
                 flex-direction: column;
@@ -1364,7 +1356,7 @@
         </div>
     </div>
 
-    <!-- STRIPE-STYLE DARK FOOTER -->
+    <!-- STRIPE-STYLE EXACT MATCH DARK FOOTER -->
     <footer class="site-footer">
         <div class="footer-top-row">
             <a onclick="showPage('home')" class="footer-brand">
@@ -1385,14 +1377,14 @@
 
             <div class="footer-right-col">
                 <div class="footer-section-group">
-                    <div class="footer-section-title">get help</div>
+                    <div class="footer-section-title">Get help</div>
                     <div class="footer-link-list">
                         <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
                     </div>
                 </div>
 
                 <div class="footer-section-group">
-                    <div class="footer-section-title">links</div>
+                    <div class="footer-section-title">Links</div>
                     <div class="footer-link-list">
                         <a href="https://walterprod.com" target="_blank" class="footer-link">Walter Productions</a>
                         <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
@@ -1402,11 +1394,8 @@
         </div>
     </footer>
 
-    <!-- Footer Media Space (Pic #3 Style) -->
-    <div class="footer-media-container">
-        <!-- Replace src with your footer graphic/media asset -->
-        <img src="footer-media-placeholder.jpg" alt="Footer Graphic" class="footer-media-image">
-    </div>
+    <!-- Footer White Space Container -->
+    <div class="footer-media-container"></div>
 
     <!-- Payment Modal -->
     <div id="payment-modal" class="modal-overlay">
