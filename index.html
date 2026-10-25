@@ -21,24 +21,25 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #555555;
-            padding: 0 0 60px 0;
+            padding: 0 0 60px 0 !important;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* True Edge-to-Edge Navbar */
+        /* True Locked Edge-to-Edge Navbar */
         .navbar {
-            position: sticky;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin: 0 0 48px 0;
-            padding: 24px 40px;
+            position: sticky !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1000 !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 0 48px 0 !important;
+            padding: 24px 40px !important;
             background-color: transparent;
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
@@ -48,9 +49,9 @@
         }
 
         .navbar.scrolled {
-            top: 0;
-            padding: 14px 40px;
-            background-color: rgba(238, 236, 240, 0.85);
+            top: 0 !important;
+            padding: 14px 40px !important;
+            background-color: rgba(238, 236, 240, 0.85) !important;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -59,9 +60,9 @@
 
         /* Consistent Inset Padding for Content Sections */
         .hero-section, .content-section, .registration-page {
-            padding-left: 40px;
-            padding-right: 40px;
-            width: 100%;
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+            width: 100% !important;
         }
 
         /* Brand Logo */
@@ -626,7 +627,6 @@
             margin-top: 4px;
         }
 
-        /* Radio & Promo Code Sections */
         .form-divider-section {
             border-top: 1px solid rgba(0, 0, 0, 0.08);
             padding-top: 36px;
@@ -683,7 +683,6 @@
             color: #FFFFFF;
         }
 
-        /* Order Summary Section */
         .order-summary-section {
             border-top: 1px solid rgba(0, 0, 0, 0.08);
             padding-top: 40px;
@@ -741,7 +740,6 @@
             background-color: #31135C;
         }
 
-        /* Modal Overlay for Payment */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -801,8 +799,8 @@
 
         @media (max-width: 900px) {
             .navbar, .hero-section, .content-section, .registration-page {
-                padding-left: 16px;
-                padding-right: 16px;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
             }
             .hero-header-row {
                 flex-direction: column;
