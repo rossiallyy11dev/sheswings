@@ -21,11 +21,12 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #555555;
-            padding: 0 16px 60px 16px;
+            padding: 0 0 60px 0;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* Seamless Top Nav / Floating Box on Scroll */
+        /* True Edge-to-Edge Navbar */
         .navbar {
             position: sticky;
             top: 0;
@@ -36,9 +37,8 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin: 0 auto 48px auto;
-            padding: 24px 0 24px 0;
-            border-radius: 16px;
+            margin: 0 0 48px 0;
+            padding: 24px 40px;
             background-color: transparent;
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
@@ -48,13 +48,20 @@
         }
 
         .navbar.scrolled {
-            top: 12px;
-            padding: 12px 16px 12px 20px;
+            top: 0;
+            padding: 14px 40px;
             background-color: rgba(238, 236, 240, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Consistent Inset Padding for Content Sections */
+        .hero-section, .content-section {
+            padding-left: 40px;
+            padding-right: 40px;
+            width: 100%;
         }
 
         /* Brand Logo */
@@ -186,7 +193,6 @@
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
-            padding: 0;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
@@ -498,11 +504,9 @@
         }
 
         @media (max-width: 900px) {
-            body {
-                padding: 0 12px 40px 12px;
-            }
-            .navbar {
-                padding: 16px 0;
+            .navbar, .hero-section, .content-section {
+                padding-left: 16px;
+                padding-right: 16px;
             }
             .hero-header-row {
                 flex-direction: column;
@@ -557,7 +561,7 @@
             <span class="bold-text">SHE</span> <span class="light-text">Swings</span>
         </a>
         <div class="nav-right">
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#faqs" class="nav-link">Contact</a>
             <a href="#register" class="btn-register">Register</a>
         </div>
     </header>
@@ -606,7 +610,7 @@
 
         <!-- Agenda at a Glance Section -->
         <section class="content-section" id="agenda">
-            <h2 class="section-title">Agenda at a glance</h2>
+            <h2 class="section-title">Agenda at a<br>glance</h2>
             <div class="section-right-content">
                 <div class="agenda-list">
                     <div class="agenda-row">
