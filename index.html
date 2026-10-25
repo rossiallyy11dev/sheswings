@@ -21,7 +21,7 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #555555;
-            padding: 0 0 0 0;
+            padding: 0;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
@@ -38,7 +38,7 @@
             align-items: center;
             width: 100%;
             margin: 0 0 40px 0;
-            padding: 24px 24px;
+            padding: 24px 32px;
             background-color: transparent;
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
@@ -49,8 +49,8 @@
 
         .navbar.scrolled {
             top: 0;
-            padding: 14px 24px;
-            background-color: rgba(238, 236, 240, 0.9);
+            padding: 14px 32px;
+            background-color: rgba(238, 236, 240, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -59,8 +59,8 @@
 
         /* Edge-to-Edge Inset Padding */
         .hero-section, .content-section, .registration-page {
-            padding-left: 24px;
-            padding-right: 24px;
+            padding-left: 32px;
+            padding-right: 32px;
             width: 100%;
         }
 
@@ -186,7 +186,7 @@
 
         /* Section Dividers */
         .section-divider {
-            width: calc(100% - 48px);
+            width: calc(100% - 64px);
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
             margin: 120px auto 16px auto;
@@ -735,12 +735,12 @@
         }
 
         /* ------------------------------------------------ */
-        /* STRIPE-STYLE EDGE-TO-EDGE DARK FOOTER            */
+        /* STRIPE-STYLE EXACT MATCH DARK FOOTER             */
         /* ------------------------------------------------ */
         .site-footer {
-            background-color: #08020F;
+            background-color: #06010D;
             color: #FFFFFF;
-            padding: 80px 24px 80px 24px;
+            padding: 24px 32px 140px 32px;
             margin-top: 140px;
             display: flex;
             flex-direction: column;
@@ -751,28 +751,30 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 120px;
+            margin-bottom: 180px;
             width: 100%;
         }
 
         .footer-brand {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #FFFFFF;
             text-decoration: none;
             display: inline-block;
             cursor: pointer;
+            letter-spacing: -0.01em;
         }
 
         .footer-event-details {
             display: flex;
-            gap: 60px;
+            gap: 120px;
+            text-align: left;
         }
 
         .footer-meta-item {
             font-size: 0.95rem;
             color: #FFFFFF;
-            line-height: 1.45;
+            line-height: 1.4;
             font-weight: 400;
         }
 
@@ -796,20 +798,20 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
-            width: 420px;
+            width: 380px;
             flex-shrink: 0;
         }
 
         .footer-section-group {
             border-top: 1px solid rgba(255, 255, 255, 0.15);
-            padding-top: 20px;
+            padding-top: 16px;
         }
 
         .footer-section-title {
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 400;
             color: #7E7E91;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             letter-spacing: 0.02em;
             text-transform: lowercase;
         }
@@ -817,13 +819,13 @@
         .footer-link-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
 
         .footer-link {
             color: #FFFFFF;
             text-decoration: none;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 400;
             transition: opacity 0.2s ease;
         }
@@ -837,7 +839,7 @@
         .footer-media-container {
             width: 100%;
             height: 480px;
-            background-color: #08020F;
+            background-color: #06010D;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -977,6 +979,7 @@
             .footer-top-row {
                 flex-direction: column;
                 gap: 32px;
+                margin-bottom: 80px;
             }
             .footer-event-details {
                 flex-direction: column;
@@ -1351,7 +1354,7 @@
         </div>
     </div>
 
-    <!-- STRIPE-STYLE DARK FOOTER -->
+    <!-- STRIPE-STYLE EXACT MATCH DARK FOOTER -->
     <footer class="site-footer">
         <div class="footer-top-row">
             <a onclick="showPage('home')" class="footer-brand">
