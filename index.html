@@ -17,7 +17,6 @@
             padding: 0;
         }
 
-        /* Body padding is zeroed out so the navbar can go completely edge-to-edge */
         body {
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
@@ -26,7 +25,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Edge-to-Edge Navbar with 40px inner side padding */
+        /* Consistent Edge-to-Edge Padding for Navbar and Sections */
+        .navbar, .hero-section, .content-section, .registration-page {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        /* Seamless Top Nav */
         .navbar {
             position: sticky;
             top: 0;
@@ -38,8 +43,8 @@
             align-items: center;
             width: 100%;
             margin: 0 0 48px 0;
-            padding: 24px 40px;
-            border-radius: 0;
+            padding-top: 24px;
+            padding-bottom: 24px;
             background-color: transparent;
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
@@ -50,7 +55,8 @@
 
         .navbar.scrolled {
             top: 0;
-            padding: 14px 40px;
+            padding-top: 14px;
+            padding-bottom: 14px;
             background-color: rgba(238, 236, 240, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -115,11 +121,6 @@
 
         .btn-register:hover {
             background-color: #0099D8;
-        }
-
-        /* Apply 40px side padding to the main content and sections so they retain alignment */
-        #home-page, .registration-page {
-            padding: 0 40px;
         }
 
         /* Hero Layout */
@@ -738,10 +739,7 @@
         }
 
         @media (max-width: 900px) {
-            body {
-                padding: 0;
-            }
-            .navbar, #home-page, .registration-page {
+            .navbar, .hero-section, .content-section, .registration-page {
                 padding-left: 16px;
                 padding-right: 16px;
             }
