@@ -21,8 +21,14 @@
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #F8F8FA;
             color: #555555;
-            padding: 0 40px 80px 40px;
+            padding: 0 40px 60px 40px;
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* Consistent Edge-to-Edge Padding for Navbar, Hero, Sections, and Registration Page */
+        .navbar, .hero-section, .content-section, .registration-page {
+            padding-left: 0;
+            padding-right: 0;
         }
 
         /* Seamless Top Nav */
@@ -56,6 +62,10 @@
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            /* Add horizontal breathing room when it floats into view on scroll */
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 16px;
         }
 
         /* Brand Logo */
