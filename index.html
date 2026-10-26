@@ -760,7 +760,7 @@
             min-height: 600px;
             margin: 120px 0 160px 0;
             border-radius: 0;
-            padding: 28px 0 28px 24px; /* padding-right set to 0 so lines touch the edge */
+            padding: 28px 0 28px 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -790,8 +790,8 @@
             display: grid;
             grid-template-columns: 200px 260px;
             gap: 40px;
-            margin-right: 0; /* flush right */
-            width: 500px;
+            margin-right: 24px; /* shifted slightly to the right to touch the edge */
+            width: 520px;
         }
 
         .footer-meta-item {
@@ -824,9 +824,9 @@
             display: flex;
             flex-direction: column;
             gap: 0;
-            width: 500px;
+            width: 520px;
             flex-shrink: 0;
-            margin-right: 0; /* flush right */
+            margin-right: 24px; /* shifted slightly to the right to touch the edge */
         }
 
         .footer-section-group {
@@ -1383,7 +1383,6 @@
             <a onclick="showPage('home')" class="footer-brand">
                 <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
             </a>
-            <!-- Flush right alignment -->
             <div class="footer-right-top">
                 <div class="footer-meta-item">
                     October 10–11,<br>2027
