@@ -766,13 +766,13 @@
             justify-content: space-between;
         }
 
-        /* TOP ROW: Brand at Top Left, Date and Location side-by-side at the top right */
+        /* TOP ROW: Brand on left, Date and Location grouped on right aligned with bottom blocks */
         .footer-top-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             width: 100%;
-            margin-bottom: 165px;
+            margin-bottom: 120px;
         }
 
         .footer-brand {
@@ -786,9 +786,11 @@
             padding-left: 0;
         }
 
-        .footer-right-top {
-            display: flex;
-            gap: 160px; /* Pushes date in further toward the location */
+        /* Grid container for top right items to match bottom columns exactly */
+        .footer-top-right-grid {
+            display: grid;
+            grid-template-columns: 300px 380px;
+            gap: 40px;
             margin-right: 48px;
         }
 
@@ -819,13 +821,17 @@
         }
 
         .footer-right-col {
+            display: grid;
+            grid-template-columns: 300px 380px;
+            gap: 40px;
+            width: auto;
+            margin-right: 48px;
+        }
+
+        .footer-column-group {
             display: flex;
             flex-direction: column;
-            gap: 0;
             width: 100%;
-            max-width: 420px;
-            flex-shrink: 0;
-            margin-right: 48px;
         }
 
         .footer-section-group {
@@ -1000,7 +1006,9 @@
                 gap: 32px;
                 margin-bottom: 48px;
             }
-            .footer-right-top {
+            .footer-top-right-grid {
+                display: flex;
+                flex-direction: column;
                 gap: 32px;
                 margin-right: 0;
             }
@@ -1010,6 +1018,9 @@
                 gap: 48px;
             }
             .footer-right-col {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
                 width: 100%;
                 margin-right: 0;
             }
@@ -1381,11 +1392,11 @@
             <a onclick="showPage('home')" class="footer-brand">
                 <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
             </a>
-            <div class="footer-right-top">
+            <div class="footer-top-right-grid">
                 <div class="footer-meta-item">
                     October 10–11,<br>2027
                 </div>
-                <div class="footer-meta-item" style="margin-right: 48px;">
+                <div class="footer-meta-item">
                     Oswego Lake Country Club,<br>Lake Oswego, Oregon
                 </div>
             </div>
@@ -1394,19 +1405,23 @@
         <div class="footer-bottom-row">
             <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
 
-            <div class="footer-right-col" style="margin-right: 48px;">
-                <div class="footer-section-group">
-                    <div class="footer-section-title">Get help</div>
-                    <div class="footer-link-list">
-                        <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
+            <div class="footer-right-col">
+                <div class="footer-column-group">
+                    <div class="footer-section-group">
+                        <div class="footer-section-title">Get help</div>
+                        <div class="footer-link-list">
+                            <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="footer-section-group">
-                    <div class="footer-section-title">Links</div>
-                    <div class="footer-link-list">
-                        <a href="https://walterprod.com" target="_blank" class="footer-link">Walter Productions</a>
-                        <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
+                <div class="footer-column-group">
+                    <div class="footer-section-group">
+                        <div class="footer-section-title">Links</div>
+                        <div class="footer-link-list">
+                            <a href="https://walterprod.com" target="_blank" class="footer-link">Walter Productions</a>
+                            <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
+                        </div>
                     </div>
                 </div>
             </div>
