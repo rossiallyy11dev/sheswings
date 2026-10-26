@@ -829,7 +829,7 @@
             flex-shrink: 0;
             margin-left: auto;
             margin-right: 0;
-            margin-bottom: 24px; /* Nudges both sections UP higher relative to the bottom */
+            margin-bottom: 0; 
         }
 
         .footer-section-group {
@@ -839,13 +839,15 @@
             width: 100%;
         }
 
-        /* Comfortable breathing room between Get Help and Links */
+        /* Nudges Get Help UP a smidge by increasing spacing above Links */
         .footer-section-group.get-help-group {
-            margin-bottom: 40px; 
+            margin-bottom: 76px; 
         }
 
+        /* Locks Links in place and increases its top padding slightly to give Get Help room */
         .footer-section-group:last-child {
             margin-bottom: 0;
+            padding-top: 24px;
         }
 
         .footer-section-title {
