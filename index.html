@@ -760,7 +760,7 @@
             min-height: 600px;
             margin: 120px 0 160px 0;
             border-radius: 0;
-            padding: 28px 0 28px 24px;
+            padding: 28px 72px 28px 24px; /* Matches the exact right margin offset from the header */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -789,8 +789,8 @@
         .footer-right-top {
             display: grid;
             grid-template-columns: 200px 260px;
-            gap: 40px;
-            margin-right: 24px; /* shifted slightly to the right to touch the edge */
+            gap: 60px; /* Matches header-meta-group gap */
+            margin-right: 0;
             width: 520px;
         }
 
@@ -826,7 +826,7 @@
             gap: 0;
             width: 520px;
             flex-shrink: 0;
-            margin-right: 24px; /* shifted slightly to the right to touch the edge */
+            margin-right: 0;
         }
 
         .footer-section-group {
