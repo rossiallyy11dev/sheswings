@@ -788,10 +788,11 @@
 
         .footer-right-top {
             display: grid;
-            grid-template-columns: 200px 260px;
-            gap: 40px;
+            grid-template-columns: auto auto;
+            gap: 60px;
             margin-left: auto;
-            margin-right: -16px; /* Pushes content right to match header spacing */
+            margin-right: 0;
+            width: auto;
         }
 
         .footer-meta-item {
@@ -799,6 +800,7 @@
             color: #FFFFFF;
             line-height: 1.45;
             font-weight: 400;
+            text-align: right;
         }
 
         /* BOTTOM ROW: Large Headline at Bottom Left, Get Help & Links on the right */
@@ -824,10 +826,10 @@
             display: flex;
             flex-direction: column;
             gap: 0;
-            width: 500px;
+            width: 420px;
             flex-shrink: 0;
             margin-left: auto;
-            margin-right: -16px; /* Pushes content right to match header spacing */
+            margin-right: 0;
         }
 
         .footer-section-group {
