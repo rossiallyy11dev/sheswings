@@ -766,7 +766,7 @@
             justify-content: space-between;
         }
 
-        /* TOP ROW: Brand at Top Left, Metadata shifted slightly right to match reference */
+        /* TOP ROW: Brand at Top Left, Metadata properly aligned */
         .footer-top-row {
             display: flex;
             justify-content: space-between;
@@ -789,7 +789,7 @@
         .footer-right-top {
             display: flex;
             gap: 120px;
-            margin-right: 28px;
+            margin-right: 0;
         }
 
         .footer-meta-item {
@@ -799,7 +799,7 @@
             font-weight: 400;
         }
 
-        /* BOTTOM ROW: Large Headline at Bottom Left, Links/Help shifted slightly right */
+        /* BOTTOM ROW: Large Headline at Bottom Left, Links/Help with edge-to-edge lines */
         .footer-bottom-row {
             display: flex;
             justify-content: space-between;
@@ -823,15 +823,16 @@
             flex-direction: column;
             gap: 0;
             width: 100%;
-            max-width: 380px;
+            max-width: 420px;
             flex-shrink: 0;
-            margin-right: 28px;
+            margin-right: 0;
         }
 
         .footer-section-group {
             border-top: 1px solid rgba(255, 255, 255, 0.15);
             padding-top: 16px;
             margin-bottom: 24px;
+            width: 100%;
         }
 
         .footer-section-group:last-child {
