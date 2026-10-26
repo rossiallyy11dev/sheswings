@@ -766,18 +766,29 @@
             justify-content: space-between;
         }
 
-        /* TOP ROW: Date and Location side-by-side at the top right */
+        /* TOP ROW: Brand at Top Left, Date and Location side-by-side at the top right */
         .footer-top-row {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: flex-start;
             width: 100%;
             margin-bottom: 165px;
         }
 
+        .footer-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            line-height: 1.0;
+            cursor: pointer;
+            letter-spacing: -0.01em;
+            padding-left: 0;
+        }
+
         .footer-right-top {
             display: flex;
-            gap: 160px;
+            gap: 120px;
             margin-right: 48px;
         }
 
@@ -1367,6 +1378,9 @@
     <!-- STRIPE-SESSIONS EXACT MATCH FULL-WIDTH DARK FOOTER -->
     <footer class="site-footer">
         <div class="footer-top-row">
+            <a onclick="showPage('home')" class="footer-brand">
+                <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
+            </a>
             <div class="footer-right-top">
                 <div class="footer-meta-item">
                     October 10–11,<br>2027
