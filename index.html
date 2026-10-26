@@ -829,7 +829,7 @@
             flex-shrink: 0;
             margin-left: auto;
             margin-right: 0;
-            margin-bottom: 40px; /* Moved higher up from the bottom edge */
+            margin-bottom: 0;
         }
 
         .footer-section-group {
@@ -837,6 +837,11 @@
             padding-top: 16px;
             margin-bottom: 24px;
             width: 100%;
+        }
+
+        /* Push the Links section group down while keeping Get Help higher up */
+        .footer-section-group.get-help-group {
+            margin-bottom: 60px; 
         }
 
         .footer-section-group:last-child {
@@ -1017,7 +1022,9 @@
             .footer-right-col {
                 width: 100%;
                 margin-right: 0;
-                margin-bottom: 0;
+            }
+            .footer-section-group.get-help-group {
+                margin-bottom: 24px;
             }
         }
     </style>
@@ -1401,7 +1408,7 @@
             <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
 
             <div class="footer-right-col">
-                <div class="footer-section-group">
+                <div class="footer-section-group get-help-group">
                     <div class="footer-section-title">Get help</div>
                     <div class="footer-link-list">
                         <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
