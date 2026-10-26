@@ -788,7 +788,7 @@
 
         .footer-right-top {
             display: flex;
-            gap: 160px;
+            gap: 60px;
             margin-right: 48px;
         }
 
@@ -1381,20 +1381,23 @@
             <a onclick="showPage('home')" class="footer-brand">
                 <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
             </a>
-            <div class="footer-right-top" style="display: grid; grid-template-columns: 220px 220px; gap: 40px; margin-right: 48px;">
-                <div class="footer-meta-item" style="justify-self: start;">
-                    October 10–11,<br>2027
-                </div>
-                <div class="footer-meta-item" style="justify-self: start;">
-                    Oswego Lake Country Club,<br>Lake Oswego, Oregon
-                </div>
-            </div>
+            <!-- Removed footer-right-top so date and location are now positioned next to each other on the right side above Get help / Links -->
         </div>
 
         <div class="footer-bottom-row">
             <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
 
             <div class="footer-right-col" style="margin-right: 48px;">
+                <!-- Date and Location placed directly above Get help -->
+                <div style="display: flex; gap: 60px; margin-bottom: 24px;">
+                    <div class="footer-meta-item">
+                        October 10–11,<br>2027
+                    </div>
+                    <div class="footer-meta-item">
+                        Oswego Lake Country Club,<br>Lake Oswego, Oregon
+                    </div>
+                </div>
+
                 <div class="footer-section-group">
                     <div class="footer-section-title">Get help</div>
                     <div class="footer-link-list">
@@ -1439,7 +1442,7 @@
 
                 <div style="display: flex; gap: 12px; margin-bottom: 24px;">
                     <div class="form-group" style="flex: 1;">
-                        <label class="label">MM / YY</label>
+                        <label class="form-label">MM / YY</label>
                         <input type="text" class="form-input" placeholder="MM/YY" required>
                     </div>
                     <div class="form-group" style="flex: 1;">
