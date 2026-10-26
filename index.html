@@ -766,13 +766,24 @@
             justify-content: space-between;
         }
 
-        /* TOP ROW: Date and Location aligned side-by-side at the top */
+        /* TOP ROW: Brand at Top Left, Location on the right */
         .footer-top-row {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: flex-start;
             width: 100%;
             margin-bottom: 165px;
+        }
+
+        .footer-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            line-height: 1.0;
+            cursor: pointer;
+            letter-spacing: -0.01em;
+            padding-left: 0;
         }
 
         .footer-right-top {
@@ -788,7 +799,7 @@
             font-weight: 400;
         }
 
-        /* BOTTOM ROW: Large Headline at Bottom Left, Get Help & Links on the right */
+        /* BOTTOM ROW: Large Headline at Bottom Left, Right side uses grid/flex to align Date with Get Help/Links */
         .footer-bottom-row {
             display: flex;
             justify-content: space-between;
@@ -1367,8 +1378,11 @@
     <!-- STRIPE-SESSIONS EXACT MATCH FULL-WIDTH DARK FOOTER -->
     <footer class="site-footer">
         <div class="footer-top-row">
-            <div class="footer-right-top">
-                <div class="footer-meta-item">
+            <a onclick="showPage('home')" class="footer-brand">
+                <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
+            </a>
+            <div class="footer-right-top" style="justify-content: flex-end;">
+                <div class="footer-meta-item" style="visibility: hidden;">
                     October 10–11,<br>2027
                 </div>
                 <div class="footer-meta-item" style="margin-right: 48px;">
@@ -1381,6 +1395,12 @@
             <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
 
             <div class="footer-right-col" style="margin-right: 48px;">
+                <div class="footer-section-group" style="border-top: none; padding-top: 0; margin-bottom: 24px;">
+                    <div class="footer-meta-item" style="color: #FFFFFF; margin-bottom: 32px;">
+                        October 10–11,<br>2027
+                    </div>
+                </div>
+
                 <div class="footer-section-group">
                     <div class="footer-section-title">Get help</div>
                     <div class="footer-link-list">
