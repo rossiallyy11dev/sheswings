@@ -526,7 +526,7 @@
         .reg-hero-container {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: stretch; /* Stretches children so height matches fully */
             gap: 40px;
             margin-bottom: 24px;
             margin-top: -16px;
@@ -535,6 +535,9 @@
         .reg-title-col {
             flex: 1;
             padding-top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .reg-title {
@@ -548,7 +551,7 @@
         .reg-image-container {
             width: 50vw;
             max-width: 680px;
-            height: 780px; /* Extended to match full height and almost touch the bottom line */
+            height: 700px; /* Much longer so it stretches down almost touching the line */
             border-radius: 28px;
             overflow: hidden;
             background-color: #E8E8EC;
