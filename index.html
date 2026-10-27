@@ -1058,7 +1058,7 @@
             <span class="bold-text">SHE</span> <span class="light-text">Swings</span>
         </a>
         <div class="nav-right">
-            <a onclick="showPage('home'); setTimeout(() => document.getElementById('faqs').scrollIntoView(), 10);" class="nav-link">FAQs</a>
+            <a onclick="showPage('home'); setTimeout(() => document.getElementById('faqs').scrollIntoView({behavior: 'smooth'}), 50);" class="nav-link">FAQs</a>
             <button onclick="showPage('register')" class="btn-register">Register</button>
         </div>
     </header>
@@ -1256,7 +1256,7 @@
     </main>
 
     <!-- REGISTRATION PAGE VIEW -->
-    <div id="register-page" class="registration-page">
+    <div id="register" class="registration-page">
         <div class="reg-hero-wrapper">
             <div class="reg-hero-container">
                 <div class="reg-title-col">
@@ -1507,7 +1507,7 @@
 
         function showPage(page) {
             const homePage = document.getElementById('home-page');
-            const regPage = document.getElementById('register-page');
+            const regPage = document.getElementById('register');
 
             if (page === 'register') {
                 homePage.style.display = 'none';
