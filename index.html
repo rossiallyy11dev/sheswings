@@ -534,6 +534,10 @@
 
         .reg-title-col {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 780px;
             padding-top: 0;
         }
 
@@ -570,10 +574,10 @@
         .reg-meta-bar {
             display: flex;
             gap: 120px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            margin-bottom: 48px;
-            padding-top: 10px;
+            padding-bottom: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding-top: 24px;
+            margin-bottom: 0;
         }
 
         .reg-meta-item {
@@ -588,6 +592,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 32px 40px;
             margin-bottom: 48px;
+            margin-top: 48px;
         }
 
         .form-group {
@@ -987,12 +992,17 @@
                 max-width: 100%;
                 height: 380px;
             }
+            .reg-title-col {
+                height: auto;
+            }
             .form-grid {
                 grid-template-columns: 1fr;
             }
             .reg-meta-bar {
                 gap: 32px;
                 flex-direction: column;
+                border-top: none;
+                padding-top: 0;
             }
             .form-divider-section {
                 flex-direction: column;
@@ -1243,19 +1253,19 @@
         <div class="reg-hero-container">
             <div class="reg-title-col">
                 <h1 class="reg-title">Register for<br>SHE Swings<br>2027</h1>
+                
+                <div class="reg-meta-bar">
+                    <div class="reg-meta-item">
+                        October 10–11,<br>2027
+                    </div>
+                    <div class="reg-meta-item">
+                        Oswego Lake Country Club,<br>Lake Oswego, Oregon
+                    </div>
+                </div>
             </div>
             
             <div class="reg-image-container">
                 <div class="reg-image-placeholder">[ Media Space Reserved ]</div>
-            </div>
-        </div>
-
-        <div class="reg-meta-bar">
-            <div class="reg-meta-item">
-                October 10–11,<br>2027
-            </div>
-            <div class="reg-meta-item">
-                Oswego Lake Country Club,<br>Lake Oswego, Oregon
             </div>
         </div>
 
