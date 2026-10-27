@@ -528,16 +528,12 @@
             justify-content: space-between;
             align-items: flex-start;
             gap: 40px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             margin-top: -16px;
         }
 
         .reg-title-col {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 780px;
             padding-top: 0;
         }
 
@@ -552,7 +548,7 @@
         .reg-image-container {
             width: 50vw;
             max-width: 680px;
-            height: 780px;
+            height: 580px; /* Shortened height */
             border-radius: 28px;
             overflow: hidden;
             background-color: #E8E8EC;
@@ -571,12 +567,16 @@
             padding: 20px;
         }
 
+        .reg-hero-wrapper {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            padding-bottom: 24px;
+            margin-bottom: 48px;
+            width: 100%;
+        }
+
         .reg-meta-bar {
             display: flex;
             gap: 120px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding-bottom: 24px;
-            margin-bottom: 0;
         }
 
         .reg-meta-item {
@@ -591,7 +591,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 32px 40px;
             margin-bottom: 48px;
-            margin-top: 48px;
         }
 
         .form-group {
@@ -997,6 +996,10 @@
             .form-grid {
                 grid-template-columns: 1fr;
             }
+            .reg-hero-wrapper {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
             .reg-meta-bar {
                 gap: 32px;
                 flex-direction: column;
@@ -1247,22 +1250,24 @@
 
     <!-- REGISTRATION PAGE VIEW -->
     <div id="register-page" class="registration-page">
-        <div class="reg-hero-container">
-            <div class="reg-title-col">
-                <h1 class="reg-title">Register for<br>SHE Swings<br>2027</h1>
+        <div class="reg-hero-wrapper">
+            <div class="reg-hero-container">
+                <div class="reg-title-col">
+                    <h1 class="reg-title">Register for<br>SHE Swings<br>2027</h1>
+                </div>
                 
-                <div class="reg-meta-bar">
-                    <div class="reg-meta-item">
-                        October 10–11,<br>2027
-                    </div>
-                    <div class="reg-meta-item">
-                        Oswego Lake Country Club,<br>Lake Oswego, Oregon
-                    </div>
+                <div class="reg-image-container">
+                    <div class="reg-image-placeholder">[ Media Space Reserved ]</div>
                 </div>
             </div>
-            
-            <div class="reg-image-container">
-                <div class="reg-image-placeholder">[ Media Space Reserved ]</div>
+
+            <div class="reg-meta-bar">
+                <div class="reg-meta-item">
+                    October 10–11,<br>2027
+                </div>
+                <div class="reg-meta-item">
+                    Oswego Lake Country Club,<br>Lake Oswego, Oregon
+                </div>
             </div>
         </div>
 
