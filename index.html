@@ -526,7 +526,7 @@
         .reg-hero-container {
             display: flex;
             justify-content: space-between;
-            align-items: stretch; /* Stretches children so height matches fully */
+            align-items: flex-start;
             gap: 40px;
             margin-bottom: 24px;
             margin-top: -16px;
@@ -551,7 +551,7 @@
         .reg-image-container {
             width: 50vw;
             max-width: 680px;
-            height: 700px; /* Much longer so it stretches down almost touching the line */
+            height: 960px; /* Extended to match the bottom line exactly */
             border-radius: 28px;
             overflow: hidden;
             background-color: #E8E8EC;
@@ -580,6 +580,9 @@
         .reg-meta-bar {
             display: flex;
             gap: 120px;
+            margin-top: -100px; /* Pulls the date/location up to align with the bottom of the tall photo container */
+            position: relative;
+            z-index: 2;
         }
 
         .reg-meta-item {
@@ -1006,6 +1009,7 @@
             .reg-meta-bar {
                 gap: 32px;
                 flex-direction: column;
+                margin-top: 0;
             }
             .form-divider-section {
                 flex-direction: column;
