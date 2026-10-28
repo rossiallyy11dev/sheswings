@@ -536,7 +536,7 @@
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr calc(50vw - 48px); /* Adjusted grid to create a slightly larger, clean right margin */
+            grid-template-columns: 1fr calc(50vw - 48px);
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
@@ -562,7 +562,7 @@
             display: flex;
             gap: 60px;
             align-self: end;
-            margin-left: 12px; /* Tiny bit to the right as requested previously */
+            margin-left: 12px;
         }
 
         .reg-meta-item {
@@ -588,7 +588,7 @@
             justify-content: center;
             align-self: end;
             border: 1px solid rgba(0, 0, 0, 0.05);
-            margin-right: 16px; /* Adds a nice, slightly larger margin from the right edge of the screen */
+            margin-right: 16px;
         }
 
         .reg-image-media {
@@ -596,6 +596,12 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        /* Form Container with increased side padding */
+        .form-container {
+            padding-left: 48px;
+            padding-right: 48px;
         }
 
         .form-grid {
