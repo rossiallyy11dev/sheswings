@@ -26,7 +26,7 @@
             background-color: #FFFFFF;
             color: #555555;
             padding: 0;
-            padding-top: 80px; /* Offset for fixed navbar */
+            padding-top: 120px; /* Generous offset for fixed navbar */
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
@@ -150,7 +150,7 @@
         /* Hero Layout */
         .hero-section {
             width: 100%;
-            margin: 0 auto 64px auto;
+            margin: 24px auto 64px auto; /* Added top margin for breathable spacing */
         }
 
         .hero-header-row {
@@ -1542,13 +1542,12 @@
         </div>
     </div>
 
-    <!-- JS WITH HYSTERESIS SCROLL LOGIC TO ELIMINATE GLITCH -->
+    <!-- JS WITH HYSTERESIS SCROLL LOGIC -->
     <script>
         const nav = document.getElementById('navbar');
 
         function updateNavbar() {
             if (nav) {
-                // Hysteresis threshold prevents glitching/flickering near boundary
                 if (window.scrollY > 30) {
                     nav.classList.add('scrolled');
                 } else if (window.scrollY < 10) {
