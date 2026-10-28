@@ -553,7 +553,7 @@
             font-weight: 400;
             line-height: 0.95;
             letter-spacing: -0.04em;
-            color: #1A0B2E;
+            color: #555555;
         }
 
         .reg-meta-bar {
@@ -648,62 +648,6 @@
             font-size: 0.825rem;
             color: #777788;
             margin-top: 4px;
-        }
-
-        .form-divider-section {
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            padding-top: 36px;
-            margin-top: 24px;
-            margin-bottom: 36px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .section-question {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #1A0B2E;
-            letter-spacing: -0.01em;
-        }
-
-        .radio-options {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .radio-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1.1rem;
-            color: #1A0B2E;
-            cursor: pointer;
-        }
-
-        .promo-code-box {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .btn-apply {
-            background-color: transparent;
-            border: 1px solid #1A0B2E;
-            color: #1A0B2E;
-            padding: 0 24px;
-            height: 52px;
-            border-radius: 999px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .btn-apply:hover {
-            background-color: #1A0B2E;
-            color: #FFFFFF;
         }
 
         .order-summary-section {
@@ -1014,11 +958,6 @@
             .reg-hero-wrapper {
                 border-bottom: none;
                 padding-bottom: 0;
-            }
-            .form-divider-section {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
             }
             .order-summary-section {
                 flex-direction: column;
@@ -1375,22 +1314,6 @@
                         <label class="form-label">Job title*</label>
                         <input type="text" class="form-input" required>
                         <div class="field-subtext">Enter your title as you'd like it printed on your badge.</div>
-                    </div>
-                </div>
-
-                <div class="form-divider-section">
-                    <div class="section-question">Are you a SHE Swings partner?*</div>
-                    <div class="radio-options">
-                        <label class="radio-label"><input type="radio" name="partner" value="yes"> Yes</label>
-                        <label class="radio-label"><input type="radio" name="partner" value="no" checked> No</label>
-                    </div>
-                </div>
-
-                <div class="form-divider-section">
-                    <div class="section-question">Do you have a registration code?</div>
-                    <div class="promo-code-box">
-                        <input type="text" class="form-input" style="width: 280px;" placeholder="Enter code">
-                        <button type="button" class="btn-apply">Apply</button>
                     </div>
                 </div>
 
