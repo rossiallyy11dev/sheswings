@@ -560,7 +560,7 @@
             grid-column: 1;
             grid-row: 2;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr auto 1fr; /* 3-column layout to center the location precisely */
             align-self: end;
             width: 100%;
         }
@@ -573,7 +573,8 @@
         }
 
         .reg-meta-item.location {
-            justify-self: center; /* Pushes location to the exact middle of the left column space */
+            grid-column: 2; /* Sits exactly in the middle column */
+            justify-self: start;
         }
 
         .reg-image-container {
@@ -963,6 +964,7 @@
                 gap: 24px;
             }
             .reg-meta-item.location {
+                grid-column: 1;
                 justify-self: start;
             }
             .form-grid {
