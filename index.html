@@ -30,7 +30,7 @@
             overflow-x: hidden;
         }
 
-        /* Full Edge-to-Edge Navbar */
+        /* Full Edge-to-Edge Navbar with Sticky Offset & No Border Line */
         .navbar {
             position: sticky;
             top: 8px;
@@ -44,7 +44,7 @@
             margin: 0 0 40px 0;
             padding: 24px 16px;
             background-color: #FFFFFF;
-            border-bottom: none;
+            border-bottom: none; /* Removed the line across the page */
             border-radius: 0;
             box-shadow: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -63,7 +63,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* Page Padding */
+        /* Ultra-Thin Edge Margins */
         .hero-section, .content-section, .registration-page {
             padding-left: 16px;
             padding-right: 16px;
@@ -530,13 +530,11 @@
             padding-bottom: 24px;
             margin-bottom: 48px;
             width: 100%;
-            padding-left: 48px;  /* Uniform margin matching form container */
-            padding-right: 48px; /* Uniform margin matching form container */
         }
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Balanced 50/50 hero split inside uniform margins */
+            grid-template-columns: 1fr calc(50vw - 32px);
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
@@ -577,7 +575,10 @@
             grid-row: 1 / span 2;
             width: 100%;
             height: 720px;
-            border-radius: 28px;
+            border-top-left-radius: 28px;
+            border-bottom-left-radius: 28px;
+            border-top-right-radius: 28px;
+            border-bottom-right-radius: 28px;
             overflow: hidden;
             background-color: #E8E8EC;
             display: flex;
@@ -595,7 +596,7 @@
             display: block;
         }
 
-        /* Form Container */
+        /* Form Container with increased side padding */
         .form-container {
             padding-left: 48px;
             padding-right: 48px;
@@ -935,10 +936,6 @@
                 max-width: 100%;
                 height: 280px;
             }
-            .reg-hero-wrapper {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
             .reg-hero-container {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto auto;
@@ -964,10 +961,6 @@
             }
             .form-grid {
                 grid-template-columns: 1fr;
-            }
-            .form-container {
-                padding-left: 16px;
-                padding-right: 16px;
             }
             .reg-hero-wrapper {
                 border-bottom: none;
