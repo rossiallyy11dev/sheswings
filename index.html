@@ -44,7 +44,7 @@
             margin: 0 0 40px 0;
             padding: 24px 16px;
             background-color: #FFFFFF;
-            border-bottom: none; /* Removed the line across the page */
+            border-bottom: none;
             border-radius: 0;
             box-shadow: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -534,7 +534,7 @@
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr calc(50vw - 32px);
+            grid-template-columns: 1fr 1fr; /* Perfectly aligns right edge to match 16px page padding */
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
