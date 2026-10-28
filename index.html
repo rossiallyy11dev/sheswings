@@ -530,13 +530,11 @@
             padding-bottom: 24px;
             margin-bottom: 48px;
             width: 100%;
-            padding-left: 16px;  /* Insets entire hero grid to match page margin */
-            padding-right: 16px; /* Insets photo right edge to match title margin */
         }
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr calc(50vw - 32px);
+            grid-template-columns: 1fr 1fr; /* Perfectly aligns right edge to match 16px page padding */
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
