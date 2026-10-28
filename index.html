@@ -560,7 +560,7 @@
             grid-column: 1;
             grid-row: 2;
             display: grid;
-            grid-template-columns: 1fr auto 1fr; /* 3-column layout to center the location precisely */
+            grid-template-columns: 1fr auto 1fr;
             align-self: end;
             width: 100%;
         }
@@ -573,8 +573,9 @@
         }
 
         .reg-meta-item.location {
-            grid-column: 2; /* Sits exactly in the middle column */
+            grid-column: 2;
             justify-self: start;
+            margin-left: 32px; /* Nudges the location a smidge to the right */
         }
 
         .reg-image-container {
@@ -966,6 +967,7 @@
             .reg-meta-item.location {
                 grid-column: 1;
                 justify-self: start;
+                margin-left: 0;
             }
             .form-grid {
                 grid-template-columns: 1fr;
