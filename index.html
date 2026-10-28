@@ -534,7 +534,7 @@
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            grid-template-columns: 1fr 1.15fr; /* Matches the ~53% wide photo proportion from Stripe Sessions */
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
@@ -548,11 +548,12 @@
         }
 
         .reg-title {
-            font-size: clamp(3.6rem, 6vw, 5.8rem);
+            font-size: clamp(3.2rem, 5.2vw, 5.4rem);
             font-weight: 400;
-            line-height: 0.95;
+            line-height: 0.96;
             letter-spacing: -0.04em;
             color: #555555;
+            max-width: 480px; /* Forces tight, editorial line breaks like Stripe Sessions */
         }
 
         .reg-meta-bar {
@@ -561,7 +562,7 @@
             display: flex;
             gap: 60px;
             align-self: end;
-            margin-left: 12px;
+            margin-left: 0;
         }
 
         .reg-meta-item {
@@ -576,10 +577,7 @@
             grid-row: 1 / span 2;
             width: 100%;
             height: 720px;
-            border-top-left-radius: 28px;
-            border-bottom-left-radius: 28px;
-            border-top-right-radius: 28px;
-            border-bottom-right-radius: 28px;
+            border-radius: 28px;
             overflow: hidden;
             background-color: #E8E8EC;
             display: flex;
