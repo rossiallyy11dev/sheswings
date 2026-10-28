@@ -575,7 +575,7 @@
         .reg-meta-item.location {
             grid-column: 2;
             justify-self: start;
-            margin-left: 150px; /* Adjusted slightly more to the right */
+            margin-left: 150px;
         }
 
         .reg-image-container {
@@ -602,7 +602,7 @@
             display: block;
         }
 
-        /* Form Container with increased side padding */
+        /* Form Container with side padding */
         .form-container {
             padding-left: 48px;
             padding-right: 48px;
@@ -612,7 +612,17 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px 40px;
-            margin-bottom: 48px;
+            margin-bottom: 32px;
+        }
+
+        .form-section-heading {
+            grid-column: 1 / -1;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #1A0B2E;
+            padding-top: 24px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            margin-top: 16px;
         }
 
         .form-group {
@@ -662,6 +672,34 @@
             font-size: 0.825rem;
             color: #777788;
             margin-top: 4px;
+        }
+
+        /* Foursome Dynamic Section */
+        .foursome-container {
+            grid-column: 1 / -1;
+            background-color: #F8F8FC;
+            border: 1px solid #E0E0E8;
+            border-radius: 14px;
+            padding: 24px;
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .foursome-container.active {
+            display: flex;
+        }
+
+        .foursome-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1A0B2E;
+        }
+
+        .teammate-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
         }
 
         .order-summary-section {
@@ -972,6 +1010,9 @@
             .form-grid {
                 grid-template-columns: 1fr;
             }
+            .teammate-row {
+                grid-template-columns: 1fr;
+            }
             .reg-hero-wrapper {
                 border-bottom: none;
                 padding-bottom: 0;
@@ -1242,6 +1283,7 @@
         <div class="form-container">
             <form id="registration-form" onsubmit="handleFormSubmit(event)">
                 <div class="form-grid">
+                    <!-- FIRST HALF: UNTOUCHED -->
                     <div class="form-group">
                         <label class="form-label">First name*</label>
                         <input type="text" class="form-input" required>
@@ -1317,6 +1359,7 @@
                         </select>
                     </div>
 
+                    <!-- SECOND HALF: ENHANCED FOR TOURNAMENT REGISTRATION -->
                     <div class="form-group">
                         <label class="form-label">Job function*</label>
                         <select class="form-select" required>
@@ -1332,6 +1375,63 @@
                         <input type="text" class="form-input" required>
                         <div class="field-subtext">Enter your title as you'd like it printed on your badge.</div>
                     </div>
+
+                    <div class="form-section-heading">Registration Options</div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Registration Type*</label>
+                        <select class="form-select" id="reg-type-select" onchange="toggleRegOptions()" required>
+                            <option value="individual" data-price="250">Individual Player — $250.00 (Includes 18 Holes + All Receptions)</option>
+                            <option value="foursome" data-price="1000">Foursome / Team Captain — $1,000.00 (Includes 4 Players + All Receptions)</option>
+                            <option value="social" data-price="100">Social & Guest Pass — $100.00 (Receptions & Luncheon Only)</option>
+                            <option value="sponsor" data-price="0">Sponsor Representative — Complimentary (Requires Code)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-section-heading" id="golf-details-heading">Golf & Event Preferences</div>
+
+                    <div class="form-group" id="group-handicap">
+                        <label class="form-label">Handicap / Estimated Score</label>
+                        <input type="text" class="form-input" placeholder="e.g., 18 or 'Beginner'">
+                    </div>
+
+                    <div class="form-group" id="group-rentals">
+                        <label class="form-label">Golf Club Rental Needs</label>
+                        <select class="form-select">
+                            <option value="none">No rentals needed (bringing my own)</option>
+                            <option value="rh">Yes — Right Handed Set</option>
+                            <option value="lh">Yes — Left Handed Set</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Dietary Restrictions or Food Allergies</label>
+                        <input type="text" class="form-input" placeholder="e.g., None, Vegetarian, Gluten-Free, Nut Allergy">
+                    </div>
+
+                    <!-- FOURSOME TEAMMATES DYNAMIC CONTAINER -->
+                    <div class="foursome-container" id="foursome-section">
+                        <div class="foursome-title">Foursome Teammate Details</div>
+                        <div class="field-subtext">You can add teammate details now or leave empty and add them later.</div>
+
+                        <div class="teammate-row">
+                            <input type="text" class="form-input" placeholder="Player 2 Name">
+                            <input type="email" class="form-input" placeholder="Player 2 Email">
+                            <input type="text" class="form-input" placeholder="Player 2 Handicap">
+                        </div>
+
+                        <div class="teammate-row">
+                            <input type="text" class="form-input" placeholder="Player 3 Name">
+                            <input type="email" class="form-input" placeholder="Player 3 Email">
+                            <input type="text" class="form-input" placeholder="Player 3 Handicap">
+                        </div>
+
+                        <div class="teammate-row">
+                            <input type="text" class="form-input" placeholder="Player 4 Name">
+                            <input type="email" class="form-input" placeholder="Player 4 Email">
+                            <input type="text" class="form-input" placeholder="Player 4 Handicap">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Order Summary -->
@@ -1339,12 +1439,12 @@
                     <h2 class="summary-left-title">Order summary</h2>
                     <div class="summary-right-details">
                         <div class="summary-row">
-                            <span>Registration Fee</span>
-                            <span>$1.00</span>
+                            <span id="summary-label">Individual Player Registration</span>
+                            <span id="summary-fee">$250.00</span>
                         </div>
                         <div class="summary-row total">
                             <span>Total</span>
-                            <span>$1.00</span>
+                            <span id="summary-total">$250.00</span>
                         </div>
                         <div style="overflow: hidden; clear: both;">
                             <button type="submit" class="btn-submit-reg">Register</button>
@@ -1403,7 +1503,7 @@
 
             <div class="pay-amount-badge">
                 <span>Total Due:</span>
-                <span>$1.00 USD</span>
+                <span id="modal-pay-amount">$250.00 USD</span>
             </div>
 
             <form onsubmit="handlePaymentSubmit(event)">
@@ -1428,7 +1528,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-submit-reg" style="width: 100%; height: 52px; font-size: 1.05rem; float: none; margin-top: 0;">Pay $1.00 & Confirm</button>
+                <button type="submit" class="btn-submit-reg" style="width: 100%; height: 52px; font-size: 1.05rem; float: none; margin-top: 0;">Pay & Confirm</button>
             </form>
         </div>
     </div>
@@ -1481,7 +1581,52 @@
             } else if (hash === '#faqs') {
                 navigateTo('faqs');
             }
+            toggleRegOptions();
         });
+
+        function toggleRegOptions() {
+            const regSelect = document.getElementById('reg-type-select');
+            const selectedOpt = regSelect.options[regSelect.selectedIndex];
+            const val = regSelect.value;
+            const price = parseInt(selectedOpt.getAttribute('data-price')) || 0;
+
+            const handicapGroup = document.getElementById('group-handicap');
+            const rentalsGroup = document.getElementById('group-rentals');
+            const golfHeading = document.getElementById('golf-details-heading');
+            const foursomeSection = document.getElementById('foursome-section');
+
+            const summaryLabel = document.getElementById('summary-label');
+            const summaryFee = document.getElementById('summary-fee');
+            const summaryTotal = document.getElementById('summary-total');
+            const modalPayAmount = document.getElementById('modal-pay-amount');
+
+            // Toggle Golf Fields
+            if (val === 'social') {
+                handicapGroup.style.display = 'none';
+                rentalsGroup.style.display = 'none';
+                golfHeading.textContent = 'Event Preferences';
+            } else {
+                handicapGroup.style.display = 'flex';
+                rentalsGroup.style.display = 'flex';
+                golfHeading.textContent = 'Golf & Event Preferences';
+            }
+
+            // Toggle Foursome Fields
+            if (val === 'foursome') {
+                foursomeSection.classList.add('active');
+            } else {
+                foursomeSection.classList.remove('active');
+            }
+
+            // Update Summary
+            const formattedPrice = '$' + price.toFixed(2);
+            summaryLabel.textContent = selectedOpt.text.split('—')[0].trim() + ' Registration';
+            summaryFee.textContent = formattedPrice;
+            summaryTotal.textContent = formattedPrice;
+            if (modalPayAmount) {
+                modalPayAmount.textContent = formattedPrice + ' USD';
+            }
+        }
 
         function handleFormSubmit(e) {
             e.preventDefault();
@@ -1494,7 +1639,8 @@
 
         function handlePaymentSubmit(e) {
             e.preventDefault();
-            alert('Registration and payment of $1.00 successful! Thank you for registering.');
+            const totalText = document.getElementById('summary-total').textContent;
+            alert('Registration and payment of ' + totalText + ' successful! Thank you for registering.');
             closeModal();
             navigateTo('home');
         }
