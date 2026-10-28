@@ -534,7 +534,7 @@
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Perfectly aligns right edge to match 16px page padding */
+            grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
@@ -587,6 +587,8 @@
             align-self: end;
             border: 1px solid rgba(0, 0, 0, 0.05);
             margin-right: 0;
+            position: relative;
+            left: -24px; /* Shifts the photo a smidge to the left while keeping its exact size */
         }
 
         .reg-image-media {
