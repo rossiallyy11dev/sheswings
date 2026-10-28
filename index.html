@@ -536,7 +536,7 @@
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr calc(50vw - 32px);
+            grid-template-columns: 1fr calc(50vw - 48px); /* Adjusted grid to create a slightly larger, clean right margin */
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
@@ -562,7 +562,7 @@
             display: flex;
             gap: 60px;
             align-self: end;
-            margin-left: 12px; /* Shifted a tiny bit to the right */
+            margin-left: 12px; /* Tiny bit to the right as requested previously */
         }
 
         .reg-meta-item {
@@ -575,7 +575,7 @@
         .reg-image-container {
             grid-column: 2;
             grid-row: 1 / span 2;
-            width: calc(100% + 16px);
+            width: 100%;
             height: 720px;
             border-top-left-radius: 28px;
             border-bottom-left-radius: 28px;
@@ -588,6 +588,7 @@
             justify-content: center;
             align-self: end;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-right: 16px; /* Adds a nice, slightly larger margin from the right edge of the screen */
         }
 
         .reg-image-media {
@@ -945,6 +946,7 @@
                 height: 380px;
                 min-height: auto;
                 border-radius: 28px;
+                margin-right: 0;
             }
             .reg-meta-bar {
                 grid-column: 1;
