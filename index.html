@@ -66,16 +66,9 @@
         }
 
         /* Ultra-Thin Edge Margins */
-        .hero-section, .content-section {
+        .hero-section, .content-section, .registration-page {
             padding-left: 16px;
             padding-right: 16px;
-            width: 100%;
-        }
-
-        /* Registration page specific padding: keep left padding, remove right padding for edge-to-edge image */
-        .registration-page {
-            padding-left: 16px;
-            padding-right: 0;
             width: 100%;
         }
 
@@ -543,7 +536,7 @@
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr 50vw;
+            grid-template-columns: 1fr calc(50vw - 16px); /* Perfectly balances right margin to match 16px page padding */
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
@@ -553,7 +546,6 @@
         .reg-title-col {
             grid-column: 1;
             grid-row: 1;
-            padding-left: 16px; /* Retain left margin for text */
         }
 
         .reg-title {
@@ -570,7 +562,6 @@
             display: flex;
             gap: 60px;
             align-self: end;
-            margin-left: 16px; /* Retain left margin for meta text */
         }
 
         .reg-meta-item {
@@ -585,11 +576,10 @@
             grid-row: 1 / span 2;
             width: 100%;
             height: 720px;
-            /* Curved top-left and bottom-left corners, flush square on the right edge */
             border-top-left-radius: 28px;
             border-bottom-left-radius: 28px;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            border-top-right-radius: 28px; /* Balanced rounded corners matching left side */
+            border-bottom-right-radius: 28px;
             overflow: hidden;
             background-color: #E8E8EC;
             display: flex;
@@ -597,7 +587,6 @@
             justify-content: center;
             align-self: end;
             border: 1px solid rgba(0, 0, 0, 0.05);
-            border-right: none;
         }
 
         .reg-image-media {
@@ -605,11 +594,6 @@
             height: 100%;
             object-fit: cover;
             display: block;
-        }
-
-        .form-container {
-            padding-left: 16px;
-            padding-right: 16px;
         }
 
         .form-grid {
@@ -952,11 +936,6 @@
                 gap: 28px;
                 margin-top: 0;
             }
-            .reg-title-col {
-                grid-column: 1;
-                grid-row: 1;
-                padding-left: 0;
-            }
             .reg-image-container {
                 grid-column: 1;
                 grid-row: 2;
@@ -964,17 +943,13 @@
                 max-width: 100%;
                 height: 380px;
                 min-height: auto;
-                border-radius: 28px; /* Restore all-around rounded corners on mobile */
+                border-radius: 28px;
             }
             .reg-meta-bar {
                 grid-column: 1;
                 grid-row: 3;
                 gap: 32px;
                 flex-direction: column;
-                margin-left: 0;
-            }
-            .registration-page {
-                padding-right: 16px; /* Restore right padding on mobile */
             }
             .form-grid {
                 grid-template-columns: 1fr;
