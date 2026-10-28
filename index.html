@@ -18,7 +18,7 @@
         }
 
         html {
-            scroll-padding-top: 100px; /* Leaves breathing room below the sticky navbar */
+            scroll-padding-top: 100px;
         }
 
         body {
@@ -30,10 +30,10 @@
             overflow-x: hidden;
         }
 
-        /* Full Edge-to-Edge Navbar with Sticky Offset & Opaque Background */
+        /* Full Edge-to-Edge Navbar with Sticky Offset & No Border Line */
         .navbar {
             position: sticky;
-            top: 8px; /* Safe buffer from browser top edge to prevent glitching */
+            top: 8px;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -43,8 +43,8 @@
             width: 100%;
             margin: 0 0 40px 0;
             padding: 24px 16px;
-            background-color: #FFFFFF; /* Opaque background prevents overlap/transparency glitches */
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: #FFFFFF;
+            border-bottom: none; /* Removed the line across the page */
             border-radius: 0;
             box-shadow: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -534,7 +534,7 @@
 
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr calc(50vw - 32px); /* Perfectly aligns right edge to match 16px page padding */
+            grid-template-columns: 1fr calc(50vw - 32px);
             grid-template-rows: 1fr auto;
             column-gap: 40px;
             row-gap: 36px;
@@ -560,7 +560,7 @@
             display: flex;
             gap: 60px;
             align-self: end;
-            margin-left: 12px; /* Tiny shift to the right */
+            margin-left: 12px;
         }
 
         .reg-meta-item {
@@ -586,7 +586,7 @@
             justify-content: center;
             align-self: end;
             border: 1px solid rgba(0, 0, 0, 0.05);
-            margin-right: 0; /* Aligned exactly with page right padding */
+            margin-right: 0;
         }
 
         .reg-image-media {
@@ -1464,7 +1464,6 @@
             }
         }
 
-        // Handle initial load or browser back/forward buttons with hashes
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash;
             if (hash === '#register') {
