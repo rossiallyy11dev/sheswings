@@ -26,14 +26,15 @@
             background-color: #FFFFFF;
             color: #555555;
             padding: 0;
+            padding-top: 80px; /* Offset for fixed navbar */
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* Full Edge-to-Edge Navbar with Sticky Offset & No Border Line */
+        /* FIXED NAVBAR WITH SMOOTH PILL TRANSITION */
         .navbar {
-            position: sticky;
-            top: 8px;
+            position: fixed;
+            top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -41,26 +42,34 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin: 0 0 40px 0;
-            padding: 24px 16px;
-            background-color: #FFFFFF;
-            border-bottom: none;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px 24px;
+            background-color: transparent;
+            border: 1px solid transparent;
             border-radius: 0;
             box-shadow: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-radius 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        top 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* Scrolled Floating State */
         .navbar.scrolled {
             top: 12px;
             width: calc(100% - 32px);
-            margin: 0 auto 40px auto;
-            padding: 11px 16px;
-            background-color: rgba(238, 236, 240, 0.9);
+            padding: 10px 20px;
+            background-color: rgba(238, 236, 240, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
         /* Ultra-Thin Edge Margins */
@@ -118,7 +127,7 @@
             padding: 9px 28px;
             border-radius: 999px;
             text-decoration: none;
-            transition: background-color 0.2s ease, opacity 0.2s ease;
+            transition: background-color 0.2s ease, opacity 0.2s ease, padding 0.3s ease;
             display: inline-block;
             text-align: center;
             border: none;
@@ -1283,7 +1292,7 @@
         <div class="form-container">
             <form id="registration-form" onsubmit="handleFormSubmit(event)">
                 <div class="form-grid">
-                    <!-- FIRST HALF: UNTOUCHED -->
+                    <!-- FIRST HALF -->
                     <div class="form-group">
                         <label class="form-label">First name*</label>
                         <input type="text" class="form-input" required>
@@ -1359,7 +1368,7 @@
                         </select>
                     </div>
 
-                    <!-- SECOND HALF: ENHANCED FOR TOURNAMENT REGISTRATION -->
+                    <!-- SECOND HALF -->
                     <div class="form-group">
                         <label class="form-label">Job function*</label>
                         <select class="form-select" required>
@@ -1533,20 +1542,22 @@
         </div>
     </div>
 
+    <!-- JS WITH HYSTERESIS SCROLL LOGIC TO ELIMINATE GLITCH -->
     <script>
         const nav = document.getElementById('navbar');
 
         function updateNavbar() {
             if (nav) {
-                if (window.scrollY > 20) {
+                // Hysteresis threshold prevents glitching/flickering near boundary
+                if (window.scrollY > 30) {
                     nav.classList.add('scrolled');
-                } else {
+                } else if (window.scrollY < 10) {
                     nav.classList.remove('scrolled');
                 }
             }
         }
 
-        window.addEventListener('scroll', updateNavbar);
+        window.addEventListener('scroll', updateNavbar, { passive: true });
         window.addEventListener('load', updateNavbar);
 
         function navigateTo(target) {
