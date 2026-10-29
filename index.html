@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* VARIABLE-DRIVEN WIDE DIAGONAL MASK MATCHING STRIPE INSPECTOR */
+        /* EXACT STRIPE-STYLE SCROLL MASK: TOP IS CRISP, FADE SWEEPS DOWN */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,9 +262,9 @@
             font-weight: 400;
             max-width: 650px;
             color: #555555;
-            /* Uses CSS variable --highlightOffset updated smoothly via scroll */
-            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 30%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 30%) + 35%));
-            mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 30%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 30%) + 35%));
+            /* Top is fully opaque (solid black), fading down to translucent based on --highlightOffset */
+            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 20%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 20%) + 40%));
+            mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 20%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 20%) + 40%));
             transition: -webkit-mask-image 0.1s ease-out, mask-image 0.1s ease-out;
         }
 
@@ -1571,7 +1571,7 @@
             }
         }
 
-        /* SCROLL-DRIVEN CSS VARIABLE HIGHLIGHT OFFSET ANIMATION */
+        /* EXACT STRIPE SCROLL-DRIVEN HIGHLIGHT OFFSET ANIMATION */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
@@ -1587,8 +1587,8 @@
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Dynamically drive CSS variable matching Stripe's --highlightOffset
-            const offsetVal = 10 + (85 * progress);
+            // Smoothly drives --highlightOffset so top remains solid and fade sweeps down
+            const offsetVal = 10 + (90 * progress);
             aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
 
             if (progress >= 1) {
