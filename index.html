@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* STRIPE-STYLE SUBTLE SCROLL GRADIENT FADE */
+        /* SUBTLE STRIPE-STYLE GRADIENT TEXT REVEAL */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,14 +262,13 @@
             font-weight: 400;
             max-width: 710px;
             color: #555555;
-            opacity: 0.3; /* Default resting unfocused state */
-            transform: translateY(10px);
-            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .section-text.revealed {
-            opacity: 1;
-            transform: translateY(0);
+        /* Individual words that smoothly shift opacity based on scroll position */
+        .stripe-word {
+            opacity: 0.28;
+            transition: opacity 0.1s ease-out;
+            display: inline;
         }
 
         .guest-intro-text {
@@ -1111,7 +1110,7 @@
             </div>
         </section>
 
-        <!-- About Section with Stripe-Style Smooth Scroll Reveal -->
+        <!-- About Section with Subtle Stripe-Style Scroll Gradient Fade -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
@@ -1570,32 +1569,56 @@
             }
         }
 
-        /* STRIPE-STYLE SUBTLE SCROLL FADE REVEAL */
-        function checkScrollReveal() {
-            const aboutText = document.getElementById('about-text');
-            if (!aboutText) return;
+        /* SUBTLE STRIPE-STYLE GRADIENT SCROLL REVEAL */
+        let stripeWordSpans = [];
 
-            const rect = aboutText.getBoundingClientRect();
+        function initStripeScrollReveal() {
+            const container = document.getElementById('about-text');
+            if (!container) return;
+            
+            const words = container.textContent.trim().split(/\s+/);
+            container.innerHTML = words.map(word => `<span class="stripe-word">${word}</span>`).join(' ');
+            stripeWordSpans = Array.from(container.querySelectorAll('.stripe-word'));
+        }
+
+        function handleStripeScrollReveal() {
+            const container = document.getElementById('about-text');
+            if (!container || !stripeWordSpans.length) return;
+
+            const rect = container.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            // Trigger when the element enters the lower-middle part of the viewport
-            if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.1) {
-                aboutText.classList.add('revealed');
-            } else {
-                // Optional: remove class if you want it to fade back out when scrolling away
-                // aboutText.classList.remove('revealed');
-            }
+            // Define the smooth scroll range where the text fades from muted to dark
+            const startPoint = windowHeight * 0.9;
+            const endPoint = windowHeight * 0.35;
+            const totalDistance = startPoint - endPoint;
+
+            const currentPos = startPoint - rect.top;
+            let scrollProgress = currentPos / totalDistance;
+            scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+
+            // Apply a smooth gradient curve across the words based on overall paragraph progress
+            stripeWordSpans.forEach((span, index) => {
+                const wordOffset = index / stripeWordSpans.length;
+                // Creates a smooth rolling gradient window like Stripe Sessions
+                const wordProgress = (scrollProgress - wordOffset * 0.5) * 2;
+                const clampedProgress = Math.max(0, Math.min(1, wordProgress));
+                
+                // Fade smoothly from a subtle 0.28 gray up to full 1.0 dark
+                const opacity = 0.28 + (0.72 * clampedProgress);
+                span.style.opacity = opacity.toFixed(3);
+            });
         }
 
         function onScrollHandler() {
             updateNavbar();
-            checkScrollReveal();
+            handleStripeScrollReveal();
         }
 
         window.addEventListener('scroll', onScrollHandler, { passive: true });
         window.addEventListener('load', () => {
             updateNavbar();
-            checkScrollReveal();
+            handleStripeScrollReveal();
         });
 
         // Core view router
@@ -1620,7 +1643,7 @@
                 regPage.classList.remove('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-            checkScrollReveal();
+            handleStripeScrollReveal();
         }
 
         // Navigation pushing real states onto history stack
@@ -1644,6 +1667,8 @@
 
         // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
+            initStripeScrollReveal();
+
             const banner = document.getElementById('hero-banner');
             if (banner && !sessionStorage.getItem('bannerAnimated')) {
                 banner.style.opacity = '0';
@@ -1664,7 +1689,7 @@
                 history.replaceState({view: window.location.hash || 'home'}, '', window.location.href);
             }
             handleRoute();
-            checkScrollReveal();
+            handleStripeScrollReveal();
             toggleRegOptions();
         });
 
