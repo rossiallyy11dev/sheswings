@@ -29,12 +29,12 @@
             background-color: #FFFFFF;
             color: #555555;
             padding: 0;
-            padding-top: 120px; /* Generous offset for fixed navbar */
+            padding-top: 120px;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* FIXED NAVBAR WITH SMOOTH PILL TRANSITION */
+        /* FIXED NAVBAR (UNTOUCHED) */
         .navbar {
             position: fixed;
             top: 0;
@@ -45,21 +45,13 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 100%;
             margin: 0 auto;
             padding: 20px 24px;
             background-color: transparent;
             border: 1px solid transparent;
             border-radius: 0;
             box-shadow: none;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        border-radius 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        top 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                        width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* Scrolled Floating State */
@@ -75,7 +67,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
-        /* Ultra-Thin Edge Margins */
         .hero-section, .content-section, .registration-page {
             padding-left: 16px;
             padding-right: 16px;
@@ -211,7 +202,6 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            padding: 0;
             opacity: 1; 
             transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -253,7 +243,7 @@
             flex: 1;
         }
 
-        /* FIRST LINE CRISP & SOLID: Gradient starts fully opaque for the first 35% before fading */
+        /* EXACT STRIPE VERTICAL SCROLL-REVEAL MASK */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,15 +252,14 @@
             font-weight: 400;
             max-width: 650px;
             color: #555555;
-            /* Solid black up to (--highlightOffset + 35%), ensuring first line has zero fade */
-            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 0%), rgba(0,0,0,1) calc(var(--highlightOffset, 0%) + 35%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 0%) + 65%));
-            mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 0%), rgba(0,0,0,1) calc(var(--highlightOffset, 0%) + 35%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 0%) + 65%));
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) var(--highlightOffset, 20%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 20%) + 35%));
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) var(--highlightOffset, 20%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 20%) + 35%));
             transition: -webkit-mask-image 0.1s ease-out, mask-image 0.1s ease-out;
         }
 
         .section-text.fully-revealed {
-            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-            mask-image: linear-gradient(115deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
         }
 
         .guest-intro-text {
@@ -626,7 +615,6 @@
             display: block;
         }
 
-        /* Form Container with side padding */
         .form-container {
             padding-left: 48px;
             padding-right: 48px;
@@ -698,7 +686,6 @@
             margin-top: 4px;
         }
 
-        /* Foursome Dynamic Section */
         .foursome-container {
             grid-column: 1 / -1;
             background-color: #F8F8FC;
@@ -783,7 +770,7 @@
             background-color: #0099D8;
         }
 
-        /* Full-Width Footer (#00AAEE Brand Blue Background + #FFFFFF White Text) */
+        /* Full-Width Footer */
         .site-footer {
             background-color: #00AAEE;
             color: #FFFFFF;
@@ -1112,7 +1099,7 @@
             </div>
         </section>
 
-        <!-- About Section with Solid First Line and Dynamic Sweep -->
+        <!-- About Section with Exact Stripe Vertical Scroll-Reveal -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
@@ -1571,7 +1558,7 @@
             }
         }
 
-        /* MASK ANIMATION: Solid start for the first line, sweeping diagonal fade onward */
+        /* EXACT STRIPE VERTICAL SCROLL REVEAL */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
@@ -1579,7 +1566,7 @@
             const rect = aboutText.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            const startPoint = windowHeight * 0.9;
+            const startPoint = windowHeight * 0.85;
             const endPoint = windowHeight * 0.15;
             const totalDistance = startPoint - endPoint;
 
@@ -1587,7 +1574,7 @@
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            const offsetVal = -10 + (130 * progress);
+            const offsetVal = progress * 100;
             aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
 
             if (progress >= 1) {
@@ -1633,7 +1620,6 @@
             handleStripeMaskReveal();
         }
 
-        // Navigation pushing real states onto history stack
         function navigateTo(target) {
             if (target === 'register') {
                 history.pushState({view: 'register'}, '', '#register');
@@ -1647,12 +1633,10 @@
             }
         }
 
-        // Listen to browser back/forward buttons
         window.addEventListener('popstate', (e) => {
             handleRoute();
         });
 
-        // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
             const banner = document.getElementById('hero-banner');
             if (banner && !sessionStorage.getItem('bannerAnimated')) {
@@ -1694,7 +1678,6 @@
             const summaryTotal = document.getElementById('summary-total');
             const modalPayAmount = document.getElementById('modal-pay-amount');
 
-            // Toggle Golf Fields
             if (val === 'social') {
                 handicapGroup.style.display = 'none';
                 rentalsGroup.style.display = 'none';
@@ -1705,14 +1688,12 @@
                 golfHeading.textContent = 'Golf & Event Preferences';
             }
 
-            // Toggle Foursome Fields
             if (val === 'foursome') {
                 foursomeSection.classList.add('active');
             } else {
                 foursomeSection.classList.remove('active');
             }
 
-            // Update Summary
             const formattedPrice = '$' + price.toFixed(2);
             summaryLabel.textContent = selectedOpt.text.split('—')[0].trim() + ' Registration';
             summaryFee.textContent = formattedPrice;
