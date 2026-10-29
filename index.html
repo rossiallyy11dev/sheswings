@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* EXACT STRIPE-STYLE SCROLL MASK: TOP IS CRISP, FADE SWEEPS DOWN */
+        /* EXACT STRIPE SCROLL-DRIVEN MASK: TOP IS CRISP, DIAGONAL SWEEPS DOWN */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,15 +262,15 @@
             font-weight: 400;
             max-width: 650px;
             color: #555555;
-            /* Top is fully opaque (solid black), fading down to translucent based on --highlightOffset */
-            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 20%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 20%) + 40%));
-            mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 20%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 20%) + 40%));
+            /* Driven by CSS variable --highlightOffset updated smoothly via scroll */
+            -webkit-mask-image: linear-gradient(295deg, rgba(0,0,0,1) var(--highlightOffset, 0%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 0%) + 35%));
+            mask-image: linear-gradient(295deg, rgba(0,0,0,1) var(--highlightOffset, 0%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 0%) + 35%));
             transition: -webkit-mask-image 0.1s ease-out, mask-image 0.1s ease-out;
         }
 
         .section-text.fully-revealed {
-            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-            mask-image: linear-gradient(115deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            -webkit-mask-image: linear-gradient(295deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(295deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
         }
 
         .guest-intro-text {
@@ -1116,7 +1116,7 @@
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
-                <p class="section-text" id="about-text" style="--highlightOffset: 20%;">
+                <p class="section-text" id="about-text" style="--highlightOffset: 0%;">
                     Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
@@ -1587,8 +1587,8 @@
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Smoothly drives --highlightOffset so top remains solid and fade sweeps down
-            const offsetVal = 10 + (90 * progress);
+            // Smoothly sweeps offset from 0% to 110% as you scroll down
+            const offsetVal = progress * 110;
             aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
 
             if (progress >= 1) {
