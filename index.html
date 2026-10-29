@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* SCROLL-DRIVEN DIAGONAL ANGLE FADE MASK */
+        /* WIDER SCROLL-DRIVEN DIAGONAL MASK STARTING AT LINE 3 */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,15 +262,15 @@
             font-weight: 400;
             max-width: 650px;
             color: #555555;
-            /* Dynamically updated via JS scroll listener */
-            -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,1) 25%, rgba(0,0,0,0.15) 55%);
-            mask-image: linear-gradient(120deg, rgba(0,0,0,1) 25%, rgba(0,0,0,0.15) 55%);
+            /* Wider transition band starting further down */
+            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) 45%, rgba(0,0,0,0.15) 85%);
+            mask-image: linear-gradient(115deg, rgba(0,0,0,1) 45%, rgba(0,0,0,0.15) 85%);
             transition: -webkit-mask-image 0.1s ease-out, mask-image 0.1s ease-out;
         }
 
         .section-text.fully-revealed {
-            -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-            mask-image: linear-gradient(120deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(115deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
         }
 
         .guest-intro-text {
@@ -1112,7 +1112,7 @@
             </div>
         </section>
 
-        <!-- About Section with Scroll-Driven Diagonal Fade Effect -->
+        <!-- About Section with Scroll-Driven Wider Diagonal Fade Effect -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
@@ -1571,7 +1571,7 @@
             }
         }
 
-        /* SCROLL-DRIVEN DIAGONAL MASK ANIMATION */
+        /* SCROLL-DRIVEN WIDER DIAGONAL MASK ANIMATION */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
@@ -1587,11 +1587,11 @@
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Dynamically slide the gradient stops based on scroll progress
-            const solidStop = 25 + (75 * progress);
-            const fadeStop = 55 + (45 * progress);
+            // Wider transition band starting around line 3
+            const solidStop = 45 + (55 * progress);
+            const fadeStop = 85 + (15 * progress);
 
-            const maskValue = `linear-gradient(120deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.15) ${fadeStop}%)`;
+            const maskValue = `linear-gradient(115deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.15) ${fadeStop}%)`;
             aboutText.style.webkitMaskImage = maskValue;
             aboutText.style.maskImage = maskValue;
 
