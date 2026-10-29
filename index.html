@@ -212,10 +212,12 @@
             object-fit: cover;
             display: block;
             padding: 0;
-            opacity: 0; /* Starts hidden to avoid the loading flash */
+            opacity: 1; /* Default to visible for normal navigation */
         }
 
+        /* Fade-in animation class applied ONLY on first site load */
         .hero-banner-image.animate-load {
+            opacity: 0;
             animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
@@ -1561,7 +1563,7 @@
         </div>
     </div>
 
-    <!-- JS WITH INITIAL-LOAD-ONLY BANNER ANIMATION & STRIPE-STYLE ROUTING -->
+    <!-- JS WITH FIRST-LOAD-ONLY ANIMATION & STRIPE-STYLE ROUTING -->
     <script>
         const nav = document.getElementById('navbar');
 
@@ -1623,13 +1625,11 @@
 
         // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
-            // Trigger animation only on initial first load of the session
+            // Trigger animation ONLY on initial first load of the session
             const banner = document.getElementById('hero-banner');
             if (banner && !sessionStorage.getItem('bannerAnimated')) {
                 banner.classList.add('animate-load');
                 sessionStorage.setItem('bannerAnimated', 'true');
-            } else if (banner) {
-                banner.style.opacity = '1';
             }
 
             if (!history.state) {
