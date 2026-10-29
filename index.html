@@ -1558,7 +1558,7 @@
         </div>
     </div>
 
-    <!-- JS WITH HYSTERESIS SCROLL LOGIC -->
+    <!-- JS WITH POPSTATE & COVER BANNER -->
     <script>
         const nav = document.getElementById('navbar');
 
@@ -1582,12 +1582,16 @@
             if (target === 'register') {
                 homePage.style.display = 'none';
                 regPage.classList.add('active');
-                history.pushState(null, '', '#register');
+                if (window.location.hash !== '#register') {
+                    history.pushState(null, '', '#register');
+                }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else if (target === 'faqs') {
                 homePage.style.display = 'block';
                 regPage.classList.remove('active');
-                history.pushState(null, '', '#faqs');
+                if (window.location.hash !== '#faqs') {
+                    history.pushState(null, '', '#faqs');
+                }
                 const faqsElement = document.getElementById('faqs');
                 if (faqsElement) {
                     faqsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1595,10 +1599,24 @@
             } else {
                 homePage.style.display = 'block';
                 regPage.classList.remove('active');
-                history.pushState(null, '', window.location.pathname);
+                if (window.location.hash !== '') {
+                    history.pushState(null, '', window.location.pathname);
+                }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
+
+        // Listen for browser back/forward navigation
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash;
+            if (hash === '#register') {
+                navigateTo('register');
+            } else if (hash === '#faqs') {
+                navigateTo('faqs');
+            } else {
+                navigateTo('home');
+            }
+        });
 
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash;
