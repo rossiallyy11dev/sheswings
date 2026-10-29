@@ -212,12 +212,11 @@
             object-fit: cover;
             display: block;
             padding: 0;
-            opacity: 1; /* Default to visible so navigation back doesn't hide it */
+            opacity: 0; /* Starts hidden so fade animation runs cleanly */
         }
 
-        /* Fade-in animation class applied ONLY on first site open */
+        /* Entrance fade animation applied on initial load */
         .hero-banner-image.animate-load {
-            opacity: 0;
             animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
@@ -1563,7 +1562,7 @@
         </div>
     </div>
 
-    <!-- JS WITH ONCE-PER-SESSION BANNER ANIMATION -->
+    <!-- JS WITH INITIAL FADE ANIMATION AND POPSTATE ROUTING -->
     <script>
         const nav = document.getElementById('navbar');
 
@@ -1625,12 +1624,15 @@
 
         // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
-            // Trigger animation ONLY if it hasn't been played yet this session
             const banner = document.getElementById('hero-banner');
             if (banner) {
+                // Check if this is the initial open for the browser session
                 if (!sessionStorage.getItem('bannerAnimated')) {
                     banner.classList.add('animate-load');
                     sessionStorage.setItem('bannerAnimated', 'true');
+                } else {
+                    // Show immediately without playing animation on subsequent view swaps
+                    banner.style.opacity = '1';
                 }
             }
 
