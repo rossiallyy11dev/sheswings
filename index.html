@@ -253,15 +253,25 @@
             flex: 1;
         }
 
-        /* STANDARD SOLID TEXT (EFFECT REMOVED) */
+        /* STRIPE-STYLE EXACT MATCH FADE EFFECT */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
             line-height: 1.35;
             letter-spacing: -0.015em;
             font-weight: 400;
-            max-width: 700px;
+            max-width: 660px;
             color: #555555;
+            /* Top 2 lines solid, diagonal fade starting right across line 3 */
+            -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0.15) 80%);
+            mask-image: linear-gradient(135deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0.15) 80%);
+            transition: -webkit-mask-image 0.2s ease-out, mask-image 0.2s ease-out;
+        }
+
+        /* Fully revealed state when scrolled into full view */
+        .section-text.fully-revealed {
+            -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(135deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
         }
 
         .guest-intro-text {
@@ -1103,11 +1113,11 @@
             </div>
         </section>
 
-        <!-- About Section (Effect Removed) -->
+        <!-- About Section with Exact Stripe-Style Fade Effect -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
-                <p class="section-text">
+                <p class="section-text" id="about-text">
                     Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
@@ -1562,8 +1572,47 @@
             }
         }
 
-        window.addEventListener('scroll', updateNavbar, { passive: true });
-        window.addEventListener('load', updateNavbar);
+        /* STRIPE-STYLE EXACT MATCH DIAGONAL MASK SCROLL REVEAL */
+        function handleStripeMaskReveal() {
+            const aboutText = document.getElementById('about-text');
+            if (!aboutText) return;
+
+            const rect = aboutText.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            const startPoint = windowHeight * 0.85;
+            const endPoint = windowHeight * 0.25;
+            const totalDistance = startPoint - endPoint;
+
+            const currentPos = startPoint - rect.top;
+            let progress = currentPos / totalDistance;
+            progress = Math.max(0, Math.min(1, progress));
+
+            // Dynamically scale stops along the 135deg diagonal angle as user scrolls
+            const solidStop = 50 + (50 * progress);
+            const fadeStop = 80 + (20 * progress);
+
+            const maskValue = `linear-gradient(135deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.15) ${fadeStop}%)`;
+            aboutText.style.webkitMaskImage = maskValue;
+            aboutText.style.maskImage = maskValue;
+
+            if (progress >= 1) {
+                aboutText.classList.add('fully-revealed');
+            } else {
+                aboutText.classList.remove('fully-revealed');
+            }
+        }
+
+        function onScrollHandler() {
+            updateNavbar();
+            handleStripeMaskReveal();
+        }
+
+        window.addEventListener('scroll', onScrollHandler, { passive: true });
+        window.addEventListener('load', () => {
+            updateNavbar();
+            handleStripeMaskReveal();
+        });
 
         // Core view router
         function handleRoute() {
@@ -1587,6 +1636,7 @@
                 regPage.classList.remove('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+            handleStripeMaskReveal();
         }
 
         // Navigation pushing real states onto history stack
@@ -1630,6 +1680,7 @@
                 history.replaceState({view: window.location.hash || 'home'}, '', window.location.href);
             }
             handleRoute();
+            handleStripeMaskReveal();
             toggleRegOptions();
         });
 
