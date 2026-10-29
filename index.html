@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* STRIPE-STYLE EXACT REFERENCE DIAGONAL FADE MASK */
+        /* STRIPE-STYLE EXACT MATCH DIAGONAL FADE MASK */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,16 +262,16 @@
             font-weight: 400;
             max-width: 710px;
             color: #555555;
-            /* 120deg diagonal angle matching Stripe reference #1 */
-            -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,1) 45%, rgba(0,0,0,0.2) 75%);
-            mask-image: linear-gradient(120deg, rgba(0,0,0,1) 45%, rgba(0,0,0,0.2) 75%);
+            /* 150deg angle matches Stripe's exact diagonal sweep */
+            -webkit-mask-image: linear-gradient(150deg, rgba(0,0,0,1) 55%, rgba(0,0,0,0.2) 82%);
+            mask-image: linear-gradient(150deg, rgba(0,0,0,1) 55%, rgba(0,0,0,0.2) 82%);
             transition: -webkit-mask-image 0.15s ease-out, mask-image 0.15s ease-out;
         }
 
         /* Fully opened state when scrolled into full view */
         .section-text.fully-revealed {
-            -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-            mask-image: linear-gradient(120deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            -webkit-mask-image: linear-gradient(150deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(150deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
         }
 
         .guest-intro-text {
@@ -1572,7 +1572,7 @@
             }
         }
 
-        /* STRIPE-STYLE EXACT DIAGONAL MASK SCROLL REVEAL */
+        /* STRIPE-STYLE EXACT MATCH DIAGONAL MASK SCROLL REVEAL */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
@@ -1588,11 +1588,11 @@
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Dynamically scale stops along the 120deg diagonal angle as user scrolls
-            const solidStop = 45 + (55 * progress);
-            const fadeStop = 75 + (25 * progress);
+            // Dynamically scale stops along the 150deg diagonal angle as user scrolls
+            const solidStop = 55 + (45 * progress);
+            const fadeStop = 82 + (18 * progress);
 
-            const maskValue = `linear-gradient(120deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.2) ${fadeStop}%)`;
+            const maskValue = `linear-gradient(150deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.2) ${fadeStop}%)`;
             aboutText.style.webkitMaskImage = maskValue;
             aboutText.style.maskImage = maskValue;
 
