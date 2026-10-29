@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* STRIPE EXACT LINE-BY-LINE FADE EFFECT */
+        /* SCROLL-DRIVEN DIAGONAL ANGLE FADE MASK */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,30 +262,15 @@
             font-weight: 400;
             max-width: 650px;
             color: #555555;
-            display: flex;
-            flex-direction: column;
+            /* Dynamically updated via JS scroll listener */
+            -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,1) 25%, rgba(0,0,0,0.15) 55%);
+            mask-image: linear-gradient(120deg, rgba(0,0,0,1) 25%, rgba(0,0,0,0.15) 55%);
+            transition: -webkit-mask-image 0.1s ease-out, mask-image 0.1s ease-out;
         }
 
-        /* Line 1 & 2: Fully Solid */
-        .text-line-solid {
-            display: block;
-            color: #555555;
-        }
-
-        /* Line 3 & 4: Horizontal fade matching Stripe reference */
-        .text-line-fade {
-            display: block;
-            background: linear-gradient(90deg, #555555 35%, rgba(85, 85, 85, 0.25) 90%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: background 0.3s ease-out, -webkit-text-fill-color 0.3s ease-out;
-        }
-
-        /* Fully revealed state when scrolled */
-        .section-text.fully-revealed .text-line-fade {
-            background: none;
-            -webkit-text-fill-color: #555555;
+        .section-text.fully-revealed {
+            -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(120deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
         }
 
         .guest-intro-text {
@@ -1127,16 +1112,12 @@
             </div>
         </section>
 
-        <!-- About Section with Exact Stripe-Style Line-by-Line Fade Effect -->
+        <!-- About Section with Scroll-Driven Diagonal Fade Effect -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
                 <p class="section-text" id="about-text">
-                    <span class="text-line-solid">Designed for leaders, community advocates, and golf</span>
-                    <span class="text-line-solid">enthusiasts, this vibrant charitable tournament supports</span>
-                    <span class="text-line-fade">youth mentorship through Friends of the Children –</span>
-                    <span class="text-line-fade">Portland. SHE Swings combines competitive play,</span>
-                    <span class="text-line-fade">networking, and high-impact fundraising.</span>
+                    Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
                     <button onclick="navigateTo('register')" class="btn-register">Register</button>
@@ -1590,7 +1571,7 @@
             }
         }
 
-        /* SCROLL REVEAL FOR TEXT FADE */
+        /* SCROLL-DRIVEN DIAGONAL MASK ANIMATION */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
@@ -1605,6 +1586,14 @@
             const currentPos = startPoint - rect.top;
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
+
+            // Dynamically slide the gradient stops based on scroll progress
+            const solidStop = 25 + (75 * progress);
+            const fadeStop = 55 + (45 * progress);
+
+            const maskValue = `linear-gradient(120deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.15) ${fadeStop}%)`;
+            aboutText.style.webkitMaskImage = maskValue;
+            aboutText.style.maskImage = maskValue;
 
             if (progress >= 1) {
                 aboutText.classList.add('fully-revealed');
