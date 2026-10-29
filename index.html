@@ -212,23 +212,8 @@
             object-fit: cover;
             display: block;
             padding: 0;
-            opacity: 1; /* Always visible by default */
-        }
-
-        /* Animation class added strictly on initial load */
-        .hero-banner-image.animate-load {
-            animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes heroFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            opacity: 1; /* Always fully visible by default */
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* Section Dividers */
@@ -1562,7 +1547,7 @@
         </div>
     </div>
 
-    <!-- JS WITH ONCE-ONLY ANIMATION & POPSTATE ROUTING -->
+    <!-- JS WITH CONTROLLED JS-DRIVEN INITIAL LOAD EFFECT -->
     <script>
         const nav = document.getElementById('navbar');
 
@@ -1625,10 +1610,25 @@
         // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
             const banner = document.getElementById('hero-banner');
-            if (banner && !sessionStorage.getItem('bannerAnimated')) {
-                // Apply animation ONLY on the very first page load of the session
-                banner.classList.add('animate-load');
-                sessionStorage.setItem('bannerAnimated', 'true');
+            if (banner) {
+                // Check session storage so this effect runs STRICTLY once on the first site open
+                if (!sessionStorage.getItem('bannerAnimated')) {
+                    // Set starting hidden state via JS right before animating
+                    banner.style.opacity = '0';
+                    banner.style.transform = 'scale(0.98)';
+                    
+                    // Trigger fade-in on next frame
+                    requestAnimationFrame(() => {
+                        banner.style.opacity = '1';
+                        banner.style.transform = 'scale(1)';
+                    });
+
+                    sessionStorage.setItem('bannerAnimated', 'true');
+                } else {
+                    // Subsequent page visits/navigation: ensure it stays instantly visible with no animation
+                    banner.style.opacity = '1';
+                    banner.style.transform = 'scale(1)';
+                }
             }
 
             if (!history.state) {
