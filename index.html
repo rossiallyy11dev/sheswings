@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* EXACT STRIPE 115DEG DIAGONAL MASK SWEEPING LEFT-TO-RIGHT */
+        /* FIRST LINE CRISP & SOLID: Gradient starts fully opaque for the first 35% before fading */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,9 +262,9 @@
             font-weight: 400;
             max-width: 650px;
             color: #555555;
-            /* 115deg gradient with --highlightOffset controlling the horizontal reveal position */
-            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 0%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 0%) + 35%));
-            mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 0%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 0%) + 35%));
+            /* Solid black up to (--highlightOffset + 35%), ensuring first line has zero fade */
+            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 0%), rgba(0,0,0,1) calc(var(--highlightOffset, 0%) + 35%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 0%) + 65%));
+            mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 0%), rgba(0,0,0,1) calc(var(--highlightOffset, 0%) + 35%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 0%) + 65%));
             transition: -webkit-mask-image 0.1s ease-out, mask-image 0.1s ease-out;
         }
 
@@ -1112,7 +1112,7 @@
             </div>
         </section>
 
-        <!-- About Section with Stripe-Inspector Style Variable Offset -->
+        <!-- About Section with Solid First Line and Dynamic Sweep -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
@@ -1571,7 +1571,7 @@
             }
         }
 
-        /* EXACT 115DEG HORIZONTAL SWEEP ANIMATION */
+        /* MASK ANIMATION: Solid start for the first line, sweeping diagonal fade onward */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
@@ -1587,8 +1587,7 @@
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Sweeps from left to right (-10% to 110%) to match Stripe's reveal direction
-            const offsetVal = -10 + (120 * progress);
+            const offsetVal = -10 + (130 * progress);
             aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
 
             if (progress >= 1) {
