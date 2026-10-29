@@ -260,18 +260,18 @@
             line-height: 1.35;
             letter-spacing: -0.015em;
             font-weight: 400;
-            max-width: 710px;
+            max-width: 630px; /* Matched to Stripe's exact paragraph wrap width */
             color: #555555;
-            /* 150deg angle matches Stripe's exact diagonal sweep */
-            -webkit-mask-image: linear-gradient(150deg, rgba(0,0,0,1) 55%, rgba(0,0,0,0.2) 82%);
-            mask-image: linear-gradient(150deg, rgba(0,0,0,1) 55%, rgba(0,0,0,0.2) 82%);
+            /* 115deg angle with precise stops matching Stripe reference #1 */
+            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0.2) 78%);
+            mask-image: linear-gradient(115deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0.2) 78%);
             transition: -webkit-mask-image 0.15s ease-out, mask-image 0.15s ease-out;
         }
 
         /* Fully opened state when scrolled into full view */
         .section-text.fully-revealed {
-            -webkit-mask-image: linear-gradient(150deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-            mask-image: linear-gradient(150deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(115deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
         }
 
         .guest-intro-text {
@@ -1113,7 +1113,7 @@
             </div>
         </section>
 
-        <!-- About Section with Exact Reference Diagonal Fade -->
+        <!-- About Section with Exact Stripe-Style Diagonal Fade -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
@@ -1588,11 +1588,11 @@
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Dynamically scale stops along the 150deg diagonal angle as user scrolls
-            const solidStop = 55 + (45 * progress);
-            const fadeStop = 82 + (18 * progress);
+            // Dynamically scale stops along the 115deg diagonal angle as user scrolls
+            const solidStop = 50 + (50 * progress);
+            const fadeStop = 78 + (22 * progress);
 
-            const maskValue = `linear-gradient(150deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.2) ${fadeStop}%)`;
+            const maskValue = `linear-gradient(115deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.2) ${fadeStop}%)`;
             aboutText.style.webkitMaskImage = maskValue;
             aboutText.style.maskImage = maskValue;
 
