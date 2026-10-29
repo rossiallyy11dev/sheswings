@@ -212,7 +212,7 @@
             object-fit: cover;
             display: block;
             padding: 0;
-            opacity: 1; /* Always fully visible by default */
+            opacity: 1; 
             transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* STRIPE-STYLE SCROLL REVEAL TEXT */
+        /* STRIPE-STYLE SUBTLE SCROLL GRADIENT FADE */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,12 +262,14 @@
             font-weight: 400;
             max-width: 710px;
             color: #555555;
+            opacity: 0.3; /* Default resting unfocused state */
+            transform: translateY(10px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .scroll-reveal-word {
-            opacity: 0.25;
-            transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-            display: inline;
+        .section-text.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .guest-intro-text {
@@ -1109,7 +1111,7 @@
             </div>
         </section>
 
-        <!-- About Section with Scroll Reveal Text -->
+        <!-- About Section with Stripe-Style Smooth Scroll Reveal -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
@@ -1568,56 +1570,32 @@
             }
         }
 
-        /* STRIPE-STYLE TEXT FADE REVEAL ON SCROLL */
-        let wordSpans = [];
+        /* STRIPE-STYLE SUBTLE SCROLL FADE REVEAL */
+        function checkScrollReveal() {
+            const aboutText = document.getElementById('about-text');
+            if (!aboutText) return;
 
-        function initScrollTextReveal() {
-            const container = document.getElementById('about-text');
-            if (!container) return;
-            
-            const words = container.textContent.trim().split(/\s+/);
-            container.innerHTML = words.map(word => `<span class="scroll-reveal-word">${word}</span>`).join(' ');
-            wordSpans = Array.from(container.querySelectorAll('.scroll-reveal-word'));
-        }
-
-        function handleScrollTextReveal() {
-            const container = document.getElementById('about-text');
-            if (!container || !wordSpans.length) return;
-
-            const rect = container.getBoundingClientRect();
+            const rect = aboutText.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            // Start animation when text top hits 85% of viewport, finish when bottom hits 35%
-            const startPoint = windowHeight * 0.85;
-            const endPoint = windowHeight * 0.35;
-            const totalDistance = startPoint - endPoint;
-
-            const currentPos = startPoint - rect.top;
-            let progress = currentPos / totalDistance;
-            progress = Math.max(0, Math.min(1, progress));
-
-            const totalWords = wordSpans.length;
-            wordSpans.forEach((span, index) => {
-                const wordThreshold = index / totalWords;
-                if (progress > wordThreshold) {
-                    // Smoothly transition word opacity from muted (0.25) to full (1.0)
-                    const wordProgress = Math.min(1, (progress - wordThreshold) * totalWords);
-                    span.style.opacity = 0.25 + (0.75 * wordProgress);
-                } else {
-                    span.style.opacity = '0.25';
-                }
-            });
+            // Trigger when the element enters the lower-middle part of the viewport
+            if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.1) {
+                aboutText.classList.add('revealed');
+            } else {
+                // Optional: remove class if you want it to fade back out when scrolling away
+                // aboutText.classList.remove('revealed');
+            }
         }
 
         function onScrollHandler() {
             updateNavbar();
-            handleScrollTextReveal();
+            checkScrollReveal();
         }
 
         window.addEventListener('scroll', onScrollHandler, { passive: true });
         window.addEventListener('load', () => {
             updateNavbar();
-            handleScrollTextReveal();
+            checkScrollReveal();
         });
 
         // Core view router
@@ -1642,7 +1620,7 @@
                 regPage.classList.remove('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-            handleScrollTextReveal();
+            checkScrollReveal();
         }
 
         // Navigation pushing real states onto history stack
@@ -1666,8 +1644,6 @@
 
         // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
-            initScrollTextReveal();
-
             const banner = document.getElementById('hero-banner');
             if (banner && !sessionStorage.getItem('bannerAnimated')) {
                 banner.style.opacity = '0';
@@ -1688,6 +1664,7 @@
                 history.replaceState({view: window.location.hash || 'home'}, '', window.location.href);
             }
             handleRoute();
+            checkScrollReveal();
             toggleRegOptions();
         });
 
