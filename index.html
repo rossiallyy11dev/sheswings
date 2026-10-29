@@ -253,6 +253,7 @@
             flex: 1;
         }
 
+        /* STRIPE-STYLE SCROLL REVEAL TEXT */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -261,6 +262,12 @@
             font-weight: 400;
             max-width: 710px;
             color: #555555;
+        }
+
+        .scroll-reveal-word {
+            opacity: 0.25;
+            transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline;
         }
 
         .guest-intro-text {
@@ -1102,11 +1109,11 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About Section with Scroll Reveal Text -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
-                <p class="section-text">
+                <p class="section-text" id="about-text">
                     Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
@@ -1547,7 +1554,7 @@
         </div>
     </div>
 
-    <!-- JS WITH CONTROLLED JS-DRIVEN INITIAL LOAD EFFECT -->
+    <!-- SCRIPT -->
     <script>
         const nav = document.getElementById('navbar');
 
@@ -1561,8 +1568,57 @@
             }
         }
 
-        window.addEventListener('scroll', updateNavbar, { passive: true });
-        window.addEventListener('load', updateNavbar);
+        /* STRIPE-STYLE TEXT FADE REVEAL ON SCROLL */
+        let wordSpans = [];
+
+        function initScrollTextReveal() {
+            const container = document.getElementById('about-text');
+            if (!container) return;
+            
+            const words = container.textContent.trim().split(/\s+/);
+            container.innerHTML = words.map(word => `<span class="scroll-reveal-word">${word}</span>`).join(' ');
+            wordSpans = Array.from(container.querySelectorAll('.scroll-reveal-word'));
+        }
+
+        function handleScrollTextReveal() {
+            const container = document.getElementById('about-text');
+            if (!container || !wordSpans.length) return;
+
+            const rect = container.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Start animation when text top hits 85% of viewport, finish when bottom hits 35%
+            const startPoint = windowHeight * 0.85;
+            const endPoint = windowHeight * 0.35;
+            const totalDistance = startPoint - endPoint;
+
+            const currentPos = startPoint - rect.top;
+            let progress = currentPos / totalDistance;
+            progress = Math.max(0, Math.min(1, progress));
+
+            const totalWords = wordSpans.length;
+            wordSpans.forEach((span, index) => {
+                const wordThreshold = index / totalWords;
+                if (progress > wordThreshold) {
+                    // Smoothly transition word opacity from muted (0.25) to full (1.0)
+                    const wordProgress = Math.min(1, (progress - wordThreshold) * totalWords);
+                    span.style.opacity = 0.25 + (0.75 * wordProgress);
+                } else {
+                    span.style.opacity = '0.25';
+                }
+            });
+        }
+
+        function onScrollHandler() {
+            updateNavbar();
+            handleScrollTextReveal();
+        }
+
+        window.addEventListener('scroll', onScrollHandler, { passive: true });
+        window.addEventListener('load', () => {
+            updateNavbar();
+            handleScrollTextReveal();
+        });
 
         // Core view router
         function handleRoute() {
@@ -1586,9 +1642,10 @@
                 regPage.classList.remove('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+            handleScrollTextReveal();
         }
 
-        // Navigation pushing real states onto the history stack
+        // Navigation pushing real states onto history stack
         function navigateTo(target) {
             if (target === 'register') {
                 history.pushState({view: 'register'}, '', '#register');
@@ -1609,26 +1666,22 @@
 
         // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
-            const banner = document.getElementById('hero-banner');
-            if (banner) {
-                // Check session storage so this effect runs STRICTLY once on the first site open
-                if (!sessionStorage.getItem('bannerAnimated')) {
-                    // Set starting hidden state via JS right before animating
-                    banner.style.opacity = '0';
-                    banner.style.transform = 'scale(0.98)';
-                    
-                    // Trigger fade-in on next frame
-                    requestAnimationFrame(() => {
-                        banner.style.opacity = '1';
-                        banner.style.transform = 'scale(1)';
-                    });
+            initScrollTextReveal();
 
-                    sessionStorage.setItem('bannerAnimated', 'true');
-                } else {
-                    // Subsequent page visits/navigation: ensure it stays instantly visible with no animation
+            const banner = document.getElementById('hero-banner');
+            if (banner && !sessionStorage.getItem('bannerAnimated')) {
+                banner.style.opacity = '0';
+                banner.style.transform = 'scale(0.98)';
+                
+                requestAnimationFrame(() => {
                     banner.style.opacity = '1';
                     banner.style.transform = 'scale(1)';
-                }
+                });
+
+                sessionStorage.setItem('bannerAnimated', 'true');
+            } else if (banner) {
+                banner.style.opacity = '1';
+                banner.style.transform = 'scale(1)';
             }
 
             if (!history.state) {
