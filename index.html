@@ -1558,7 +1558,7 @@
         </div>
     </div>
 
-    <!-- JS WITH POPSTATE & COVER BANNER -->
+    <!-- JS WITH STRIPE-STYLE HISTORY STACK ROUTING -->
     <script>
         const nav = document.getElementById('navbar');
 
@@ -1575,23 +1575,19 @@
         window.addEventListener('scroll', updateNavbar, { passive: true });
         window.addEventListener('load', updateNavbar);
 
-        function navigateTo(target) {
+        // Core view router
+        function handleRoute() {
+            const hash = window.location.hash;
             const homePage = document.getElementById('home-page');
             const regPage = document.getElementById('register');
 
-            if (target === 'register') {
+            if (hash === '#register') {
                 homePage.style.display = 'none';
                 regPage.classList.add('active');
-                if (window.location.hash !== '#register') {
-                    history.pushState(null, '', '#register');
-                }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (target === 'faqs') {
+            } else if (hash === '#faqs') {
                 homePage.style.display = 'block';
                 regPage.classList.remove('active');
-                if (window.location.hash !== '#faqs') {
-                    history.pushState(null, '', '#faqs');
-                }
                 const faqsElement = document.getElementById('faqs');
                 if (faqsElement) {
                     faqsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1599,32 +1595,36 @@
             } else {
                 homePage.style.display = 'block';
                 regPage.classList.remove('active');
-                if (window.location.hash !== '') {
-                    history.pushState(null, '', window.location.pathname);
-                }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
-        // Listen for browser back/forward navigation
-        window.addEventListener('popstate', () => {
-            const hash = window.location.hash;
-            if (hash === '#register') {
-                navigateTo('register');
-            } else if (hash === '#faqs') {
-                navigateTo('faqs');
+        // Navigation pushing real states onto the history stack (like Stripe)
+        function navigateTo(target) {
+            if (target === 'register') {
+                history.pushState({view: 'register'}, '', '#register');
+                handleRoute();
+            } else if (target === 'faqs') {
+                history.pushState({view: 'faqs'}, '', '#faqs');
+                handleRoute();
             } else {
-                navigateTo('home');
+                history.pushState({view: 'home'}, '', window.location.pathname);
+                handleRoute();
             }
+        }
+
+        // Listen to browser back/forward buttons
+        window.addEventListener('popstate', (e) => {
+            handleRoute();
         });
 
+        // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash;
-            if (hash === '#register') {
-                navigateTo('register');
-            } else if (hash === '#faqs') {
-                navigateTo('faqs');
+            // Ensure initial state exists
+            if (!history.state) {
+                history.replaceState({view: window.location.hash || 'home'}, '', window.location.href);
             }
+            handleRoute();
             toggleRegOptions();
         });
 
