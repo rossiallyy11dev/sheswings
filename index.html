@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* WIDER SCROLL-DRIVEN DIAGONAL MASK STARTING AT LINE 3 */
+        /* VARIABLE-DRIVEN WIDE DIAGONAL MASK MATCHING STRIPE INSPECTOR */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,9 +262,9 @@
             font-weight: 400;
             max-width: 650px;
             color: #555555;
-            /* Wider transition band starting further down */
-            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) 45%, rgba(0,0,0,0.15) 85%);
-            mask-image: linear-gradient(115deg, rgba(0,0,0,1) 45%, rgba(0,0,0,0.15) 85%);
+            /* Uses CSS variable --highlightOffset updated smoothly via scroll */
+            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 30%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 30%) + 35%));
+            mask-image: linear-gradient(115deg, rgba(0,0,0,1) var(--highlightOffset, 30%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 30%) + 35%));
             transition: -webkit-mask-image 0.1s ease-out, mask-image 0.1s ease-out;
         }
 
@@ -1112,11 +1112,11 @@
             </div>
         </section>
 
-        <!-- About Section with Scroll-Driven Wider Diagonal Fade Effect -->
+        <!-- About Section with Stripe-Inspector Style Variable Offset -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
-                <p class="section-text" id="about-text">
+                <p class="section-text" id="about-text" style="--highlightOffset: 20%;">
                     Designed for leaders, community advocates, and golf enthusiasts, this vibrant charitable tournament supports youth mentorship through Friends of the Children – Portland. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
@@ -1571,7 +1571,7 @@
             }
         }
 
-        /* SCROLL-DRIVEN WIDER DIAGONAL MASK ANIMATION */
+        /* SCROLL-DRIVEN CSS VARIABLE HIGHLIGHT OFFSET ANIMATION */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
@@ -1579,21 +1579,17 @@
             const rect = aboutText.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            const startPoint = windowHeight * 0.85;
-            const endPoint = windowHeight * 0.25;
+            const startPoint = windowHeight * 0.9;
+            const endPoint = windowHeight * 0.2;
             const totalDistance = startPoint - endPoint;
 
             const currentPos = startPoint - rect.top;
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Wider transition band starting around line 3
-            const solidStop = 45 + (55 * progress);
-            const fadeStop = 85 + (15 * progress);
-
-            const maskValue = `linear-gradient(115deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.15) ${fadeStop}%)`;
-            aboutText.style.webkitMaskImage = maskValue;
-            aboutText.style.maskImage = maskValue;
+            // Dynamically drive CSS variable matching Stripe's --highlightOffset
+            const offsetVal = 10 + (85 * progress);
+            aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
 
             if (progress >= 1) {
                 aboutText.classList.add('fully-revealed');
