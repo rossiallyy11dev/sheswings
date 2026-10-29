@@ -212,10 +212,10 @@
             object-fit: cover;
             display: block;
             padding: 0;
-            opacity: 0; /* Starts hidden so fade animation runs cleanly */
+            opacity: 1; /* Always visible by default */
         }
 
-        /* Entrance fade animation applied on initial load */
+        /* Animation class added strictly on initial load */
         .hero-banner-image.animate-load {
             animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -1562,7 +1562,7 @@
         </div>
     </div>
 
-    <!-- JS WITH INITIAL FADE ANIMATION AND POPSTATE ROUTING -->
+    <!-- JS WITH ONCE-ONLY ANIMATION & POPSTATE ROUTING -->
     <script>
         const nav = document.getElementById('navbar');
 
@@ -1603,7 +1603,7 @@
             }
         }
 
-        // Navigation pushing real states onto the history stack (like Stripe)
+        // Navigation pushing real states onto the history stack
         function navigateTo(target) {
             if (target === 'register') {
                 history.pushState({view: 'register'}, '', '#register');
@@ -1625,15 +1625,10 @@
         // Run on initial load
         window.addEventListener('DOMContentLoaded', () => {
             const banner = document.getElementById('hero-banner');
-            if (banner) {
-                // Check if this is the initial open for the browser session
-                if (!sessionStorage.getItem('bannerAnimated')) {
-                    banner.classList.add('animate-load');
-                    sessionStorage.setItem('bannerAnimated', 'true');
-                } else {
-                    // Show immediately without playing animation on subsequent view swaps
-                    banner.style.opacity = '1';
-                }
+            if (banner && !sessionStorage.getItem('bannerAnimated')) {
+                // Apply animation ONLY on the very first page load of the session
+                banner.classList.add('animate-load');
+                sessionStorage.setItem('bannerAnimated', 'true');
             }
 
             if (!history.state) {
