@@ -253,7 +253,7 @@
             flex: 1;
         }
 
-        /* STRIPE-STYLE GRADIENT FADE: Top lines crisp, bottom lines gently fogged */
+        /* STRIPE-STYLE DIAGONAL FADE MASK */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -262,16 +262,16 @@
             font-weight: 400;
             max-width: 710px;
             color: #555555;
-            /* Default initial gradient mask: top is fully visible (1), bottom lines fade out */
-            -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 40%, rgba(0,0,0,0.25) 100%);
-            mask-image: linear-gradient(180deg, rgba(0,0,0,1) 40%, rgba(0,0,0,0.25) 100%);
-            transition: -webkit-mask-image 0.4s ease-out, mask-image 0.4s ease-out;
+            /* Angled mask: starts solid for top lines, diagonal fog kicks in higher up */
+            -webkit-mask-image: linear-gradient(160deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0.2) 65%);
+            mask-image: linear-gradient(160deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0.2) 65%);
+            transition: -webkit-mask-image 0.2s ease-out, mask-image 0.2s ease-out;
         }
 
-        /* When fully scrolled into view, the mask opens up completely to show all text */
+        /* Fully opened state when scrolled into full view */
         .section-text.fully-revealed {
-            -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-            mask-image: linear-gradient(180deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            -webkit-mask-image: linear-gradient(160deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(160deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
         }
 
         .guest-intro-text {
@@ -1113,7 +1113,7 @@
             </div>
         </section>
 
-        <!-- About Section with Stripe-Style Gradient Fade -->
+        <!-- About Section with Stripe-Style Angled Gradient Fade -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
@@ -1572,7 +1572,7 @@
             }
         }
 
-        /* STRIPE-STYLE MASK GRADIENT SCROLL REVEAL */
+        /* STRIPE-STYLE DIAGONAL MASK GRADIENT SCROLL REVEAL */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
@@ -1580,19 +1580,20 @@
             const rect = aboutText.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            // Calculate progress as the text scrolls up through the viewport
+            // Trigger window calculation as text scrolls through viewport
             const startPoint = windowHeight * 0.85;
-            const endPoint = windowHeight * 0.2;
+            const endPoint = windowHeight * 0.25;
             const totalDistance = startPoint - endPoint;
 
             const currentPos = startPoint - rect.top;
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Expand the gradient mask fade point smoothly from 40% down to 100% as user scrolls
-            const fadeStop = 40 + (60 * progress);
-            
-            const maskValue = `linear-gradient(180deg, rgba(0,0,0,1) ${fadeStop}%, rgba(0,0,0,0.2) 100%)`;
+            // Shift solid cutoff line from 15% to 100% and fog boundary from 65% to 100%
+            const solidStop = 15 + (85 * progress);
+            const fadeStop = 65 + (35 * progress);
+
+            const maskValue = `linear-gradient(160deg, rgba(0,0,0,1) ${solidStop}%, rgba(0,0,0,0.25) ${fadeStop}%)`;
             aboutText.style.webkitMaskImage = maskValue;
             aboutText.style.maskImage = maskValue;
 
