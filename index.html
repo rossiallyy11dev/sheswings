@@ -812,39 +812,29 @@
             }
             .hero-header-row {
                 flex-direction: column;
-                gap: 0;
+                gap: 24px;
                 padding: 0;
-                margin-bottom: 24px;
             }
             .hero-headline {
                 margin-left: 0;
-                margin-bottom: 20px;
-                /* Forces headline lines to stay completely on one line each */
-                white-space: nowrap;
+                margin-top: 20px;
             }
             .hero-meta-group {
-                display: grid;
-                grid-template-columns: auto auto;
                 gap: 32px;
-                width: 100%;
-                max-width: 100%;
                 margin-left: 0;
                 margin-right: 0;
             }
-            .meta-item {
-                white-space: nowrap;
-            }
             .hero-banner-container {
-                height: 380px;
-                background-color: #E8E8EC;
+                height: auto !important;
+                background-color: transparent !important;
+                border: none !important;
                 border-radius: 16px;
                 overflow: hidden;
             }
             .hero-banner-image {
                 width: 100%;
-                height: 100%;
+                height: auto;
                 object-fit: cover;
-                object-position: 85% bottom;
                 display: block;
             }
             .content-section {
@@ -931,12 +921,13 @@
 </head>
 <body>
 
-    <!-- NAVBAR (FAQ removed from nav-right) -->
+    <!-- NAVBAR -->
     <header class="navbar" id="navbar">
         <a onclick="navigateTo('home')" class="brand-logo">
             <span class="bold-text">SHE</span> <span class="light-text">Swings</span>
         </a>
         <div class="nav-right">
+            <a href="#faqs" onclick="navigateTo('faqs')" class="nav-link">FAQs</a>
             <button onclick="navigateTo('register')" class="btn-register">Register</button>
         </div>
     </header>
@@ -954,7 +945,7 @@
                     <div class="meta-item">
                         October 10–11,<br>2027
                     </div>
-                    <div class="meta-item">
+                    <div class="meta-item" style="margin-right: 48px;">
                         Oswego Lake Country Club,<br>Lake Oswego, Oregon
                     </div>
                 </div>
