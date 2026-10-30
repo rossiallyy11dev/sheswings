@@ -203,7 +203,7 @@
             grid-template-columns: auto auto;
             gap: 60px;
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .meta-item {
@@ -212,28 +212,32 @@
             line-height: 1.45;
             color: #555555;
             font-weight: 400;
+        }
+
+        .meta-item.location {
             white-space: nowrap;
         }
 
         .hero-banner-container {
             width: 100%;
-            background-color: #EEEEF2;
+            background-color: transparent;
             border-radius: 16px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: none;
             position: relative;
-            padding: 16px;
+            padding: 0;
         }
 
         .hero-banner-image {
             width: 100%;
-            height: auto;
-            object-fit: contain;
+            height: 380px;
+            object-fit: cover;
+            object-position: 85% bottom;
             display: block;
-            border-radius: 8px;
+            border-radius: 16px;
         }
 
         /* Section Dividers */
@@ -835,9 +839,18 @@
             .meta-item {
                 white-space: normal;
             }
+            .meta-item.location {
+                white-space: nowrap;
+            }
             .hero-banner-container {
-                padding: 12px;
-                border-radius: 12px;
+                padding: 0;
+                border-radius: 16px;
+                background-color: transparent;
+                border: none;
+            }
+            .hero-banner-image {
+                height: 240px;
+                border-radius: 16px;
             }
             .content-section {
                 flex-direction: column;
@@ -947,7 +960,7 @@
                     <div class="meta-item">
                         October 10–11,<br>2027
                     </div>
-                    <div class="meta-item">
+                    <div class="meta-item location">
                         Oswego Lake Country Club,<br>Lake Oswego, Oregon
                     </div>
                 </div>
