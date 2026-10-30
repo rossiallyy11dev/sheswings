@@ -8,10 +8,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="FAVICON 7.png">
 
-    <!-- Preload Hero Images for Instant Loading -->
-    <link rel="preload" as="image" href="OFFICIAL BANNER.png">
-    <link rel="preload" as="image" href="REGISTRATION 4.png">
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +34,7 @@
             overflow-x: hidden;
         }
 
-        /* FIXED NAVBAR (UNTOUCHED) */
+        /* FIXED NAVBAR */
         .navbar {
             position: fixed;
             top: 0;
@@ -574,7 +570,7 @@
 
         .reg-hero-wrapper {
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding-bottom: 24px;
+            padding-bottom: 48px;
             margin-bottom: 48px;
             width: 100%;
         }
@@ -649,159 +645,38 @@
             display: block;
         }
 
-        .form-container {
-            padding-left: 48px;
-            padding-right: 48px;
+        /* REPLACEMENT REGISTRATION INFO BLOCK */
+        .reg-info-container {
+            padding: 0 16px;
+            max-width: 800px;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px 40px;
-            margin-bottom: 32px;
-        }
-
-        .form-section-heading {
-            grid-column: 1 / -1;
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: #1A0B2E;
-            padding-top: 24px;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            margin-top: 16px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #1A0B2E;
-        }
-
-        .form-input, .form-select {
-            width: 100%;
-            height: 52px;
-            padding: 0 18px;
-            border-radius: 10px;
-            border: 1px solid #E0E0E8;
-            background-color: #F3F3F7;
+        .reg-info-heading {
             font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            color: #1A0B2E;
-            outline: none;
-            transition: border-color 0.2s, background-color 0.2s;
-        }
-
-        .form-input:focus, .form-select:focus {
-            border-color: #1A0B2E;
-            background-color: #FFFFFF;
-        }
-
-        .form-select {
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml;utf8,<svg fill='%231A0B2E' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-        }
-
-        .field-subtext {
-            font-size: 0.825rem;
-            color: #777788;
-            margin-top: 4px;
-        }
-
-        .foursome-container {
-            grid-column: 1 / -1;
-            background-color: #F8F8FC;
-            border: 1px solid #E0E0E8;
-            border-radius: 16px;
-            padding: 24px;
-            display: none;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .foursome-container.active {
-            display: flex;
-        }
-
-        .foursome-title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #1A0B2E;
-        }
-
-        .teammate-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
-        }
-
-        .order-summary-section {
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            padding-top: 40px;
-            margin-top: 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .summary-left-title {
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 2.8vw, 2.8rem);
             font-weight: 400;
-            color: #1A0B2E;
-            letter-spacing: -0.02em;
-        }
-
-        .summary-right-details {
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            font-size: 1.1rem;
             color: #555555;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 24px;
         }
 
-        .summary-row.total {
-            border-top: 1px solid #E0E0E6;
-            font-size: 1.5rem;
-            font-weight: 500;
+        .reg-info-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #555555;
+            font-weight: 400;
+        }
+
+        .reg-info-text a {
             color: #00AAEE;
-            padding-top: 24px;
-            margin-top: 12px;
-        }
-
-        .btn-submit-reg {
-            background-color: #00AAEE;
-            color: #FFFFFF;
-            font-size: 1.05rem;
+            text-decoration: none;
             font-weight: 500;
-            padding: 16px 48px;
-            border-radius: 999px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            float: right;
-            margin-top: 32px;
         }
 
-        .btn-submit-reg:hover {
-            background-color: #0099D8;
+        .reg-info-text a:hover {
+            text-decoration: underline;
         }
 
         /* Full-Width Footer */
@@ -925,64 +800,6 @@
             text-decoration: underline;
         }
 
-        /* Payment Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .payment-modal {
-            background: #FFFFFF;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 460px;
-            padding: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-        }
-
-        .modal-title {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #111;
-        }
-
-        .close-modal {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #888;
-        }
-
-        .pay-amount-badge {
-            background: #F0F4FF;
-            color: #00AAEE;
-            padding: 12px 16px;
-            border-radius: 10px;
-            font-weight: 500;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
         @media (max-width: 900px) {
             .hero-header-row {
                 flex-direction: column;
@@ -1051,20 +868,6 @@
                 grid-column: 1;
                 justify-self: start;
                 margin-left: 0;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .teammate-row {
-                grid-template-columns: 1fr;
-            }
-            .reg-hero-wrapper {
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-            .order-summary-section {
-                flex-direction: column;
-                gap: 24px;
             }
             .site-footer {
                 padding: 24px 16px;
@@ -1327,179 +1130,12 @@
             </div>
         </div>
 
-        <!-- Form -->
-        <div class="form-container">
-            <form id="registration-form" onsubmit="handleFormSubmit(event)">
-                <div class="form-grid">
-                    <!-- FIRST HALF -->
-                    <div class="form-group">
-                        <label class="form-label">First name*</label>
-                        <input type="text" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Last name*</label>
-                        <input type="text" class="form-input" required>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label">Business email*</label>
-                        <input type="email" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Phone number*</label>
-                        <input type="tel" class="form-input" placeholder="+1 (424) 242-4242" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Country/region*</label>
-                        <select class="form-select" required>
-                            <option value="US">United States</option>
-                            <option value="CA">Canada</option>
-                            <option value="UK">United Kingdom</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">State*</label>
-                        <select class="form-select" required>
-                            <option value="">Select state</option>
-                            <option value="OR">Oregon</option>
-                            <option value="WA">Washington</option>
-                            <option value="CA">California</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Postal code*</label>
-                        <input type="text" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Company/organization*</label>
-                        <input type="text" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Company/organization website*</label>
-                        <input type="url" class="form-input" placeholder="https://" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Industry*</label>
-                        <select class="form-select" required>
-                            <option value="">Select industry</option>
-                            <option value="tech">Technology</option>
-                            <option value="finance">Finance / Sports</option>
-                            <option value="nonprofit">Non-Profit / Community</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Job level*</label>
-                        <select class="form-select" required>
-                            <option value="">Select job level</option>
-                            <option value="executive">Executive / C-Suite</option>
-                            <option value="director">Director / Manager</option>
-                            <option value="professional">Professional / Individual Contributor</option>
-                        </select>
-                    </div>
-
-                    <!-- SECOND HALF -->
-                    <div class="form-group">
-                        <label class="form-label">Job function*</label>
-                        <select class="form-select" required>
-                            <option value="">Select job function</option>
-                            <option value="leadership">Executive Leadership</option>
-                            <option value="marketing">Marketing & Partnerships</option>
-                            <option value="operations">Operations</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Job title*</label>
-                        <input type="text" class="form-input" required>
-                        <div class="field-subtext">Enter your title as you'd like it printed on your badge.</div>
-                    </div>
-
-                    <div class="form-section-heading">Registration Options</div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label">Registration Type*</label>
-                        <select class="form-select" id="reg-type-select" onchange="toggleRegOptions()" required>
-                            <option value="individual" data-price="250">Individual Player — $250.00 (Includes 18 Holes + All Receptions)</option>
-                            <option value="foursome" data-price="1000">Foursome / Team Captain — $1,000.00 (Includes 4 Players + All Receptions)</option>
-                            <option value="social" data-price="100">Social & Guest Pass — $100.00 (Receptions & Luncheon Only)</option>
-                            <option value="sponsor" data-price="0">Sponsor Representative — Complimentary (Requires Code)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-section-heading" id="golf-details-heading">Golf & Event Preferences</div>
-
-                    <div class="form-group" id="group-handicap">
-                        <label class="form-label">Handicap / Estimated Score</label>
-                        <input type="text" class="form-input" placeholder="e.g., 18 or 'Beginner'">
-                    </div>
-
-                    <div class="form-group" id="group-rentals">
-                        <label class="form-label">Golf Club Rental Needs</label>
-                        <select class="form-select">
-                            <option value="none">No rentals needed (bringing my own)</option>
-                            <option value="rh">Yes — Right Handed Set</option>
-                            <option value="lh">Yes — Left Handed Set</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label">Dietary Restrictions or Food Allergies</label>
-                        <input type="text" class="form-input" placeholder="e.g., None, Vegetarian, Gluten-Free, Nut Allergy">
-                    </div>
-
-                    <!-- FOURSOME TEAMMATES DYNAMIC CONTAINER -->
-                    <div class="foursome-container" id="foursome-section">
-                        <div class="foursome-title">Foursome Teammate Details</div>
-                        <div class="field-subtext">You can add teammate details now or leave empty and add them later.</div>
-
-                        <div class="teammate-row">
-                            <input type="text" class="form-input" placeholder="Player 2 Name">
-                            <input type="email" class="form-input" placeholder="Player 2 Email">
-                            <input type="text" class="form-input" placeholder="Player 2 Handicap">
-                        </div>
-
-                        <div class="teammate-row">
-                            <input type="text" class="form-input" placeholder="Player 3 Name">
-                            <input type="email" class="form-input" placeholder="Player 3 Email">
-                            <input type="text" class="form-input" placeholder="Player 3 Handicap">
-                        </div>
-
-                        <div class="teammate-row">
-                            <input type="text" class="form-input" placeholder="Player 4 Name">
-                            <input type="email" class="form-input" placeholder="Player 4 Email">
-                            <input type="text" class="form-input" placeholder="Player 4 Handicap">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Order Summary -->
-                <div class="order-summary-section">
-                    <h2 class="summary-left-title">Order summary</h2>
-                    <div class="summary-right-details">
-                        <div class="summary-row">
-                            <span id="summary-label">Individual Player Registration</span>
-                            <span id="summary-fee">$250.00</span>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total</span>
-                            <span id="summary-total">$250.00</span>
-                        </div>
-                        <div style="overflow: hidden; clear: both;">
-                            <button type="submit" class="btn-submit-reg">Register</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+        <!-- REPLACED REGISTRATION COPY SECTION -->
+        <div class="reg-info-container">
+            <h2 class="reg-info-heading">Foursome Registration</h2>
+            <p class="reg-info-text">
+                SHE Swings is currently accepting registrations for participating foursomes. To reserve a spot for your team or inquire about player opportunities, please contact <strong>Mike Lee</strong> directly at <a href="mailto:mikelee23@mac.com">mikelee23@mac.com</a>.
+            </p>
         </div>
     </div>
 
@@ -1540,46 +1176,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Payment Modal -->
-    <div id="payment-modal" class="modal-overlay">
-        <div class="payment-modal">
-            <div class="modal-header">
-                <div class="modal-title">Complete Payment</div>
-                <button class="close-modal" onclick="closeModal()">&times;</button>
-            </div>
-
-            <div class="pay-amount-badge">
-                <span>Total Due:</span>
-                <span id="modal-pay-amount">$250.00 USD</span>
-            </div>
-
-            <form onsubmit="handlePaymentSubmit(event)">
-                <div class="form-group" style="margin-bottom: 16px;">
-                    <label class="form-label">Cardholder Name</label>
-                    <input type="text" class="form-input" required placeholder="Name on card">
-                </div>
-
-                <div class="form-group" style="margin-bottom: 16px;">
-                    <label class="form-label">Card Information</label>
-                    <input type="text" class="form-input" required placeholder="1234 5678 9012 3456">
-                </div>
-
-                <div style="display: flex; gap: 12px; margin-bottom: 24px;">
-                    <div class="form-group" style="flex: 1;">
-                        <label class="form-label">MM / YY</label>
-                        <input type="text" class="form-input" placeholder="MM/YY" required>
-                    </div>
-                    <div class="form-group" style="flex: 1;">
-                        <label class="form-label">CVC</label>
-                        <input type="text" class="form-input" placeholder="CVC" required>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-submit-reg" style="width: 100%; height: 52px; font-size: 1.05rem; float: none; margin-top: 0;">Pay & Confirm</button>
-            </form>
-        </div>
-    </div>
 
     <!-- SCRIPT -->
     <script>
@@ -1680,66 +1276,7 @@
             }
             handleRoute();
             handleStripeMaskReveal();
-            toggleRegOptions();
         });
-
-        function toggleRegOptions() {
-            const regSelect = document.getElementById('reg-type-select');
-            const selectedOpt = regSelect.options[regSelect.selectedIndex];
-            const val = regSelect.value;
-            const price = parseInt(selectedOpt.getAttribute('data-price')) || 0;
-
-            const handicapGroup = document.getElementById('group-handicap');
-            const rentalsGroup = document.getElementById('group-rentals');
-            const golfHeading = document.getElementById('golf-details-heading');
-            const foursomeSection = document.getElementById('foursome-section');
-
-            const summaryLabel = document.getElementById('summary-label');
-            const summaryFee = document.getElementById('summary-fee');
-            const summaryTotal = document.getElementById('summary-total');
-            const modalPayAmount = document.getElementById('modal-pay-amount');
-
-            if (val === 'social') {
-                handicapGroup.style.display = 'none';
-                rentalsGroup.style.display = 'none';
-                golfHeading.textContent = 'Event Preferences';
-            } else {
-                handicapGroup.style.display = 'flex';
-                rentalsGroup.style.display = 'flex';
-                golfHeading.textContent = 'Golf & Event Preferences';
-            }
-
-            if (val === 'foursome') {
-                foursomeSection.classList.add('active');
-            } else {
-                foursomeSection.classList.remove('active');
-            }
-
-            const formattedPrice = '$' + price.toFixed(2);
-            summaryLabel.textContent = selectedOpt.text.split('—')[0].trim() + ' Registration';
-            summaryFee.textContent = formattedPrice;
-            summaryTotal.textContent = formattedPrice;
-            if (modalPayAmount) {
-                modalPayAmount.textContent = formattedPrice + ' USD';
-            }
-        }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            document.getElementById('payment-modal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('payment-modal').classList.remove('active');
-        }
-
-        function handlePaymentSubmit(e) {
-            e.preventDefault();
-            const totalText = document.getElementById('summary-total').textContent;
-            alert('Registration and payment of ' + totalText + ' successful! Thank you for registering.');
-            closeModal();
-            navigateTo('home');
-        }
     </script>
 </body>
 </html>
