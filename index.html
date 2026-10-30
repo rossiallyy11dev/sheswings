@@ -173,6 +173,7 @@
         /* Hero Layout */
         .hero-section {
             width: 100%;
+            max-width: 1200px;
             margin: 24px auto 64px auto;
         }
 
@@ -216,7 +217,7 @@
 
         .hero-banner-container {
             width: 100%;
-            height: 560px;
+            height: 380px;
             background-color: #E8E8EC;
             border-radius: 16px;
             overflow: hidden;
@@ -231,6 +232,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: 85% bottom;
             display: block;
             opacity: 1; 
         }
@@ -238,6 +240,7 @@
         /* Section Dividers */
         .section-divider {
             width: calc(100% - 32px);
+            max-width: 1200px;
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
             margin: 120px auto 16px auto;
@@ -246,7 +249,7 @@
         /* Generic Section Layout */
         .content-section {
             width: 100%;
-            max-width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: flex-start;
@@ -566,6 +569,7 @@
         .registration-page {
             display: none;
             width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
             padding-top: 0;
         }
@@ -812,29 +816,39 @@
             }
             .hero-header-row {
                 flex-direction: column;
-                gap: 24px;
+                gap: 0;
                 padding: 0;
+                margin-bottom: 24px;
             }
             .hero-headline {
                 margin-left: 0;
-                margin-top: 20px;
+                margin-bottom: 20px;
+                /* Forces headline lines to stay completely on one line each */
+                white-space: nowrap;
             }
             .hero-meta-group {
+                display: grid;
+                grid-template-columns: auto auto;
                 gap: 32px;
+                width: 100%;
+                max-width: 100%;
                 margin-left: 0;
                 margin-right: 0;
             }
+            .meta-item {
+                white-space: nowrap;
+            }
             .hero-banner-container {
-                height: auto !important;
-                background-color: transparent !important;
-                border: none !important;
+                height: 380px;
+                background-color: #E8E8EC;
                 border-radius: 16px;
                 overflow: hidden;
             }
             .hero-banner-image {
                 width: 100%;
-                height: auto;
+                height: 100%;
                 object-fit: cover;
+                object-position: 85% bottom;
                 display: block;
             }
             .content-section {
@@ -921,13 +935,12 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR (FAQ removed from nav-right) -->
     <header class="navbar" id="navbar">
         <a onclick="navigateTo('home')" class="brand-logo">
             <span class="bold-text">SHE</span> <span class="light-text">Swings</span>
         </a>
         <div class="nav-right">
-            <a href="#faqs" onclick="navigateTo('faqs')" class="nav-link">FAQs</a>
             <button onclick="navigateTo('register')" class="btn-register">Register</button>
         </div>
     </header>
@@ -945,7 +958,7 @@
                     <div class="meta-item">
                         October 10–11,<br>2027
                     </div>
-                    <div class="meta-item" style="margin-right: 48px;">
+                    <div class="meta-item">
                         Oswego Lake Country Club,<br>Lake Oswego, Oregon
                     </div>
                 </div>
