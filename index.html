@@ -807,6 +807,11 @@
         }
 
         @media (max-width: 900px) {
+            /* Hide FAQ link on mobile only */
+            .nav-faq-link {
+                display: none !important;
+            }
+
             body {
                 padding-top: 90px;
             }
@@ -927,7 +932,7 @@
             <span class="bold-text">SHE</span> <span class="light-text">Swings</span>
         </a>
         <div class="nav-right">
-            <a href="#faqs" onclick="navigateTo('faqs')" class="nav-link">FAQs</a>
+            <a href="#faqs" onclick="navigateTo('faqs')" class="nav-link nav-faq-link">FAQs</a>
             <button onclick="navigateTo('register')" class="btn-register">Register</button>
         </div>
     </header>
