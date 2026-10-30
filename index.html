@@ -825,11 +825,17 @@
                 margin-right: 0;
             }
             .hero-banner-container {
-                height: 220px;
-                background-color: #E8E8EC;
+                height: auto !important;
+                background-color: transparent !important;
+                border: none !important;
+                border-radius: 16px;
+                overflow: hidden;
             }
             .hero-banner-image {
-                object-fit: contain;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                display: block;
             }
             .content-section {
                 flex-direction: column;
