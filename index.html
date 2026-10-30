@@ -68,7 +68,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
-        /* REGISTRATION PAGE NAV STATE (EXACT STRIPE SESSIONS BEHAVIOR) */
+        /* REGISTRATION PAGE NAV STATE (EXACT STRIPE SESSIONS STAGNANT & FLOATING BEHAVIOR) */
         body.is-registration-page .navbar {
             top: 0 !important;
             width: 100% !important;
@@ -78,17 +78,17 @@
             background-color: #FFFFFF !important;
             backdrop-filter: none !important;
             -webkit-backdrop-filter: none !important;
-            border-bottom: 1px solid transparent !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
             padding: 20px 24px !important;
         }
 
-        /* REGISTRATION PAGE SCROLLED STATE (EXACT STRIPE BLUR & BOTTOM BORDER) */
+        /* REGISTRATION PAGE SCROLLED STATE (FROSTED BLUR LOOK) */
         body.is-registration-page .navbar.reg-scrolled {
-            background-color: rgba(255, 255, 255, 0.82) !important;
+            background-color: rgba(255, 255, 255, 0.78) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
             padding: 16px 24px !important;
         }
 
@@ -682,7 +682,7 @@
 
         .reg-info-heading {
             font-family: 'Roboto', sans-serif;
-            font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+            font-size: clamp(1.8rem, 2.8vw, 2.8vw);
             font-weight: 400;
             color: #555555;
             letter-spacing: -0.02em;
@@ -973,7 +973,7 @@
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
                 <p class="section-text" id="about-text" style="--highlightOffset: 0%;">
-                    Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>, with proceeds directly benefiting the organization. SHE Swings combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
+                    Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>, with proceeds directly benefiting the organization. This event combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
                     <button onclick="navigateTo('register')" class="btn-register">Register</button>
