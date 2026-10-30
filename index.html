@@ -68,18 +68,28 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
-        /* REGISTRATION PAGE NAV STATE (TRANSLUCENT FROSTED ON SCROLL) */
+        /* REGISTRATION PAGE NAV STATE (EXACT STRIPE SESSIONS BEHAVIOR) */
         body.is-registration-page .navbar {
             top: 0 !important;
             width: 100% !important;
-            padding: 18px 24px !important;
-            background-color: rgba(255, 255, 255, 0.85) !important;
+            max-width: 100% !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            background-color: #FFFFFF !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border-bottom: 1px solid transparent !important;
+            padding: 20px 24px !important;
+        }
+
+        /* REGISTRATION PAGE SCROLLED STATE (EXACT STRIPE BLUR & BOTTOM BORDER) */
+        body.is-registration-page .navbar.reg-scrolled {
+            background-color: rgba(255, 255, 255, 0.82) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
-            border-radius: 0 !important;
-            border: none !important;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+            padding: 16px 24px !important;
         }
 
         body.is-registration-page .nav-right {
@@ -664,7 +674,7 @@
             display: block;
         }
 
-        /* REPLACED REGISTRATION INFO BLOCK */
+        /* REPLACED REGISTRATION COPY SECTION */
         .reg-info-container {
             padding: 0 16px;
             max-width: 800px;
@@ -1202,10 +1212,20 @@
 
         function updateNavbar() {
             if (nav) {
-                if (window.scrollY > 30) {
-                    nav.classList.add('scrolled');
-                } else if (window.scrollY < 10) {
+                if (document.body.classList.contains('is-registration-page')) {
+                    if (window.scrollY > 10) {
+                        nav.classList.add('reg-scrolled');
+                    } else {
+                        nav.classList.remove('reg-scrolled');
+                    }
                     nav.classList.remove('scrolled');
+                } else {
+                    nav.classList.remove('reg-scrolled');
+                    if (window.scrollY > 30) {
+                        nav.classList.add('scrolled');
+                    } else if (window.scrollY < 10) {
+                        nav.classList.remove('scrolled');
+                    }
                 }
             }
         }
