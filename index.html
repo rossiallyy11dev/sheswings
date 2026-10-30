@@ -68,18 +68,18 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
-        /* REGISTRATION PAGE NAV STATE (STRIPE STYLE) */
+        /* REGISTRATION PAGE NAV STATE (TRANSLUCENT FROSTED ON SCROLL) */
         body.is-registration-page .navbar {
             top: 0 !important;
             width: 100% !important;
             padding: 18px 24px !important;
-            background-color: #FFFFFF !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
+            background-color: rgba(255, 255, 255, 0.85) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
             border-radius: 0 !important;
             border: none !important;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-            box-shadow: none !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
         }
 
         body.is-registration-page .nav-right {
@@ -1201,7 +1201,7 @@
         const nav = document.getElementById('navbar');
 
         function updateNavbar() {
-            if (nav && !document.body.classList.contains('is-registration-page')) {
+            if (nav) {
                 if (window.scrollY > 30) {
                     nav.classList.add('scrolled');
                 } else if (window.scrollY < 10) {
@@ -1257,7 +1257,6 @@
                 homePage.style.display = 'none';
                 regPage.classList.add('active');
                 document.body.classList.add('is-registration-page');
-                nav.classList.remove('scrolled');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else if (hash === '#faqs') {
                 homePage.style.display = 'block';
