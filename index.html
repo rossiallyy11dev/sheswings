@@ -49,12 +49,13 @@
             padding: 20px 24px;
             background-color: transparent;
             border: 1px solid transparent;
+            border-bottom: 1px solid transparent;
             border-radius: 0;
             box-shadow: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Scrolled Floating State */
+        /* MAIN PAGE SCROLLED FLOATING STATE */
         .navbar.scrolled {
             top: 12px;
             width: calc(100% - 32px);
@@ -65,6 +66,24 @@
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.5);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        /* REGISTRATION PAGE NAV STATE (STRIPE STYLE) */
+        body.is-registration-page .navbar {
+            top: 0 !important;
+            width: 100% !important;
+            padding: 18px 24px !important;
+            background-color: #FFFFFF !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border-radius: 0 !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: none !important;
+        }
+
+        body.is-registration-page .nav-right {
+            display: none !important;
         }
 
         .hero-section, .content-section, .registration-page {
@@ -645,7 +664,7 @@
             display: block;
         }
 
-        /* REPLACEMENT REGISTRATION INFO BLOCK */
+        /* REPLACED REGISTRATION INFO BLOCK */
         .reg-info-container {
             padding: 0 16px;
             max-width: 800px;
@@ -1182,7 +1201,7 @@
         const nav = document.getElementById('navbar');
 
         function updateNavbar() {
-            if (nav) {
+            if (nav && !document.body.classList.contains('is-registration-page')) {
                 if (window.scrollY > 30) {
                     nav.classList.add('scrolled');
                 } else if (window.scrollY < 10) {
@@ -1237,10 +1256,13 @@
             if (hash === '#register') {
                 homePage.style.display = 'none';
                 regPage.classList.add('active');
+                document.body.classList.add('is-registration-page');
+                nav.classList.remove('scrolled');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else if (hash === '#faqs') {
                 homePage.style.display = 'block';
                 regPage.classList.remove('active');
+                document.body.classList.remove('is-registration-page');
                 const faqsElement = document.getElementById('faqs');
                 if (faqsElement) {
                     faqsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1248,8 +1270,10 @@
             } else {
                 homePage.style.display = 'block';
                 regPage.classList.remove('active');
+                document.body.classList.remove('is-registration-page');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+            updateNavbar();
             handleStripeMaskReveal();
         }
 
