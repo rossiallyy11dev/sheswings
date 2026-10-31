@@ -20,6 +20,12 @@
             padding: 0;
         }
 
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         html {
             scroll-padding-top: 100px;
         }
@@ -31,7 +37,6 @@
             padding: 0;
             padding-top: 120px;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
         }
 
         /* FIXED NAVBAR */
@@ -829,6 +834,9 @@
                 margin-left: 0;
                 margin-right: 0;
             }
+            .meta-item {
+                margin-right: 0 !important;
+            }
             .hero-banner-container {
                 height: auto !important;
                 background-color: transparent !important;
@@ -847,9 +855,10 @@
                 gap: 24px;
             }
             .section-title {
-                white-space: normal;
-                flex: none;
-                width: 100%;
+                white-space: normal !important;
+                flex: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
                 padding-right: 0;
             }
             .section-right-content {
@@ -905,9 +914,11 @@
                 margin-bottom: 48px;
             }
             .footer-right-top {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
                 gap: 32px;
-                margin-right: 0;
-                width: 100%;
+                margin-right: 0 !important;
+                width: 100% !important;
             }
             .footer-bottom-row {
                 flex-direction: column;
@@ -950,7 +961,7 @@
                     <div class="meta-item">
                         October 10–11,<br>2027
                     </div>
-                    <div class="meta-item" style="margin-right: 48px;">
+                    <div class="meta-item">
                         Oswego Lake Country Club,<br>Lake Oswego, Oregon
                     </div>
                 </div>
