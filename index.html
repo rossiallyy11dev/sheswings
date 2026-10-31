@@ -812,10 +812,10 @@
         }
 
         /* ------------------------------------------------ */
-        /* MOBILE & TABLET / IPAD PORTRAIT (max-width: 768px) */
+        /* MOBILE PHONES ONLY (max-width: 767px)            */
         /* ------------------------------------------------ */
-        @media (max-width: 768px) {
-            /* Hide FAQ link on mobile/tablet only */
+        @media (max-width: 767px) {
+            /* Hide FAQ link on mobile only */
             .nav-faq-link {
                 display: none !important;
             }
@@ -932,7 +932,7 @@
                 margin-right: 0 !important;
                 width: 100% !important;
             }
-            /* Keep Oswego Lake Country Club on a single line on mobile/tablet footer */
+            /* Keep Oswego Lake Country Club on a single line on mobile footer */
             .footer-right-top .footer-meta-item:last-child {
                 white-space: nowrap;
             }
@@ -947,6 +947,39 @@
             }
             .footer-section-group.get-help-group {
                 margin-bottom: 24px;
+            }
+        }
+
+        /* ------------------------------------------------ */
+        /* IPAD / TABLET PORTRAIT ONLY (Exact width: 768px)  */
+        /* ------------------------------------------------ */
+        @media (min-width: 768px) and (max-width: 768px) {
+            .hero-banner-container, 
+            .guest-media-container, 
+            .sponsor-media-container {
+                height: auto !important;
+                background-color: transparent !important;
+                border: none !important;
+                border-radius: 16px;
+                overflow: hidden;
+            }
+            .hero-banner-image, 
+            .guest-media-image, 
+            .sponsor-media-container img {
+                width: 100%;
+                height: auto !important;
+                object-fit: contain !important;
+                display: block;
+            }
+            .reg-image-container {
+                height: auto !important;
+                background-color: transparent !important;
+                border: none !important;
+            }
+            .reg-image-media {
+                width: 100%;
+                height: auto !important;
+                object-fit: contain !important;
             }
         }
     </style>
@@ -993,7 +1026,7 @@
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
                 <p class="section-text" id="about-text" style="--highlightOffset: 0%;">
-                    Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>, with proceeds directly benefiting the organization. This event combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
+                    Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>[cite: 1], with proceeds directly benefiting the organization. This event combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
                     <button onclick="navigateTo('register')" class="btn-register">Register</button>
@@ -1219,7 +1252,7 @@
                     <div class="footer-section-title">Links</div>
                     <div class="footer-link-list">
                         <a href="https://walterprod.com" target="_blank" class="footer-link">Walter Productions</a>
-                        <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
+                        <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>[cite: 1]
                     </div>
                 </div>
             </div>
