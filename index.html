@@ -925,43 +925,48 @@
                 margin-left: 0;
             }
 
-            /* Footer Reordering for Mobile (Headline on Top) */
+            /* Footer Reordering for Mobile: SHE Swings -> Headline -> Date/Location above line */
             .site-footer {
                 padding: 24px 16px;
                 width: 100%;
                 min-height: auto;
+                display: flex;
+                flex-direction: column;
             }
             .footer-top-row {
                 flex-direction: column;
-                gap: 32px;
-                margin-bottom: 32px;
+                gap: 24px;
+                margin-bottom: 24px;
+            }
+            .footer-brand {
+                order: 1;
             }
             .footer-right-top {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr !important;
-                gap: 32px;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
                 margin-right: 0 !important;
                 width: 100% !important;
-                order: 2; /* Date/location pushed below headline */
-            }
-            .footer-right-top .footer-meta-item:last-child {
-                white-space: nowrap;
+                order: 3; /* Placed right above the Get Help line */
+                margin-top: 32px;
+                padding-top: 24px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
             }
             .footer-bottom-row {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 32px;
+                gap: 0;
             }
             .footer-headline {
                 font-size: 2.3rem;
                 line-height: 1.08;
-                order: 1; /* Headline pushed to the very top */
+                order: 2; /* Sits right under SHE Swings */
                 margin-bottom: 0;
             }
             .footer-right-col {
                 width: 100%;
                 margin-right: 0;
-                order: 3;
+                order: 4;
             }
             .footer-section-group.get-help-group {
                 margin-bottom: 24px;
@@ -1080,43 +1085,48 @@
                 margin-left: 0;
             }
 
-            /* Footer Reordering for iPad (Headline on Top) */
+            /* Footer Reordering for iPad: SHE Swings -> Headline -> Date/Location above line */
             .site-footer {
                 padding: 24px 16px;
                 width: 100%;
                 min-height: auto;
+                display: flex;
+                flex-direction: column;
             }
             .footer-top-row {
                 flex-direction: column;
-                gap: 32px;
-                margin-bottom: 32px;
+                gap: 24px;
+                margin-bottom: 24px;
+            }
+            .footer-brand {
+                order: 1;
             }
             .footer-right-top {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr !important;
-                gap: 32px;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
                 margin-right: 0 !important;
                 width: 100% !important;
-                order: 2; /* Date/location pushed below headline */
-            }
-            .footer-right-top .footer-meta-item:last-child {
-                white-space: nowrap;
+                order: 3; /* Placed right above the Get Help line */
+                margin-top: 32px;
+                padding-top: 24px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
             }
             .footer-bottom-row {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 32px;
+                gap: 0;
             }
             .footer-headline {
                 font-size: 2.3rem;
                 line-height: 1.08;
-                order: 1; /* Headline pushed to the very top */
+                order: 2; /* Sits right under SHE Swings */
                 margin-bottom: 0;
             }
             .footer-right-col {
                 width: 100%;
                 margin-right: 0;
-                order: 3;
+                order: 4;
             }
             .footer-section-group.get-help-group {
                 margin-bottom: 24px;
