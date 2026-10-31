@@ -934,7 +934,7 @@
             .footer-top-row {
                 flex-direction: column;
                 gap: 32px;
-                margin-bottom: 48px;
+                margin-bottom: 32px;
             }
             .footer-right-top {
                 display: grid !important;
@@ -942,6 +942,7 @@
                 gap: 32px;
                 margin-right: 0 !important;
                 width: 100% !important;
+                order: 2; /* Date/location pushed below headline */
             }
             .footer-right-top .footer-meta-item:last-child {
                 white-space: nowrap;
@@ -949,18 +950,18 @@
             .footer-bottom-row {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 48px;
+                gap: 32px;
             }
             .footer-headline {
                 font-size: 2.3rem;
                 line-height: 1.08;
-                order: 1; /* Move headline to the top */
-                margin-bottom: 32px;
+                order: 1; /* Headline pushed to the very top */
+                margin-bottom: 0;
             }
             .footer-right-col {
                 width: 100%;
                 margin-right: 0;
-                order: 2;
+                order: 3;
             }
             .footer-section-group.get-help-group {
                 margin-bottom: 24px;
@@ -1088,7 +1089,7 @@
             .footer-top-row {
                 flex-direction: column;
                 gap: 32px;
-                margin-bottom: 48px;
+                margin-bottom: 32px;
             }
             .footer-right-top {
                 display: grid !important;
@@ -1096,6 +1097,7 @@
                 gap: 32px;
                 margin-right: 0 !important;
                 width: 100% !important;
+                order: 2; /* Date/location pushed below headline */
             }
             .footer-right-top .footer-meta-item:last-child {
                 white-space: nowrap;
@@ -1103,18 +1105,18 @@
             .footer-bottom-row {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 48px;
+                gap: 32px;
             }
             .footer-headline {
                 font-size: 2.3rem;
                 line-height: 1.08;
-                order: 1; /* Move headline to the top */
-                margin-bottom: 32px;
+                order: 1; /* Headline pushed to the very top */
+                margin-bottom: 0;
             }
             .footer-right-col {
                 width: 100%;
                 margin-right: 0;
-                order: 2;
+                order: 3;
             }
             .footer-section-group.get-help-group {
                 margin-bottom: 24px;
