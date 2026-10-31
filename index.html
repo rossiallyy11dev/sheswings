@@ -849,7 +849,7 @@
                 padding-left: 28px !important;
             }
             
-            /* SQUARE HERO BANNER FOR MOBILE WITH LOGO IN BOTTOM-RIGHT */
+            /* SQUARE HERO BANNER FOR MOBILE WITH CONTAIN TO SHOW FULL LOGO */
             .hero-banner-container {
                 height: calc(100vw - 32px) !important;
                 max-height: 400px;
@@ -860,8 +860,7 @@
             .hero-banner-image {
                 width: 100% !important;
                 height: 100% !important;
-                object-fit: cover !important;
-                object-position: 88% bottom !important; /* Panned right and down to pin the round logo in the bottom-right corner */
+                object-fit: contain !important; /* Ensures the entire panoramic image and its logo fit fully without cropping out edges */
                 display: block !important;
             }
 
