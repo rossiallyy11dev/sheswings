@@ -686,7 +686,7 @@
             text-decoration: underline;
         }
 
-        /* DESKTOP FOOTER LAYOUT */
+        /* ORIGINAL DESKTOP FOOTER (UNTOUCHED) */
         .site-footer {
             background-color: #00AAEE;
             color: #FFFFFF;
@@ -919,31 +919,43 @@
                 margin-left: 0;
             }
 
-            /* STRIPE SESSIONS FOOTER MATCH (MOBILE) */
+            /* REORDER FOOTER FOR MOBILE (EXACT STRIPE SESSIONS STACK) */
             .site-footer {
                 padding: 40px 20px 48px 20px;
                 width: 100%;
                 min-height: auto;
-                display: block !important;
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                grid-template-areas: 
+                    "brand"
+                    "headline"
+                    "dates"
+                    "links" !important;
+                gap: 0 !important;
             }
+
             .footer-top-row {
-                display: block !important;
-                margin-bottom: 0;
+                display: contents !important;
             }
+
+            .footer-bottom-row {
+                display: contents !important;
+            }
+
             .footer-brand {
-                display: block;
+                grid-area: brand;
                 margin-bottom: 36px;
             }
-            .footer-bottom-row {
-                display: block !important;
-            }
+
             .footer-headline {
+                grid-area: headline;
                 font-size: 2.35rem;
                 line-height: 1.08;
                 margin-bottom: 56px;
-                display: block;
             }
+
             .footer-right-top {
+                grid-area: dates;
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
@@ -951,18 +963,23 @@
                 margin: 0 0 36px 0 !important;
                 gap: 16px !important;
             }
+
             .footer-meta-item {
                 flex: 1;
             }
+
             .footer-right-col {
+                grid-area: links;
                 width: 100% !important;
                 margin: 0 !important;
             }
+
             .footer-section-group {
                 border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
                 padding-top: 20px !important;
                 margin-bottom: 36px !important;
             }
+
             .footer-section-group.get-help-group {
                 margin-bottom: 36px !important;
             }
@@ -1078,31 +1095,43 @@
                 margin-left: 0;
             }
 
-            /* STRIPE SESSIONS FOOTER MATCH (IPAD) */
+            /* REORDER FOOTER FOR IPAD (EXACT STRIPE SESSIONS STACK) */
             .site-footer {
                 padding: 40px 24px 48px 24px;
                 width: 100%;
                 min-height: auto;
-                display: block !important;
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                grid-template-areas: 
+                    "brand"
+                    "headline"
+                    "dates"
+                    "links" !important;
+                gap: 0 !important;
             }
+
             .footer-top-row {
-                display: block !important;
-                margin-bottom: 0;
+                display: contents !important;
             }
+
+            .footer-bottom-row {
+                display: contents !important;
+            }
+
             .footer-brand {
-                display: block;
+                grid-area: brand;
                 margin-bottom: 36px;
             }
-            .footer-bottom-row {
-                display: block !important;
-            }
+
             .footer-headline {
+                grid-area: headline;
                 font-size: 2.8rem;
                 line-height: 1.08;
                 margin-bottom: 56px;
-                display: block;
             }
+
             .footer-right-top {
+                grid-area: dates;
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
@@ -1110,18 +1139,23 @@
                 margin: 0 0 36px 0 !important;
                 gap: 24px !important;
             }
+
             .footer-meta-item {
                 flex: 1;
             }
+
             .footer-right-col {
+                grid-area: links;
                 width: 100% !important;
                 margin: 0 !important;
             }
+
             .footer-section-group {
                 border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
                 padding-top: 20px !important;
                 margin-bottom: 36px !important;
             }
+
             .footer-section-group.get-help-group {
                 margin-bottom: 36px !important;
             }
@@ -1370,9 +1404,6 @@
             <a onclick="navigateTo('home')" class="footer-brand">
                 <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
             </a>
-            
-            <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
-
             <div class="footer-right-top">
                 <div class="footer-meta-item">
                     October 10–11,<br>2027
@@ -1384,6 +1415,8 @@
         </div>
 
         <div class="footer-bottom-row">
+            <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
+
             <div class="footer-right-col">
                 <div class="footer-section-group get-help-group">
                     <div class="footer-section-title">Get help</div>
