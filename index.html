@@ -849,7 +849,23 @@
                 padding-left: 28px !important;
             }
             
-            .hero-banner-container, 
+            /* SQUARE HERO BANNER FOR MOBILE */
+            .hero-banner-container {
+                height: calc(100vw - 32px) !important; /* Makes it a perfect square based on screen width minus padding */
+                max-height: 400px;
+                background-color: #E8E8EC !important;
+                border-radius: 16px;
+                overflow: hidden;
+            }
+            .hero-banner-image {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: 78% center !important; /* Pans closer to the right side to keep the logo clear and centered */
+                display: block !important;
+            }
+
+            /* OTHER MOBILE MEDIA CONTAINERS (UNTOUCHED) */
             .guest-media-container, 
             .sponsor-media-container,
             .about-media-container {
@@ -860,7 +876,6 @@
                 border-radius: 16px;
                 overflow: hidden;
             }
-            .hero-banner-image, 
             .guest-media-image, 
             .sponsor-media-container img,
             .about-media-image {
@@ -1143,7 +1158,7 @@
                 grid-template-columns: 120px 220px !important;
                 gap: 28px !important;
                 margin-left: auto !important;
-                margin-right: -16px !important; /* Pulls the footer group left to match the header's 16px right margin */
+                margin-right: -16px !important;
                 width: auto !important;
             }
 
