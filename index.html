@@ -924,14 +924,12 @@
                 justify-self: start;
                 margin-left: 0;
             }
+
+            /* Footer Reordering for Mobile (Headline on Top) */
             .site-footer {
                 padding: 24px 16px;
                 width: 100%;
                 min-height: auto;
-            }
-            .footer-headline {
-                font-size: 2.3rem;
-                line-height: 1.08;
             }
             .footer-top-row {
                 flex-direction: column;
@@ -945,7 +943,6 @@
                 margin-right: 0 !important;
                 width: 100% !important;
             }
-            /* Keep Oswego Lake Country Club on a single line on mobile footer */
             .footer-right-top .footer-meta-item:last-child {
                 white-space: nowrap;
             }
@@ -954,9 +951,16 @@
                 align-items: flex-start;
                 gap: 48px;
             }
+            .footer-headline {
+                font-size: 2.3rem;
+                line-height: 1.08;
+                order: 1; /* Move headline to the top */
+                margin-bottom: 32px;
+            }
             .footer-right-col {
                 width: 100%;
                 margin-right: 0;
+                order: 2;
             }
             .footer-section-group.get-help-group {
                 margin-bottom: 24px;
@@ -1074,14 +1078,12 @@
                 justify-self: start;
                 margin-left: 0;
             }
+
+            /* Footer Reordering for iPad (Headline on Top) */
             .site-footer {
                 padding: 24px 16px;
                 width: 100%;
                 min-height: auto;
-            }
-            .footer-headline {
-                font-size: 2.3rem;
-                line-height: 1.08;
             }
             .footer-top-row {
                 flex-direction: column;
@@ -1103,9 +1105,16 @@
                 align-items: flex-start;
                 gap: 48px;
             }
+            .footer-headline {
+                font-size: 2.3rem;
+                line-height: 1.08;
+                order: 1; /* Move headline to the top */
+                margin-bottom: 32px;
+            }
             .footer-right-col {
                 width: 100%;
                 margin-right: 0;
+                order: 2;
             }
             .footer-section-group.get-help-group {
                 margin-bottom: 24px;
