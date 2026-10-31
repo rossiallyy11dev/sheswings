@@ -811,7 +811,7 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             /* Hide FAQ link on mobile only */
             .nav-faq-link {
                 display: none !important;
@@ -1252,8 +1252,8 @@
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
 
-            // Disable fade effect on mobile screens (900px or narrower)
-            if (window.innerWidth <= 900) {
+            // Disable fade effect on mobile screens (768px or narrower)
+            if (window.innerWidth <= 768) {
                 aboutText.classList.add('fully-revealed');
                 aboutText.style.removeProperty('--highlightOffset');
                 return;
