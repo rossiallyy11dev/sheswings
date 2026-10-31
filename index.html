@@ -812,9 +812,9 @@
         }
 
         /* ------------------------------------------------ */
-        /* MOBILE PHONES ONLY (max-width: 768px)            */
+        /* MOBILE PHONES ONLY (max-width: 767px)            */
         /* ------------------------------------------------ */
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             /* Hide FAQ link on mobile only */
             .nav-faq-link {
                 display: none !important;
@@ -1255,8 +1255,8 @@
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
 
-            // Disable fade effect on mobile screens (768px or narrower)
-            if (window.innerWidth <= 768) {
+            // Disable fade effect on mobile screens (767px or narrower)
+            if (window.innerWidth <= 767) {
                 aboutText.classList.add('fully-revealed');
                 aboutText.style.removeProperty('--highlightOffset');
                 return;
