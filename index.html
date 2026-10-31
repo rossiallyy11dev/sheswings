@@ -821,7 +821,7 @@
                 padding-top: 90px;
             }
             .hero-section {
-                margin-bottom: 110px; /* Added extra space below hero section on mobile */
+                margin-bottom: 110px;
             }
             .hero-header-row {
                 flex-direction: column;
@@ -1247,6 +1247,13 @@
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
+
+            // Disable fade effect on mobile screens (900px or narrower)
+            if (window.innerWidth <= 900) {
+                aboutText.classList.add('fully-revealed');
+                aboutText.style.removeProperty('--highlightOffset');
+                return;
+            }
 
             const rect = aboutText.getBoundingClientRect();
             const windowHeight = window.innerHeight;
