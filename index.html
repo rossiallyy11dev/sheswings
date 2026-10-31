@@ -849,7 +849,7 @@
                 padding-left: 28px !important;
             }
             
-            /* SQUARE HERO BANNER FOR MOBILE WITH COVER AND UNLOCKED LOGO POSITION */
+            /* SQUARE HERO BANNER FOR MOBILE USING MOBILE BANNER.PNG */
             .hero-banner-container {
                 height: calc(100vw - 32px) !important;
                 max-height: 400px;
@@ -858,10 +858,11 @@
                 overflow: hidden;
             }
             .hero-banner-image {
+                content: url("MOBILE BANNER.png") !important;
                 width: 100% !important;
                 height: 100% !important;
                 object-fit: cover !important;
-                object-position: 74% bottom !important; /* Adjusted slightly left from 88% so the whole logo stays inside the frame while using cover */
+                object-position: center !important;
                 display: block !important;
             }
 
