@@ -812,10 +812,10 @@
         }
 
         /* ------------------------------------------------ */
-        /* MOBILE PHONES ONLY (max-width: 767px)            */
+        /* MOBILE & TABLET / IPAD PORTRAIT (max-width: 768px) */
         /* ------------------------------------------------ */
-        @media (max-width: 767px) {
-            /* Hide FAQ link on mobile only */
+        @media (max-width: 768px) {
+            /* Hide FAQ link on mobile/tablet only */
             .nav-faq-link {
                 display: none !important;
             }
@@ -932,7 +932,7 @@
                 margin-right: 0 !important;
                 width: 100% !important;
             }
-            /* Keep Oswego Lake Country Club on a single line on mobile footer */
+            /* Keep Oswego Lake Country Club on a single line on mobile/tablet footer */
             .footer-right-top .footer-meta-item:last-child {
                 white-space: nowrap;
             }
@@ -1255,8 +1255,8 @@
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
 
-            // Disable fade effect on mobile screens (767px or narrower)
-            if (window.innerWidth <= 767) {
+            // Disable fade effect on mobile/tablet screens (768px or narrower)
+            if (window.innerWidth <= 768) {
                 aboutText.classList.add('fully-revealed');
                 aboutText.style.removeProperty('--highlightOffset');
                 return;
