@@ -979,7 +979,7 @@
             .footer-right-top .footer-meta-item:last-child {
                 flex: 0 0 320px !important;
                 text-align: left !important;
-                padding-left: 14px !important; /* Shifts the location block rightwards to align with the 'e' in 'course' */
+                padding-left: 14px !important;
             }
 
             .footer-meta-item {
@@ -1125,69 +1125,46 @@
                 margin-left: 0;
             }
 
-            /* MATCH DESKTOP FOOTER STRUCTURE FOR IPAD */
+            /* MATCH DESKTOP FOOTER LAYOUT FOR IPAD */
             .site-footer {
-                padding: 40px 24px 48px 24px;
-                width: 100%;
-                min-height: auto;
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                grid-template-areas: 
-                    "brand"
-                    "headline"
-                    "dates"
-                    "links" !important;
-                gap: 0 !important;
+                padding: 28px 16px 28px 20px !important;
+                min-height: 520px !important;
             }
 
             .footer-top-row {
-                display: contents !important;
-            }
-
-            .footer-bottom-row {
-                display: contents !important;
-            }
-
-            .footer-brand {
-                grid-area: brand;
-                margin-bottom: 36px;
-            }
-
-            .footer-headline {
-                grid-area: headline;
-                font-size: 2.8rem;
-                line-height: 1.08;
-                margin-bottom: 56px;
-            }
-
-            .footer-right-top {
-                grid-area: dates;
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
-                width: 100% !important;
-                margin: 0 0 36px 0 !important;
+                margin-bottom: 100px !important;
+            }
+
+            .footer-right-top {
+                display: grid !important;
+                grid-template-columns: 120px 220px !important;
                 gap: 24px !important;
+                margin-left: auto !important;
+                margin-right: 0 !important;
+                width: auto !important;
             }
 
-            .footer-meta-item {
-                flex: 1;
+            .footer-bottom-row {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: flex-end !important;
             }
 
-            .footer-right-col {
-                grid-area: links;
-                width: 100% !important;
+            .footer-headline {
+                font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
+                line-height: 1.05 !important;
+                max-width: 380px !important;
                 margin: 0 !important;
             }
 
-            .footer-section-group {
-                border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
-                padding-top: 20px !important;
-                margin-bottom: 36px !important;
-            }
-
-            .footer-section-group.get-help-group {
-                margin-bottom: 36px !important;
+            .footer-right-col {
+                width: 300px !important;
+                margin-left: auto !important;
+                margin-right: 0 !important;
+                margin-bottom: 0 !important;
             }
         }
     </style>
