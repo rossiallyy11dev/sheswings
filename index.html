@@ -845,19 +845,29 @@
             .meta-item {
                 margin-right: 0 !important;
             }
-            .hero-banner-container {
+            
+            /* Un-crop all photos on mobile */
+            .hero-banner-container, 
+            .guest-media-container, 
+            .sponsor-media-container,
+            .about-media-container {
                 height: auto !important;
+                max-width: 100% !important;
                 background-color: transparent !important;
                 border: none !important;
                 border-radius: 16px;
                 overflow: hidden;
             }
-            .hero-banner-image {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-                display: block;
+            .hero-banner-image, 
+            .guest-media-image, 
+            .sponsor-media-container img,
+            .about-media-image {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: contain !important;
+                display: block !important;
             }
+
             .content-section {
                 flex-direction: column;
                 gap: 24px;
@@ -880,10 +890,6 @@
             .agenda-date-col {
                 flex: none;
             }
-            .about-media-container, .guest-media-container, .sponsor-media-container {
-                max-width: 100%;
-                height: 280px;
-            }
             .reg-hero-container {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto auto;
@@ -895,10 +901,17 @@
                 grid-row: 2;
                 width: 100%;
                 max-width: 100%;
-                height: 380px;
+                height: auto !important;
                 min-height: auto;
                 border-radius: 16px;
                 margin-right: 0;
+                background-color: transparent !important;
+                border: none !important;
+            }
+            .reg-image-media {
+                width: 100%;
+                height: auto !important;
+                object-fit: contain !important;
             }
             .reg-meta-bar {
                 grid-column: 1;
@@ -1009,8 +1022,10 @@
             /* Un-crop all photos ONLY for iPad */
             .hero-banner-container, 
             .guest-media-container, 
-            .sponsor-media-container {
+            .sponsor-media-container,
+            .about-media-container {
                 height: auto !important;
+                max-width: 100% !important;
                 background-color: transparent !important;
                 border: none !important;
                 border-radius: 16px;
@@ -1018,11 +1033,12 @@
             }
             .hero-banner-image, 
             .guest-media-image, 
-            .sponsor-media-container img {
-                width: 100%;
+            .sponsor-media-container img,
+            .about-media-image {
+                width: 100% !important;
                 height: auto !important;
                 object-fit: contain !important;
-                display: block;
+                display: block !important;
             }
             .reg-image-container {
                 grid-column: 1;
@@ -1139,7 +1155,7 @@
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
                 <p class="section-text" id="about-text" style="--highlightOffset: 0%;">
-                    Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>[cite: 1], with proceeds directly benefiting the organization. This event combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
+                    Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>, with proceeds directly benefiting the organization. This event combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
                     <button onclick="navigateTo('register')" class="btn-register">Register</button>
@@ -1365,7 +1381,7 @@
                     <div class="footer-section-title">Links</div>
                     <div class="footer-link-list">
                         <a href="https://walterprod.com" target="_blank" class="footer-link">Walter Productions</a>
-                        <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>[cite: 1]
+                        <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
                     </div>
                 </div>
             </div>
