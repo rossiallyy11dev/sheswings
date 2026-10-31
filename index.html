@@ -846,7 +846,7 @@
                 margin-right: 0 !important;
             }
             .meta-item:nth-child(2) {
-                padding-left: 0 !important;
+                padding-left: 28px !important;
             }
             
             .hero-banner-container, 
@@ -1018,7 +1018,7 @@
                 gap: 16px;
             }
             .hero-headline {
-                font-size: 2.7rem !important;
+                font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
                 line-height: 1.05 !important;
                 margin-left: 0 !important;
                 margin-top: 0 !important;
@@ -1116,72 +1116,69 @@
                 margin-left: 0;
             }
 
-            /* IPAD FOOTER SIDE-BY-SIDE MATCHING DESKTOP & HEADER FONT SIZE */
+            /* REORDER FOOTER FOR IPAD (EXACT STRIPE SESSIONS STACK) */
             .site-footer {
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: space-between !important;
-                padding: 28px 24px !important;
-                min-height: 520px !important;
-                background-color: #00AAEE !important;
+                padding: 40px 24px 48px 24px;
+                width: 100%;
+                min-height: auto;
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                grid-template-areas: 
+                    "brand"
+                    "headline"
+                    "dates"
+                    "links" !important;
+                gap: 0 !important;
             }
 
             .footer-top-row {
+                display: contents !important;
+            }
+
+            .footer-bottom-row {
+                display: contents !important;
+            }
+
+            .footer-brand {
+                grid-area: brand;
+                margin-bottom: 36px;
+            }
+
+            .footer-headline {
+                grid-area: headline;
+                font-size: 2.8rem;
+                line-height: 1.08;
+                margin-bottom: 56px;
+            }
+
+            .footer-right-top {
+                grid-area: dates;
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
                 width: 100% !important;
-                margin-bottom: 100px !important;
-            }
-
-            .footer-bottom-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
-                width: 100% !important;
-            }
-
-            .footer-brand {
-                grid-area: auto !important;
-                margin-bottom: 0 !important;
-            }
-
-            .footer-headline {
-                grid-area: auto !important;
-                font-size: 2.7rem !important;
-                line-height: 1.0 !important;
-                max-width: 480px !important;
-                margin-bottom: 0 !important;
-            }
-
-            .footer-right-top {
-                grid-area: auto !important;
-                display: grid !important;
-                grid-template-columns: 140px 220px !important;
+                margin: 0 0 36px 0 !important;
                 gap: 24px !important;
-                width: auto !important;
-                margin: 0 !important;
             }
 
             .footer-meta-item {
-                flex: none !important;
-                font-size: 0.9rem !important;
+                flex: 1;
             }
 
             .footer-right-col {
-                grid-area: auto !important;
-                width: 360px !important;
+                grid-area: links;
+                width: 100% !important;
                 margin: 0 !important;
             }
 
             .footer-section-group {
-                border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
-                padding-top: 16px !important;
-                margin-bottom: 24px !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+                padding-top: 20px !important;
+                margin-bottom: 36px !important;
             }
 
             .footer-section-group.get-help-group {
-                margin-bottom: 40px !important;
+                margin-bottom: 36px !important;
             }
         }
     </style>
