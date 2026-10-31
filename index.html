@@ -202,6 +202,11 @@
             flex-shrink: 0;
         }
 
+        /* Hide the mobile line break by default on desktop */
+        .mobile-break {
+            display: none;
+        }
+
         .hero-meta-group {
             display: flex;
             gap: 60px;
@@ -817,6 +822,11 @@
                 display: none !important;
             }
 
+            /* Enable the mobile line break in headlines */
+            .mobile-break {
+                display: inline;
+            }
+
             body {
                 padding-top: 90px;
             }
@@ -954,14 +964,14 @@
         <section class="hero-section">
             <div class="hero-header-row">
                 <h1 class="hero-headline">
-                    Making a difference<br>on and off the course
+                    Making a difference<br class="mobile-break">on and off the course
                 </h1>
                 
                 <div class="hero-meta-group">
                     <div class="meta-item">
                         October 10–11,<br>2027
                     </div>
-                    <div class="meta-item">
+                    <div class="meta-item" style="margin-right: 48px;">
                         Oswego Lake Country Club,<br>Lake Oswego, Oregon
                     </div>
                 </div>
@@ -1189,7 +1199,7 @@
         </div>
 
         <div class="footer-bottom-row">
-            <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
+            <h2 class="footer-headline">Making a difference<br class="mobile-break">on and off the course</h2>
 
             <div class="footer-right-col">
                 <div class="footer-section-group get-help-group">
