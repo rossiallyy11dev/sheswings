@@ -991,7 +991,7 @@
         /* ------------------------------------------------ */
         @media (min-width: 768px) and (max-width: 1024px) {
             .nav-faq-link {
-                display: inline-block !important;
+                display: none !important;
             }
             body {
                 padding-top: 90px;
@@ -1000,28 +1000,28 @@
                 margin-bottom: 110px;
             }
             
-            /* HERO HEADER ROW SIDE-BY-SIDE WITH LEFT-ALIGNED META GROUP */
+            /* HERO HEADER ROW SIDE-BY-SIDE WITH RIGHT-ALIGNED META GROUP */
             .hero-header-row {
                 flex-direction: row !important;
-                justify-content: flex-start !important;
+                justify-content: space-between !important;
                 align-items: flex-start !important;
                 margin-bottom: 40px;
                 padding: 0;
-                gap: 32px;
+                gap: 20px;
             }
             .hero-headline {
                 font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
                 line-height: 1.05 !important;
                 margin-left: 0 !important;
                 margin-top: 0 !important;
-                max-width: 440px !important;
+                max-width: 400px !important;
                 flex-shrink: 1 !important;
             }
             .hero-meta-group {
                 display: flex !important;
-                gap: 28px !important;
+                gap: 24px !important;
                 padding-top: 8px !important;
-                margin-left: 0 !important;
+                margin-left: auto !important;
                 margin-right: 0 !important;
                 flex-shrink: 0 !important;
             }
