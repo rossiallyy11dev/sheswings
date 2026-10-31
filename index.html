@@ -73,7 +73,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
-        /* REGISTRATION PAGE NAV STATE (EXACT STRIPE SESSIONS STAGNANT & FLOATING BEHAVIOR) */
+        /* REGISTRATION PAGE NAV STATE */
         body.is-registration-page .navbar {
             top: 0 !important;
             width: 100% !important;
@@ -87,7 +87,6 @@
             padding: 20px 24px !important;
         }
 
-        /* REGISTRATION PAGE SCROLLED STATE (FROSTED BLUR LOOK) */
         body.is-registration-page .navbar.reg-scrolled {
             background-color: rgba(255, 255, 255, 0.78) !important;
             backdrop-filter: blur(16px) !important;
@@ -277,7 +276,7 @@
             flex: 1;
         }
 
-        /* EXACT STRIPE VERTICAL SCROLL-REVEAL MASK */
+        /* Vertical Scroll-Reveal */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -565,9 +564,7 @@
             text-decoration: underline;
         }
 
-        /* ------------------------------------------------ */
-        /* REGISTRATION PAGE VIEW                           */
-        /* ------------------------------------------------ */
+        /* REGISTRATION PAGE VIEW */
         .registration-page {
             display: none;
             width: 100%;
@@ -656,7 +653,6 @@
             display: block;
         }
 
-        /* REPLACED REGISTRATION COPY SECTION */
         .reg-info-container {
             padding: 0 16px;
             max-width: 800px;
@@ -690,7 +686,7 @@
             text-decoration: underline;
         }
 
-        /* Full-Width Footer */
+        /* DESKTOP FOOTER LAYOUT */
         .site-footer {
             background-color: #00AAEE;
             color: #FFFFFF;
@@ -812,10 +808,9 @@
         }
 
         /* ------------------------------------------------ */
-        /* MOBILE PHONES ONLY (max-width: 767px)            */
+        /* MOBILE PHONES (max-width: 767px)                 */
         /* ------------------------------------------------ */
         @media (max-width: 767px) {
-            /* Hide FAQ link on mobile only */
             .nav-faq-link {
                 display: none !important;
             }
@@ -846,7 +841,6 @@
                 margin-right: 0 !important;
             }
             
-            /* Un-crop all photos on mobile */
             .hero-banner-container, 
             .guest-media-container, 
             .sponsor-media-container,
@@ -925,59 +919,59 @@
                 margin-left: 0;
             }
 
-            /* Footer Reordering for Mobile: SHE Swings -> Headline -> Date/Location above line */
+            /* STRIPE SESSIONS FOOTER MATCH (MOBILE) */
             .site-footer {
-                padding: 24px 16px;
+                padding: 40px 20px 48px 20px;
                 width: 100%;
                 min-height: auto;
-                display: flex;
-                flex-direction: column;
+                display: block !important;
             }
             .footer-top-row {
-                flex-direction: column;
-                gap: 24px;
-                margin-bottom: 24px;
+                display: block !important;
+                margin-bottom: 0;
             }
             .footer-brand {
-                order: 1;
+                display: block;
+                margin-bottom: 36px;
+            }
+            .footer-bottom-row {
+                display: block !important;
+            }
+            .footer-headline {
+                font-size: 2.35rem;
+                line-height: 1.08;
+                margin-bottom: 56px;
+                display: block;
             }
             .footer-right-top {
                 display: flex !important;
-                flex-direction: column !important;
-                gap: 16px !important;
-                margin-right: 0 !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
                 width: 100% !important;
-                order: 3; /* Placed right above the Get Help line */
-                margin-top: 32px;
-                padding-top: 24px;
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                margin: 0 0 36px 0 !important;
+                gap: 16px !important;
             }
-            .footer-bottom-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-            }
-            .footer-headline {
-                font-size: 2.3rem;
-                line-height: 1.08;
-                order: 2; /* Sits right under SHE Swings */
-                margin-bottom: 0;
+            .footer-meta-item {
+                flex: 1;
             }
             .footer-right-col {
-                width: 100%;
-                margin-right: 0;
-                order: 4;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            .footer-section-group {
+                border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+                padding-top: 20px !important;
+                margin-bottom: 36px !important;
             }
             .footer-section-group.get-help-group {
-                margin-bottom: 24px;
+                margin-bottom: 36px !important;
             }
         }
 
         /* ------------------------------------------------ */
-        /* IPAD / TABLET PORTRAIT ONLY (Exact width: 768px)  */
+        /* IPAD / TABLET PORTRAIT (Exact width: 768px)       */
         /* ------------------------------------------------ */
         @media (min-width: 768px) and (max-width: 768px) {
-            /* Keep mobile layout structure */
             .nav-faq-link {
                 display: none !important;
             }
@@ -1029,7 +1023,6 @@
                 flex: none;
             }
 
-            /* Un-crop all photos ONLY for iPad */
             .hero-banner-container, 
             .guest-media-container, 
             .sponsor-media-container,
@@ -1085,51 +1078,52 @@
                 margin-left: 0;
             }
 
-            /* Footer Reordering for iPad: SHE Swings -> Headline -> Date/Location above line */
+            /* STRIPE SESSIONS FOOTER MATCH (IPAD) */
             .site-footer {
-                padding: 24px 16px;
+                padding: 40px 24px 48px 24px;
                 width: 100%;
                 min-height: auto;
-                display: flex;
-                flex-direction: column;
+                display: block !important;
             }
             .footer-top-row {
-                flex-direction: column;
-                gap: 24px;
-                margin-bottom: 24px;
+                display: block !important;
+                margin-bottom: 0;
             }
             .footer-brand {
-                order: 1;
+                display: block;
+                margin-bottom: 36px;
+            }
+            .footer-bottom-row {
+                display: block !important;
+            }
+            .footer-headline {
+                font-size: 2.8rem;
+                line-height: 1.08;
+                margin-bottom: 56px;
+                display: block;
             }
             .footer-right-top {
                 display: flex !important;
-                flex-direction: column !important;
-                gap: 16px !important;
-                margin-right: 0 !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
                 width: 100% !important;
-                order: 3; /* Placed right above the Get Help line */
-                margin-top: 32px;
-                padding-top: 24px;
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                margin: 0 0 36px 0 !important;
+                gap: 24px !important;
             }
-            .footer-bottom-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-            }
-            .footer-headline {
-                font-size: 2.3rem;
-                line-height: 1.08;
-                order: 2; /* Sits right under SHE Swings */
-                margin-bottom: 0;
+            .footer-meta-item {
+                flex: 1;
             }
             .footer-right-col {
-                width: 100%;
-                margin-right: 0;
-                order: 4;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            .footer-section-group {
+                border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+                padding-top: 20px !important;
+                margin-bottom: 36px !important;
             }
             .footer-section-group.get-help-group {
-                margin-bottom: 24px;
+                margin-bottom: 36px !important;
             }
         }
     </style>
@@ -1362,7 +1356,6 @@
             </div>
         </div>
 
-        <!-- REPLACED REGISTRATION COPY SECTION -->
         <div class="reg-info-container">
             <h2 class="reg-info-heading">Foursome Registration</h2>
             <p class="reg-info-text">
@@ -1377,6 +1370,9 @@
             <a onclick="navigateTo('home')" class="footer-brand">
                 <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
             </a>
+            
+            <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
+
             <div class="footer-right-top">
                 <div class="footer-meta-item">
                     October 10–11,<br>2027
@@ -1388,8 +1384,6 @@
         </div>
 
         <div class="footer-bottom-row">
-            <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
-
             <div class="footer-right-col">
                 <div class="footer-section-group get-help-group">
                     <div class="footer-section-title">Get help</div>
@@ -1438,7 +1432,6 @@
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
 
-            // Disable fade effect on mobile/tablet screens (768px or narrower)
             if (window.innerWidth <= 768) {
                 aboutText.classList.add('fully-revealed');
                 aboutText.style.removeProperty('--highlightOffset');
@@ -1477,7 +1470,6 @@
             handleStripeMaskReveal();
         });
 
-        // Core view router
         function handleRoute() {
             const hash = window.location.hash;
             const homePage = document.getElementById('home-page');
