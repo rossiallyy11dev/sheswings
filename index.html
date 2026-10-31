@@ -388,6 +388,10 @@
             padding-top: 0;
         }
 
+        .agenda-row:last-child {
+            border-bottom: none;
+        }
+
         .agenda-date-col {
             flex: 0 0 220px;
         }
@@ -1509,19 +1513,6 @@
             }
         }
 
-        /* REMOVE LAST AGENDA LINE AFTER OCT 11, 2027 */
-        function checkAgendaLine() {
-            const targetDate = new Date('2027-10-11T23:59:59');
-            const now = new Date();
-            if (now > targetDate) {
-                const rows = document.querySelectorAll('.agenda-row');
-                if (rows.length > 0) {
-                    const lastRow = rows[rows.length - 1];
-                    lastRow.style.borderBottom = 'none';
-                }
-            }
-        }
-
         function onScrollHandler() {
             updateNavbar();
             handleStripeMaskReveal();
@@ -1531,7 +1522,6 @@
         window.addEventListener('load', () => {
             updateNavbar();
             handleStripeMaskReveal();
-            checkAgendaLine();
         });
 
         function handleRoute() {
@@ -1585,7 +1575,6 @@
             }
             handleRoute();
             handleStripeMaskReveal();
-            checkAgendaLine();
         });
     </script>
 </body>
