@@ -101,9 +101,12 @@
         }
 
         .hero-section, .content-section, .registration-page {
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: 24px;
+            padding-right: 24px;
             width: 100%;
+            max-width: 1440px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Brand Logo */
@@ -241,7 +244,8 @@
 
         /* Section Dividers */
         .section-divider {
-            width: calc(100% - 32px);
+            width: calc(100% - 48px);
+            max-width: 1440px;
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
             margin: 120px auto 16px auto;
@@ -250,7 +254,7 @@
         /* Generic Section Layout */
         .content-section {
             width: 100%;
-            max-width: 100%;
+            max-width: 1440px;
             margin: 0 auto;
             display: flex;
             justify-content: flex-start;
@@ -658,8 +662,9 @@
         }
 
         .reg-info-container {
-            padding: 0 16px;
+            padding: 0 24px;
             max-width: 800px;
+            margin: 0 auto;
         }
 
         .reg-info-heading {
@@ -698,7 +703,7 @@
             min-height: 600px;
             margin: 120px 0 0 0;
             border-radius: 0;
-            padding: 28px 16px 28px 24px;
+            padding: 28px 24px 28px 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -709,7 +714,8 @@
             justify-content: space-between;
             align-items: flex-start;
             width: 100%;
-            margin-bottom: 165px;
+            max-width: 1440px;
+            margin: 0 auto 165px auto;
         }
 
         .footer-brand {
@@ -728,7 +734,7 @@
             grid-template-columns: 140px 280px;
             gap: 40px;
             margin-left: auto;
-            margin-right: -40px;
+            margin-right: 0;
             width: 460px;
         }
 
@@ -744,6 +750,8 @@
             justify-content: space-between;
             align-items: flex-end;
             width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
             padding-left: 0;
         }
 
@@ -812,9 +820,101 @@
         }
 
         /* ------------------------------------------------ */
-        /* MOBILE & TABLET DEVICES (max-width: 1024px)      */
+        /* TABLET & IPAD VIEWPORTS (768px to 1024px)        */
         /* ------------------------------------------------ */
-        @media (max-width: 1024px) {
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .hero-header-row {
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
+                gap: 20px;
+            }
+            .hero-headline {
+                font-size: clamp(2.2rem, 4.2vw, 3.5rem) !important;
+                max-width: 500px !important;
+                margin-top: 0 !important;
+            }
+            .hero-meta-group {
+                gap: 24px !important;
+                padding-top: 10px !important;
+                margin-right: 0 !important;
+            }
+            .hero-banner-container {
+                height: 440px !important;
+            }
+            .content-section {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .section-title {
+                white-space: normal !important;
+                flex: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-right: 0;
+            }
+            .section-right-content {
+                flex: none;
+                width: 100%;
+            }
+            .agenda-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .agenda-date-col {
+                flex: none;
+            }
+            .reg-hero-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 28px;
+            }
+            .reg-image-container {
+                grid-column: 1;
+                grid-row: 2;
+                height: 480px !important;
+            }
+            .reg-meta-bar {
+                grid-column: 1;
+                grid-row: 3;
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .reg-meta-item.location {
+                grid-column: 1;
+                margin-left: 0;
+            }
+            .site-footer {
+                padding: 40px 24px;
+            }
+            .footer-top-row {
+                flex-direction: column;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+            .footer-right-top {
+                margin-left: 0;
+                width: 100%;
+            }
+            .footer-bottom-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 48px;
+            }
+            .footer-headline {
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                max-width: 100%;
+            }
+            .footer-right-col {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        /* ------------------------------------------------ */
+        /* MOBILE PHONES ONLY (max-width: 767px)            */
+        /* ------------------------------------------------ */
+        @media (max-width: 767px) {
             .nav-faq-link {
                 display: none !important;
             }
@@ -849,7 +949,7 @@
                 padding-left: 28px !important;
             }
             
-            /* SQUARE HERO BANNER FOR MOBILE & TABLETS */
+            /* SQUARE HERO BANNER FOR MOBILE WITH PERFECTLY CENTERED LOGO */
             .hero-banner-container {
                 height: calc(100vw - 60px) !important;
                 max-height: 360px;
@@ -866,7 +966,7 @@
                 display: block !important;
             }
 
-            /* OTHER MEDIA CONTAINERS */
+            /* OTHER MOBILE MEDIA CONTAINERS (UNTOUCHED) */
             .guest-media-container, 
             .sponsor-media-container,
             .about-media-container {
@@ -943,7 +1043,7 @@
                 margin-left: 0;
             }
 
-            /* REORDER FOOTER FOR MOBILE/TABLET */
+            /* REORDER FOOTER FOR MOBILE (EXACT STRIPE SESSIONS STACK) */
             .site-footer {
                 padding: 40px 20px 48px 20px;
                 width: 100%;
