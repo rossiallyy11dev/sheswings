@@ -812,7 +812,7 @@
         }
 
         /* ------------------------------------------------ */
-        /* MOBILE PHONES ONLY (max-width: 767px)            */
+        /* TIER 1: MOBILE PHONES ONLY (max-width: 767px)    */
         /* ------------------------------------------------ */
         @media (max-width: 767px) {
             .nav-faq-link {
@@ -851,8 +851,8 @@
             
             /* SQUARE HERO BANNER FOR MOBILE WITH PERFECTLY CENTERED LOGO */
             .hero-banner-container {
-                height: calc(100vw - 32px) !important;
-                max-height: 400px;
+                height: calc(100vw - 60px) !important;
+                max-height: 360px;
                 background-color: #E8E8EC !important;
                 border-radius: 16px;
                 overflow: hidden;
@@ -862,12 +862,10 @@
                 width: 100% !important;
                 height: 100% !important;
                 object-fit: cover !important;
-                object-position: 49% 37% !important; /* 49% horizontal, 37% vertical (change 37% to move up/down) */
-                transform: scale(1.15) !important;   /* Enables vertical movement room */
+                object-position: 48% 25% !important; 
                 display: block !important;
             }
 
-            /* OTHER MOBILE MEDIA CONTAINERS (UNTOUCHED) */
             .guest-media-container, 
             .sponsor-media-container,
             .about-media-container {
@@ -944,7 +942,7 @@
                 margin-left: 0;
             }
 
-            /* REORDER FOOTER FOR MOBILE (EXACT STRIPE SESSIONS STACK) */
+            /* REORDER FOOTER FOR MOBILE */
             .site-footer {
                 padding: 40px 20px 48px 20px;
                 width: 100%;
@@ -958,27 +956,15 @@
                     "links" !important;
                 gap: 0 !important;
             }
-
-            .footer-top-row {
-                display: contents !important;
-            }
-
-            .footer-bottom-row {
-                display: contents !important;
-            }
-
-            .footer-brand {
-                grid-area: brand;
-                margin-bottom: 36px;
-            }
-
+            .footer-top-row { display: contents !important; }
+            .footer-bottom-row { display: contents !important; }
+            .footer-brand { grid-area: brand; margin-bottom: 36px; }
             .footer-headline {
                 grid-area: headline;
                 font-size: 2.35rem;
                 line-height: 1.08;
                 margin-bottom: 56px;
             }
-
             .footer-right-top {
                 grid-area: dates;
                 display: flex !important;
@@ -988,40 +974,24 @@
                 margin: 0 0 36px 0 !important;
                 gap: 16px !important;
             }
-
-            .footer-right-top .footer-meta-item:first-child {
-                flex: 0 0 140px !important;
-            }
-
+            .footer-right-top .footer-meta-item:first-child { flex: 0 0 140px !important; }
             .footer-right-top .footer-meta-item:last-child {
                 flex: 0 0 320px !important;
                 text-align: left !important;
                 padding-left: 14px !important;
             }
-
-            .footer-meta-item {
-                font-size: 0.85rem !important;
-            }
-
-            .footer-right-col {
-                grid-area: links;
-                width: 100% !important;
-                margin: 0 !important;
-            }
-
+            .footer-meta-item { font-size: 0.85rem !important; }
+            .footer-right-col { grid-area: links; width: 100% !important; margin: 0 !important; }
             .footer-section-group {
                 border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
                 padding-top: 20px !important;
                 margin-bottom: 36px !important;
             }
-
-            .footer-section-group.get-help-group {
-                margin-bottom: 36px !important;
-            }
+            .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
         /* ------------------------------------------------ */
-        /* IPAD / TABLET (768px to 1024px)                  */
+        /* TIER 2: IPADS & TABLETS (768px to 1024px)        */
         /* ------------------------------------------------ */
         @media (min-width: 768px) and (max-width: 1024px) {
             .nav-faq-link {
@@ -1147,14 +1117,12 @@
                 padding: 28px 16px 28px 20px !important;
                 min-height: 520px !important;
             }
-
             .footer-top-row {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
                 margin-bottom: 100px !important;
             }
-
             .footer-right-top {
                 display: grid !important;
                 grid-template-columns: 120px 220px !important;
@@ -1163,20 +1131,17 @@
                 margin-right: -16px !important;
                 width: auto !important;
             }
-
             .footer-bottom-row {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-end !important;
             }
-
             .footer-headline {
                 font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
                 line-height: 1.05 !important;
                 max-width: 380px !important;
                 margin: 0 !important;
             }
-
             .footer-right-col {
                 width: 300px !important;
                 margin-left: auto !important;
