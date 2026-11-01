@@ -827,26 +827,29 @@
             }
             .hero-header-row {
                 flex-direction: column;
-                gap: 24px;
+                gap: 20px;
                 padding: 0;
             }
             .hero-headline {
-                font-size: 2.45rem;
+                font-size: 2.35rem;
                 line-height: 1.1;
                 margin-left: 0;
-                margin-top: 20px;
+                margin-top: 10px;
             }
+            /* STACK META ITEMS CLEANLY FOR NARROW PHONES LIKE IPHONE SE */
             .hero-meta-group {
-                gap: 32px;
-                margin-left: 0;
-                margin-right: 0;
-                padding-left: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-top: 0 !important;
+                width: 100% !important;
             }
             .meta-item {
+                font-size: 0.95rem !important;
                 margin-right: 0 !important;
-            }
-            .meta-item:nth-child(2) {
-                padding-left: 28px !important;
+                padding-left: 0 !important;
             }
             
             /* SQUARE HERO BANNER FOR MOBILE WITH PERFECTLY CENTERED LOGO */
