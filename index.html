@@ -665,7 +665,7 @@
 
         .reg-info-heading {
             font-family: 'Roboto', sans-serif;
-            font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+            font-size: clamp(1.8rem, 2.8vw, 2.8vw);
             font-weight: 400;
             color: #555555;
             letter-spacing: -0.02em;
@@ -813,9 +813,9 @@
         }
 
         /* ------------------------------------------------ */
-        /* TIER 1: MOBILE PHONES ONLY (max-width: 767px)    */
+        /* TRUE MOBILE PHONES ONLY (max-width: 768px)       */
         /* ------------------------------------------------ */
-        @media (max-width: 767px) {
+        @media (max-width: 768px) {
             .nav-faq-link {
                 display: none !important;
             }
@@ -991,167 +991,6 @@
                 margin-bottom: 36px !important;
             }
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
-        }
-
-        /* ------------------------------------------------ */
-        /* TIER 2: IPADS & TABLETS (768px to 1366px)        */
-        /* ------------------------------------------------ */
-        @media (min-width: 768px) and (max-width: 1366px) {
-            .nav-faq-link {
-                display: none !important;
-            }
-            body {
-                padding-top: 90px;
-            }
-            .hero-section {
-                margin-bottom: 110px;
-            }
-            
-            /* HERO HEADER ROW SIDE-BY-SIDE ON IPAD */
-            .hero-header-row {
-                flex-direction: row !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
-                margin-bottom: 40px;
-                padding: 0;
-                gap: 16px;
-            }
-            .hero-headline {
-                font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
-                line-height: 1.05 !important;
-                margin-left: 0 !important;
-                margin-top: 0 !important;
-                max-width: 335px !important;
-                flex-shrink: 0 !important;
-            }
-            .hero-meta-group {
-                display: flex !important;
-                gap: 28px !important;
-                padding-top: 0 !important;
-                margin-left: auto !important;
-                margin-right: 16px !important;
-                flex-shrink: 0 !important;
-                align-self: flex-end !important;
-            }
-            .meta-item {
-                font-size: 0.875rem !important;
-                margin-right: 0 !important;
-            }
-
-            .content-section {
-                flex-direction: column;
-                gap: 24px;
-            }
-            .section-title {
-                white-space: normal !important;
-                flex: none !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                padding-right: 0;
-            }
-            .section-right-content {
-                flex: none;
-                width: 100%;
-            }
-            .agenda-row {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .agenda-date-col {
-                flex: none;
-            }
-
-            .hero-banner-container, 
-            .guest-media-container, 
-            .sponsor-media-container,
-            .about-media-container {
-                height: auto !important;
-                max-width: 100% !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 16px;
-                overflow: hidden;
-            }
-            .hero-banner-image, 
-            .guest-media-image, 
-            .sponsor-media-container img,
-            .about-media-image {
-                width: 100% !important;
-                height: auto !important;
-                object-fit: contain !important;
-                display: block !important;
-            }
-            .reg-image-container {
-                grid-column: 1;
-                grid-row: 2;
-                width: 100%;
-                max-width: 100%;
-                height: auto !important;
-                min-height: auto;
-                border-radius: 16px;
-                margin-right: 0;
-                background-color: transparent !important;
-                border: none !important;
-            }
-            .reg-image-media {
-                width: 100%;
-                height: auto !important;
-                object-fit: contain !important;
-            }
-            .reg-hero-container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto;
-                gap: 28px;
-                margin-top: 0;
-            }
-            .reg-meta-bar {
-                grid-column: 1;
-                grid-row: 3;
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .reg-meta-item.location {
-                grid-column: 1;
-                justify-self: start;
-                margin-left: 0;
-            }
-
-            /* MATCH DESKTOP FOOTER LAYOUT FOR IPAD */
-            .site-footer {
-                padding: 28px 16px 28px 20px !important;
-                min-height: 520px !important;
-            }
-            .footer-top-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-start !important;
-                margin-bottom: 100px !important;
-            }
-            .footer-right-top {
-                display: grid !important;
-                grid-template-columns: 120px 220px !important;
-                gap: 28px !important;
-                margin-left: auto !important;
-                margin-right: -16px !important;
-                width: auto !important;
-            }
-            .footer-bottom-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
-            }
-            .footer-headline {
-                font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
-                line-height: 1.05 !important;
-                max-width: 380px !important;
-                margin: 0 !important;
-            }
-            .footer-right-col {
-                width: 300px !important;
-                margin-left: auto !important;
-                margin-right: 0 !important;
-                margin-bottom: 0 !important;
-            }
         }
     </style>
 </head>
