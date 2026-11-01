@@ -35,7 +35,7 @@
             background-color: #FFFFFF;
             color: #555555;
             padding: 0;
-            padding-top: 120px;
+            padding-top: 100px;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -50,22 +50,18 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin: 0 auto;
             padding: 20px 24px;
-            background-color: transparent;
-            border: 1px solid transparent;
-            border-bottom: 1px solid transparent;
-            border-radius: 0;
-            box-shadow: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background-color: #FFFFFF;
+            transition: all 0.3s ease;
         }
 
-        /* MAIN PAGE SCROLLED FLOATING STATE */
         .navbar.scrolled {
             top: 12px;
             width: calc(100% - 32px);
-            padding: 10px 20px;
-            background-color: rgba(238, 236, 240, 0.85);
+            left: 16px;
+            right: 16px;
+            padding: 12px 20px;
+            background-color: rgba(238, 236, 240, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-radius: 16px;
@@ -73,40 +69,31 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
-        /* REGISTRATION PAGE NAV STATE */
         body.is-registration-page .navbar {
-            top: 0 !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
             background-color: #FFFFFF !important;
             backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-            padding: 20px 24px !important;
-        }
-
-        body.is-registration-page .navbar.reg-scrolled {
-            background-color: rgba(255, 255, 255, 0.78) !important;
-            backdrop-filter: blur(16px) !important;
-            -webkit-backdrop-filter: blur(16px) !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-            padding: 16px 24px !important;
+            top: 0 !important;
+            width: 100% !important;
+            left: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
         }
 
         body.is-registration-page .nav-right {
             display: none !important;
         }
 
+        /* GLOBAL CONTAINER PADDING */
         .hero-section, .content-section, .registration-page {
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
             width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Brand Logo */
+        /* BRAND LOGO */
         .brand-logo {
             font-family: 'Roboto', sans-serif;
             font-size: 1.25rem;
@@ -115,14 +102,8 @@
             letter-spacing: -0.02em;
             cursor: pointer;
         }
-
-        .brand-logo .bold-text {
-            font-weight: 700;
-        }
-
-        .brand-logo .light-text {
-            font-weight: 400;
-        }
+        .brand-logo .bold-text { font-weight: 700; }
+        .brand-logo .light-text { font-weight: 400; }
 
         .nav-right {
             display: flex;
@@ -131,105 +112,66 @@
         }
 
         .nav-link {
-            font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
-            font-weight: 400;
             color: #555555;
             text-decoration: none;
-            transition: opacity 0.2s ease;
             cursor: pointer;
         }
 
-        .nav-link:hover {
-            opacity: 0.6;
-        }
-
-        /* Register Pill Button */
         .btn-register {
-            font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
-            font-weight: 400;
             color: #FFFFFF;
             background-color: #00AAEE;
             padding: 9px 28px;
             border-radius: 999px;
             text-decoration: none;
-            transition: background-color 0.2s ease, opacity 0.2s ease, padding 0.3s ease;
-            display: inline-block;
-            text-align: center;
             border: none;
             cursor: pointer;
+            transition: background-color 0.2s ease;
         }
+        .btn-register:hover { background-color: #0099D8; }
 
-        .navbar.scrolled .btn-register {
-            background-color: #00AAEE;
-            padding: 8px 25px;
-        }
-
-        .navbar.scrolled .btn-register:hover {
-            background-color: #0099D8;
-        }
-
-        .btn-register:hover {
-            background-color: #0099D8;
-        }
-
-        /* Hero Layout */
+        /* HERO SECTION */
         .hero-section {
-            width: 100%;
             margin: 24px auto 64px auto;
         }
 
         .hero-header-row {
             display: flex;
-            justify-content: flex-start;
-            align-items: flex-end; /* ALIGNS META GROUP TO BOTTOM BASELINE OF HEADLINE */
-            margin-bottom: 40px;
-            padding: 0;
-            width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 36px;
+            gap: 24px;
+            flex-wrap: wrap;
         }
 
         .hero-headline {
-            font-family: 'Roboto', sans-serif;
-            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            font-size: clamp(2.2rem, 5vw, 5.5rem);
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: -0.03em;
-            max-width: 750px;
             color: #555555;
-            margin-left: -2px;
-            flex-shrink: 0;
         }
 
         .hero-meta-group {
             display: flex;
-            gap: 60px;
-            padding-top: 0;
-            margin-left: auto;
-            margin-right: 48px;
+            gap: 40px;
             flex-shrink: 0;
-            align-self: flex-end; /* LOCKS BOTTOM BASELINE WITH 'COURSE' */
         }
 
         .meta-item {
-            font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
             line-height: 1.4;
             color: #555555;
-            font-weight: 400;
         }
 
         .hero-banner-container {
             width: 100%;
-            height: 560px;
+            height: clamp(280px, 45vw, 560px);
             background-color: #E8E8EC;
             border-radius: 16px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
         }
 
         .hero-banner-image {
@@ -237,37 +179,32 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            opacity: 1; 
         }
 
-        /* Section Dividers */
+        /* SECTION DIVIDERS */
         .section-divider {
-            width: calc(100% - 32px);
+            width: calc(100% - 40px);
+            max-width: 1200px;
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
-            margin: 120px auto 16px auto;
+            margin: 80px auto;
         }
 
-        /* Generic Section Layout */
+        /* CONTENT SECTIONS */
         .content-section {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: flex-start;
+            gap: 40px;
         }
 
         .section-title {
-            font-family: 'Roboto', sans-serif;
-            font-size: clamp(2rem, 3.2vw, 3.2rem);
+            font-size: clamp(1.8rem, 3vw, 3.2rem);
             font-weight: 400;
             color: #555555;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            white-space: nowrap;
-            flex: 0 0 480px; 
-            padding-right: 48px;
+            flex: 0 0 380px;
         }
 
         .section-right-content {
@@ -275,883 +212,140 @@
             flex-direction: column;
             gap: 28px;
             flex: 1;
+            max-width: 700px;
         }
 
-        /* Vertical Scroll-Reveal */
         .section-text {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.6rem;
-            line-height: 1.35;
-            letter-spacing: -0.015em;
-            font-weight: 400;
-            max-width: 650px;
+            font-size: 1.35rem;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
             color: #555555;
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) var(--highlightOffset, 20%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 20%) + 35%));
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) var(--highlightOffset, 20%), rgba(0,0,0,0.15) calc(var(--highlightOffset, 20%) + 35%));
-            transition: -webkit-mask-image 0.1s ease-out, mask-image 0.1s ease-out;
         }
-
-        .section-text.fully-revealed {
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-        }
-
-        .section-text a {
-            color: #00AAEE;
-            text-decoration: none;
-        }
-
-        .section-text a:hover {
-            text-decoration: underline;
-        }
+        .section-text a { color: #00AAEE; text-decoration: none; }
 
         .guest-intro-text {
-            font-family: 'Roboto', sans-serif;
             font-size: 1.05rem;
             line-height: 1.5;
-            font-weight: 400;
             color: #555555;
-            max-width: 540px;
-            margin: 0;
         }
 
-        .guest-media-container {
+        .media-container {
             width: 100%;
-            max-width: 540px;
-            height: 440px;
+            border-radius: 16px;
+            overflow: hidden;
             background-color: #E8E8EC;
-            border-radius: 16px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             border: 1px solid rgba(0, 0, 0, 0.05);
-            margin: 8px 0 0 0;
         }
-
-        .sponsor-media-container {
-            width: 100%;
-            max-width: 785px;
-            height: 500px;
-            background-color: #E8E8EC;
-            border-radius: 16px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            margin: 8px 0 0 0;
-        }
-
-        .guest-media-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 58% center;
-            display: block;
-        }
-
-        .about-media-container {
-            width: 100%;
-            max-width: 440px;
-            height: auto;
-            border-radius: 16px;
-            overflow: hidden;
-            display: block;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            margin-top: 12px;
-        }
-
-        .about-media-image {
+        .media-container img {
             width: 100%;
             height: auto;
-            object-fit: cover;
             display: block;
+            object-fit: cover;
         }
 
-        /* Agenda Section Layout */
+        /* AGENDA */
         .agenda-list {
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 750px;
         }
 
         .agenda-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 36px 0;
+            padding: 28px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            gap: 20px;
         }
+        .agenda-row:first-child { padding-top: 0; }
+        .agenda-row:last-child { border-bottom: none; }
 
-        .agenda-row:first-child {
-            padding-top: 0;
-        }
-
-        .agenda-row:last-child {
-            border-bottom: none;
-        }
-
-        .agenda-date-col {
-            flex: 0 0 220px;
-        }
-
-        .agenda-date {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: #555555;
-            margin-bottom: 8px;
-        }
-
+        .agenda-date-col { flex: 0 0 180px; }
+        .agenda-date { font-size: 1.2rem; font-weight: 500; color: #555555; margin-bottom: 6px; }
         .agenda-tag {
             display: inline-flex;
             align-items: center;
             gap: 6px;
             font-size: 0.825rem;
-            font-weight: 400;
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #555555;
-            padding: 3px 10px 3px 8px;
+            background: rgba(0,0,0,0.04);
+            padding: 3px 8px;
             border-radius: 6px;
-            border: 1px solid rgba(0, 0, 0, 0.12);
         }
-
         .rhombus-icon {
-            width: 11px;
-            height: 9px;
-            background-color: #FF5522;
-            transform: skewX(-20deg);
-            border-radius: 1px;
-            display: inline-block;
+            width: 10px; height: 8px; background-color: #FF5522; transform: skewX(-20deg); display: inline-block;
         }
+        .agenda-events-col { flex: 1; font-size: 1.05rem; line-height: 1.5; }
+        .agenda-note { font-style: italic; margin-top: 6px; opacity: 0.7; font-size: 0.9rem; }
 
-        .agenda-events-col {
-            flex: 1;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #555555;
-            font-weight: 400;
-        }
-
-        .agenda-note {
-            font-style: italic;
-            margin-top: 8px;
-            opacity: 0.8;
-        }
-
-        /* Sponsor Callout Card */
+        /* SPONSOR CARD */
         .sponsor-card {
-            width: 100%;
-            max-width: 785px;
             background-color: #EEEEF2;
             border-radius: 16px;
-            padding: 24px 28px;
+            padding: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            margin-top: 8px;
+            gap: 16px;
         }
-
-        .sponsor-card-title {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #555555;
-            margin-bottom: 6px;
-        }
-
-        .sponsor-card-link {
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 400;
-            color: #00AAEE;
-            text-decoration: none;
-        }
-
-        .sponsor-card-link:hover {
-            text-decoration: underline;
-        }
-
+        .sponsor-card-title { font-weight: 500; margin-bottom: 4px; }
+        .sponsor-card-link { color: #00AAEE; text-decoration: none; font-size: 0.95rem; }
         .sponsor-arrow-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background-color: #E2E2E8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555555;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: background-color 0.2s ease;
+            width: 36px; height: 36px; border-radius: 50%; background-color: #E2E2E8; display: flex; align-items: center; justify-content: center; color: #555555; text-decoration: none; flex-shrink: 0;
         }
 
-        .sponsor-arrow-btn:hover {
-            background-color: #D6D6DD;
-        }
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid rgba(0, 0, 0, 0.08); padding: 20px 0; }
+        .faq-item summary { font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { padding-top: 12px; font-size: 0.95rem; line-height: 1.5; }
 
-        /* FAQ Accordion Styling */
-        .faq-list {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 785px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 24px 0;
-        }
-
-        .faq-item:first-child {
-            padding-top: 0;
-        }
-
-        .faq-item details {
-            width: 100%;
-        }
-
-        .faq-item summary {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #555555;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .faq-toggle-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: #E8E8EC;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: #555555;
-            flex-shrink: 0;
-            margin-left: 16px;
-            transition: transform 0.2s ease;
-        }
-
-        .faq-item details[open] .faq-toggle-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.975rem;
-            line-height: 1.6;
-            color: #555555;
-            padding-top: 16px;
-            font-weight: 400;
-        }
-
-        .faq-answer a {
-            color: #00AAEE;
-            text-decoration: none;
-        }
-
-        .faq-answer a:hover {
-            text-decoration: underline;
-        }
-
-        /* REGISTRATION PAGE VIEW */
-        .registration-page {
-            display: none;
-            width: 100%;
-            margin: 0 auto;
-            padding-top: 0;
-        }
-
-        .registration-page.active {
-            display: block;
-        }
-
-        .reg-hero-wrapper {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding-bottom: 48px;
-            margin-bottom: 48px;
-            width: 100%;
-        }
-
+        /* REGISTRATION PAGE */
+        .registration-page { display: none; }
+        .registration-page.active { display: block; }
         .reg-hero-container {
             display: grid;
-            grid-template-columns: 1fr 1.15fr;
-            grid-template-rows: auto auto;
-            column-gap: 40px;
-            row-gap: 36px;
-            margin-top: 0;
-            width: 100%;
-        }
-
-        .reg-title-col {
-            grid-column: 1;
-            grid-row: 1;
-        }
-
-        .reg-title {
-            font-size: clamp(3.2rem, 5.2vw, 5.4rem);
-            font-weight: 400;
-            line-height: 0.96;
-            letter-spacing: -0.04em;
-            color: #555555;
-            max-width: 480px;
-        }
-
-        .reg-meta-bar {
-            grid-column: 1;
-            grid-row: 2;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-self: end;
-            width: 100%;
-        }
-
-        .reg-meta-item {
-            font-size: 1.05rem;
-            color: #555555;
-            line-height: 1.45;
-            font-weight: 400;
-        }
-
-        .reg-meta-item.location {
-            grid-column: 2;
-            justify-self: start;
-            margin-left: 150px;
-        }
-
-        .reg-image-container {
-            grid-column: 2;
-            grid-row: 1 / span 2;
-            width: 100%;
-            height: 720px;
-            border-radius: 16px;
-            overflow: hidden;
-            background-color: #E8E8EC;
-            display: flex;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             align-items: center;
-            justify-content: center;
-            align-self: end;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            margin: 0;
-            position: static;
+            margin-bottom: 60px;
         }
+        .reg-title { font-size: clamp(2.5vw, 4.5vw, 4.5rem); line-height: 1.0; }
 
-        .reg-image-media {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .reg-info-container {
-            padding: 0 16px;
-            max-width: 800px;
-        }
-
-        .reg-info-heading {
-            font-family: 'Roboto', sans-serif;
-            font-size: clamp(1.8rem, 2.8vw, 2.8rem);
-            font-weight: 400;
-            color: #555555;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-            margin-bottom: 24px;
-        }
-
-        .reg-info-text {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.25rem;
-            line-height: 1.6;
-            color: #555555;
-            font-weight: 400;
-        }
-
-        .reg-info-text a {
-            color: #00AAEE;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .reg-info-text a:hover {
-            text-decoration: underline;
-        }
-
-        /* ORIGINAL DESKTOP FOOTER (UNTOUCHED) */
+        /* FOOTER */
         .site-footer {
             background-color: #00AAEE;
             color: #FFFFFF;
             width: 100%;
-            min-height: 600px;
-            margin: 120px 0 0 0;
-            border-radius: 0;
-            padding: 28px 16px 28px 24px;
+            margin-top: 100px;
+            padding: 60px 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 60px;
         }
-
-        .footer-top-row {
+        .footer-top-row, .footer-bottom-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
             width: 100%;
-            margin-bottom: 165px;
-        }
-
-        .footer-brand {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #FFFFFF;
-            text-decoration: none;
-            line-height: 1.0;
-            cursor: pointer;
-            letter-spacing: -0.01em;
-            padding-left: 0;
-        }
-
-        .footer-right-top {
-            display: grid;
-            grid-template-columns: 140px 280px;
             gap: 40px;
-            margin-left: auto;
-            margin-right: -40px;
-            width: 460px;
         }
+        .footer-brand { color: #FFFFFF; font-weight: 700; text-decoration: none; font-size: 1.25rem; }
+        .footer-headline { font-size: clamp(2rem, 4vw, 4.5rem); font-weight: 400; line-height: 1.05; max-width: 600px; }
+        .footer-right-col { display: flex; flex-direction: column; gap: 32px; }
+        .footer-link { color: #FFFFFF; text-decoration: none; display: block; margin-top: 6px; }
 
-        .footer-meta-item {
-            font-size: 0.95rem;
-            color: #FFFFFF;
-            line-height: 1.45;
-            font-weight: 400;
-        }
-
-        .footer-bottom-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            width: 100%;
-            padding-left: 0;
-        }
-
-        .footer-headline {
-            font-size: clamp(3rem, 5.5vw, 5.5rem);
-            font-weight: 400;
-            line-height: 1.0;
-            letter-spacing: -0.03em;
-            color: #FFFFFF;
-            max-width: 850px;
-            margin: 0;
-        }
-
-        .footer-right-col {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            width: 420px;
-            flex-shrink: 0;
-            margin-left: auto;
-            margin-right: 0;
-            margin-bottom: 0; 
-        }
-
-        .footer-section-group {
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            padding-top: 16px;
-            margin-bottom: 24px;
-            width: 100%;
-        }
-
-        .footer-section-group.get-help-group {
-            margin-bottom: 56px; 
-        }
-
-        .footer-section-group:last-child {
-            margin-bottom: 0;
-            padding-top: 16px;
-        }
-
-        .footer-section-title {
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 12px;
-            letter-spacing: 0.01em;
-        }
-
-        .footer-link-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .footer-link {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 400;
-            transition: opacity 0.2s ease;
-        }
-
-        .footer-link:hover {
-            opacity: 0.8;
-            text-decoration: underline;
-        }
-
-        /* ------------------------------------------------ */
-        /* TIER 1: MOBILE PHONES ONLY (max-width: 767px)    */
-        /* ------------------------------------------------ */
-        @media (max-width: 767px) {
-            .nav-faq-link {
-                display: none !important;
-            }
-
-            body {
-                padding-top: 90px;
-            }
-            .hero-section {
-                margin-bottom: 110px;
-            }
-            .hero-header-row {
+        /* RESPONSIVE BREAKPOINT FOR MOBILE & TABLETS */
+        @media (max-width: 900px) {
+            .content-section, .hero-header-row, .reg-hero-container, .footer-top-row, .footer-bottom-row {
                 flex-direction: column;
-                gap: 24px;
-                padding: 0;
+                display: flex;
             }
-            .hero-headline {
-                font-size: 2.45rem;
-                line-height: 1.1;
-                margin-left: 0;
-                margin-top: 20px;
-            }
-            .hero-meta-group {
-                display: flex !important;
-                flex-direction: row !important;
-                gap: 24px !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                padding-top: 0 !important;
-                width: 100% !important;
-                justify-content: flex-start !important;
-                align-self: flex-start !important;
-            }
-            .meta-item {
-                font-size: 0.875rem !important;
-                margin-right: 0 !important;
-                padding-left: 0 !important;
-            }
-            
-            .hero-banner-container {
-                height: calc(100vw - 60px) !important;
-                max-height: 360px;
-                background-color: #E8E8EC !important;
-                border-radius: 16px;
-                overflow: hidden;
-            }
-            .hero-banner-image {
-                content: url("MOBILE BANNER.png") !important;
-                width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important;
-                object-position: 48% 25% !important; 
-                display: block !important;
-            }
-
-            .guest-media-container, 
-            .sponsor-media-container,
-            .about-media-container {
-                height: auto !important;
-                max-width: 100% !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 16px;
-                overflow: hidden;
-            }
-            .guest-media-image, 
-            .sponsor-media-container img,
-            .about-media-image {
-                width: 100% !important;
-                height: auto !important;
-                object-fit: contain !important;
-                display: block !important;
-            }
-
-            .content-section {
-                flex-direction: column;
-                gap: 24px;
-            }
-            .section-title {
-                white-space: normal !important;
-                flex: none !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                padding-right: 0;
-            }
-            .section-right-content {
-                flex: none;
-                width: 100%;
-            }
-            .agenda-row {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .agenda-date-col {
-                flex: none;
-            }
-            .reg-hero-container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto;
-                gap: 28px;
-                margin-top: 0;
-            }
-            .reg-image-container {
-                grid-column: 1;
-                grid-row: 2;
-                width: 100%;
-                max-width: 100%;
-                height: auto !important;
-                min-height: auto;
-                border-radius: 16px;
-                margin-right: 0;
-                background-color: transparent !important;
-                border: none !important;
-            }
-            .reg-image-media {
-                width: 100%;
-                height: auto !important;
-                object-fit: contain !important;
-            }
-            .reg-meta-bar {
-                grid-column: 1;
-                grid-row: 3;
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .reg-meta-item.location {
-                grid-column: 1;
-                justify-self: start;
-                margin-left: 0;
-            }
-
-            .site-footer {
-                padding: 40px 20px 48px 20px;
-                width: 100%;
-                min-height: auto;
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                grid-template-areas: 
-                    "brand"
-                    "headline"
-                    "dates"
-                    "links" !important;
-                gap: 0 !important;
-            }
-            .footer-top-row { display: contents !important; }
-            .footer-bottom-row { display: contents !important; }
-            .footer-brand { grid-area: brand; margin-bottom: 36px; }
-            .footer-headline {
-                grid-area: headline;
-                font-size: 2.35rem;
-                line-height: 1.08;
-                margin-bottom: 56px;
-            }
-            .footer-right-top {
-                grid-area: dates;
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-start !important;
-                width: 100% !important;
-                margin: 0 0 36px 0 !important;
-                gap: 16px !important;
-            }
-            .footer-right-top .footer-meta-item:first-child { flex: 0 0 140px !important; }
-            .footer-right-top .footer-meta-item:last-child {
-                flex: 0 0 320px !important;
-                text-align: left !important;
-                padding-left: 14px !important;
-            }
-            .footer-meta-item { font-size: 0.85rem !important; }
-            .footer-right-col { grid-area: links; width: 100% !important; margin: 0 !important; }
-            .footer-section-group {
-                border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
-                padding-top: 20px !important;
-                margin-bottom: 36px !important;
-            }
-            .footer-section-group.get-help-group { margin-bottom: 36px !important; }
-        }
-
-        /* ------------------------------------------------ */
-        /* TIER 2: IPADS & TABLETS (768px to 1366px)        */
-        /* ------------------------------------------------ */
-        @media (min-width: 768px) and (max-width: 1366px) {
-            .nav-faq-link {
-                display: none !important;
-            }
-            body {
-                padding-top: 90px;
-            }
-            .hero-section {
-                margin-bottom: 110px;
-            }
-            
-            /* HERO HEADER ROW SIDE-BY-SIDE ON IPAD */
-            .hero-header-row {
-                flex-direction: row !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
-                margin-bottom: 40px;
-                padding: 0;
-                gap: 16px;
-            }
-            .hero-headline {
-                font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
-                line-height: 1.05 !important;
-                margin-left: 0 !important;
-                margin-top: 0 !important;
-                max-width: 335px !important;
-                flex-shrink: 0 !important;
-            }
-            .hero-meta-group {
-                display: flex !important;
-                gap: 28px !important;
-                padding-top: 0 !important;
-                margin-left: auto !important;
-                margin-right: 16px !important;
-                flex-shrink: 0 !important;
-                align-self: flex-end !important;
-            }
-            .meta-item {
-                font-size: 0.875rem !important;
-                margin-right: 0 !important;
-            }
-
-            .content-section {
-                flex-direction: column;
-                gap: 24px;
-            }
-            .section-title {
-                white-space: normal !important;
-                flex: none !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                padding-right: 0;
-            }
-            .section-right-content {
-                flex: none;
-                width: 100%;
-            }
-            .agenda-row {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .agenda-date-col {
-                flex: none;
-            }
-
-            .hero-banner-container, 
-            .guest-media-container, 
-            .sponsor-media-container,
-            .about-media-container {
-                height: auto !important;
-                max-width: 100% !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 16px;
-                overflow: hidden;
-            }
-            .hero-banner-image, 
-            .guest-media-image, 
-            .sponsor-media-container img,
-            .about-media-image {
-                width: 100% !important;
-                height: auto !important;
-                object-fit: contain !important;
-                display: block !important;
-            }
-            .reg-image-container {
-                grid-column: 1;
-                grid-row: 2;
-                width: 100%;
-                max-width: 100%;
-                height: auto !important;
-                min-height: auto;
-                border-radius: 16px;
-                margin-right: 0;
-                background-color: transparent !important;
-                border: none !important;
-            }
-            .reg-image-media {
-                width: 100%;
-                height: auto !important;
-                object-fit: contain !important;
-            }
-            .reg-hero-container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto;
-                gap: 28px;
-                margin-top: 0;
-            }
-            .reg-meta-bar {
-                grid-column: 1;
-                grid-row: 3;
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .reg-meta-item.location {
-                grid-column: 1;
-                justify-self: start;
-                margin-left: 0;
-            }
-
-            /* MATCH DESKTOP FOOTER LAYOUT FOR IPAD */
-            .site-footer {
-                padding: 28px 16px 28px 20px !important;
-                min-height: 520px !important;
-            }
-            .footer-top-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-start !important;
-                margin-bottom: 100px !important;
-            }
-            .footer-right-top {
-                display: grid !important;
-                grid-template-columns: 120px 220px !important;
-                gap: 28px !important;
-                margin-left: auto !important;
-                margin-right: -16px !important;
-                width: auto !important;
-            }
-            .footer-bottom-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
-            }
-            .footer-headline {
-                font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
-                line-height: 1.05 !important;
-                max-width: 380px !important;
-                margin: 0 !important;
-            }
-            .footer-right-col {
-                width: 300px !important;
-                margin-left: auto !important;
-                margin-right: 0 !important;
-                margin-bottom: 0 !important;
-            }
+            .section-title { flex: none; width: 100%; padding-right: 0; }
+            .hero-meta-group { width: 100%; justify-content: space-space; gap: 20px; }
+            .reg-hero-container { display: flex; }
+            .footer-right-col { width: 100%; }
         }
     </style>
 </head>
@@ -1170,81 +364,61 @@
 
     <!-- LANDING PAGE VIEW -->
     <main id="home-page">
-        <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-header-row">
                 <h1 class="hero-headline">
                     Making a difference<br>on and off the course
                 </h1>
-                
                 <div class="hero-meta-group">
-                    <div class="meta-item">
-                        October 10–11,<br>2027
-                    </div>
-                    <div class="meta-item">
-                        Oswego Lake Country Club,<br>Lake Oswego, Oregon
-                    </div>
+                    <div class="meta-item">October 10–11, 2027</div>
+                    <div class="meta-item">Oswego Lake Country Club,<br>Lake Oswego, Oregon</div>
                 </div>
             </div>
-
             <div class="hero-banner-container">
-                <img src="OFFICIAL BANNER.png" alt="SHE Swings Banner" class="hero-banner-image" id="hero-banner">
+                <img src="OFFICIAL BANNER.png" alt="SHE Swings Banner" class="hero-banner-image">
             </div>
         </section>
 
-        <!-- About Section with Exact Stripe Vertical Scroll-Reveal -->
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
-                <p class="section-text" id="about-text" style="--highlightOffset: 0%;">
-                    Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>, with proceeds directly benefiting the organization. This event combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
+                <p class="section-text">
+                    Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>.
                 </p>
                 <div>
                     <button onclick="navigateTo('register')" class="btn-register">Register</button>
                 </div>
-                <div class="about-media-container">
-                    <img src="FOTC.png" alt="Friends of the Children - Portland" class="about-media-image">
+                <div class="media-container">
+                    <img src="FOTC.png" alt="Friends of the Children">
                 </div>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- Agenda Section -->
         <section class="content-section" id="agenda">
-            <h2 class="section-title">Agenda at a<br>glance</h2>
+            <h2 class="section-title">Agenda at a glance</h2>
             <div class="section-right-content">
                 <div class="agenda-list">
                     <div class="agenda-row">
                         <div class="agenda-date-col">
                             <div class="agenda-date">Sunday, Oct 10</div>
-                            <div class="agenda-tag">
-                                <span class="rhombus-icon"></span>
-                                Day 1
-                            </div>
+                            <div class="agenda-tag"><span class="rhombus-icon"></span> Day 1</div>
                         </div>
                         <div class="agenda-events-col">
                             <div>Welcome & Registration</div>
-                            <div>Opening keynote</div>
-                            <div>Fireside chat with special guest</div>
+                            <div>Opening keynote & Fireside chat</div>
                             <div>Welcome reception</div>
-                            <div class="agenda-note">*Special training opportunities coming soon</div>
                         </div>
                     </div>
-
                     <div class="agenda-row">
                         <div class="agenda-date-col">
                             <div class="agenda-date">Monday, Oct 11</div>
-                            <div class="agenda-tag">
-                                <span class="rhombus-icon"></span>
-                                Day 2
-                            </div>
+                            <div class="agenda-tag"><span class="rhombus-icon"></span> Day 2</div>
                         </div>
                         <div class="agenda-events-col">
                             <div>Tournament breakfast & briefing</div>
                             <div>18-hole championship play</div>
-                            <div>Networking luncheon</div>
-                            <div>Fireside chat with special guest</div>
                             <div>Awards celebration</div>
                         </div>
                     </div>
@@ -1254,30 +428,28 @@
 
         <div class="section-divider"></div>
 
-        <!-- Special Guest Section -->
         <section class="content-section" id="guests">
             <h2 class="section-title">Special Guest</h2>
             <div class="section-right-content">
                 <p class="guest-intro-text">
-                    We are honored to welcome professional golfer Cheyenne Woods. Beyond her accomplishments on the LPGA Tour and Ladies European Tour, Cheyenne is a passionate advocate for diversity in golf and empowering youth through sport.
+                    We are honored to welcome professional golfer Cheyenne Woods, a passionate advocate for diversity in golf and youth empowerment.
                 </p>
-                <div class="guest-media-container">
-                    <img src="Cheyenne Woods.jpg" alt="Cheyenne Woods" class="guest-media-image" style="object-position: 58% center;">
+                <div class="media-container">
+                    <img src="Cheyenne Woods.jpg" alt="Cheyenne Woods">
                 </div>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- Sponsors Section -->
         <section class="content-section" id="sponsors">
             <h2 class="section-title">Sponsors</h2>
             <div class="section-right-content">
                 <p class="guest-intro-text">
-                    SHE Swings connects your organization with an influential audience of business and community leaders committed to social impact.
+                    Connect your organization with an influential audience of community leaders committed to social impact.
                 </p>
-                <div class="sponsor-media-container">
-                    <img src="FOTC_pic 1.jpeg" alt="Sponsors at SHE Swings" class="guest-media-image" style="object-position: 43% center;">
+                <div class="media-container">
+                    <img src="FOTC_pic 1.jpeg" alt="Sponsors">
                 </div>
                 <div class="sponsor-card">
                     <div>
@@ -1291,68 +463,20 @@
 
         <div class="section-divider"></div>
 
-        <!-- FAQ Section -->
         <section class="content-section">
             <h2 class="section-title" id="faqs">FAQs</h2>
             <div class="section-right-content">
                 <div class="faq-list">
                     <div class="faq-item">
-                        <details name="faq-accordion">
-                            <summary>
-                                Is there a minimum age requirement to attend?
-                                <span class="faq-toggle-icon">+</span>
-                            </summary>
-                            <div class="faq-answer">
-                                <p>There is no minimum age requirement to attend, and junior golfers are welcome to participate!</p>
-                            </div>
+                        <details>
+                            <summary>Is there a minimum age requirement?</summary>
+                            <div class="faq-answer">There is no minimum age requirement to attend, and junior golfers are welcome!</div>
                         </details>
                     </div>
-
                     <div class="faq-item">
-                        <details name="faq-accordion">
-                            <summary>
-                                Do I need to bring my own golf clubs?
-                                <span class="faq-toggle-icon">+</span>
-                            </summary>
-                            <div class="faq-answer">
-                                <p>Yes, participants are required to bring their own set of golf clubs.</p>
-                            </div>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details name="faq-accordion">
-                            <summary>
-                                What is the dress code for the tournament and reception?
-                                <span class="faq-toggle-icon">+</span>
-                            </summary>
-                            <div class="faq-answer">
-                                <p>Please wear standard golf apparel appropriate for the course and reception. Denim is not permitted.</p>
-                            </div>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details name="faq-accordion">
-                            <summary>
-                                Can I modify or cancel my registration?
-                                <span class="faq-toggle-icon">+</span>
-                            </summary>
-                            <div class="faq-answer">
-                                <p>Yes, registration details can be modified or canceled. Please contact Mike Lee at <a href="mailto:mikelee23@mac.com">mikelee23@mac.com</a> to do so. </p>
-                            </div>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details name="faq-accordion">
-                            <summary>
-                                I have additional questions that weren't covered here. Who can I contact?
-                                <span class="faq-toggle-icon">+</span>
-                            </summary>
-                            <div class="faq-answer">
-                                <p>For any further questions regarding registration, sponsorships, or general event details, please reach out directly to Mike Lee at <a href="mailto:mikelee23@mac.com">mikelee23@mac.com</a>.</p>
-                            </div>
+                        <details>
+                            <summary>Do I need to bring my own golf clubs?</summary>
+                            <div class="faq-answer">Yes, participants are required to bring their own set of clubs.</div>
                         </details>
                     </div>
                 </div>
@@ -1362,192 +486,69 @@
 
     <!-- REGISTRATION PAGE VIEW -->
     <div id="register" class="registration-page">
-        <div class="reg-hero-wrapper">
+        <section class="hero-section">
             <div class="reg-hero-container">
-                <div class="reg-title-col">
-                    <h1 class="reg-title">Register for<br>SHE Swings<br>2027</h1>
-                </div>
-
-                <div class="reg-meta-bar">
-                    <div class="reg-meta-item">
-                        October 10–11,<br>2027
-                    </div>
-                    <div class="reg-meta-item location">
-                        Oswego Lake Country Club,<br>Lake Oswego, Oregon
-                    </div>
-                </div>
-
-                <div class="reg-image-container">
-                    <img src="REGISTRATION 4.png" alt="Registration Header Media" class="reg-image-media">
+                <h1 class="reg-title">Register for<br>SHE Swings 2027</h1>
+                <div class="media-container">
+                    <img src="REGISTRATION 4.png" alt="Registration">
                 </div>
             </div>
-        </div>
-
-        <div class="reg-info-container">
-            <h2 class="reg-info-heading">Foursome Registration</h2>
-            <p class="reg-info-text">
-                SHE Swings is currently accepting registrations for participating foursomes. To reserve a spot for your team or inquire about player opportunities, please contact <strong>Mike Lee</strong> directly at <a href="mailto:mikelee23@mac.com">mikelee23@mac.com</a>.
-            </p>
-        </div>
+        </section>
     </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-top-row">
-            <a onclick="navigateTo('home')" class="footer-brand">
-                <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
-            </a>
-            <div class="footer-right-top">
-                <div class="footer-meta-item">
-                    October 10–11,<br>2027
-                </div>
-                <div class="footer-meta-item">
-                    Oswego Lake Country Club,<br>Lake Oswego, Oregon
-                </div>
+            <a onclick="navigateTo('home')" class="footer-brand">SHE Swings</a>
+            <div class="hero-meta-group">
+                <div class="meta-item">October 10–11, 2027</div>
+                <div class="meta-item">Oswego Lake Country Club</div>
             </div>
         </div>
-
         <div class="footer-bottom-row">
-            <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
-
+            <h2 class="footer-headline">Making a difference on and off the course</h2>
             <div class="footer-right-col">
-                <div class="footer-section-group get-help-group">
-                    <div class="footer-section-title">Get help</div>
-                    <div class="footer-link-list">
-                        <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
-                    </div>
-                </div>
-
-                <div class="footer-section-group">
-                    <div class="footer-section-title">Links</div>
-                    <div class="footer-link-list">
-                        <a href="https://walterprod.com" target="_blank" class="footer-link">Walter Productions</a>
-                        <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
-                    </div>
+                <div>
+                    <strong>Get help</strong>
+                    <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPT -->
     <script>
-        const nav = document.getElementById('navbar');
-
-        function updateNavbar() {
-            if (nav) {
-                if (document.body.classList.contains('is-registration-page')) {
-                    if (window.scrollY > 10) {
-                        nav.classList.add('reg-scrolled');
-                    } else {
-                        nav.classList.remove('reg-scrolled');
-                    }
-                    nav.classList.remove('scrolled');
-                } else {
-                    nav.classList.remove('reg-scrolled');
-                    if (window.scrollY > 30) {
-                        nav.classList.add('scrolled');
-                    } else if (window.scrollY < 10) {
-                        nav.classList.remove('scrolled');
-                    }
-                }
-            }
-        }
-
-        /* EXACT STRIPE VERTICAL SCROLL REVEAL */
-        function handleStripeMaskReveal() {
-            const aboutText = document.getElementById('about-text');
-            if (!aboutText) return;
-
-            if (window.innerWidth <= 768) {
-                aboutText.classList.add('fully-revealed');
-                aboutText.style.removeProperty('--highlightOffset');
-                return;
-            }
-
-            const rect = aboutText.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            const startPoint = windowHeight * 0.85;
-            const endPoint = windowHeight * 0.15;
-            const totalDistance = startPoint - endPoint;
-
-            const currentPos = startPoint - rect.top;
-            let progress = currentPos / totalDistance;
-            progress = Math.max(0, Math.min(1, progress));
-
-            const offsetVal = progress * 100;
-            aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
-
-            if (progress >= 1) {
-                aboutText.classList.add('fully-revealed');
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 30) {
+                nav.classList.add('scrolled');
             } else {
-                aboutText.classList.remove('fully-revealed');
+                nav.classList.remove('scrolled');
             }
-        }
-
-        function onScrollHandler() {
-            updateNavbar();
-            handleStripeMaskReveal();
-        }
-
-        window.addEventListener('scroll', onScrollHandler, { passive: true });
-        window.addEventListener('load', () => {
-            updateNavbar();
-            handleStripeMaskReveal();
         });
 
         function handleRoute() {
             const hash = window.location.hash;
-            const homePage = document.getElementById('home-page');
-            const regPage = document.getElementById('register');
-
+            const home = document.getElementById('home-page');
+            const reg = document.getElementById('register');
             if (hash === '#register') {
-                homePage.style.display = 'none';
-                regPage.classList.add('active');
+                home.style.display = 'none';
+                reg.classList.add('active');
                 document.body.classList.add('is-registration-page');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (hash === '#faqs') {
-                homePage.style.display = 'block';
-                regPage.classList.remove('active');
-                document.body.classList.remove('is-registration-page');
-                const faqsElement = document.getElementById('faqs');
-                if (faqsElement) {
-                    faqsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
             } else {
-                homePage.style.display = 'block';
-                regPage.classList.remove('active');
+                home.style.display = 'block';
+                reg.classList.remove('active');
                 document.body.classList.remove('is-registration-page');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-            updateNavbar();
-            handleStripeMaskReveal();
+            window.scrollTo(0, 0);
         }
 
         function navigateTo(target) {
-            if (target === 'register') {
-                history.pushState({view: 'register'}, '', '#register');
-                handleRoute();
-            } else if (target === 'faqs') {
-                history.pushState({view: 'faqs'}, '', '#faqs');
-                handleRoute();
-            } else {
-                history.pushState({view: 'home'}, '', window.location.pathname);
-                handleRoute();
-            }
+            history.pushState({}, '', target === 'register' ? '#register' : '#');
+            handleRoute();
         }
 
-        window.addEventListener('popstate', (e) => {
-            handleRoute();
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            if (!history.state) {
-                history.replaceState({view: window.location.hash || 'home'}, '', window.location.href);
-            }
-            handleRoute();
-            handleStripeMaskReveal();
-        });
+        window.addEventListener('popstate', handleRoute);
+        window.addEventListener('DOMContentLoaded', handleRoute);
     </script>
 </body>
 </html>
