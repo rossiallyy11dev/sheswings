@@ -1085,7 +1085,7 @@
                 line-height: 1.4 !important;
             }
 
-            /* FIX: Fill the box cleanly using cover, with object-position adjusted to keep the badge inside view */
+            /* FIX: Shift object-position further right so the badge moves left into view */
             .hero-banner-container {
                 width: 100% !important;
                 height: 420px !important;
@@ -1096,7 +1096,7 @@
                 width: 100% !important;
                 height: 100% !important;
                 object-fit: cover !important;
-                object-position: 18% center !important;
+                object-position: 85% center !important;
                 display: block !important;
             }
 
@@ -1238,7 +1238,7 @@
                 line-height: 1.4 !important;
             }
 
-            /* FIX: Fill the box cleanly using cover, with object-position adjusted to keep the badge inside view */
+            /* FIX: Shift object-position further right so the badge moves left into view */
             .hero-banner-container {
                 width: 100% !important;
                 height: 480px !important;
@@ -1249,7 +1249,7 @@
                 width: 100% !important;
                 height: 100% !important;
                 object-fit: cover !important;
-                object-position: 18% center !important;
+                object-position: 85% center !important;
                 display: block !important;
             }
 
@@ -1670,12 +1670,12 @@
             }
         }
 
-        function onScrollHandler() {
+        function onScrollHeader() {
             updateNavbar();
             handleStripeMaskReveal();
         }
 
-        window.addEventListener('scroll', onScrollHandler, { passive: true });
+        window.addEventListener('scroll', onScrollHeader, { passive: true });
         window.addEventListener('load', () => {
             updateNavbar();
             handleStripeMaskReveal();
