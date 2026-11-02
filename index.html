@@ -1031,8 +1031,162 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* IPADS & TABLETS ONLY (768px to 1366px) */
-        @media (min-width: 768px) and (max-width: 1366px) {
+        /* TIER 1: SMALL TABLETS (768px to 991px - e.g., iPad Mini, Surface Pro) */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .nav-faq-link {
+                display: inline-block !important;
+            }
+
+            body {
+                padding-top: 100px;
+            }
+
+            .hero-section, .content-section, .registration-page {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .section-divider {
+                width: calc(100% - 32px) !important;
+                margin: 80px auto 16px auto !important;
+            }
+
+            .hero-section {
+                margin-bottom: 80px;
+            }
+
+            .hero-header-row {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                margin-bottom: 32px !important;
+                padding: 0 !important;
+                gap: 20px !important;
+                width: 100% !important;
+            }
+
+            .hero-headline {
+                font-size: clamp(3rem, 6.5vw, 4.2rem) !important;
+                line-height: 0.98 !important;
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                letter-spacing: -0.035em !important;
+            }
+
+            .hero-meta-group {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 40px !important;
+                padding-top: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                width: 100% !important;
+                align-self: flex-start !important;
+            }
+
+            .meta-item {
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .hero-banner-container {
+                width: 100% !important;
+                height: clamp(340px, 45vw, 460px) !important;
+            }
+
+            .content-section {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            .section-title {
+                white-space: normal !important;
+                flex: none !important;
+                width: 100% !important;
+                padding-right: 0 !important;
+                font-size: clamp(2.2rem, 4.5vw, 2.8rem) !important;
+            }
+
+            .section-right-content {
+                flex: none !important;
+                width: 100% !important;
+            }
+
+            .section-text {
+                font-size: clamp(1.2rem, 2.4vw, 1.45rem) !important;
+                line-height: 1.4 !important;
+                max-width: 100% !important;
+            }
+
+            .guest-media-container, 
+            .sponsor-media-container,
+            .about-media-container {
+                height: auto !important;
+                max-width: 100% !important;
+                background-color: transparent !important;
+                border: none !important;
+            }
+
+            .guest-media-image, 
+            .sponsor-media-container img,
+            .about-media-image {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: contain !important;
+            }
+
+            .agenda-row {
+                flex-direction: row !important;
+                gap: 24px !important;
+            }
+
+            .agenda-date-col {
+                flex: 0 0 180px !important;
+            }
+
+            .site-footer {
+                padding: 40px 16px 40px 16px !important;
+            }
+
+            .footer-top-row {
+                margin-bottom: 64px !important;
+            }
+
+            .footer-right-top {
+                display: grid !important;
+                grid-template-columns: 130px 220px !important;
+                gap: 20px !important;
+                margin-left: auto !important;
+                margin-right: 0 !important;
+                width: auto !important;
+            }
+
+            .footer-bottom-row {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 40px !important;
+            }
+
+            .footer-headline {
+                font-size: clamp(2.4rem, 4.5vw, 3.2rem) !important;
+                line-height: 1.05 !important;
+                max-width: 100% !important;
+            }
+
+            .footer-right-col {
+                width: 100% !important;
+                margin-left: 0 !important;
+            }
+        }
+
+        /* TIER 2: LARGE TABLETS (992px to 1199px - e.g., iPad Pro 11"/13", Surface Pro Landscape) */
+        @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
             }
@@ -1054,83 +1208,64 @@
             }
 
             .hero-section {
-                margin-bottom: 100px;
+                margin-bottom: 90px;
             }
-            
+
             .hero-header-row {
                 display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                justify-content: flex-start !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: flex-end !important;
                 margin-bottom: 36px !important;
-                padding: 0 !important;
-                gap: 24px !important;
+                gap: 32px !important;
                 width: 100% !important;
             }
 
             .hero-headline {
-                font-size: clamp(3.2rem, 6.5vw, 4.5rem) !important;
-                line-height: 1.04 !important;
-                margin-left: 0 !important;
-                margin-top: 0 !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                letter-spacing: -0.035em !important;
+                font-size: clamp(3.4rem, 5vw, 4.5rem) !important;
+                line-height: 1.0 !important;
+                max-width: 580px !important;
             }
 
             .hero-meta-group {
                 display: flex !important;
                 flex-direction: row !important;
-                gap: 48px !important;
-                padding-top: 0 !important;
-                margin-left: 0 !important;
+                gap: 36px !important;
+                margin-left: auto !important;
                 margin-right: 0 !important;
-                width: 100% !important;
-                align-self: flex-start !important;
             }
 
             .meta-item {
-                font-size: 1.05rem !important;
-                line-height: 1.45 !important;
-                margin-right: 0 !important;
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
             }
 
             .hero-banner-container {
                 width: 100% !important;
-                height: clamp(380px, 45vw, 540px) !important;
-                background-color: #E8E8EC !important;
-                border-radius: 16px !important;
-                overflow: hidden !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                border: 1px solid rgba(0, 0, 0, 0.05) !important;
-            }
-
-            .hero-banner-image {
-                width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important;
-                display: block !important;
+                height: 480px !important;
             }
 
             .content-section {
-                flex-direction: column;
-                gap: 28px;
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                gap: 32px !important;
             }
 
             .section-title {
-                white-space: normal !important;
-                flex: none !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                padding-right: 0;
-                font-size: clamp(2.2rem, 4vw, 3rem) !important;
+                white-space: nowrap !important;
+                flex: 0 0 320px !important;
+                padding-right: 24px !important;
+                font-size: clamp(2.4rem, 3.5vw, 3rem) !important;
             }
 
             .section-right-content {
-                flex: none;
-                width: 100%;
+                flex: 1 !important;
+            }
+
+            .section-text {
+                font-size: 1.45rem !important;
+                line-height: 1.35 !important;
+                max-width: 100% !important;
             }
 
             .guest-media-container, 
@@ -1138,10 +1273,6 @@
             .about-media-container {
                 height: auto !important;
                 max-width: 100% !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 16px;
-                overflow: hidden;
             }
 
             .guest-media-image, 
@@ -1149,73 +1280,29 @@
             .about-media-image {
                 width: 100% !important;
                 height: auto !important;
-                object-fit: contain !important;
-                display: block !important;
+                object-fit: cover !important;
             }
 
             .agenda-row {
-                flex-direction: row;
-                gap: 24px;
+                flex-direction: row !important;
+                gap: 32px !important;
             }
 
             .agenda-date-col {
-                flex: 0 0 200px;
-            }
-
-            .reg-image-container {
-                grid-column: 1;
-                grid-row: 2;
-                width: 100%;
-                max-width: 100%;
-                height: auto !important;
-                min-height: auto;
-                border-radius: 16px;
-                margin-right: 0;
-                background-color: transparent !important;
-                border: none !important;
-            }
-
-            .reg-image-media {
-                width: 100%;
-                height: auto !important;
-                object-fit: contain !important;
-            }
-
-            .reg-hero-container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto;
-                gap: 28px;
-                margin-top: 0;
-            }
-
-            .reg-meta-bar {
-                grid-column: 1;
-                grid-row: 3;
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
-            }
-
-            .reg-meta-item.location {
-                grid-column: 2;
-                justify-self: start;
-                margin-left: 0;
+                flex: 0 0 200px !important;
             }
 
             .site-footer {
-                padding: 44px 16px 44px 16px !important;
-                min-height: 520px !important;
+                padding: 40px 16px 40px 16px !important;
             }
 
             .footer-top-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-start !important;
                 margin-bottom: 100px !important;
             }
 
             .footer-right-top {
                 display: grid !important;
-                grid-template-columns: 140px 260px !important;
+                grid-template-columns: 140px 240px !important;
                 gap: 32px !important;
                 margin-left: auto !important;
                 margin-right: 0 !important;
@@ -1229,17 +1316,14 @@
             }
 
             .footer-headline {
-                font-size: clamp(2.8rem, 5vw, 4rem) !important;
+                font-size: clamp(2.8rem, 4vw, 3.6rem) !important;
                 line-height: 1.05 !important;
-                max-width: 520px !important;
-                margin: 0 !important;
+                max-width: 500px !important;
             }
 
             .footer-right-col {
                 width: 320px !important;
                 margin-left: auto !important;
-                margin-right: 0 !important;
-                margin-bottom: 0 !important;
             }
         }
     </style>
