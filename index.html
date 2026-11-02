@@ -1038,7 +1038,7 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* TIER 1: SMALL TABLETS (768px to 991px - WITH FULLY COVERED INITIAL MASK) */
+        /* TIER 1: SMALL TABLETS (768px to 991px - WITH DYNAMIC SCROLL REVEAL) */
         @media (min-width: 768px) and (max-width: 991px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1125,9 +1125,10 @@
                 width: 100% !important;
             }
 
-            .section-text.tablet-initially-masked {
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%) !important;
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%) !important;
+            .section-text {
+                font-size: clamp(1.2rem, 2.4vw, 1.45rem) !important;
+                line-height: 1.4 !important;
+                max-width: 100% !important;
             }
 
             .guest-media-container, 
@@ -1196,7 +1197,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px - WITH FULLY COVERED INITIAL MASK) */
+        /* TIER 2: LARGE TABLETS (992px to 1199px - WITH DYNAMIC SCROLL REVEAL) */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1268,9 +1269,10 @@
                 flex: 1 !important;
             }
 
-            .section-text.tablet-initially-masked {
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%) !important;
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%) !important;
+            .section-text {
+                font-size: 1.45rem !important;
+                line-height: 1.35 !important;
+                max-width: 100% !important;
             }
 
             .guest-media-container, 
@@ -1525,7 +1527,7 @@
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
-                <p class="section-text tablet-initially-masked" id="about-text" style="--highlightOffset: -30%;">
+                <p class="section-text" id="about-text" style="--highlightOffset: -15%;">
                     Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>, with proceeds directly benefiting the organization. This event combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
@@ -1789,7 +1791,6 @@
 
             if (window.innerWidth <= 768) {
                 aboutText.classList.remove('fully-revealed');
-                aboutText.classList.remove('tablet-initially-masked');
                 aboutText.style.removeProperty('--highlightOffset');
                 return;
             }
@@ -1798,20 +1799,15 @@
             const windowHeight = window.innerHeight;
 
             const startPoint = windowHeight * 0.95;
-            const endPoint = windowHeight * 0.15;
+            const endPoint = windowHeight * 0.20;
             const totalDistance = startPoint - endPoint;
 
             const currentPos = startPoint - rect.top;
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            if (progress > 0.05) {
-                aboutText.classList.remove('tablet-initially-masked');
-            } else {
-                aboutText.classList.add('tablet-initially-masked');
-            }
-
-            const offsetVal = (progress * 130) - 30;
+            // Start completely covered (-15%) and smoothly animate to fully revealed (115%)
+            const offsetVal = (progress * 130) - 15;
             aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
 
             if (progress >= 1) {
