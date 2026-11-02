@@ -281,7 +281,7 @@
             flex: 1;
         }
 
-        /* Vertical Scroll-Reveal (Desktop default) */
+        /* Vertical Scroll-Reveal */
         .section-text {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
@@ -1038,7 +1038,7 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* TIER 1: SMALL TABLETS (768px to 991px - WITH STATIC FADE-OUT MASK) */
+        /* TIER 1: SMALL TABLETS (768px to 991px - WITH DYNAMIC SCROLL REVEAL) */
         @media (min-width: 768px) and (max-width: 991px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1129,9 +1129,6 @@
                 font-size: clamp(1.2rem, 2.4vw, 1.45rem) !important;
                 line-height: 1.4 !important;
                 max-width: 100% !important;
-                /* Static Fade-Out Mask for Small Tablet */
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 35%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%) !important;
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 35%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%) !important;
             }
 
             .guest-media-container, 
@@ -1200,7 +1197,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px - WITH STATIC FADE-OUT MASK) */
+        /* TIER 2: LARGE TABLETS (992px to 1199px - WITH DYNAMIC SCROLL REVEAL) */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1276,9 +1273,6 @@
                 font-size: 1.45rem !important;
                 line-height: 1.35 !important;
                 max-width: 100% !important;
-                /* Static Fade-Out Mask for Large Tablet */
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 35%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%) !important;
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 35%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%) !important;
             }
 
             .guest-media-container, 
@@ -1790,12 +1784,12 @@
             }
         }
 
-        /* EXACT STRIPE VERTICAL SCROLL REVEAL (Desktop only) */
+        /* EXACT STRIPE VERTICAL SCROLL REVEAL (Active on Desktop and Tablets >= 768px) */
         function handleStripeMaskReveal() {
             const aboutText = document.getElementById('about-text');
             if (!aboutText) return;
 
-            if (window.innerWidth < 1200) {
+            if (window.innerWidth <= 768) {
                 aboutText.classList.remove('fully-revealed');
                 aboutText.style.removeProperty('--highlightOffset');
                 return;
