@@ -1798,13 +1798,21 @@
             const rect = aboutText.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            // Expanded startPoint for large tablets / taller viewports so scrolling back up covers the text fully
-            const startPoint = window.innerWidth >= 992 && window.innerWidth <= 1199 ? windowHeight * 1.25 : windowHeight * 0.95;
+            const startPoint = windowHeight * 0.95;
             const endPoint = windowHeight * 0.20;
             const totalDistance = startPoint - endPoint;
 
             const currentPos = startPoint - rect.top;
             let progress = currentPos / totalDistance;
+
+            // For large tablets (992px to 1199px), bind progress directly to page scroll position 
+            // so scrolling back up to the top reliably resets the mask to completely covered (-100%).
+            if (window.innerWidth >= 992 && window.innerWidth <= 1199) {
+                const scrollY = window.scrollY;
+                const maxScrollForReveal = 350; // Distance over which text fully reveals
+                progress = scrollY / maxScrollForReveal;
+            }
+
             progress = Math.max(0, Math.min(1, progress));
 
             // Start completely covered (-100%) and smoothly animate to fully revealed (100%)
