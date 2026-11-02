@@ -183,7 +183,7 @@
         .hero-header-row {
             display: flex;
             justify-content: flex-start;
-            align-items: flex-start;
+            align-items: flex-end;
             margin-bottom: 40px;
             padding: 0;
             width: 100%;
@@ -195,7 +195,7 @@
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: -0.03em;
-            max-width: 650px;
+            max-width: 750px;
             color: #555555;
             margin-left: -2px;
             flex-shrink: 0;
@@ -204,11 +204,11 @@
         .hero-meta-group {
             display: flex;
             gap: 60px;
-            padding-top: 6px;
-            margin-left: 80px;
+            padding-top: 0;
+            margin-left: auto;
             margin-right: 16px;
             flex-shrink: 0;
-            align-self: flex-start;
+            align-self: flex-end;
         }
 
         .meta-item {
@@ -857,7 +857,6 @@
                 margin-left: 0 !important;
                 margin-top: 10px !important;
                 width: 100% !important;
-                max-width: 100% !important;
             }
 
             .hero-meta-group {
@@ -966,7 +965,7 @@
             }
 
             .reg-image-media {
-                width: 100% !important;
+                width: 100%;
                 height: auto !important;
                 object-fit: contain !important;
             }
@@ -1086,9 +1085,10 @@
                 line-height: 1.4 !important;
             }
 
+            /* FIX: Fill the box cleanly using cover, but shift object-position slightly left/up so the badge stays inside view */
             .hero-banner-container {
                 width: 100% !important;
-                height: 480px !important;
+                height: 420px !important;
                 background-color: #E8E8EC !important;
             }
 
@@ -1124,27 +1124,21 @@
                 max-width: 100% !important;
             }
 
-            .guest-media-container {
-                height: 420px !important;
-                max-width: 100% !important;
-            }
-
-            .sponsor-media-container {
-                height: 450px !important;
-                max-width: 100% !important;
-            }
-
+            .guest-media-container, 
+            .sponsor-media-container,
             .about-media-container {
                 height: auto !important;
                 max-width: 100% !important;
+                background-color: transparent !important;
+                border: none !important;
             }
 
             .guest-media-image, 
             .sponsor-media-container img,
             .about-media-image {
                 width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important;
+                height: auto !important;
+                object-fit: contain !important;
             }
 
             .agenda-row {
@@ -1196,7 +1190,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS / IPAD PRO PORTRAIT (992px to 1199px) */
+        /* TIER 2: LARGE TABLETS (992px to 1199px - e.g., iPad Pro 11"/13", Surface Pro Landscape) */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1215,30 +1209,28 @@
                 margin-bottom: 80px;
             }
 
-            /* FIX: Allow header to stack cleanly on portrait iPad Pro so headline & date/location have full breathing room */
             .hero-header-row {
                 display: flex !important;
-                flex-direction: column !important;
-                justify-content: flex-start !important;
-                align-items: flex-start !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: flex-end !important;
                 margin-bottom: 36px !important;
-                gap: 24px !important;
+                gap: 32px !important;
                 width: 100% !important;
             }
 
             .hero-headline {
-                font-size: clamp(3.2rem, 5.2vw, 4.4rem) !important;
+                font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
                 line-height: 1.0 !important;
-                max-width: 100% !important;
+                max-width: 580px !important;
             }
 
             .hero-meta-group {
                 display: flex !important;
                 flex-direction: row !important;
-                gap: 48px !important;
-                margin-left: 0 !important;
+                gap: 32px !important;
+                margin-left: auto !important;
                 margin-right: 0 !important;
-                align-self: flex-start !important;
             }
 
             .meta-item {
@@ -1246,9 +1238,10 @@
                 line-height: 1.4 !important;
             }
 
+            /* FIX: Fill the box cleanly using cover, but shift object-position slightly left/up so the badge stays inside view */
             .hero-banner-container {
                 width: 100% !important;
-                height: 520px !important;
+                height: 480px !important;
                 background-color: #E8E8EC !important;
             }
 
@@ -1261,22 +1254,20 @@
             }
 
             .content-section {
-                flex-direction: column !important;
+                flex-direction: row !important;
                 align-items: flex-start !important;
-                gap: 24px !important;
+                gap: 32px !important;
             }
 
             .section-title {
-                white-space: normal !important;
-                flex: none !important;
-                width: 100% !important;
-                padding-right: 0 !important;
+                white-space: nowrap !important;
+                flex: 0 0 300px !important;
+                padding-right: 24px !important;
                 font-size: clamp(2.4rem, 3.2vw, 3rem) !important;
             }
 
             .section-right-content {
-                flex: none !important;
-                width: 100% !important;
+                flex: 1 !important;
             }
 
             .section-text {
@@ -1285,16 +1276,8 @@
                 max-width: 100% !important;
             }
 
-            .guest-media-container {
-                height: 460px !important;
-                max-width: 100% !important;
-            }
-
-            .sponsor-media-container {
-                height: 500px !important;
-                max-width: 100% !important;
-            }
-
+            .guest-media-container, 
+            .sponsor-media-container,
             .about-media-container {
                 height: auto !important;
                 max-width: 100% !important;
@@ -1304,7 +1287,7 @@
             .sponsor-media-container img,
             .about-media-image {
                 width: 100% !important;
-                height: 100% !important;
+                height: auto !important;
                 object-fit: cover !important;
             }
 
