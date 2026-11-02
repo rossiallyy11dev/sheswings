@@ -1031,25 +1031,311 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* TIER 1: SMALL TABLETS (768px to 991px) */
+        /* TIER 1: SMALL TABLETS (768px to 991px - e.g., iPad Mini, Surface Pro Portrait) */
         @media (min-width: 768px) and (max-width: 991px) {
             .nav-faq-link {
                 display: inline-block !important;
             }
 
+            body {
+                padding-top: 100px;
+            }
+
+            .section-divider {
+                width: calc(100% - 32px) !important;
+                margin: 80px auto 16px auto !important;
+            }
+
+            .hero-section {
+                margin-bottom: 64px;
+            }
+
+            .hero-header-row {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                margin-bottom: 32px !important;
+                gap: 24px !important;
+                width: 100% !important;
+            }
+
+            .hero-headline {
+                font-size: clamp(3.2rem, 6.8vw, 4.2rem) !important;
+                line-height: 0.98 !important;
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                letter-spacing: -0.035em !important;
+            }
+
+            .hero-meta-group {
+                display: grid !important;
+                grid-template-columns: 140px 1fr !important;
+                gap: 24px !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                width: 100% !important;
+                align-self: flex-start !important;
+            }
+
+            .meta-item {
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
+            }
+
+            /* FIX: Fill the box cleanly using cover, but shift object-position slightly left/up so the badge stays inside view */
+            .hero-banner-container {
+                width: 100% !important;
+                height: 420px !important;
+                background-color: #E8E8EC !important;
+            }
+
             .hero-banner-image {
-                object-position: 85% center !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: 45% center !important;
+                display: block !important;
+            }
+
+            .content-section {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            .section-title {
+                white-space: normal !important;
+                flex: none !important;
+                width: 100% !important;
+                padding-right: 0 !important;
+                font-size: clamp(2.2rem, 4.5vw, 2.8rem) !important;
+            }
+
+            .section-right-content {
+                flex: none !important;
+                width: 100% !important;
+            }
+
+            .section-text {
+                font-size: clamp(1.2rem, 2.4vw, 1.45rem) !important;
+                line-height: 1.4 !important;
+                max-width: 100% !important;
+            }
+
+            .guest-media-container, 
+            .sponsor-media-container,
+            .about-media-container {
+                height: auto !important;
+                max-width: 100% !important;
+                background-color: transparent !important;
+                border: none !important;
+            }
+
+            .guest-media-image, 
+            .sponsor-media-container img,
+            .about-media-image {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: contain !important;
+            }
+
+            .agenda-row {
+                flex-direction: row !important;
+                gap: 24px !important;
+            }
+
+            .agenda-date-col {
+                flex: 0 0 180px !important;
+            }
+
+            .site-footer {
+                padding: 40px 16px 40px 16px !important;
+                min-height: auto !important;
+            }
+
+            .footer-top-row {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
+                margin-bottom: 64px !important;
+            }
+
+            .footer-right-top {
+                display: grid !important;
+                grid-template-columns: 130px 220px !important;
+                gap: 20px !important;
+                margin-left: auto !important;
+                margin-right: 0 !important;
+                width: auto !important;
+            }
+
+            .footer-bottom-row {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 40px !important;
+            }
+
+            .footer-headline {
+                font-size: clamp(2.4rem, 4.5vw, 3.2rem) !important;
+                line-height: 1.05 !important;
+                max-width: 100% !important;
+            }
+
+            .footer-right-col {
+                width: 100% !important;
+                margin-left: 0 !important;
             }
         }
 
-        /* TIER 2: LARGE TABLETS / IPAD PRO (992px to 1199px) */
+        /* TIER 2: LARGE TABLETS (992px to 1199px - e.g., iPad Pro 11"/13", Surface Pro Landscape) */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
             }
 
+            body {
+                padding-top: 110px;
+            }
+
+            .section-divider {
+                width: calc(100% - 32px) !important;
+                margin: 100px auto 16px auto !important;
+            }
+
+            .hero-section {
+                margin-bottom: 80px;
+            }
+
+            .hero-header-row {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: flex-end !important;
+                margin-bottom: 36px !important;
+                gap: 32px !important;
+                width: 100% !important;
+            }
+
+            .hero-headline {
+                font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
+                line-height: 1.0 !important;
+                max-width: 580px !important;
+            }
+
+            .hero-meta-group {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 32px !important;
+                margin-left: auto !important;
+                margin-right: 0 !important;
+            }
+
+            .meta-item {
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
+            }
+
+            /* FIX: Fill the box cleanly using cover, but shift object-position slightly left/up so the badge stays inside view */
+            .hero-banner-container {
+                width: 100% !important;
+                height: 480px !important;
+                background-color: #E8E8EC !important;
+            }
+
             .hero-banner-image {
-                object-position: 85% center !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: 45% center !important;
+                display: block !important;
+            }
+
+            .content-section {
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                gap: 32px !important;
+            }
+
+            .section-title {
+                white-space: nowrap !important;
+                flex: 0 0 300px !important;
+                padding-right: 24px !important;
+                font-size: clamp(2.4rem, 3.2vw, 3rem) !important;
+            }
+
+            .section-right-content {
+                flex: 1 !important;
+            }
+
+            .section-text {
+                font-size: 1.45rem !important;
+                line-height: 1.35 !important;
+                max-width: 100% !important;
+            }
+
+            .guest-media-container, 
+            .sponsor-media-container,
+            .about-media-container {
+                height: auto !important;
+                max-width: 100% !important;
+            }
+
+            .guest-media-image, 
+            .sponsor-media-container img,
+            .about-media-image {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: cover !important;
+            }
+
+            .agenda-row {
+                flex-direction: row !important;
+                gap: 32px !important;
+            }
+
+            .agenda-date-col {
+                flex: 0 0 200px !important;
+            }
+
+            .site-footer {
+                padding: 40px 16px 40px 16px !important;
+                min-height: auto !important;
+            }
+
+            .footer-top-row {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
+                margin-bottom: 80px !important;
+            }
+
+            .footer-right-top {
+                display: grid !important;
+                grid-template-columns: 140px 240px !important;
+                gap: 32px !important;
+                margin-left: auto !important;
+                margin-right: 0 !important;
+                width: auto !important;
+            }
+
+            .footer-bottom-row {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: flex-end !important;
+            }
+
+            .footer-headline {
+                font-size: clamp(2.8rem, 4vw, 3.6rem) !important;
+                line-height: 1.05 !important;
+                max-width: 500px !important;
+            }
+
+            .footer-right-col {
+                width: 320px !important;
+                margin-left: auto !important;
             }
         }
     </style>
