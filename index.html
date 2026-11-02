@@ -1197,7 +1197,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px) - DATE & LOCATION MOVED UP AND SLIGHTLY LEFT */
+        /* TIER 2: LARGE TABLETS (992px to 1199px) - NO CHANGES */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1228,7 +1228,7 @@
                 flex-direction: row !important;
                 gap: 28px !important;
                 margin-left: auto !important;
-                margin-right: 24px !important; /* Shifted slightly to the LEFT compared to previous right alignment */
+                margin-right: 24px !important;
                 align-self: flex-start !important;
                 padding-top: 4px !important;
             }
@@ -1338,7 +1338,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - 2-LINE TITLE & EXACT PHOTO #1 ALIGNMENT (RIGHT PLACEMENT) */
+        /* TIER 3: DESKTOP (1200px and up) - EXACT PHOTO #1 ALIGNMENT (PUSHED FARTHER RIGHT) */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1350,17 +1350,17 @@
 
             .hero-header-row {
                 display: grid !important;
-                grid-template-columns: minmax(480px, 600px) 160px 320px !important;
-                align-items: flex-start !important; /* Aligns to top to match 2-line title */
+                grid-template-columns: minmax(480px, 540px) 160px 360px !important;
+                align-items: flex-start !important;
                 margin-bottom: 36px !important;
-                column-gap: 60px !important;
+                column-gap: 80px !important;
                 width: 100% !important;
             }
 
             .hero-headline {
                 font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
                 line-height: 1.05 !important;
-                max-width: 600px !important;
+                max-width: 540px !important;
                 grid-column: 1 !important;
             }
 
@@ -1377,12 +1377,12 @@
 
             .meta-item:nth-of-type(1) {
                 grid-column: 2 !important;
-                transform: translateX(110px); /* Moved further to the RIGHT to match Photo #1 */
+                transform: translateX(180px); /* Pushed further RIGHT to match reference photo */
             }
 
             .meta-item:nth-of-type(2) {
                 grid-column: 3 !important;
-                transform: translateX(100px); /* Moved further to the RIGHT to match Photo #1 */
+                transform: translateX(180px); /* Pushed further RIGHT to match reference photo */
             }
 
             .hero-banner-container {
