@@ -862,6 +862,7 @@
                 margin-left: 0 !important;
                 margin-top: 10px !important;
                 width: 100% !important;
+                max-width: 100% !important;
             }
 
             .hero-meta-group {
@@ -971,7 +972,7 @@
             }
 
             .reg-image-media {
-                width: 100%;
+                width: 100% !important;
                 height: auto !important;
                 object-fit: contain !important;
             }
@@ -1196,7 +1197,7 @@
             }
         }
 
-        /* TIER 2 & DESKTOP (992px and up): EXACT STRIPE ALIGNMENT */
+        /* TIER 2: LARGE TABLETS & DESKTOP (992px and up) */
         @media (min-width: 992px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1208,17 +1209,17 @@
 
             .hero-header-row {
                 display: grid !important;
-                grid-template-columns: minmax(320px, 580px) 160px 260px !important;
+                grid-template-columns: minmax(480px, 680px) 160px 280px !important;
                 align-items: flex-end !important;
                 margin-bottom: 36px !important;
-                column-gap: 60px !important;
+                column-gap: 50px !important;
                 width: 100% !important;
             }
 
             .hero-headline {
                 font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
                 line-height: 1.0 !important;
-                max-width: 580px !important;
+                max-width: 680px !important;
                 grid-column: 1 !important;
             }
 
@@ -1235,10 +1236,12 @@
 
             .meta-item:nth-of-type(1) {
                 grid-column: 2 !important;
+                transform: translateX(30px);
             }
 
             .meta-item:nth-of-type(2) {
                 grid-column: 3 !important;
+                transform: translateX(45px);
             }
 
             .hero-banner-container {
