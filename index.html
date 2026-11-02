@@ -1096,7 +1096,7 @@
                 width: 100% !important;
                 height: 100% !important;
                 object-fit: cover !important;
-                object-position: 85% center !important;
+                object-position: 92% center !important;
                 display: block !important;
             }
 
@@ -1249,7 +1249,7 @@
                 width: 100% !important;
                 height: 100% !important;
                 object-fit: cover !important;
-                object-position: 85% center !important;
+                object-position: 92% center !important;
                 display: block !important;
             }
 
@@ -1670,12 +1670,12 @@
             }
         }
 
-        function onScrollHeader() {
+        function onScrollHandler() {
             updateNavbar();
             handleStripeMaskReveal();
         }
 
-        window.addEventListener('scroll', onScrollHeader, { passive: true });
+        window.addEventListener('scroll', onScrollHandler, { passive: true });
         window.addEventListener('load', () => {
             updateNavbar();
             handleStripeMaskReveal();
