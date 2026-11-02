@@ -812,7 +812,7 @@
             text-decoration: underline;
         }
 
-        /* MOBILE PHONES ONLY (max-width: 767px) - ABSOLUTE UNIVERSAL PIC #1 MATCH */
+        /* MOBILE PHONES ONLY (max-width: 767px) - STRIPE FLUID SCALING TECHNIQUE */
         @media (max-width: 767px) {
             .nav-faq-link {
                 display: none !important;
@@ -831,30 +831,28 @@
                 padding: 0 !important;
                 margin-bottom: 28px !important;
                 width: 100% !important;
-                max-width: 343px !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
+                max-width: 100% !important;
             }
             .hero-headline {
-                font-size: 2.35rem !important;
-                line-height: 1.1 !important;
+                font-size: clamp(2.15rem, 8.2vw, 2.45rem) !important;
+                line-height: 1.08 !important;
                 margin-left: 0 !important;
                 margin-top: 10px !important;
                 width: 100% !important;
-                max-width: 343px !important;
+                max-width: 100% !important;
             }
             .hero-meta-group {
                 display: grid !important;
-                grid-template-columns: 125px 1fr !important;
-                gap: 16px !important;
+                grid-template-columns: 38% 62% !important;
+                gap: 12px !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
                 padding-top: 0 !important;
                 width: 100% !important;
-                max-width: 343px !important;
+                max-width: 100% !important;
             }
             .meta-item {
-                font-size: 0.875rem !important;
+                font-size: clamp(0.8rem, 3.2vw, 0.875rem) !important;
                 line-height: 1.4 !important;
                 margin-right: 0 !important;
                 padding-left: 0 !important;
@@ -863,10 +861,10 @@
             
             .hero-banner-container {
                 width: 100% !important;
-                max-width: 343px !important;
+                max-width: 100% !important;
                 margin: 0 auto !important;
                 height: calc(100vw - 32px) !important;
-                max-height: 343px !important;
+                max-height: 380px !important;
                 background-color: #E8E8EC !important;
                 border-radius: 16px;
                 overflow: hidden;
