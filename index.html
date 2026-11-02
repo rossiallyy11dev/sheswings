@@ -183,7 +183,7 @@
         .hero-header-row {
             display: flex;
             justify-content: flex-start;
-            align-items: flex-end;
+            align-items: flex-start;
             margin-bottom: 40px;
             padding: 0;
             width: 100%;
@@ -208,7 +208,7 @@
             margin-left: auto;
             margin-right: 16px;
             flex-shrink: 0;
-            align-self: flex-end;
+            align-self: flex-start;
         }
 
         .meta-item {
@@ -1085,7 +1085,6 @@
                 line-height: 1.4 !important;
             }
 
-            /* FIX: Fill the box cleanly using cover, but shift object-position slightly left/up so the badge stays inside view */
             .hero-banner-container {
                 width: 100% !important;
                 height: 420px !important;
@@ -1213,7 +1212,7 @@
                 display: flex !important;
                 flex-direction: row !important;
                 justify-content: space-between !important;
-                align-items: flex-end !important;
+                align-items: flex-start !important;
                 margin-bottom: 36px !important;
                 gap: 32px !important;
                 width: 100% !important;
@@ -1231,6 +1230,7 @@
                 gap: 32px !important;
                 margin-left: auto !important;
                 margin-right: 0 !important;
+                align-self: flex-start !important;
             }
 
             .meta-item {
@@ -1238,7 +1238,6 @@
                 line-height: 1.4 !important;
             }
 
-            /* FIX: Fill the box cleanly using cover, but shift object-position slightly left/up so the badge stays inside view */
             .hero-banner-container {
                 width: 100% !important;
                 height: 480px !important;
