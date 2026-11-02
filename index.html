@@ -1031,7 +1031,7 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* TIER 1: SMALL TABLETS (768px to 991px - e.g., iPad Mini, Surface Pro) */
+        /* TIER 1: SMALL TABLETS (768px to 991px - e.g., iPad Mini, Surface Pro Portrait) */
         @media (min-width: 768px) and (max-width: 991px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1041,35 +1041,28 @@
                 padding-top: 100px;
             }
 
-            .hero-section, .content-section, .registration-page {
-                padding-left: 16px !important;
-                padding-right: 16px !important;
-                width: 100% !important;
-                box-sizing: border-box !important;
-            }
-
             .section-divider {
                 width: calc(100% - 32px) !important;
                 margin: 80px auto 16px auto !important;
             }
 
             .hero-section {
-                margin-bottom: 80px;
+                margin-bottom: 64px;
             }
 
+            /* Stack Hero Headline above Date/Location Meta Row */
             .hero-header-row {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: flex-start !important;
                 justify-content: flex-start !important;
                 margin-bottom: 32px !important;
-                padding: 0 !important;
-                gap: 20px !important;
+                gap: 24px !important;
                 width: 100% !important;
             }
 
             .hero-headline {
-                font-size: clamp(3rem, 6.5vw, 4.2rem) !important;
+                font-size: clamp(3.2rem, 6.8vw, 4.2rem) !important;
                 line-height: 0.98 !important;
                 margin-left: 0 !important;
                 margin-top: 0 !important;
@@ -1079,10 +1072,9 @@
             }
 
             .hero-meta-group {
-                display: flex !important;
-                flex-direction: row !important;
-                gap: 40px !important;
-                padding-top: 0 !important;
+                display: grid !important;
+                grid-template-columns: 140px 1fr !important;
+                gap: 24px !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
                 width: 100% !important;
@@ -1099,6 +1091,7 @@
                 height: clamp(340px, 45vw, 460px) !important;
             }
 
+            /* Content Sections stack Section Title vertically above Right Content */
             .content-section {
                 flex-direction: column !important;
                 gap: 20px !important;
@@ -1151,9 +1144,13 @@
 
             .site-footer {
                 padding: 40px 16px 40px 16px !important;
+                min-height: auto !important;
             }
 
             .footer-top-row {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
                 margin-bottom: 64px !important;
             }
 
@@ -1195,22 +1192,16 @@
                 padding-top: 110px;
             }
 
-            .hero-section, .content-section, .registration-page {
-                padding-left: 16px !important;
-                padding-right: 16px !important;
-                width: 100% !important;
-                box-sizing: border-box !important;
-            }
-
             .section-divider {
                 width: calc(100% - 32px) !important;
                 margin: 100px auto 16px auto !important;
             }
 
             .hero-section {
-                margin-bottom: 90px;
+                margin-bottom: 80px;
             }
 
+            /* Side-by-Side Hero Header */
             .hero-header-row {
                 display: flex !important;
                 flex-direction: row !important;
@@ -1222,7 +1213,7 @@
             }
 
             .hero-headline {
-                font-size: clamp(3.4rem, 5vw, 4.5rem) !important;
+                font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
                 line-height: 1.0 !important;
                 max-width: 580px !important;
             }
@@ -1230,7 +1221,7 @@
             .hero-meta-group {
                 display: flex !important;
                 flex-direction: row !important;
-                gap: 36px !important;
+                gap: 32px !important;
                 margin-left: auto !important;
                 margin-right: 0 !important;
             }
@@ -1245,6 +1236,7 @@
                 height: 480px !important;
             }
 
+            /* Side-by-Side Content Sections */
             .content-section {
                 flex-direction: row !important;
                 align-items: flex-start !important;
@@ -1253,9 +1245,9 @@
 
             .section-title {
                 white-space: nowrap !important;
-                flex: 0 0 320px !important;
+                flex: 0 0 300px !important;
                 padding-right: 24px !important;
-                font-size: clamp(2.4rem, 3.5vw, 3rem) !important;
+                font-size: clamp(2.4rem, 3.2vw, 3rem) !important;
             }
 
             .section-right-content {
@@ -1294,10 +1286,14 @@
 
             .site-footer {
                 padding: 40px 16px 40px 16px !important;
+                min-height: auto !important;
             }
 
             .footer-top-row {
-                margin-bottom: 100px !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
+                margin-bottom: 80px !important;
             }
 
             .footer-right-top {
