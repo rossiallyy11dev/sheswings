@@ -812,7 +812,7 @@
             text-decoration: underline;
         }
 
-        /* MOBILE PHONES ONLY (max-width: 767px) - 16px THIN MARGINS */
+        /* MOBILE PHONES ONLY (max-width: 767px) */
         @media (max-width: 767px) {
             .nav-faq-link {
                 display: none !important;
@@ -1031,14 +1031,14 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* IPADS & TABLETS ONLY (768px to 1366px) */
+        /* TABLETS ONLY (768px to 1366px) - REPLICATING STRIPE SESSIONS TABLET BREAKPOINTS */
         @media (min-width: 768px) and (max-width: 1366px) {
             .nav-faq-link {
                 display: inline-block !important;
             }
 
             body {
-                padding-top: 110px;
+                padding-top: 100px;
             }
 
             .hero-section, .content-section, .registration-page {
@@ -1050,27 +1050,28 @@
 
             .section-divider {
                 width: calc(100% - 32px) !important;
-                margin: 100px auto 16px auto !important;
+                margin: 80px auto 16px auto !important;
             }
 
             .hero-section {
-                margin-bottom: 100px;
+                margin-bottom: 80px;
             }
             
+            /* Vertical header alignment on smaller tablet width (iPad mini / Surface), scaling side-by-side on wider tablet */
             .hero-header-row {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: flex-start !important;
                 justify-content: flex-start !important;
-                margin-bottom: 36px !important;
+                margin-bottom: 32px !important;
                 padding: 0 !important;
-                gap: 24px !important;
+                gap: 20px !important;
                 width: 100% !important;
             }
 
             .hero-headline {
-                font-size: clamp(3.2rem, 6.5vw, 4.5rem) !important;
-                line-height: 1.04 !important;
+                font-size: clamp(3.2rem, 7vw, 5rem) !important;
+                line-height: 0.98 !important;
                 margin-left: 0 !important;
                 margin-top: 0 !important;
                 max-width: 100% !important;
@@ -1081,7 +1082,7 @@
             .hero-meta-group {
                 display: flex !important;
                 flex-direction: row !important;
-                gap: 48px !important;
+                gap: 40px !important;
                 padding-top: 0 !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
@@ -1090,14 +1091,14 @@
             }
 
             .meta-item {
-                font-size: 1.05rem !important;
-                line-height: 1.45 !important;
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
                 margin-right: 0 !important;
             }
 
             .hero-banner-container {
                 width: 100% !important;
-                height: clamp(380px, 45vw, 540px) !important;
+                height: clamp(360px, 48vw, 520px) !important;
                 background-color: #E8E8EC !important;
                 border-radius: 16px !important;
                 overflow: hidden !important;
@@ -1114,9 +1115,10 @@
                 display: block !important;
             }
 
+            /* Content Sections stack title above content like Stripe's "About Sessions" tablet view */
             .content-section {
-                flex-direction: column;
-                gap: 28px;
+                flex-direction: column !important;
+                gap: 20px !important;
             }
 
             .section-title {
@@ -1124,13 +1126,20 @@
                 flex: none !important;
                 width: 100% !important;
                 max-width: 100% !important;
-                padding-right: 0;
-                font-size: clamp(2.2rem, 4vw, 3rem) !important;
+                padding-right: 0 !important;
+                font-size: clamp(2.2rem, 4.5vw, 3rem) !important;
             }
 
             .section-right-content {
-                flex: none;
-                width: 100%;
+                flex: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .section-text {
+                font-size: clamp(1.25rem, 2.5vw, 1.5rem) !important;
+                line-height: 1.4 !important;
+                max-width: 100% !important;
             }
 
             .guest-media-container, 
@@ -1140,8 +1149,8 @@
                 max-width: 100% !important;
                 background-color: transparent !important;
                 border: none !important;
-                border-radius: 16px;
-                overflow: hidden;
+                border-radius: 16px !important;
+                overflow: hidden !important;
             }
 
             .guest-media-image, 
@@ -1154,69 +1163,69 @@
             }
 
             .agenda-row {
-                flex-direction: row;
-                gap: 24px;
+                flex-direction: row !important;
+                gap: 24px !important;
             }
 
             .agenda-date-col {
-                flex: 0 0 200px;
+                flex: 0 0 180px !important;
             }
 
             .reg-image-container {
-                grid-column: 1;
-                grid-row: 2;
-                width: 100%;
-                max-width: 100%;
+                grid-column: 1 !important;
+                grid-row: 2 !important;
+                width: 100% !important;
+                max-width: 100% !important;
                 height: auto !important;
-                min-height: auto;
-                border-radius: 16px;
-                margin-right: 0;
+                min-height: auto !important;
+                border-radius: 16px !important;
+                margin-right: 0 !important;
                 background-color: transparent !important;
                 border: none !important;
             }
 
             .reg-image-media {
-                width: 100%;
+                width: 100% !important;
                 height: auto !important;
                 object-fit: contain !important;
             }
 
             .reg-hero-container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto;
-                gap: 28px;
-                margin-top: 0;
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto auto auto !important;
+                gap: 24px !important;
+                margin-top: 0 !important;
             }
 
             .reg-meta-bar {
-                grid-column: 1;
-                grid-row: 3;
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
+                grid-column: 1 !important;
+                grid-row: 3 !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 24px !important;
             }
 
             .reg-meta-item.location {
-                grid-column: 2;
-                justify-self: start;
-                margin-left: 0;
+                grid-column: 2 !important;
+                justify-self: start !important;
+                margin-left: 0 !important;
             }
 
             .site-footer {
-                padding: 44px 16px 44px 16px !important;
-                min-height: 520px !important;
+                padding: 40px 16px 40px 16px !important;
+                min-height: auto !important;
             }
 
             .footer-top-row {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
-                margin-bottom: 100px !important;
+                margin-bottom: 80px !important;
             }
 
             .footer-right-top {
                 display: grid !important;
-                grid-template-columns: 140px 260px !important;
-                gap: 32px !important;
+                grid-template-columns: 140px 240px !important;
+                gap: 24px !important;
                 margin-left: auto !important;
                 margin-right: 0 !important;
                 width: auto !important;
@@ -1229,14 +1238,14 @@
             }
 
             .footer-headline {
-                font-size: clamp(2.8rem, 5vw, 4rem) !important;
+                font-size: clamp(2.5rem, 4.5vw, 3.8rem) !important;
                 line-height: 1.05 !important;
-                max-width: 520px !important;
+                max-width: 480px !important;
                 margin: 0 !important;
             }
 
             .footer-right-col {
-                width: 320px !important;
+                width: 280px !important;
                 margin-left: auto !important;
                 margin-right: 0 !important;
                 margin-bottom: 0 !important;
