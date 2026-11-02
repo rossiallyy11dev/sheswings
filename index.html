@@ -1527,7 +1527,7 @@
         <section class="content-section" id="about">
             <h2 class="section-title">About SHE Swings</h2>
             <div class="section-right-content">
-                <p class="section-text" id="about-text" style="--highlightOffset: 0%;">
+                <p class="section-text" id="about-text" style="--highlightOffset: -15%;">
                     Designed for leaders, community advocates, and golf enthusiasts, this all-women's tournament supports youth mentorship through <a href="https://friendspdx.org/" target="_blank">Friends of the Children – Portland</a>, with proceeds directly benefiting the organization. This event combines competitive play, networking, and high-impact fundraising to serve and empower the next generation.
                 </p>
                 <div>
@@ -1798,15 +1798,16 @@
             const rect = aboutText.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            const startPoint = windowHeight * 0.85;
-            const endPoint = windowHeight * 0.15;
+            const startPoint = windowHeight * 0.95;
+            const endPoint = windowHeight * 0.20;
             const totalDistance = startPoint - endPoint;
 
             const currentPos = startPoint - rect.top;
             let progress = currentPos / totalDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            const offsetVal = progress * 100;
+            // Start completely covered (-15%) and smoothly animate to fully revealed (115%)
+            const offsetVal = (progress * 130) - 15;
             aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
 
             if (progress >= 1) {
