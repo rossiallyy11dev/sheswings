@@ -1798,7 +1798,8 @@
             const rect = aboutText.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            const startPoint = windowHeight * 0.95;
+            // Expanded startPoint for large tablets / taller viewports so scrolling back up covers the text fully
+            const startPoint = window.innerWidth >= 992 && window.innerWidth <= 1199 ? windowHeight * 1.25 : windowHeight * 0.95;
             const endPoint = windowHeight * 0.20;
             const totalDistance = startPoint - endPoint;
 
