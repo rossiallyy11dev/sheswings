@@ -1031,7 +1031,7 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* TIER 1: SMALL TABLETS (768px to 991px - RESTORED ORIGINAL STACKED LAYOUT, UNTOUCHED) */
+        /* TIER 1: SMALL TABLETS (768px to 991px - UNTOUCHED ORIGINAL STACKED LAYOUT) */
         @media (min-width: 768px) and (max-width: 991px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1189,8 +1189,8 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px - STRIPE LAYOUT) */
-        @media (min-width: 992px) and (max-width: 1199px) {
+        /* TIER 2 & DESKTOP (992px and up): STRIPE LAYOUT WITH DATE/LOCATION PUSHED RIGHT */
+        @media (min-width: 992px) {
             .nav-faq-link {
                 display: inline-block !important;
             }
@@ -1199,22 +1199,13 @@
                 padding-top: 110px;
             }
 
-            .section-divider {
-                width: calc(100% - 32px) !important;
-                margin: 100px auto 16px auto !important;
-            }
-
-            .hero-section {
-                margin-bottom: 80px;
-            }
-
             .hero-header-row {
                 display: flex !important;
                 flex-direction: row !important;
-                justify-content: space-between !important;
+                justify-content: flex-start !important;
                 align-items: flex-end !important;
                 margin-bottom: 36px !important;
-                gap: 32px !important;
+                gap: 0 !important;
                 width: 100% !important;
             }
 
@@ -1222,14 +1213,16 @@
                 font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
                 line-height: 1.0 !important;
                 max-width: 580px !important;
+                flex-shrink: 0 !important;
             }
 
             .hero-meta-group {
                 display: flex !important;
                 flex-direction: row !important;
-                gap: 32px !important;
+                gap: 60px !important;
                 margin-left: auto !important;
-                margin-right: 0 !important;
+                margin-right: 16px !important;
+                align-self: flex-end !important;
             }
 
             .meta-item {
