@@ -1085,14 +1085,21 @@
                 line-height: 1.4 !important;
             }
 
+            /* FIX: Let the container height scale automatically to the image aspect ratio */
             .hero-banner-container {
                 width: 100% !important;
-                height: clamp(340px, 45vw, 460px) !important;
-                background-color: #E8E8EC !important;
+                height: auto !important;
+                background-color: transparent !important;
+                border: none !important;
+                border-radius: 16px;
+                overflow: hidden;
             }
 
             .hero-banner-image {
+                width: 100% !important;
+                height: auto !important;
                 object-fit: contain !important;
+                display: block !important;
             }
 
             .content-section {
@@ -1233,14 +1240,21 @@
                 line-height: 1.4 !important;
             }
 
+            /* FIX: Let the container height scale automatically to the image aspect ratio */
             .hero-banner-container {
                 width: 100% !important;
-                height: 480px !important;
-                background-color: #E8E8EC !important;
+                height: auto !important;
+                background-color: transparent !important;
+                border: none !important;
+                border-radius: 16px;
+                overflow: hidden;
             }
 
             .hero-banner-image {
+                width: 100% !important;
+                height: auto !important;
                 object-fit: contain !important;
+                display: block !important;
             }
 
             .content-section {
@@ -1699,7 +1713,7 @@
             handleStripeMaskReveal();
         }
 
-        function navigateTo(target) {
+        fn navigateTo(target) {
             if (target === 'register') {
                 history.pushState({view: 'register'}, '', '#register');
                 handleRoute();
