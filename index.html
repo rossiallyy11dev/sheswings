@@ -1197,7 +1197,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px) - DATE & LOCATION MOVED UP */
+        /* TIER 2: LARGE TABLETS (992px to 1199px) - DATE & LOCATION MOVED UP AND SLIGHTLY LEFT */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1211,7 +1211,7 @@
                 display: flex !important;
                 flex-direction: row !important;
                 justify-content: space-between !important;
-                align-items: flex-start !important; /* Changed from flex-end to align top/up with headline */
+                align-items: flex-start !important;
                 margin-bottom: 36px !important;
                 gap: 32px !important;
                 width: 100% !important;
@@ -1226,11 +1226,11 @@
             .hero-meta-group {
                 display: flex !important;
                 flex-direction: row !important;
-                gap: 32px !important;
+                gap: 28px !important;
                 margin-left: auto !important;
-                margin-right: 0 !important;
-                align-self: flex-start !important; /* Keeps them aligned at the top */
-                padding-top: 4px !important; /* Fine-tune vertical positioning */
+                margin-right: 24px !important; /* Shifted slightly to the LEFT compared to previous right alignment */
+                align-self: flex-start !important;
+                padding-top: 4px !important;
             }
 
             .meta-item {
@@ -1338,7 +1338,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - 2-LINE TITLE & DATE/LOCATION MOVED UP & RIGHT */
+        /* TIER 3: DESKTOP (1200px and up) - 2-LINE TITLE & EXACT PHOTO #1 ALIGNMENT (RIGHT PLACEMENT) */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1350,17 +1350,17 @@
 
             .hero-header-row {
                 display: grid !important;
-                grid-template-columns: minmax(480px, 620px) 160px 300px !important;
-                align-items: flex-start !important; /* Aligns items to the top so they match the 2-line title height */
+                grid-template-columns: minmax(480px, 600px) 160px 320px !important;
+                align-items: flex-start !important; /* Aligns to top to match 2-line title */
                 margin-bottom: 36px !important;
-                column-gap: 50px !important;
+                column-gap: 60px !important;
                 width: 100% !important;
             }
 
             .hero-headline {
                 font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
                 line-height: 1.05 !important;
-                max-width: 620px !important;
+                max-width: 600px !important;
                 grid-column: 1 !important;
             }
 
@@ -1371,18 +1371,18 @@
             .meta-item {
                 font-size: 0.95rem !important;
                 line-height: 1.4 !important;
-                align-self: flex-start !important; /* Moves date and location UP */
+                align-self: flex-start !important;
                 padding-top: 4px !important;
             }
 
             .meta-item:nth-of-type(1) {
                 grid-column: 2 !important;
-                transform: translateX(45px); /* Moves date to the RIGHT */
+                transform: translateX(110px); /* Moved further to the RIGHT to match Photo #1 */
             }
 
             .meta-item:nth-of-type(2) {
                 grid-column: 3 !important;
-                transform: translateX(65px); /* Moves location to the RIGHT */
+                transform: translateX(100px); /* Moved further to the RIGHT to match Photo #1 */
             }
 
             .hero-banner-container {
