@@ -816,7 +816,7 @@
             text-decoration: underline;
         }
 
-        /* MOBILE PHONES ONLY (max-width: 767px) - UNTOUCHED */
+        /* MOBILE PHONES ONLY (max-width: 767px) */
         @media (max-width: 767px) {
             .nav-faq-link {
                 display: none !important;
@@ -828,6 +828,12 @@
 
             body {
                 padding-top: 90px;
+            }
+
+            /* Remove fade effect on mobile */
+            .section-text {
+                -webkit-mask-image: none !important;
+                mask-image: none !important;
             }
 
             .hero-section, .content-section, .registration-page {
@@ -1805,17 +1811,14 @@
             const currentPos = startPoint - rect.top;
             let progress = currentPos / totalDistance;
 
-            // For large tablets (992px to 1199px), bind progress directly to page scroll position 
-            // so scrolling back up to the top reliably resets the mask to completely covered (-100%).
             if (window.innerWidth >= 992 && window.innerWidth <= 1199) {
                 const scrollY = window.scrollY;
-                const maxScrollForReveal = 350; // Distance over which text fully reveals
+                const maxScrollForReveal = 350;
                 progress = scrollY / maxScrollForReveal;
             }
 
             progress = Math.max(0, Math.min(1, progress));
 
-            // Start completely covered (-100%) and smoothly animate to fully revealed (100%)
             const offsetVal = (progress * 200) - 100;
             aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
 
