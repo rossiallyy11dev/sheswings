@@ -1031,24 +1031,25 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* IPADS & TABLETS (768px to 1366px) - UPDATED TO MATCH STRIPE TABLET PATTERN */
+        /* IPADS & TABLETS ONLY (768px to 1366px) - MATCHING STRIPE SESSIONS TABLET LAYOUT */
         @media (min-width: 768px) and (max-width: 1366px) {
             .nav-faq-link {
-                display: none !important;
+                display: inline-block !important;
             }
+
             body {
-                padding-top: 100px;
+                padding-top: 110px;
             }
 
             .hero-section, .content-section, .registration-page {
-                padding-left: clamp(28px, 4.5vw, 48px) !important;
-                padding-right: clamp(28px, 4.5vw, 48px) !important;
+                padding-left: 36px !important;
+                padding-right: 36px !important;
                 width: 100% !important;
                 box-sizing: border-box !important;
             }
 
             .section-divider {
-                width: calc(100% - clamp(56px, 9vw, 96px)) !important;
+                width: calc(100% - 72px) !important;
                 margin: 100px auto 16px auto !important;
             }
 
@@ -1056,46 +1057,48 @@
                 margin-bottom: 100px;
             }
             
-            /* Responsive layout: vertical flow on 768px-899px, side-by-side above 900px */
+            /* Vertical column layout matching Stripe Sessions tablet behavior */
             .hero-header-row {
                 display: flex !important;
-                flex-direction: row !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
-                margin-bottom: 40px !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                margin-bottom: 36px !important;
                 padding: 0 !important;
                 gap: 24px !important;
-                flex-wrap: wrap !important;
+                width: 100% !important;
             }
 
             .hero-headline {
-                font-size: clamp(2.5rem, 5.2vw, 4.2rem) !important;
-                line-height: 1.05 !important;
+                font-size: clamp(3.2rem, 6.5vw, 4.5rem) !important;
+                line-height: 1.04 !important;
                 margin-left: 0 !important;
                 margin-top: 0 !important;
-                max-width: 580px !important;
-                flex: 1 1 340px !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                letter-spacing: -0.035em !important;
             }
 
             .hero-meta-group {
                 display: flex !important;
-                gap: clamp(24px, 4vw, 48px) !important;
+                flex-direction: row !important;
+                gap: 48px !important;
                 padding-top: 0 !important;
-                margin-left: auto !important;
+                margin-left: 0 !important;
                 margin-right: 0 !important;
-                flex-shrink: 0 !important;
-                align-self: flex-end !important;
+                width: 100% !important;
+                align-self: flex-start !important;
             }
 
             .meta-item {
-                font-size: clamp(0.875rem, 1.4vw, 1rem) !important;
+                font-size: 1.05rem !important;
                 line-height: 1.45 !important;
                 margin-right: 0 !important;
             }
 
             .hero-banner-container {
                 width: 100% !important;
-                height: clamp(380px, 48vw, 520px) !important;
+                height: clamp(380px, 45vw, 540px) !important;
                 background-color: #E8E8EC !important;
                 border-radius: 16px !important;
                 overflow: hidden !important;
@@ -1123,7 +1126,7 @@
                 width: 100% !important;
                 max-width: 100% !important;
                 padding-right: 0;
-                font-size: clamp(2rem, 3.8vw, 2.8rem) !important;
+                font-size: clamp(2.2rem, 4vw, 3rem) !important;
             }
 
             .section-right-content {
@@ -1200,7 +1203,7 @@
             }
 
             .site-footer {
-                padding: 40px clamp(28px, 4.5vw, 48px) 40px clamp(28px, 4.5vw, 48px) !important;
+                padding: 44px 36px 44px 36px !important;
                 min-height: 520px !important;
             }
 
@@ -1213,8 +1216,8 @@
 
             .footer-right-top {
                 display: grid !important;
-                grid-template-columns: 130px 240px !important;
-                gap: 28px !important;
+                grid-template-columns: 140px 260px !important;
+                gap: 32px !important;
                 margin-left: auto !important;
                 margin-right: 0 !important;
                 width: auto !important;
@@ -1227,9 +1230,9 @@
             }
 
             .footer-headline {
-                font-size: clamp(2.3rem, 4.2vw, 3.4rem) !important;
+                font-size: clamp(2.8rem, 5vw, 4rem) !important;
                 line-height: 1.05 !important;
-                max-width: 480px !important;
+                max-width: 520px !important;
                 margin: 0 !important;
             }
 
