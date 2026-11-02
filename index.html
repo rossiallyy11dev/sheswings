@@ -1085,20 +1085,18 @@
                 line-height: 1.4 !important;
             }
 
-            /* FIX: Let the container height scale automatically to the image aspect ratio */
+            /* FIX: Fill the box cleanly using cover, but shift object-position slightly left/up so the badge stays inside view */
             .hero-banner-container {
                 width: 100% !important;
-                height: auto !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 16px;
-                overflow: hidden;
+                height: 420px !important;
+                background-color: #E8E8EC !important;
             }
 
             .hero-banner-image {
                 width: 100% !important;
-                height: auto !important;
-                object-fit: contain !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: 45% center !important;
                 display: block !important;
             }
 
@@ -1240,20 +1238,18 @@
                 line-height: 1.4 !important;
             }
 
-            /* FIX: Let the container height scale automatically to the image aspect ratio */
+            /* FIX: Fill the box cleanly using cover, but shift object-position slightly left/up so the badge stays inside view */
             .hero-banner-container {
                 width: 100% !important;
-                height: auto !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 16px;
-                overflow: hidden;
+                height: 480px !important;
+                background-color: #E8E8EC !important;
             }
 
             .hero-banner-image {
                 width: 100% !important;
-                height: auto !important;
-                object-fit: contain !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: 45% center !important;
                 display: block !important;
             }
 
@@ -1713,7 +1709,7 @@
             handleStripeMaskReveal();
         }
 
-        fn navigateTo(target) {
+        function navigateTo(target) {
             if (target === 'register') {
                 history.pushState({view: 'register'}, '', '#register');
                 handleRoute();
