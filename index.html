@@ -965,7 +965,7 @@
             }
 
             .reg-image-media {
-                width: 100% !important;
+                width: 100%;
                 height: auto !important;
                 object-fit: contain !important;
             }
@@ -1052,9 +1052,9 @@
 
             .hero-header-row {
                 display: flex !important;
-                flex-direction: row !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
                 margin-bottom: 32px !important;
                 gap: 24px !important;
                 width: 100% !important;
@@ -1065,19 +1065,19 @@
                 line-height: 0.98 !important;
                 margin-left: 0 !important;
                 margin-top: 0 !important;
-                max-width: 500px !important;
-                width: auto !important;
+                max-width: 100% !important;
+                width: 100% !important;
                 letter-spacing: -0.035em !important;
             }
 
             .hero-meta-group {
-                display: flex !important;
-                flex-direction: row !important;
-                gap: 28px !important;
-                margin-left: auto !important;
+                display: grid !important;
+                grid-template-columns: 140px 1fr !important;
+                gap: 24px !important;
+                margin-left: 0 !important;
                 margin-right: 0 !important;
-                width: auto !important;
-                align-self: flex-end !important;
+                width: 100% !important;
+                align-self: flex-start !important;
             }
 
             .meta-item {
@@ -1085,6 +1085,7 @@
                 line-height: 1.4 !important;
             }
 
+            /* FIX: Shift object-position further right so the badge moves left into view */
             .hero-banner-container {
                 width: 100% !important;
                 height: 420px !important;
@@ -1237,6 +1238,7 @@
                 line-height: 1.4 !important;
             }
 
+            /* FIX: Shift object-position further right so the badge moves left into view */
             .hero-banner-container {
                 width: 100% !important;
                 height: 480px !important;
@@ -1693,7 +1695,7 @@
                 homePage.style.display = 'block';
                 regPage.classList.remove('active');
                 document.body.classList.remove('is-registration-page');
-                const faqsElement =-document.getElementById('faqs');
+                const faqsElement = document.getElementById('faqs');
                 if (faqsElement) {
                     faqsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
