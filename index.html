@@ -50,13 +50,10 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px 24px;
+            padding: 20px min(3vw, 32px);
             background-color: transparent;
-            border: 1px solid transparent;
-            border-bottom: 1px solid transparent;
-            border-radius: 0;
-            box-shadow: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -84,7 +81,7 @@
             backdrop-filter: none !important;
             -webkit-backdrop-filter: none !important;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-            padding: 20px 24px !important;
+            padding: 20px min(3vw, 32px) !important;
         }
 
         body.is-registration-page .navbar.reg-scrolled {
@@ -93,17 +90,21 @@
             -webkit-backdrop-filter: blur(16px) !important;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-            padding: 16px 24px !important;
+            padding: 16px min(3vw, 32px) !important;
         }
 
         body.is-registration-page .nav-right {
             display: none !important;
         }
 
+        /* FLUID GLOBAL WRAPPERS */
         .hero-section, .content-section, .registration-page {
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: min(3vw, 32px);
+            padding-right: min(3vw, 32px);
             width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Brand Logo */
@@ -182,32 +183,33 @@
 
         .hero-header-row {
             display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
+            justify-content: space-between;
+            align-items: flex-end;
             margin-bottom: 40px;
             padding: 0;
             width: 100%;
+            gap: 24px;
         }
 
         .hero-headline {
             font-family: 'Roboto', sans-serif;
-            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            font-size: clamp(2.5rem, 5.2vw, 5.5rem);
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: -0.03em;
             max-width: 750px;
             color: #555555;
             margin-left: -2px;
-            flex-shrink: 0;
+            flex-shrink: 1;
         }
 
         .hero-meta-group {
             display: flex;
-            gap: 60px;
-            padding-top: 44px;
+            gap: clamp(24px, 4vw, 60px);
+            padding-top: 0;
             margin-left: auto;
-            margin-right: 48px;
             flex-shrink: 0;
+            align-self: flex-end;
         }
 
         .meta-item {
@@ -220,7 +222,7 @@
 
         .hero-banner-container {
             width: 100%;
-            height: 560px;
+            height: clamp(320px, 40vw, 560px);
             background-color: #E8E8EC;
             border-radius: 16px;
             overflow: hidden;
@@ -241,7 +243,8 @@
 
         /* Section Dividers */
         .section-divider {
-            width: calc(100% - 32px);
+            width: calc(100% - min(6vw, 64px));
+            max-width: 1400px;
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
             margin: 120px auto 16px auto;
@@ -250,11 +253,10 @@
         /* Generic Section Layout */
         .content-section {
             width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: flex-start;
+            gap: 40px;
         }
 
         .section-title {
@@ -265,8 +267,8 @@
             letter-spacing: -0.02em;
             line-height: 1.1;
             white-space: nowrap;
-            flex: 0 0 480px; 
-            padding-right: 48px;
+            flex: 0 0 clamp(240px, 30vw, 480px);
+            padding-right: 24px;
         }
 
         .section-right-content {
@@ -274,12 +276,13 @@
             flex-direction: column;
             gap: 28px;
             flex: 1;
+            max-width: 800px;
         }
 
         /* Vertical Scroll-Reveal */
         .section-text {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.6rem;
+            font-size: clamp(1.25rem, 1.8vw, 1.6rem);
             line-height: 1.35;
             letter-spacing: -0.015em;
             font-weight: 400;
@@ -317,7 +320,7 @@
         .guest-media-container {
             width: 100%;
             max-width: 540px;
-            height: 440px;
+            height: clamp(320px, 35vw, 440px);
             background-color: #E8E8EC;
             border-radius: 16px;
             overflow: hidden;
@@ -331,7 +334,7 @@
         .sponsor-media-container {
             width: 100%;
             max-width: 785px;
-            height: 500px;
+            height: clamp(340px, 40vw, 500px);
             background-color: #E8E8EC;
             border-radius: 16px;
             overflow: hidden;
@@ -382,6 +385,7 @@
             align-items: flex-start;
             padding: 36px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            gap: 20px;
         }
 
         .agenda-row:first-child {
@@ -453,6 +457,7 @@
             align-items: center;
             border: 1px solid rgba(0, 0, 0, 0.04);
             margin-top: 8px;
+            gap: 16px;
         }
 
         .sponsor-card-title {
@@ -487,6 +492,7 @@
             text-decoration: none;
             font-size: 1.1rem;
             transition: background-color 0.2s ease;
+            flex-shrink: 0;
         }
 
         .sponsor-arrow-btn:hover {
@@ -630,14 +636,14 @@
         .reg-meta-item.location {
             grid-column: 2;
             justify-self: start;
-            margin-left: 150px;
+            margin-left: clamp(20px, 10vw, 150px);
         }
 
         .reg-image-container {
             grid-column: 2;
             grid-row: 1 / span 2;
             width: 100%;
-            height: 720px;
+            height: clamp(400px, 50vw, 720px);
             border-radius: 16px;
             overflow: hidden;
             background-color: #E8E8EC;
@@ -690,18 +696,29 @@
             text-decoration: underline;
         }
 
-        /* ORIGINAL DESKTOP FOOTER (UNTOUCHED) */
+        /* FOOTER */
         .site-footer {
             background-color: #00AAEE;
             color: #FFFFFF;
             width: 100%;
-            min-height: 600px;
+            min-height: 520px;
             margin: 120px 0 0 0;
             border-radius: 0;
-            padding: 28px 16px 28px 24px;
+            padding: 36px min(3vw, 32px) 36px min(3vw, 32px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+
+        .footer-inner-wrapper {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            flex: 1;
         }
 
         .footer-top-row {
@@ -709,7 +726,7 @@
             justify-content: space-between;
             align-items: flex-start;
             width: 100%;
-            margin-bottom: 165px;
+            margin-bottom: clamp(60px, 12vw, 165px);
         }
 
         .footer-brand {
@@ -724,12 +741,9 @@
         }
 
         .footer-right-top {
-            display: grid;
-            grid-template-columns: 140px 280px;
-            gap: 40px;
+            display: flex;
+            gap: clamp(24px, 4vw, 60px);
             margin-left: auto;
-            margin-right: -40px;
-            width: 460px;
         }
 
         .footer-meta-item {
@@ -745,10 +759,11 @@
             align-items: flex-end;
             width: 100%;
             padding-left: 0;
+            gap: 24px;
         }
 
         .footer-headline {
-            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            font-size: clamp(2.5rem, 5.2vw, 5.5rem);
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: -0.03em;
@@ -761,7 +776,7 @@
             display: flex;
             flex-direction: column;
             gap: 0;
-            width: 420px;
+            width: clamp(260px, 25vw, 420px);
             flex-shrink: 0;
             margin-left: auto;
             margin-right: 0;
@@ -776,7 +791,7 @@
         }
 
         .footer-section-group.get-help-group {
-            margin-bottom: 56px; 
+            margin-bottom: 36px; 
         }
 
         .footer-section-group:last-child {
@@ -811,10 +826,10 @@
             text-decoration: underline;
         }
 
-        /* ------------------------------------------------ */
-        /* TIER 1: MOBILE PHONES ONLY (max-width: 767px)    */
-        /* ------------------------------------------------ */
-        @media (max-width: 767px) {
+        /* --------------------------------------------------------------------- */
+        /* SINGLE RESPONSIVE BREAKPOINT: MOBILE PHONES ONLY (max-width: 768px)    */
+        /* --------------------------------------------------------------------- */
+        @media (max-width: 768px) {
             .nav-faq-link {
                 display: none !important;
             }
@@ -823,39 +838,35 @@
                 padding-top: 90px;
             }
             .hero-section {
-                margin-bottom: 110px;
+                margin-bottom: 80px;
             }
             .hero-header-row {
                 flex-direction: column;
                 gap: 24px;
                 padding: 0;
+                align-items: flex-start;
             }
             .hero-headline {
-                font-size: 2.45rem;
+                font-size: 2.35rem;
                 line-height: 1.1;
                 margin-left: 0;
-                margin-top: 20px;
             }
-            /* ORIGINAL SIDE-BY-SIDE META GROUP RESTORED, WITH SLIGHTLY TIGHTER SPACING FOR SE */
             .hero-meta-group {
                 display: flex !important;
                 flex-direction: row !important;
                 gap: 24px !important;
                 margin-left: 0 !important;
-                margin-right: 0 !important;
                 padding-top: 0 !important;
                 width: 100% !important;
                 justify-content: flex-start !important;
+                align-self: flex-start !important;
             }
             .meta-item {
                 font-size: 0.875rem !important;
-                margin-right: 0 !important;
-                padding-left: 0 !important;
             }
             
-            /* SQUARE HERO BANNER FOR MOBILE WITH PERFECTLY CENTERED LOGO */
             .hero-banner-container {
-                height: calc(100vw - 60px) !important;
+                height: calc(100vw - 48px) !important;
                 max-height: 360px;
                 background-color: #E8E8EC !important;
                 border-radius: 16px;
@@ -946,7 +957,6 @@
                 margin-left: 0;
             }
 
-            /* REORDER FOOTER FOR MOBILE */
             .site-footer {
                 padding: 40px 20px 48px 20px;
                 width: 100%;
@@ -960,6 +970,7 @@
                     "links" !important;
                 gap: 0 !important;
             }
+            .footer-inner-wrapper { display: contents !important; }
             .footer-top-row { display: contents !important; }
             .footer-bottom-row { display: contents !important; }
             .footer-brand { grid-area: brand; margin-bottom: 36px; }
@@ -967,7 +978,7 @@
                 grid-area: headline;
                 font-size: 2.35rem;
                 line-height: 1.08;
-                margin-bottom: 56px;
+                margin-bottom: 48px;
             }
             .footer-right-top {
                 grid-area: dates;
@@ -982,7 +993,6 @@
             .footer-right-top .footer-meta-item:last-child {
                 flex: 0 0 320px !important;
                 text-align: left !important;
-                padding-left: 14px !important;
             }
             .footer-meta-item { font-size: 0.85rem !important; }
             .footer-right-col { grid-area: links; width: 100% !important; margin: 0 !important; }
@@ -992,166 +1002,6 @@
                 margin-bottom: 36px !important;
             }
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
-        }
-
-        /* ------------------------------------------------ */
-        /* TIER 2: IPADS & TABLETS (768px to 1366px)        */
-        /* ------------------------------------------------ */
-        @media (min-width: 768px) and (max-width: 1366px) {
-            .nav-faq-link {
-                display: none !important;
-            }
-            body {
-                padding-top: 90px;
-            }
-            .hero-section {
-                margin-bottom: 110px;
-            }
-            
-            /* HERO HEADER ROW SIDE-BY-SIDE ON IPAD */
-            .hero-header-row {
-                flex-direction: row !important;
-                justify-content: space-between !important;
-                align-items: flex-start !important;
-                margin-bottom: 40px;
-                padding: 0;
-                gap: 16px;
-            }
-            .hero-headline {
-                font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
-                line-height: 1.05 !important;
-                margin-left: 0 !important;
-                margin-top: 0 !important;
-                max-width: 335px !important;
-                flex-shrink: 0 !important;
-            }
-            .hero-meta-group {
-                display: flex !important;
-                gap: 28px !important;
-                padding-top: 8px !important;
-                margin-left: auto !important;
-                margin-right: 16px !important;
-                flex-shrink: 0 !important;
-            }
-            .meta-item {
-                font-size: 0.875rem !important;
-                margin-right: 0 !important;
-            }
-
-            .content-section {
-                flex-direction: column;
-                gap: 24px;
-            }
-            .section-title {
-                white-space: normal !important;
-                flex: none !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                padding-right: 0;
-            }
-            .section-right-content {
-                flex: none;
-                width: 100%;
-            }
-            .agenda-row {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .agenda-date-col {
-                flex: none;
-            }
-
-            .hero-banner-container, 
-            .guest-media-container, 
-            .sponsor-media-container,
-            .about-media-container {
-                height: auto !important;
-                max-width: 100% !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 16px;
-                overflow: hidden;
-            }
-            .hero-banner-image, 
-            .guest-media-image, 
-            .sponsor-media-container img,
-            .about-media-image {
-                width: 100% !important;
-                height: auto !important;
-                object-fit: contain !important;
-                display: block !important;
-            }
-            .reg-image-container {
-                grid-column: 1;
-                grid-row: 2;
-                width: 100%;
-                max-width: 100%;
-                height: auto !important;
-                min-height: auto;
-                border-radius: 16px;
-                margin-right: 0;
-                background-color: transparent !important;
-                border: none !important;
-            }
-            .reg-image-media {
-                width: 100%;
-                height: auto !important;
-                object-fit: contain !important;
-            }
-            .reg-hero-container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto;
-                gap: 28px;
-                margin-top: 0;
-            }
-            .reg-meta-bar {
-                grid-column: 1;
-                grid-row: 3;
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .reg-meta-item.location {
-                grid-column: 1;
-                justify-self: start;
-                margin-left: 0;
-            }
-
-            /* MATCH DESKTOP FOOTER LAYOUT FOR IPAD */
-            .site-footer {
-                padding: 28px 16px 28px 20px !important;
-                min-height: 520px !important;
-            }
-            .footer-top-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-start !important;
-                margin-bottom: 100px !important;
-            }
-            .footer-right-top {
-                display: grid !important;
-                grid-template-columns: 120px 220px !important;
-                gap: 28px !important;
-                margin-left: auto !important;
-                margin-right: -16px !important;
-                width: auto !important;
-            }
-            .footer-bottom-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
-            }
-            .footer-headline {
-                font-size: clamp(2.1rem, 3.5vw, 2.7rem) !important;
-                line-height: 1.05 !important;
-                max-width: 380px !important;
-                margin: 0 !important;
-            }
-            .footer-right-col {
-                width: 300px !important;
-                margin-left: auto !important;
-                margin-right: 0 !important;
-                margin-bottom: 0 !important;
-            }
         }
     </style>
 </head>
@@ -1393,36 +1243,38 @@
 
     <!-- FOOTER -->
     <footer class="site-footer">
-        <div class="footer-top-row">
-            <a onclick="navigateTo('home')" class="footer-brand">
-                <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
-            </a>
-            <div class="footer-right-top">
-                <div class="footer-meta-item">
-                    October 10–11,<br>2027
-                </div>
-                <div class="footer-meta-item">
-                    Oswego Lake Country Club,<br>Lake Oswego, Oregon
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom-row">
-            <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
-
-            <div class="footer-right-col">
-                <div class="footer-section-group get-help-group">
-                    <div class="footer-section-title">Get help</div>
-                    <div class="footer-link-list">
-                        <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
+        <div class="footer-inner-wrapper">
+            <div class="footer-top-row">
+                <a onclick="navigateTo('home')" class="footer-brand">
+                    <span style="font-weight: 700;">SHE</span> <span style="font-weight: 400;">Swings</span>
+                </a>
+                <div class="footer-right-top">
+                    <div class="footer-meta-item">
+                        October 10–11,<br>2027
+                    </div>
+                    <div class="footer-meta-item">
+                        Oswego Lake Country Club,<br>Lake Oswego, Oregon
                     </div>
                 </div>
+            </div>
 
-                <div class="footer-section-group">
-                    <div class="footer-section-title">Links</div>
-                    <div class="footer-link-list">
-                        <a href="https://walterprod.com" target="_blank" class="footer-link">Walter Productions</a>
-                        <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
+            <div class="footer-bottom-row">
+                <h2 class="footer-headline">Making a difference<br>on and off the course</h2>
+
+                <div class="footer-right-col">
+                    <div class="footer-section-group get-help-group">
+                        <div class="footer-section-title">Get help</div>
+                        <div class="footer-link-list">
+                            <a href="mailto:mikelee23@mac.com" class="footer-link">mikelee23@mac.com</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section-group">
+                        <div class="footer-section-title">Links</div>
+                        <div class="footer-link-list">
+                            <a href="https://walterprod.com" target="_blank" class="footer-link">Walter Productions</a>
+                            <a href="https://friendspdx.org/" target="_blank" class="footer-link">Friends of the Children – Portland</a>
+                        </div>
                     </div>
                 </div>
             </div>
