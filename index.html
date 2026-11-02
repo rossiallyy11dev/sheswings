@@ -101,8 +101,8 @@
         }
 
         .hero-section, .content-section, .registration-page {
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
             width: 100%;
         }
 
@@ -242,7 +242,7 @@
 
         /* Section Dividers */
         .section-divider {
-            width: calc(100% - 32px);
+            width: calc(100% - 40px);
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
             margin: 120px auto 16px auto;
@@ -699,7 +699,7 @@
             min-height: 600px;
             margin: 120px 0 0 0;
             border-radius: 0;
-            padding: 28px 16px 28px 24px;
+            padding: 28px 24px 28px 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -812,18 +812,36 @@
             text-decoration: underline;
         }
 
-        /* MOBILE PHONES ONLY (max-width: 767px) - STRIPE FLUID SCALING TECHNIQUE */
+        /* MOBILE PHONES ONLY (max-width: 767px) - UNIFIED STRIPE MARGINS & CONTAINER CONSTRAINTS */
         @media (max-width: 767px) {
             .nav-faq-link {
                 display: none !important;
             }
 
+            .navbar {
+                padding: 16px 20px !important;
+            }
+
             body {
                 padding-top: 90px;
             }
-            .hero-section {
-                margin-bottom: 110px;
+
+            .hero-section, .content-section, .registration-page {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
             }
+
+            .section-divider {
+                width: calc(100% - 40px) !important;
+                margin: 90px auto 16px auto !important;
+            }
+
+            .hero-section {
+                margin-bottom: 90px;
+            }
+
             .hero-header-row {
                 flex-direction: column !important;
                 align-items: flex-start !important;
@@ -831,16 +849,16 @@
                 padding: 0 !important;
                 margin-bottom: 28px !important;
                 width: 100% !important;
-                max-width: 100% !important;
             }
+
             .hero-headline {
                 font-size: clamp(2.15rem, 8.2vw, 2.45rem) !important;
                 line-height: 1.08 !important;
                 margin-left: 0 !important;
                 margin-top: 10px !important;
                 width: 100% !important;
-                max-width: 100% !important;
             }
+
             .hero-meta-group {
                 display: grid !important;
                 grid-template-columns: 38% 62% !important;
@@ -849,8 +867,8 @@
                 margin-right: 0 !important;
                 padding-top: 0 !important;
                 width: 100% !important;
-                max-width: 100% !important;
             }
+
             .meta-item {
                 font-size: clamp(0.8rem, 3.2vw, 0.875rem) !important;
                 line-height: 1.4 !important;
@@ -861,14 +879,14 @@
             
             .hero-banner-container {
                 width: 100% !important;
-                max-width: 100% !important;
                 margin: 0 auto !important;
-                height: calc(100vw - 32px) !important;
+                height: calc(100vw - 40px) !important;
                 max-height: 380px !important;
                 background-color: #E8E8EC !important;
                 border-radius: 16px;
                 overflow: hidden;
             }
+
             .hero-banner-image {
                 content: url("MOBILE BANNER.png") !important;
                 width: 100% !important;
@@ -882,12 +900,14 @@
             .sponsor-media-container,
             .about-media-container {
                 height: auto !important;
+                width: 100% !important;
                 max-width: 100% !important;
                 background-color: transparent !important;
                 border: none !important;
                 border-radius: 16px;
                 overflow: hidden;
             }
+
             .guest-media-image, 
             .sponsor-media-container img,
             .about-media-image {
@@ -901,6 +921,7 @@
                 flex-direction: column;
                 gap: 24px;
             }
+
             .section-title {
                 white-space: normal !important;
                 flex: none !important;
@@ -908,23 +929,28 @@
                 max-width: 100% !important;
                 padding-right: 0;
             }
+
             .section-right-content {
                 flex: none;
                 width: 100%;
             }
+
             .agenda-row {
                 flex-direction: column;
                 gap: 16px;
             }
+
             .agenda-date-col {
                 flex: none;
             }
+
             .reg-hero-container {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto auto;
                 gap: 28px;
                 margin-top: 0;
             }
+
             .reg-image-container {
                 grid-column: 1;
                 grid-row: 2;
@@ -937,17 +963,20 @@
                 background-color: transparent !important;
                 border: none !important;
             }
+
             .reg-image-media {
                 width: 100%;
                 height: auto !important;
                 object-fit: contain !important;
             }
+
             .reg-meta-bar {
                 grid-column: 1;
                 grid-row: 3;
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
+
             .reg-meta-item.location {
                 grid-column: 1;
                 justify-self: start;
@@ -967,6 +996,7 @@
                     "links" !important;
                 gap: 0 !important;
             }
+
             .footer-top-row { display: contents !important; }
             .footer-bottom-row { display: contents !important; }
             .footer-brand { grid-area: brand; margin-bottom: 36px; }
