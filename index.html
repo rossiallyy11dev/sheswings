@@ -830,7 +830,6 @@
                 padding-top: 90px;
             }
 
-            /* Remove fade effect on mobile */
             .section-text {
                 -webkit-mask-image: none !important;
                 mask-image: none !important;
@@ -1203,8 +1202,8 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px - WITH DYNAMIC SCROLL REVEAL) */
-        @media (min-width: 992px) and (max-width: 1199px) {
+        /* TIER 2 & 3: LARGE TABLETS & DESKTOP (992px and up) - ALIGNED AGENDA BODY */
+        @media (min-width: 992px) {
             .nav-faq-link {
                 display: inline-block !important;
             }
@@ -1281,150 +1280,21 @@
                 max-width: 100% !important;
             }
 
-            .guest-media-container, 
-            .sponsor-media-container,
-            .about-media-container {
-                height: auto !important;
-                max-width: 100% !important;
+            /* Align Agenda body with the photo above it on desktop/large tablet */
+            #agenda .section-title {
+                flex: 0 0 0px !important;
+                width: 0 !important;
+                padding-right: 0 !important;
+                overflow: hidden !important;
+                visibility: hidden !important;
             }
 
-            .guest-media-image, 
-            .sponsor-media-container img,
-            .about-media-image {
+            #agenda .section-right-content {
                 width: 100% !important;
-                height: auto !important;
-                object-fit: cover !important;
+                max-width: 785px !important;
             }
 
-            .agenda-row {
-                flex-direction: row !important;
-                gap: 32px !important;
-            }
-
-            .agenda-date-col {
-                flex: 0 0 200px !important;
-            }
-
-            .site-footer {
-                padding: 40px 16px 40px 16px !important;
-                min-height: auto !important;
-            }
-
-            .footer-top-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-start !important;
-                margin-bottom: 80px !important;
-            }
-
-            .footer-right-top {
-                display: grid !important;
-                grid-template-columns: 140px 240px !important;
-                gap: 32px !important;
-                margin-left: auto !important;
-                margin-right: 0 !important;
-                width: auto !important;
-            }
-
-            .footer-bottom-row {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-end !important;
-            }
-
-            .footer-headline {
-                font-size: clamp(2.8rem, 4vw, 3.6rem) !important;
-                line-height: 1.05 !important;
-                max-width: 500px !important;
-            }
-
-            .footer-right-col {
-                width: 320px !important;
-                margin-left: auto !important;
-            }
-        }
-
-        /* TIER 3: DESKTOP (1200px and up) - UNTOUCHED & DYNAMIC */
-        @media (min-width: 1200px) {
-            .nav-faq-link {
-                display: inline-block !important;
-            }
-
-            body {
-                padding-top: 110px;
-            }
-
-            .hero-header-row {
-                display: grid !important;
-                grid-template-columns: minmax(640px, 680px) 160px 320px !important;
-                align-items: flex-start !important;
-                margin-bottom: 36px !important;
-                column-gap: 30px !important;
-                width: 100% !important;
-            }
-
-            .hero-headline {
-                font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
-                line-height: 1.05 !important;
-                max-width: 680px !important;
-                grid-column: 1 !important;
-            }
-
-            .hero-meta-group {
-                display: contents !important;
-            }
-
-            .meta-item {
-                font-size: 0.95rem !important;
-                line-height: 1.4 !important;
-                align-self: flex-start !important;
-                padding-top: 4px !important;
-            }
-
-            .meta-item:nth-of-type(1) {
-                grid-column: 2 !important;
-                transform: translateX(340px);
-            }
-
-            .meta-item:nth-of-type(2) {
-                grid-column: 3 !important;
-                transform: translateX(310px);
-            }
-
-            .hero-banner-container {
-                width: 100% !important;
-                height: 480px !important;
-                background-color: #E8E8EC !important;
-            }
-
-            .hero-banner-image {
-                width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important;
-                object-position: 92% center !important;
-                display: block !important;
-            }
-
-            .content-section {
-                flex-direction: row !important;
-                align-items: flex-start !important;
-                gap: 32px !important;
-            }
-
-            .section-title {
-                white-space: nowrap !important;
-                flex: 0 0 300px !important;
-                padding-right: 24px !important;
-                font-size: clamp(2.4rem, 3.2vw, 3rem) !important;
-            }
-
-            .section-right-content {
-                flex: 1 !important;
-            }
-
-            .section-text {
-                font-size: 1.45rem !important;
-                line-height: 1.35 !important;
+            #agenda .agenda-list {
                 max-width: 100% !important;
             }
 
