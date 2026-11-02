@@ -812,7 +812,7 @@
             text-decoration: underline;
         }
 
-        /* MOBILE PHONES ONLY (max-width: 767px) - EXACT UNIVERSAL LAYOUT */
+        /* MOBILE PHONES ONLY (max-width: 767px) - ABSOLUTE UNIVERSAL PIC #1 MATCH */
         @media (max-width: 767px) {
             .nav-faq-link {
                 display: none !important;
@@ -830,13 +830,18 @@
                 gap: 20px !important;
                 padding: 0 !important;
                 margin-bottom: 28px !important;
+                width: 100% !important;
+                max-width: 343px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
             .hero-headline {
                 font-size: 2.35rem !important;
                 line-height: 1.1 !important;
                 margin-left: 0 !important;
                 margin-top: 10px !important;
-                max-width: 340px !important;
+                width: 100% !important;
+                max-width: 343px !important;
             }
             .hero-meta-group {
                 display: grid !important;
@@ -846,7 +851,7 @@
                 margin-right: 0 !important;
                 padding-top: 0 !important;
                 width: 100% !important;
-                max-width: 360px !important;
+                max-width: 343px !important;
             }
             .meta-item {
                 font-size: 0.875rem !important;
@@ -857,8 +862,11 @@
             }
             
             .hero-banner-container {
-                height: calc(100vw - 60px) !important;
-                max-height: 360px;
+                width: 100% !important;
+                max-width: 343px !important;
+                margin: 0 auto !important;
+                height: calc(100vw - 32px) !important;
+                max-height: 343px !important;
                 background-color: #E8E8EC !important;
                 border-radius: 16px;
                 overflow: hidden;
