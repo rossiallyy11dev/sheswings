@@ -1364,7 +1364,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - ROBUST GRID ALIGNMENT UNDER PHOTO */
+        /* TIER 3: DESKTOP (1200px and up) - PERFECT ALIGNMENT UNDER PHOTO */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1448,25 +1448,22 @@
                 max-width: 100% !important;
             }
 
-            /* Dedicated Grid Layout for Agenda Section on Desktop to match photo edge */
+            /* Natural flex alignment matching other sections perfectly */
             #agenda {
-                display: grid !important;
-                grid-template-columns: 480px 1fr !important;
-                column-gap: 0 !important;
+                display: flex !important;
+                justify-content: flex-start !important;
                 align-items: flex-start !important;
             }
 
             #agenda .section-title {
-                grid-column: 1 !important;
-                padding-right: 48px !important;
-                flex: none !important;
+                flex: 0 0 300px !important;
+                padding-right: 24px !important;
             }
 
             #agenda .section-right-content {
-                grid-column: 2 !important;
                 margin-left: 0 !important;
                 max-width: 785px !important;
-                flex: none !important;
+                flex: 1 !important;
             }
 
             #agenda .agenda-list {
