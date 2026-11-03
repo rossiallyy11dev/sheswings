@@ -1427,7 +1427,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - EXACT GRID ALIGNMENT MATCHING PHOTO */
+        /* TIER 3: DESKTOP (1200px and up) - RIGHT MARGINS PUSHED IN FOR CONTENT SECTIONS */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1437,9 +1437,12 @@
                 padding-top: 110px;
             }
 
+            /* Push in the right margin/padding on content sections ONLY */
             .content-section {
                 padding-top: 24px !important;
                 padding-bottom: 140px !important;
+                padding-left: 16px !important;
+                padding-right: clamp(140px, 20vw, 400px) !important;
             }
 
             .content-section#about {
