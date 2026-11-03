@@ -767,7 +767,7 @@
         }
 
         .footer-headline {
-            font-size: clamp(3rem, 5.5vw, 5.5wn);
+            font-size: clamp(3rem, 5.5vw, 5.5rem);
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: -0.03em;
@@ -1342,6 +1342,32 @@
                 margin-top: 4px !important;
             }
 
+            /* ABOUT SECTION (LARGE TABLET): Photo unchanged (440px), paragraph above photo as wide as the photo (440px) */
+            #about {
+                display: grid !important;
+                grid-template-columns: 300px 1fr !important;
+                column-gap: 0 !important;
+                align-items: flex-start !important;
+            }
+
+            #about .section-title {
+                grid-column: 1 !important;
+                padding-right: 24px !important;
+                flex: none !important;
+            }
+
+            #about .section-right-content {
+                grid-column: 2 !important;
+                margin-left: 35px !important;
+                max-width: 440px !important;
+                flex: none !important;
+                margin-top: 4px !important;
+            }
+
+            #about .section-text {
+                max-width: 440px !important;
+            }
+
             #about .about-media-container {
                 margin-top: 0 !important;
                 margin-bottom: 0 !important;
@@ -1355,11 +1381,7 @@
                 object-fit: cover !important;
             }
 
-            /* LARGE TABLET VIEW: About section description text paragraph as wide as the photo (440px) */
-            #about .section-text {
-                max-width: 440px !important;
-            }
-
+            /* SPECIAL GUEST SECTION (LARGE TABLET): Photo widened to 785px (sharing same right margin as Sponsors below), paragraph above photo as wide as the photo (785px) */
             #guests {
                 display: grid !important;
                 grid-template-columns: 300px 1fr !important;
@@ -1376,20 +1398,19 @@
             #guests .section-right-content {
                 grid-column: 2 !important;
                 margin-left: 35px !important;
-                max-width: 540px !important;
+                max-width: 785px !important;
                 flex: none !important;
                 margin-top: 4px !important;
             }
 
-            /* LARGE TABLET VIEW: Special Guest section description text paragraph as wide as the photo (540px) */
             #guests .guest-intro-text {
-                max-width: 540px !important;
+                max-width: 785px !important;
             }
 
             #guests .guest-media-container {
                 width: 100% !important;
-                max-width: 540px !important;
-                height: 440px !important;
+                max-width: 785px !important;
+                height: 500px !important;
             }
 
             #guests .guest-media-image {
@@ -1398,7 +1419,7 @@
                 object-fit: cover !important;
             }
 
-            /* Sponsors section structured identically to Special Guest */
+            /* SPONSORS SECTION (LARGE TABLET): Photo widened to 785px, paragraph above photo as wide as photo (785px), sponsor card bar as wide as photo (785px) */
             #sponsors {
                 display: grid !important;
                 grid-template-columns: 300px 1fr !important;
@@ -1420,12 +1441,10 @@
                 margin-top: 4px !important;
             }
 
-            /* LARGE TABLET VIEW: Sponsor section description text paragraph as wide as the widened photo (785px) */
             #sponsors .guest-intro-text {
                 max-width: 785px !important;
             }
 
-            /* LARGE TABLET VIEW: Sponsor photo widened so it shares the same right margin as the section above it (785px) */
             #sponsors .sponsor-media-container {
                 width: 100% !important;
                 max-width: 785px !important;
@@ -1438,12 +1457,11 @@
                 object-fit: cover !important;
             }
 
-            /* LARGE TABLET VIEW: "Interested in becoming a sponsor" bar as wide as the photo (785px) */
             #sponsors .sponsor-card {
                 max-width: 785px !important;
             }
 
-            /* LARGE TABLET VIEW: FAQ section perfectly aligned with the section above it */
+            /* FAQ SECTION (LARGE TABLET): Perfectly aligned with the section above it */
             .content-section:has(#faqs) {
                 display: grid !important;
                 grid-template-columns: 300px 1fr !important;
@@ -1496,19 +1514,6 @@
 
             #agenda .agenda-list {
                 max-width: 100% !important;
-            }
-
-            .guest-media-container, 
-            .about-media-container {
-                height: auto !important;
-                max-width: 100% !important;
-            }
-
-            .guest-media-image, 
-            .about-media-image {
-                width: 100% !important;
-                height: auto !important;
-                object-fit: cover !important;
             }
 
             .agenda-row {
