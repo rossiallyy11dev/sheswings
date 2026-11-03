@@ -39,7 +39,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* FIXED NAVBAR - UNTOUCHED */
+        /* FIXED NAVBAR */
         .navbar {
             position: fixed;
             top: 0;
@@ -100,25 +100,10 @@
             display: none !important;
         }
 
-        /* HERO AND REGISTRATION KEEP ORIGINAL UNTOUCHED PADDING/MARGINS */
-        .hero-section, .registration-page {
+        .hero-section, .content-section, .registration-page {
             padding-left: 16px;
             padding-right: 16px;
             width: 100%;
-        }
-
-        /* CONTENT SECTIONS ONLY: Pushed in right margins to match reference screenshots */
-        .content-section {
-            padding-left: 16px;
-            padding-right: clamp(100px, 15vw, 320px);
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding-top: 24px;
-            padding-bottom: 140px;
         }
 
         /* Brand Logo */
@@ -189,7 +174,7 @@
             background-color: #0099D8;
         }
 
-        /* Hero Layout - UNTOUCHED */
+        /* Hero Layout */
         .hero-section {
             width: 100%;
             margin: 24px auto 24px auto;
@@ -265,6 +250,18 @@
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
             margin: 0 auto;
+        }
+
+        /* Generic Section Layout */
+        .content-section {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 24px;
+            padding-bottom: 140px;
         }
 
         .content-section#about {
