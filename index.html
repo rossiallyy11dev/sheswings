@@ -1600,22 +1600,23 @@
                 margin-top: 0 !important;
             }
 
-            /* Make the Special Guest description paragraph narrower (matching photo width: 440px) */
+            /* Make the Special Guest description paragraph wider (matching photo width: 720px) */
             #guests .guest-intro-text {
-                max-width: 440px !important;
+                max-width: 720px !important;
             }
 
-            /* Make Special Guest photo skinnier, exactly matching the About section photo width (440px) */
+            /* Make Special Guest photo wider, matching About section width (720px) and auto height to show the entire uncropped image */
             #guests .guest-media-container {
                 width: 100% !important;
-                max-width: 440px !important;
-                height: 440px !important;
+                max-width: 720px !important;
+                height: auto !important;
+                max-height: none !important;
             }
 
             #guests .guest-media-image {
                 width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important;
+                height: auto !important;
+                object-fit: contain !important;
             }
 
             /* Exact CSS Grid layout for Agenda matching photo container bounds */
