@@ -1339,7 +1339,6 @@
                 margin-bottom: 0 !important;
             }
 
-            /* Shift Special Guest right on Large iPad to align precisely with Agenda */
             #guests {
                 display: grid !important;
                 grid-template-columns: 300px 200px 1fr !important;
@@ -1453,7 +1452,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - UNTOUCHED */
+        /* TIER 3: DESKTOP (1200px and up) */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1579,15 +1578,43 @@
                 object-fit: contain !important;
             }
 
-            #guests .section-right-content {
-                margin-top: 4px !important;
+            /* EXACT Desktop Grid Alignment for Special Guest Section matching Agenda bounds */
+            #guests {
+                display: grid !important;
+                grid-template-columns: 480px 1fr !important;
+                column-gap: 0 !important;
+                align-items: flex-start !important;
             }
 
-            .section-text {
-                font-size: 1.45rem !important;
-                line-height: 1.35 !important;
-                max-width: 100% !important;
+            #guests .section-title {
+                grid-column: 1 !important;
+                padding-right: 48px !important;
+                flex: none !important;
+            }
+
+            #guests .section-right-content {
+                grid-column: 2 !important;
+                margin-left: -50px !important;
+                max-width: 785px !important;
+                flex: none !important;
                 margin-top: 0 !important;
+            }
+
+            #guests .guest-intro-text {
+                max-width: 720px !important;
+            }
+
+            /* Make Special Guest photo skinnier, exactly matching the About section photo width (440px) */
+            #guests .guest-media-container {
+                width: 100% !important;
+                max-width: 440px !important;
+                height: 440px !important;
+            }
+
+            #guests .guest-media-image {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
             }
 
             /* Exact CSS Grid layout for Agenda matching photo container bounds */
@@ -1616,13 +1643,11 @@
                 max-width: 100% !important;
             }
 
-            .guest-media-container, 
             .sponsor-media-container {
                 height: auto !important;
                 max-width: 100% !important;
             }
 
-            .guest-media-image, 
             .sponsor-media-container img {
                 width: 100% !important;
                 height: auto !important;
