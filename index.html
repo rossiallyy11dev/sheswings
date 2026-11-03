@@ -1360,7 +1360,7 @@
                 margin-top: 4px !important;
             }
 
-            /* Align Sponsors identically to Special Guest on Large iPad / Tablet view and widen photo */
+            /* Align Sponsors identically to Special Guest on Large iPad / Tablet view */
             #sponsors {
                 display: grid !important;
                 grid-template-columns: 300px 200px 1fr !important;
@@ -1383,13 +1383,13 @@
             }
 
             #sponsors .guest-intro-text {
-                max-width: 785px !important;
+                max-width: 540px !important;
             }
 
             #sponsors .sponsor-media-container {
                 width: 100% !important;
-                max-width: 785px !important;
-                height: 500px !important;
+                max-width: 540px !important;
+                height: 440px !important;
             }
 
             #sponsors .sponsor-media-container img {
@@ -1399,7 +1399,7 @@
             }
 
             #sponsors .sponsor-card {
-                max-width: 785px !important;
+                max-width: 540px !important;
             }
 
             .section-text {
@@ -2146,7 +2146,7 @@
             } else {
                 homePage.style.display = 'block';
                 regPage.classList.remove('active');
-                document.body.classList.0 = false;
+                document.body.classList.remove('is-registration-page');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
             updateNavbar();
