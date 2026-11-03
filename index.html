@@ -244,15 +244,15 @@
             opacity: 1; 
         }
 
-        /* Section Dividers - MATCHED TO HERO 64px GAP BEFORE/AFTER */
+        /* Section Dividers with Uniform Gap */
         .section-divider {
             width: calc(100% - 32px);
             height: 1px;
             background-color: rgba(0, 0, 0, 0.08);
-            margin: 64px auto 64px auto;
+            margin: 0 auto 0 auto;
         }
 
-        /* Generic Section Layout */
+        /* Generic Section Layout - Uniform Bottom Padding matching FAQ-to-Footer gap */
         .content-section {
             width: 100%;
             max-width: 100%;
@@ -260,6 +260,12 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
+            padding-bottom: 64px;
+            padding-top: 64px;
+        }
+
+        .content-section:first-of-type {
+            padding-top: 0;
         }
 
         .section-title {
@@ -708,7 +714,7 @@
             color: #FFFFFF;
             width: 100%;
             min-height: 600px;
-            margin: 120px 0 0 0;
+            margin: 0 0 0 0;
             border-radius: 0;
             padding: 28px 16px 28px 16px;
             display: flex;
@@ -849,13 +855,18 @@
                 box-sizing: border-box !important;
             }
 
+            .content-section {
+                padding-top: 48px !important;
+                padding-bottom: 48px !important;
+            }
+
             .section-divider {
                 width: calc(100% - 32px) !important;
-                margin: 64px auto 64px auto !important;
+                margin: 0 auto !important;
             }
 
             .hero-section {
-                margin-bottom: 64px;
+                margin-bottom: 48px;
             }
 
             .hero-header-row {
@@ -1060,13 +1071,18 @@
                 padding-top: 100px;
             }
 
+            .content-section {
+                padding-top: 48px !important;
+                padding-bottom: 48px !important;
+            }
+
             .section-divider {
                 width: calc(100% - 32px) !important;
-                margin: 64px auto 64px auto !important;
+                margin: 0 auto !important;
             }
 
             .hero-section {
-                margin-bottom: 64px;
+                margin-bottom: 48px;
             }
 
             .hero-header-row {
@@ -1219,9 +1235,14 @@
                 padding-top: 110px;
             }
 
+            .content-section {
+                padding-top: 64px !important;
+                padding-bottom: 64px !important;
+            }
+
             .section-divider {
                 width: calc(100% - 32px) !important;
-                margin: 64px auto 64px auto !important;
+                margin: 0 auto !important;
             }
 
             .hero-header-row {
@@ -1391,9 +1412,14 @@
                 padding-top: 110px;
             }
 
+            .content-section {
+                padding-top: 64px !important;
+                padding-bottom: 64px !important;
+            }
+
             .section-divider {
                 width: calc(100% - 32px) !important;
-                margin: 64px auto 64px auto !important;
+                margin: 0 auto !important;
             }
 
             .hero-header-row {
