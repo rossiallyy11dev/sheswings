@@ -1208,45 +1208,85 @@
                 flex: 0 0 180px !important;
             }
 
+            /* SMALL TABLET VIEW FOOTER RESTRUCTURE (Matching Stripe Reference #1) */
             .site-footer {
-                padding: 40px 16px 40px 16px !important;
+                padding: 40px 24px 48px 24px !important;
                 min-height: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important;
             }
 
             .footer-top-row {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
-                margin-bottom: 64px !important;
+                width: 100% !important;
+                margin-bottom: 48px !important;
+            }
+
+            .footer-brand {
+                order: 1 !important;
+                margin-bottom: 0 !important;
             }
 
             .footer-right-top {
+                order: 2 !important;
                 display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-end !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
+                width: 100% !important;
+                margin: 0 !important;
+                gap: 20px !important;
+            }
+
+            /* Date on the left, location on the right */
+            .footer-right-top .footer-meta-item:first-child {
+                flex: 1 !important;
+                text-align: left !important;
+            }
+
+            .footer-right-top .footer-meta-item:last-child {
+                flex: 1 !important;
                 text-align: right !important;
-                gap: 12px !important;
-                margin-left: auto !important;
-                margin-right: 0 !important;
-                width: auto !important;
+                padding-left: 0 !important;
+            }
+
+            .footer-meta-item {
+                font-size: 0.95rem !important;
             }
 
             .footer-bottom-row {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: flex-start !important;
-                gap: 40px !important;
+                width: 100% !important;
+                padding-left: 0 !important;
             }
 
             .footer-headline {
-                font-size: clamp(2.4rem, 4.5vw, 3.2rem) !important;
+                order: 1 !important;
+                font-size: clamp(2.6rem, 5.5vw, 3.4rem) !important;
                 line-height: 1.05 !important;
                 max-width: 100% !important;
+                margin-bottom: 64px !important;
             }
 
             .footer-right-col {
+                order: 2 !important;
                 width: 100% !important;
-                margin-left: 0 !important;
+                margin: 0 !important;
+            }
+
+            .footer-section-group {
+                border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
+                padding-top: 16px !important;
+                margin-bottom: 24px !important;
+            }
+
+            .footer-section-group.get-help-group {
+                margin-bottom: 36px !important;
             }
         }
 
@@ -1342,7 +1382,6 @@
                 margin-top: 4px !important;
             }
 
-            /* ABOUT SECTION (LARGE TABLET): Photo widened to 785px, paragraph above photo as wide as the photo (785px) */
             #about {
                 display: grid !important;
                 grid-template-columns: 300px 1fr !important;
@@ -1382,7 +1421,6 @@
                 object-fit: cover !important;
             }
 
-            /* SPECIAL GUEST SECTION (LARGE TABLET): Photo widened to 785px, paragraph above photo as wide as the photo (785px) */
             #guests {
                 display: grid !important;
                 grid-template-columns: 300px 1fr !important;
@@ -1420,7 +1458,6 @@
                 object-fit: cover !important;
             }
 
-            /* SPONSORS SECTION (LARGE TABLET): Photo widened to 785px, paragraph above photo as wide as photo (785px), sponsor card bar as wide as photo (785px) */
             #sponsors {
                 display: grid !important;
                 grid-template-columns: 300px 1fr !important;
@@ -1462,7 +1499,6 @@
                 max-width: 785px !important;
             }
 
-            /* FAQ SECTION (LARGE TABLET): Perfectly aligned with the section above it */
             .content-section:has(#faqs) {
                 display: grid !important;
                 grid-template-columns: 300px 1fr !important;
@@ -1495,7 +1531,6 @@
                 margin-top: 0 !important;
             }
 
-            /* AGENDA SECTION (LARGE TABLET): Shifted left a smidge to perfectly match 35px left margin */
             #agenda {
                 display: grid !important;
                 grid-template-columns: 300px 1fr !important;
@@ -2196,7 +2231,7 @@
                 progress = scrollY / maxScrollForReveal;
             }
 
-                progress = Math.max(0, Math.min(1, progress));
+            progress = Math.max(0, Math.min(1, progress));
 
             const offsetVal = (progress * 200) - 100;
             aboutText.style.setProperty('--highlightOffset', offsetVal.toFixed(2) + '%');
@@ -2247,7 +2282,7 @@
             handleStripeMaskReveal();
         }
 
-        function navigateType(target) {
+        function navigateTo(target) {
             if (target === 'register') {
                 history.pushState({view: 'register'}, '', '#register');
                 handleRoute();
