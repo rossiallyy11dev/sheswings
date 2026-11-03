@@ -767,7 +767,7 @@
         }
 
         .footer-headline {
-            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            font-size: clamp(3rem, 5.5vw, 5.5wn);
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: -0.03em;
@@ -1176,7 +1176,6 @@
                 max-width: 100% !important;
             }
 
-            /* SMALL TABLET: Make description text paragraphs as wide as the photo for About, Special Guest, and Sponsors */
             #about .section-text,
             #guests .guest-intro-text,
             #sponsors .guest-intro-text {
@@ -1221,7 +1220,6 @@
                 margin-bottom: 64px !important;
             }
 
-            /* SMALL TABLET: Move footer date and location to the RIGHT so it shares the same margin as everything else */
             .footer-right-top {
                 display: flex !important;
                 flex-direction: column !important;
@@ -1347,16 +1345,24 @@
             #about .about-media-container {
                 margin-top: 0 !important;
                 margin-bottom: 0 !important;
+                width: 100% !important;
+                max-width: 440px !important;
             }
 
-            /* LARGE TABLET: Make description text paragraph as wide as the photo for About */
+            #about .about-media-image {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: cover !important;
+            }
+
+            /* LARGE TABLET VIEW: About section description text paragraph as wide as the photo (440px) */
             #about .section-text {
                 max-width: 440px !important;
             }
 
             #guests {
                 display: grid !important;
-                grid-template-columns: 300px 200px 1fr !important;
+                grid-template-columns: 300px 1fr !important;
                 column-gap: 0 !important;
                 align-items: flex-start !important;
             }
@@ -1368,22 +1374,34 @@
             }
 
             #guests .section-right-content {
-                grid-column: 2 / span 2 !important;
-                margin-left: 58px !important;
-                max-width: 785px !important;
+                grid-column: 2 !important;
+                margin-left: 35px !important;
+                max-width: 540px !important;
                 flex: none !important;
                 margin-top: 4px !important;
             }
 
-            /* LARGE TABLET: Make description text paragraph as wide as the photo for Special Guest */
+            /* LARGE TABLET VIEW: Special Guest section description text paragraph as wide as the photo (540px) */
             #guests .guest-intro-text {
                 max-width: 540px !important;
             }
 
-            /* Align Sponsors identically to Special Guest on Large iPad / Tablet view */
+            #guests .guest-media-container {
+                width: 100% !important;
+                max-width: 540px !important;
+                height: 440px !important;
+            }
+
+            #guests .guest-media-image {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+
+            /* Sponsors section structured identically to Special Guest */
             #sponsors {
                 display: grid !important;
-                grid-template-columns: 300px 200px 1fr !important;
+                grid-template-columns: 300px 1fr !important;
                 column-gap: 0 !important;
                 align-items: flex-start !important;
             }
@@ -1395,22 +1413,23 @@
             }
 
             #sponsors .section-right-content {
-                grid-column: 2 / span 2 !important;
-                margin-left: 58px !important;
+                grid-column: 2 !important;
+                margin-left: 35px !important;
                 max-width: 785px !important;
                 flex: none !important;
                 margin-top: 4px !important;
             }
 
-            /* LARGE TABLET: Make description text paragraph as wide as the photo for Sponsors */
+            /* LARGE TABLET VIEW: Sponsor section description text paragraph as wide as the widened photo (785px) */
             #sponsors .guest-intro-text {
-                max-width: 540px !important;
+                max-width: 785px !important;
             }
 
+            /* LARGE TABLET VIEW: Sponsor photo widened so it shares the same right margin as the section above it (785px) */
             #sponsors .sponsor-media-container {
                 width: 100% !important;
-                max-width: 540px !important;
-                height: 440px !important;
+                max-width: 785px !important;
+                height: 500px !important;
             }
 
             #sponsors .sponsor-media-container img {
@@ -1419,8 +1438,35 @@
                 object-fit: cover !important;
             }
 
+            /* LARGE TABLET VIEW: "Interested in becoming a sponsor" bar as wide as the photo (785px) */
             #sponsors .sponsor-card {
-                max-width: 540px !important;
+                max-width: 785px !important;
+            }
+
+            /* LARGE TABLET VIEW: FAQ section perfectly aligned with the section above it */
+            .content-section:has(#faqs) {
+                display: grid !important;
+                grid-template-columns: 300px 1fr !important;
+                column-gap: 0 !important;
+                align-items: flex-start !important;
+            }
+
+            .content-section:has(#faqs) .section-title {
+                grid-column: 1 !important;
+                padding-right: 24px !important;
+                flex: none !important;
+            }
+
+            .content-section:has(#faqs) .section-right-content {
+                grid-column: 2 !important;
+                margin-left: 35px !important;
+                max-width: 785px !important;
+                flex: none !important;
+                margin-top: 4px !important;
+            }
+
+            .content-section:has(#faqs) .faq-list {
+                max-width: 785px !important;
             }
 
             .section-text {
@@ -1450,11 +1496,6 @@
 
             #agenda .agenda-list {
                 max-width: 100% !important;
-            }
-
-            /* LARGE TABLET: Make FAQ accordion skinnier, so its as wide as the section above it */
-            .content-section:has(#faqs) .faq-list {
-                max-width: 540px !important;
             }
 
             .guest-media-container, 
@@ -1619,7 +1660,6 @@
                 margin-top: 12px !important;
             }
 
-            /* DESKTOP: Make description text paragraph as wide as the photo for About */
             #about .section-text {
                 max-width: 720px !important;
                 font-size: 1.45rem !important;
@@ -1627,7 +1667,6 @@
                 margin-top: 0 !important;
             }
 
-            /* Photo container spans full paragraph width */
             #about .about-media-container {
                 width: 100% !important;
                 max-width: 720px !important;
@@ -1637,14 +1676,12 @@
                 margin-bottom: 0 !important;
             }
 
-            /* Displays entire uncropped photo */
             #about .about-media-image {
                 width: 100% !important;
                 height: auto !important;
                 object-fit: contain !important;
             }
 
-            /* EXACT Desktop Grid Alignment for Special Guest Section matching Agenda bounds */
             #guests {
                 display: grid !important;
                 grid-template-columns: 480px 1fr !important;
@@ -1666,12 +1703,10 @@
                 margin-top: 0 !important;
             }
 
-            /* Make the Special Guest description paragraph wider (matching photo width: 720px) */
             #guests .guest-intro-text {
                 max-width: 720px !important;
             }
 
-            /* Make Special Guest photo wider, matching About section width (720px) and auto height to show the entire uncropped image */
             #guests .guest-media-container {
                 width: 100% !important;
                 max-width: 720px !important;
@@ -1685,7 +1720,6 @@
                 object-fit: contain !important;
             }
 
-            /* EXACT Desktop Grid Alignment for Sponsors Section matching Special Guest & Agenda bounds */
             #sponsors {
                 display: grid !important;
                 grid-template-columns: 480px 1fr !important;
@@ -1728,7 +1762,6 @@
                 max-width: 720px !important;
             }
 
-            /* DESKTOP: FAQ section layout to make FAQ accordion skinnier and move it to the RIGHT so it starts in the same place as the content in the section above */
             .content-section:has(#faqs) {
                 display: grid !important;
                 grid-template-columns: 480px 1fr !important;
@@ -1754,7 +1787,6 @@
                 max-width: 720px !important;
             }
 
-            /* Exact CSS Grid layout for Agenda matching photo container bounds */
             #agenda {
                 display: grid !important;
                 grid-template-columns: 480px 1fr !important;
