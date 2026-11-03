@@ -1705,7 +1705,6 @@
                 padding: 0 !important;
             }
 
-            /* LARGE TABLET FOOTER FIX - ALIGN LINKS TO LEFT WITH DATE */
             .site-footer {
                 padding: 40px 16px 40px 16px !important;
                 min-height: auto !important;
@@ -2030,8 +2029,8 @@
 
             .footer-right-top {
                 display: grid !important;
-                grid-template-columns: 140px 240px !important;
-                gap: 32px !important;
+                grid-template-columns: 160px 320px !important;
+                column-gap: 30px !important;
                 margin-left: auto !important;
                 margin-right: 0 !important;
                 width: auto !important;
@@ -2049,9 +2048,15 @@
                 max-width: 500px !important;
             }
 
+            /* FIXED DESKTOP FOOTER LINKS ALIGNMENT */
             .footer-right-col {
                 width: 320px !important;
                 margin-left: auto !important;
+                margin-right: 0 !important;
+            }
+
+            .footer-section-group {
+                width: 100% !important;
             }
         }
     </style>
