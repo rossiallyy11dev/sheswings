@@ -1242,7 +1242,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px) */
+        /* TIER 2: LARGE TABLETS / IPAD VIEW (992px to 1199px) - ALIGNED TEXT BASELINE */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1262,7 +1262,8 @@
             }
 
             .section-title {
-                margin-top: -20px !important;
+                margin-top: 0 !important;
+                line-height: 1.05 !important;
             }
 
             .section-divider {
@@ -1328,8 +1329,10 @@
                 font-size: clamp(2.4rem, 3.2vw, 3rem) !important;
             }
 
+            /* Offset the description down slightly to sit flush with the "Swings" title baseline */
             .section-right-content {
                 flex: 1 !important;
+                margin-top: 12px !important;
             }
 
             #about .about-media-container {
@@ -1341,6 +1344,7 @@
                 font-size: 1.45rem !important;
                 line-height: 1.35 !important;
                 max-width: 100% !important;
+                margin-top: 0 !important;
             }
 
             #agenda {
@@ -1358,6 +1362,7 @@
                 margin-left: 35px !important;
                 max-width: 785px !important;
                 flex: 1 !important;
+                margin-top: 0 !important;
             }
 
             #agenda .agenda-list {
@@ -1427,7 +1432,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - ALIGNED TOP DESCRIPTIONS AND TITLES */
+        /* TIER 3: DESKTOP (1200px and up) - ALIGNED TEXT BASELINE */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1449,7 +1454,6 @@
                 padding-top: 24px !important;
             }
 
-            /* Remove vertical offset to align description exactly with top of title */
             .section-title {
                 margin-top: 0 !important;
                 line-height: 1.05 !important;
@@ -1524,9 +1528,10 @@
                 font-size: clamp(2.4rem, 3.2vw, 3rem) !important;
             }
 
+            /* Offset the description down slightly to sit flush with the "Swings" title baseline */
             .section-right-content {
                 flex: 1 !important;
-                padding-top: 0 !important;
+                margin-top: 12px !important;
             }
 
             #about .about-media-container {
@@ -1560,6 +1565,7 @@
                 margin-left: -50px !important;
                 max-width: 785px !important;
                 flex: none !important;
+                margin-top: 0 !important;
             }
 
             #agenda .agenda-list {
