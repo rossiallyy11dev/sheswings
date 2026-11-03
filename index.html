@@ -1428,7 +1428,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - HEADER LEFT UNTOUCHED */
+        /* TIER 3: DESKTOP (1200px and up) - EXACT GRID ALIGNMENT MATCHING PHOTO */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1454,6 +1454,57 @@
             .section-divider {
                 width: calc(100% - 32px) !important;
                 margin: 0 auto !important;
+            }
+
+            .hero-header-row {
+                display: grid !important;
+                grid-template-columns: minmax(640px, 680px) 160px 320px !important;
+                align-items: flex-start !important;
+                margin-bottom: 36px !important;
+                column-gap: 30px !important;
+                width: 100% !important;
+            }
+
+            .hero-headline {
+                font-size: clamp(3.2rem, 4.8vw, 4.2rem) !important;
+                line-height: 1.05 !important;
+                max-width: 680px !important;
+                grid-column: 1 !important;
+            }
+
+            .hero-meta-group {
+                display: contents !important;
+            }
+
+            .meta-item {
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
+                align-self: flex-start !important;
+                padding-top: 4px !important;
+            }
+
+            .meta-item:nth-of-type(1) {
+                grid-column: 2 !important;
+                transform: translateX(340px);
+            }
+
+            .meta-item:nth-of-type(2) {
+                grid-column: 3 !important;
+                transform: translateX(310px);
+            }
+
+            .hero-banner-container {
+                width: 100% !important;
+                height: 480px !important;
+                background-color: #E8E8EC !important;
+            }
+
+            .hero-banner-image {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: 92% center !important;
+                display: block !important;
             }
 
             .content-section {
@@ -1484,21 +1535,25 @@
                 max-width: 100% !important;
             }
 
+            /* Exact CSS Grid layout for Agenda matching photo container bounds */
             #agenda {
-                display: flex !important;
-                justify-content: space-between !important;
+                display: grid !important;
+                grid-template-columns: 480px 1fr !important;
+                column-gap: 0 !important;
                 align-items: flex-start !important;
             }
 
             #agenda .section-title {
-                flex: 0 0 300px !important;
-                padding-right: 24px !important;
+                grid-column: 1 !important;
+                padding-right: 48px !important;
+                flex: none !important;
             }
 
             #agenda .section-right-content {
-                margin-left: 35px !important;
+                grid-column: 2 !important;
+                margin-left: -50px !important; /* Pulls agenda flush with the photo's left edge */
                 max-width: 785px !important;
-                flex: 1 !important;
+                flex: none !important;
             }
 
             #agenda .agenda-list {
