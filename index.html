@@ -593,7 +593,7 @@
             width: 100%;
             margin: 0 auto;
             padding-top: 0;
-            padding-bottom: 140px; /* Universal bottom spacing matching content sections */
+            padding-bottom: 140px;
         }
 
         .registration-page.active {
@@ -864,7 +864,7 @@
             }
 
             .registration-page {
-                padding-bottom: 80px !important; /* Mobile bottom spacing matching mobile content sections */
+                padding-bottom: 80px !important;
             }
 
             .content-section#about {
@@ -1092,7 +1092,7 @@
             }
 
             .registration-page {
-                padding-bottom: 100px !important; /* Small tablet bottom spacing matching sections */
+                padding-bottom: 100px !important;
             }
 
             .content-section#about {
@@ -1218,6 +1218,63 @@
                 flex: 0 0 180px !important;
             }
 
+            /* SMALL TABLET REGISTRATION HEADER FIX (Matching Reference Photo #1) */
+            .reg-hero-container {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                grid-template-rows: auto auto !important;
+                column-gap: 32px !important;
+                row-gap: 28px !important;
+                width: 100% !important;
+            }
+
+            .reg-title-col {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+            }
+
+            .reg-title {
+                font-size: clamp(2.6rem, 5.2vw, 3.4rem) !important;
+                line-height: 0.96 !important;
+                max-width: 100% !important;
+            }
+
+            .reg-meta-bar {
+                grid-column: 1 !important;
+                grid-row: 2 !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 16px !important;
+                align-self: end !important;
+                width: 100% !important;
+            }
+
+            .reg-meta-item {
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .reg-meta-item.location {
+                grid-column: 2 !important;
+                margin-left: 0 !important;
+                justify-self: start !important;
+            }
+
+            .reg-image-container {
+                grid-column: 2 !important;
+                grid-row: 1 / span 2 !important;
+                width: 100% !important;
+                height: 420px !important;
+                border-radius: 16px !important;
+                margin: 0 !important;
+            }
+
+            .reg-image-media {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+
             .site-footer {
                 padding: 40px 24px 48px 24px !important;
                 min-height: auto !important;
@@ -1316,7 +1373,7 @@
             }
 
             .registration-page {
-                padding-bottom: 140px !important; /* Large tablet bottom spacing matching sections */
+                padding-bottom: 140px !important;
             }
 
             .content-section#about {
@@ -1642,7 +1699,7 @@
             }
 
             .registration-page {
-                padding-bottom: 140px !important; /* Desktop bottom spacing matching content sections */
+                padding-bottom: 140px !important;
             }
 
             .content-section#about {
