@@ -1360,6 +1360,48 @@
                 margin-top: 4px !important;
             }
 
+            /* Align Sponsors identically to Special Guest on Large iPad / Tablet view */
+            #sponsors {
+                display: grid !important;
+                grid-template-columns: 300px 200px 1fr !important;
+                column-gap: 0 !important;
+                align-items: flex-start !important;
+            }
+
+            #sponsors .section-title {
+                grid-column: 1 !important;
+                padding-right: 24px !important;
+                flex: none !important;
+            }
+
+            #sponsors .section-right-content {
+                grid-column: 2 / span 2 !important;
+                margin-left: 58px !important;
+                max-width: 785px !important;
+                flex: none !important;
+                margin-top: 4px !important;
+            }
+
+            #sponsors .guest-intro-text {
+                max-width: 540px !important;
+            }
+
+            #sponsors .sponsor-media-container {
+                width: 100% !important;
+                max-width: 540px !important;
+                height: 440px !important;
+            }
+
+            #sponsors .sponsor-media-container img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+
+            #sponsors .sponsor-card {
+                max-width: 540px !important;
+            }
+
             .section-text {
                 font-size: 1.45rem !important;
                 line-height: 1.35 !important;
@@ -1390,14 +1432,12 @@
             }
 
             .guest-media-container, 
-            .sponsor-media-container,
             .about-media-container {
                 height: auto !important;
                 max-width: 100% !important;
             }
 
             .guest-media-image, 
-            .sponsor-media-container img,
             .about-media-image {
                 width: 100% !important;
                 height: auto !important;
@@ -1619,6 +1659,49 @@
                 object-fit: contain !important;
             }
 
+            /* EXACT Desktop Grid Alignment for Sponsors Section matching Special Guest & Agenda bounds */
+            #sponsors {
+                display: grid !important;
+                grid-template-columns: 480px 1fr !important;
+                column-gap: 0 !important;
+                align-items: flex-start !important;
+            }
+
+            #sponsors .section-title {
+                grid-column: 1 !important;
+                padding-right: 48px !important;
+                flex: none !important;
+            }
+
+            #sponsors .section-right-content {
+                grid-column: 2 !important;
+                margin-left: -50px !important;
+                max-width: 785px !important;
+                flex: none !important;
+                margin-top: 0 !important;
+            }
+
+            #sponsors .guest-intro-text {
+                max-width: 720px !important;
+            }
+
+            #sponsors .sponsor-media-container {
+                width: 100% !important;
+                max-width: 720px !important;
+                height: auto !important;
+                max-height: none !important;
+            }
+
+            #sponsors .sponsor-media-container img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: contain !important;
+            }
+
+            #sponsors .sponsor-card {
+                max-width: 720px !important;
+            }
+
             /* Exact CSS Grid layout for Agenda matching photo container bounds */
             #agenda {
                 display: grid !important;
@@ -1643,17 +1726,6 @@
 
             #agenda .agenda-list {
                 max-width: 100% !important;
-            }
-
-            .sponsor-media-container {
-                height: auto !important;
-                max-width: 100% !important;
-            }
-
-            .sponsor-media-container img {
-                width: 100% !important;
-                height: auto !important;
-                object-fit: cover !important;
             }
 
             .agenda-row {
