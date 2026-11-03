@@ -593,6 +593,7 @@
             width: 100%;
             margin: 0 auto;
             padding-top: 0;
+            padding-bottom: 140px; /* Universal bottom spacing matching content sections */
         }
 
         .registration-page.active {
@@ -862,6 +863,10 @@
                 padding-bottom: 80px !important;
             }
 
+            .registration-page {
+                padding-bottom: 80px !important; /* Mobile bottom spacing matching mobile content sections */
+            }
+
             .content-section#about {
                 padding-top: 24px !important;
             }
@@ -1086,6 +1091,10 @@
                 padding-bottom: 100px !important;
             }
 
+            .registration-page {
+                padding-bottom: 100px !important; /* Small tablet bottom spacing matching sections */
+            }
+
             .content-section#about {
                 padding-top: 24px !important;
             }
@@ -1304,6 +1313,10 @@
             .content-section {
                 padding-top: 24px !important;
                 padding-bottom: 140px !important;
+            }
+
+            .registration-page {
+                padding-bottom: 140px !important; /* Large tablet bottom spacing matching sections */
             }
 
             .content-section#about {
@@ -1599,15 +1612,14 @@
                 max-width: 500px !important;
             }
 
-            /* LARGE TABLET FOOTER ADJUSTMENTS: Make section border lines longer and shift links to the left to align with the date */
             .footer-right-col {
-                width: 380px !important;
+                width: 140px !important;
                 margin-left: 0 !important;
-                margin-right: auto !important;
+                margin-right: calc((100% - 300px - 785px) / 2) !important;
             }
 
             .footer-section-group {
-                width: 100% !important;
+                width: 140px !important;
             }
         }
 
@@ -1627,6 +1639,10 @@
                 padding-left: 16px !important;
                 padding-right: clamp(140px, 20vw, 400px) !important;
                 align-items: flex-start !important;
+            }
+
+            .registration-page {
+                padding-bottom: 140px !important; /* Desktop bottom spacing matching content sections */
             }
 
             .content-section#about {
