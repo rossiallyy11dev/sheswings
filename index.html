@@ -1364,7 +1364,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - FINE-TUNED ALIGNMENT UNDER PHOTO */
+        /* TIER 3: DESKTOP (1200px and up) - PERFECT PHOTO EDGE ALIGNMENT */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1448,22 +1448,25 @@
                 max-width: 100% !important;
             }
 
-            /* Adjusted desktop agenda content margin to line up right under the photo edge */
+            /* Use CSS Grid for the desktop agenda section so title stays left and content aligns with photo */
             #agenda {
-                display: flex !important;
-                justify-content: flex-start !important;
+                display: grid !important;
+                grid-template-columns: 300px 1fr !important;
+                column-gap: 80px !important;
                 align-items: flex-start !important;
             }
 
             #agenda .section-title {
-                flex: 0 0 300px !important;
-                padding-right: 24px !important;
+                grid-column: 1 !important;
+                padding-right: 0 !important;
+                flex: none !important;
             }
 
             #agenda .section-right-content {
-                margin-left: 28px !important; /* Fine-tuned from 380px to align perfectly with the photo */
+                grid-column: 2 !important;
+                margin-left: 0 !important;
                 max-width: 785px !important;
-                flex: 1 !important;
+                flex: none !important;
             }
 
             #agenda .agenda-list {
