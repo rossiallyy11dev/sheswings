@@ -767,7 +767,7 @@
         }
 
         .footer-headline {
-            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            font-size: clamp(3rem, 5.5vw, 5.5vw);
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: -0.03em;
@@ -1360,7 +1360,6 @@
                 margin-top: 4px !important;
             }
 
-            /* Align Sponsors identically to Special Guest on Large iPad / Tablet view */
             #sponsors {
                 display: grid !important;
                 grid-template-columns: 300px 200px 1fr !important;
@@ -1640,12 +1639,12 @@
                 margin-top: 0 !important;
             }
 
-            /* Make the Special Guest description paragraph wider (matching photo width: 720px) */
+            /* Special Guest Description Paragraph: ~2/3 of the photo width (approx 480px, skinnier than the 720px photo) */
             #guests .guest-intro-text {
-                max-width: 720px !important;
+                max-width: 480px !important;
             }
 
-            /* Make Special Guest photo wider, matching About section width (720px) and auto height to show the entire uncropped image */
+            /* Special Guest Photo: Kept exact size and position (720px width uncropped) */
             #guests .guest-media-container {
                 width: 100% !important;
                 max-width: 720px !important;
@@ -1681,10 +1680,12 @@
                 margin-top: 0 !important;
             }
 
+            /* Sponsors Description Paragraph: ~2/3 of the photo width (approx 480px, skinnier than the 720px photo) */
             #sponsors .guest-intro-text {
-                max-width: 720px !important;
+                max-width: 480px !important;
             }
 
+            /* Sponsors Photo & Card: Kept exact size and position (720px width uncropped) */
             #sponsors .sponsor-media-container {
                 width: 100% !important;
                 max-width: 720px !important;
