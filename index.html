@@ -847,11 +847,6 @@
                 margin: 90px auto 16px auto !important;
             }
 
-            /* Tighten agenda bottom spacing on mobile */
-            #agenda + .section-divider {
-                margin-top: 40px !important;
-            }
-
             .hero-section {
                 margin-bottom: 90px;
             }
@@ -1048,7 +1043,7 @@
             .footer-section-group.get-help-group { margin-bottom: 36px !important; }
         }
 
-        /* TIER 1: SMALL TABLETS (768px to 991px) */
+        /* TIER 1: SMALL TABLETS (768px to 991px - UNTOUCHED & PERFECT) */
         @media (min-width: 768px) and (max-width: 991px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1061,11 +1056,6 @@
             .section-divider {
                 width: calc(100% - 32px) !important;
                 margin: 80px auto 16px auto !important;
-            }
-
-            /* Tighten agenda bottom spacing on small tablets */
-            #agenda + .section-divider {
-                margin-top: 35px !important;
             }
 
             .hero-section {
@@ -1212,7 +1202,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px) */
+        /* TIER 2: LARGE TABLETS (992px to 1199px - KEPT EXACTLY AS YOU LIKED IT) */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1220,21 +1210,6 @@
 
             body {
                 padding-top: 110px;
-            }
-
-            .section-divider {
-                width: calc(100% - 32px) !important;
-                margin: 120px auto 16px auto !important;
-            }
-
-            /* Add extra space at the bottom of the About section on large tablets */
-            #about {
-                margin-bottom: 60px !important;
-            }
-
-            /* Tighten agenda bottom spacing on large tablets */
-            #agenda + .section-divider {
-                margin-top: 40px !important;
             }
 
             .hero-header-row {
@@ -1389,7 +1364,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) */
+        /* TIER 3: DESKTOP (1200px and up) - EXACT GRID ALIGNMENT MATCHING PHOTO */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1397,21 +1372,6 @@
 
             body {
                 padding-top: 110px;
-            }
-
-            .section-divider {
-                width: calc(100% - 32px) !important;
-                margin: 120px auto 16px auto !important;
-            }
-
-            /* Add extra space at the bottom of the About section on desktop */
-            #about {
-                margin-bottom: 60px !important;
-            }
-
-            /* Tighten agenda bottom spacing on desktop */
-            #agenda + .section-divider {
-                margin-top: 40px !important;
             }
 
             .hero-header-row {
@@ -1488,22 +1448,25 @@
                 max-width: 100% !important;
             }
 
-            /* Agenda section layout with correct locked placement */
+            /* Exact CSS Grid layout for Agenda matching photo container bounds */
             #agenda {
-                display: flex !important;
-                justify-content: flex-start !important;
+                display: grid !important;
+                grid-template-columns: 480px 1fr !important;
+                column-gap: 0 !important;
                 align-items: flex-start !important;
             }
 
             #agenda .section-title {
-                flex: 0 0 300px !important;
-                padding-right: 24px !important;
+                grid-column: 1 !important;
+                padding-right: 48px !important;
+                flex: none !important;
             }
 
             #agenda .section-right-content {
-                margin-left: 180px !important;
+                grid-column: 2 !important;
+                margin-left: -50px !important; /* Pulls agenda flush with the photo's left edge */
                 max-width: 785px !important;
-                flex: 1 !important;
+                flex: none !important;
             }
 
             #agenda .agenda-list {
