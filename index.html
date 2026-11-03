@@ -1666,8 +1666,8 @@
                 grid-column: 1 !important;
                 grid-row: 2 !important;
                 display: grid !important;
-                grid-template-columns: 140px 1fr 1fr !important; /* Adjusted to 3 columns to push location right */
-                gap: 16px !important;
+                grid-template-columns: 180px 1fr !important; /* 2 columns: Date column and Location column filling remaining space */
+                gap: 24px !important;
                 align-self: end !important;
                 width: 100% !important;
             }
@@ -1678,7 +1678,7 @@
             }
 
             .reg-meta-item.location {
-                grid-column: 2 !important; /* Placed in the middle column */
+                grid-column: 2 !important; /* Forces location into the second column right next to the date */
                 margin-left: 0 !important;
                 justify-self: start !important;
                 white-space: nowrap !important;
