@@ -1427,7 +1427,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - RIGHT MARGINS PUSHED IN FOR CONTENT SECTIONS */
+        /* TIER 3: DESKTOP (1200px and up) - ALIGNED TOP DESCRIPTIONS AND TITLES */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1437,20 +1437,22 @@
                 padding-top: 110px;
             }
 
-            /* Push in the right margin/padding on content sections ONLY */
             .content-section {
                 padding-top: 24px !important;
                 padding-bottom: 140px !important;
                 padding-left: 16px !important;
                 padding-right: clamp(140px, 20vw, 400px) !important;
+                align-items: flex-start !important;
             }
 
             .content-section#about {
                 padding-top: 24px !important;
             }
 
+            /* Remove vertical offset to align description exactly with top of title */
             .section-title {
-                margin-top: -20px !important;
+                margin-top: 0 !important;
+                line-height: 1.05 !important;
             }
 
             .section-divider {
@@ -1524,6 +1526,7 @@
 
             .section-right-content {
                 flex: 1 !important;
+                padding-top: 0 !important;
             }
 
             #about .about-media-container {
@@ -1535,6 +1538,7 @@
                 font-size: 1.45rem !important;
                 line-height: 1.35 !important;
                 max-width: 100% !important;
+                margin-top: 0 !important;
             }
 
             /* Exact CSS Grid layout for Agenda matching photo container bounds */
