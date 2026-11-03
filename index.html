@@ -1431,7 +1431,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - SLIMMER PARAGRAPH & SHORTER/SKINNIER PHOTO FOR ABOUT SECTION */
+        /* TIER 3: DESKTOP (1200px and up) - STRIPE SESSIONS PROPORTIONS FOR ABOUT SECTION */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1532,26 +1532,29 @@
                 margin-top: 12px !important;
             }
 
-            /* Skinny paragraph block for About Section */
+            /* Width matching Stripe Sessions reference */
             #about .section-text {
-                max-width: 580px !important;
+                max-width: 720px !important;
                 font-size: 1.45rem !important;
                 line-height: 1.35 !important;
                 margin-top: 0 !important;
             }
 
-            /* Skinny and shorter photo container for About Section */
+            /* Photo container spans full paragraph width */
             #about .about-media-container {
-                max-width: 380px !important;
-                max-height: 250px !important;
+                width: 100% !important;
+                max-width: 720px !important;
+                height: auto !important;
+                max-height: none !important;
                 margin-top: 0 !important;
                 margin-bottom: 0 !important;
             }
 
+            /* Displays entire uncropped photo */
             #about .about-media-image {
-                height: 250px !important;
                 width: 100% !important;
-                object-fit: cover !important;
+                height: auto !important;
+                object-fit: contain !important;
             }
 
             .section-text {
