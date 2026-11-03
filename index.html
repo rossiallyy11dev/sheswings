@@ -1242,7 +1242,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS / IPAD VIEW (992px to 1199px) - ADJUSTED TOP MARGIN FOR ALIGNMENT */
+        /* TIER 2: LARGE TABLETS / IPAD VIEW (992px to 1199px) */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1329,7 +1329,6 @@
                 font-size: clamp(2.4rem, 3.2vw, 3rem) !important;
             }
 
-            /* Reduced margin-top to 4px to align description perfectly with title top */
             .section-right-content {
                 flex: 1 !important;
                 margin-top: 4px !important;
@@ -1432,7 +1431,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - UNTOUCHED */
+        /* TIER 3: DESKTOP (1200px and up) - SLIMMER PARAGRAPH & SHORTER/SKINNIER PHOTO FOR ABOUT SECTION */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1533,9 +1532,26 @@
                 margin-top: 12px !important;
             }
 
+            /* Skinny paragraph block for About Section */
+            #about .section-text {
+                max-width: 580px !important;
+                font-size: 1.45rem !important;
+                line-height: 1.35 !important;
+                margin-top: 0 !important;
+            }
+
+            /* Skinny and shorter photo container for About Section */
             #about .about-media-container {
+                max-width: 380px !important;
+                max-height: 250px !important;
                 margin-top: 0 !important;
                 margin-bottom: 0 !important;
+            }
+
+            #about .about-media-image {
+                height: 250px !important;
+                width: 100% !important;
+                object-fit: cover !important;
             }
 
             .section-text {
@@ -1572,15 +1588,13 @@
             }
 
             .guest-media-container, 
-            .sponsor-media-container,
-            .about-media-container {
+            .sponsor-media-container {
                 height: auto !important;
                 max-width: 100% !important;
             }
 
             .guest-media-image, 
-            .sponsor-media-container img,
-            .about-media-image {
+            .sponsor-media-container img {
                 width: 100% !important;
                 height: auto !important;
                 object-fit: cover !important;
