@@ -1641,7 +1641,7 @@
                 flex: 0 0 200px !important;
             }
 
-            /* LARGE TABLET REGISTRATION HEADER FIX (Matching Reference Photo #1) */
+            /* LARGE TABLET REGISTRATION HEADER FIX */
             .reg-hero-container {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
@@ -1666,7 +1666,7 @@
                 grid-column: 1 !important;
                 grid-row: 2 !important;
                 display: grid !important;
-                grid-template-columns: 140px 1fr !important;
+                grid-template-columns: 140px 1fr 1fr !important; /* Adjusted to 3 columns to push location right */
                 gap: 16px !important;
                 align-self: end !important;
                 width: 100% !important;
@@ -1678,7 +1678,7 @@
             }
 
             .reg-meta-item.location {
-                grid-column: 2 !important;
+                grid-column: 2 !important; /* Placed in the middle column */
                 margin-left: 0 !important;
                 justify-self: start !important;
                 white-space: nowrap !important;
