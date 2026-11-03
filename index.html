@@ -1202,7 +1202,7 @@
             }
         }
 
-        /* TIER 2 & 3: LARGE TABLETS & DESKTOP (992px and up) - ALIGNED AGENDA BODY */
+        /* TIER 2 & 3: LARGE TABLETS & DESKTOP (992px and up) - ALIGNED AGENDA BODY UNDER PHOTO */
         @media (min-width: 992px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1280,17 +1280,23 @@
                 max-width: 100% !important;
             }
 
-            /* Align Agenda body with the photo above it on desktop/large tablet */
+            /* Precisely align the Agenda section content column with the photo containers above */
+            #agenda {
+                display: block !important;
+                position: relative !important;
+            }
+
             #agenda .section-title {
-                flex: 0 0 0px !important;
-                width: 0 !important;
+                display: block !important;
+                position: static !important;
+                width: auto !important;
+                flex: none !important;
+                margin-bottom: 24px !important;
                 padding-right: 0 !important;
-                overflow: hidden !important;
-                visibility: hidden !important;
             }
 
             #agenda .section-right-content {
-                width: 100% !important;
+                margin-left: 324px !important; /* Matches 300px title column width + 24px gap */
                 max-width: 785px !important;
             }
 
