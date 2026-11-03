@@ -264,7 +264,6 @@
             padding-bottom: 140px;
         }
 
-        /* RESTORED ORIGINAL COMPACT TOP GAP JUST FOR ABOUT SECTION */
         .content-section#about {
             padding-top: 24px !important;
         }
@@ -1243,7 +1242,7 @@
             }
         }
 
-        /* TIER 2: LARGE TABLETS (992px to 1199px) */
+        /* TIER 2: LARGE TABLETS (992px to 1199px) - UNTOUCHED */
         @media (min-width: 992px) and (max-width: 1199px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1428,7 +1427,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - EXACT GRID ALIGNMENT MATCHING PHOTO */
+        /* TIER 3: DESKTOP (1200px and up) - ADJUSTED RIGHT-SIDE BODY MARGINS */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1436,6 +1435,13 @@
 
             body {
                 padding-top: 110px;
+            }
+
+            /* Added right-side body padding margin so body text and blocks stop earlier like the Stripe reference */
+            .hero-section, .content-section, .registration-page {
+                padding-left: 16px !important;
+                padding-right: 280px !important;
+                width: 100% !important;
             }
 
             .content-section {
@@ -1522,6 +1528,7 @@
 
             .section-right-content {
                 flex: 1 !important;
+                max-width: 720px !important; /* Restricts right-side text and cards width to match reference examples */
             }
 
             #about .about-media-container {
@@ -1551,8 +1558,8 @@
 
             #agenda .section-right-content {
                 grid-column: 2 !important;
-                margin-left: -50px !important; /* Pulls agenda flush with the photo's left edge */
-                max-width: 785px !important;
+                margin-left: -50px !important; 
+                max-width: 720px !important;
                 flex: none !important;
             }
 
