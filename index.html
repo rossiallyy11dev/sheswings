@@ -1364,7 +1364,7 @@
             }
         }
 
-        /* TIER 3: DESKTOP (1200px and up) - EXACT PHOTO LEFT EDGE ALIGNMENT */
+        /* TIER 3: DESKTOP (1200px and up) - EXACT GRID ALIGNMENT MATCHING PHOTO */
         @media (min-width: 1200px) {
             .nav-faq-link {
                 display: inline-block !important;
@@ -1448,22 +1448,25 @@
                 max-width: 100% !important;
             }
 
-            /* Shift agenda block flush to the left edge of the photo */
+            /* Exact CSS Grid layout for Agenda matching photo container bounds */
             #agenda {
-                display: flex !important;
-                justify-content: flex-start !important;
+                display: grid !important;
+                grid-template-columns: 480px 1fr !important;
+                column-gap: 0 !important;
                 align-items: flex-start !important;
             }
 
             #agenda .section-title {
-                flex: 0 0 300px !important;
-                padding-right: 24px !important;
+                grid-column: 1 !important;
+                padding-right: 48px !important;
+                flex: none !important;
             }
 
             #agenda .section-right-content {
-                margin-left: 0 !important; /* Shifted all the way left to align with photo edge */
+                grid-column: 2 !important;
+                margin-left: -50px !important; /* Pulls agenda flush with the photo's left edge */
                 max-width: 785px !important;
-                flex: 1 !important;
+                flex: none !important;
             }
 
             #agenda .agenda-list {
