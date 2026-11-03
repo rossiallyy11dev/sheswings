@@ -740,7 +740,6 @@
             cursor: pointer;
             letter-spacing: -0.01em;
             padding-left: 0;
-            white-space: nowrap !important;
         }
 
         .footer-right-top {
@@ -1209,7 +1208,6 @@
                 flex: 0 0 180px !important;
             }
 
-            /* SMALL TABLET VIEW FOOTER RESTRUCTURE */
             .site-footer {
                 padding: 40px 24px 48px 24px !important;
                 min-height: auto !important;
@@ -1567,6 +1565,7 @@
                 flex: 0 0 200px !important;
             }
 
+            /* LARGE TABLET VIEW FOOTER RESTRUCTURE (Shifting right top meta container to match 785px content width) */
             .site-footer {
                 padding: 40px 16px 40px 16px !important;
                 min-height: auto !important;
@@ -1584,7 +1583,7 @@
                 grid-template-columns: 140px 240px !important;
                 gap: 32px !important;
                 margin-left: auto !important;
-                margin-right: 0 !important;
+                margin-right: calc((100% - 300px - 785px) / 2) !important;
                 width: auto !important;
             }
 
@@ -2130,7 +2129,7 @@
                     </div>
                 </div>
 
-                <div class="reg-image-container">
+.reg-image-container {
                     <img src="REGISTRATION 4.png" alt="Registration Header Media" class="reg-image-media">
                 </div>
             </div>
