@@ -1276,7 +1276,6 @@
                 object-fit: cover !important;
             }
 
-            /* REMOVED PADDING FOR .reg-info-container TO ALIGN WITH LEFT MARGIN */
             .reg-info-container {
                 padding: 0 !important;
             }
@@ -1640,6 +1639,64 @@
 
             .agenda-date-col {
                 flex: 0 0 200px !important;
+            }
+
+            /* LARGE TABLET REGISTRATION HEADER FIX (Matching Reference Photo #1) */
+            .reg-hero-container {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                grid-template-rows: auto auto !important;
+                column-gap: 32px !important;
+                row-gap: 28px !important;
+                width: 100% !important;
+            }
+
+            .reg-title-col {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+            }
+
+            .reg-title {
+                font-size: clamp(3rem, 5.2vw, 4.4rem) !important;
+                line-height: 0.96 !important;
+                max-width: 100% !important;
+            }
+
+            .reg-meta-bar {
+                grid-column: 1 !important;
+                grid-row: 2 !important;
+                display: grid !important;
+                grid-template-columns: 140px 1fr !important;
+                gap: 16px !important;
+                align-self: end !important;
+                width: 100% !important;
+            }
+
+            .reg-meta-item {
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .reg-meta-item.location {
+                grid-column: 2 !important;
+                margin-left: 0 !important;
+                justify-self: start !important;
+                white-space: nowrap !important;
+            }
+
+            .reg-image-container {
+                grid-column: 2 !important;
+                grid-row: 1 / span 2 !important;
+                width: 100% !important;
+                height: 520px !important;
+                border-radius: 16px !important;
+                margin: 0 !important;
+            }
+
+            .reg-image-media {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
             }
 
             .site-footer {
