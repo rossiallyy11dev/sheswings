@@ -740,6 +740,7 @@
             cursor: pointer;
             letter-spacing: -0.01em;
             padding-left: 0;
+            white-space: nowrap !important;
         }
 
         .footer-right-top {
@@ -1208,7 +1209,7 @@
                 flex: 0 0 180px !important;
             }
 
-            /* SMALL TABLET VIEW FOOTER RESTRUCTURE (Matching Stripe Reference #1) */
+            /* SMALL TABLET VIEW FOOTER RESTRUCTURE */
             .site-footer {
                 padding: 40px 24px 48px 24px !important;
                 min-height: auto !important;
@@ -1219,19 +1220,21 @@
 
             .footer-top-row {
                 display: flex !important;
-                justify-content: space-between !important;
+                flex-direction: column !important;
                 align-items: flex-start !important;
                 width: 100% !important;
                 margin-bottom: 48px !important;
+                gap: 24px !important;
             }
 
             .footer-brand {
                 order: 1 !important;
                 margin-bottom: 0 !important;
+                white-space: nowrap !important;
             }
 
             .footer-right-top {
-                order: 2 !important;
+                order: 3 !important;
                 display: flex !important;
                 flex-direction: row !important;
                 justify-content: space-between !important;
@@ -1241,7 +1244,6 @@
                 gap: 20px !important;
             }
 
-            /* Date on the left, location on the right */
             .footer-right-top .footer-meta-item:first-child {
                 flex: 1 !important;
                 text-align: left !important;
@@ -1266,15 +1268,15 @@
             }
 
             .footer-headline {
-                order: 1 !important;
+                order: 2 !important;
                 font-size: clamp(2.6rem, 5.5vw, 3.4rem) !important;
                 line-height: 1.05 !important;
                 max-width: 100% !important;
-                margin-bottom: 64px !important;
+                margin-bottom: 36px !important;
             }
 
             .footer-right-col {
-                order: 2 !important;
+                order: 4 !important;
                 width: 100% !important;
                 margin: 0 !important;
             }
