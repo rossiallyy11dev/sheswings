@@ -1176,6 +1176,7 @@
                 max-width: 100% !important;
             }
 
+            /* SMALL TABLET: Make description text paragraphs as wide as the photo for About, Special Guest, and Sponsors */
             #about .section-text,
             #guests .guest-intro-text,
             #sponsors .guest-intro-text {
@@ -1208,53 +1209,44 @@
                 flex: 0 0 180px !important;
             }
 
-            /* SMALL TABLET FOOTER: Footer should look like the first screenshot (Screenshot 1) in terms of arrangement */
             .site-footer {
-                padding: 40px 16px 48px 16px !important;
+                padding: 40px 16px 40px 16px !important;
                 min-height: auto !important;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: space-between !important;
             }
 
-            .site-footer .footer-top-row {
+            .footer-top-row {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
-                width: 100% !important;
-                margin-bottom: 60px !important;
+                margin-bottom: 64px !important;
             }
 
-            .site-footer .footer-brand {
-                margin-bottom: 0 !important;
-            }
-
-            .site-footer .footer-right-top {
-                display: grid !important;
-                grid-template-columns: 130px 220px !important;
-                gap: 20px !important;
+            /* SMALL TABLET: Move footer date and location to the RIGHT so it shares the same margin as everything else */
+            .footer-right-top {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-end !important;
+                text-align: right !important;
+                gap: 12px !important;
                 margin-left: auto !important;
                 margin-right: 0 !important;
                 width: auto !important;
-                text-align: left !important;
             }
 
-            .site-footer .footer-bottom-row {
+            .footer-bottom-row {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: flex-start !important;
                 gap: 40px !important;
-                width: 100% !important;
             }
 
-            .site-footer .footer-headline {
+            .footer-headline {
                 font-size: clamp(2.4rem, 4.5vw, 3.2rem) !important;
                 line-height: 1.05 !important;
                 max-width: 100% !important;
-                margin-bottom: 0 !important;
             }
 
-            .site-footer .footer-right-col {
+            .footer-right-col {
                 width: 100% !important;
                 margin-left: 0 !important;
             }
@@ -1357,6 +1349,7 @@
                 margin-bottom: 0 !important;
             }
 
+            /* LARGE TABLET: Make description text paragraph as wide as the photo for About */
             #about .section-text {
                 max-width: 440px !important;
             }
@@ -1382,10 +1375,12 @@
                 margin-top: 4px !important;
             }
 
+            /* LARGE TABLET: Make description text paragraph as wide as the photo for Special Guest */
             #guests .guest-intro-text {
                 max-width: 540px !important;
             }
 
+            /* Align Sponsors identically to Special Guest on Large iPad / Tablet view */
             #sponsors {
                 display: grid !important;
                 grid-template-columns: 300px 200px 1fr !important;
@@ -1407,6 +1402,7 @@
                 margin-top: 4px !important;
             }
 
+            /* LARGE TABLET: Make description text paragraph as wide as the photo for Sponsors */
             #sponsors .guest-intro-text {
                 max-width: 540px !important;
             }
@@ -1456,6 +1452,7 @@
                 max-width: 100% !important;
             }
 
+            /* LARGE TABLET: Make FAQ accordion skinnier, so its as wide as the section above it */
             .content-section:has(#faqs) .faq-list {
                 max-width: 540px !important;
             }
@@ -1482,23 +1479,19 @@
                 flex: 0 0 200px !important;
             }
 
-            /* LARGE TABLET FOOTER: footer should look like the second screenshot in terms of arrangement */
             .site-footer {
                 padding: 40px 16px 40px 16px !important;
                 min-height: auto !important;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: flex-start !important;
             }
 
-            .site-footer .footer-top-row {
+            .footer-top-row {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
-                margin-bottom: 40px !important;
+                margin-bottom: 80px !important;
             }
 
-            .site-footer .footer-right-top {
+            .footer-right-top {
                 display: grid !important;
                 grid-template-columns: 140px 240px !important;
                 gap: 32px !important;
@@ -1507,24 +1500,21 @@
                 width: auto !important;
             }
 
-            .site-footer .footer-bottom-row {
+            .footer-bottom-row {
                 display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                gap: 60px !important;
+                justify-content: space-between !important;
+                align-items: flex-end !important;
             }
 
-            .site-footer .footer-headline {
+            .footer-headline {
                 font-size: clamp(2.8rem, 4vw, 3.6rem) !important;
                 line-height: 1.05 !important;
                 max-width: 500px !important;
-                order: 2 !important;
             }
 
-            .site-footer .footer-right-col {
+            .footer-right-col {
                 width: 320px !important;
-                margin-left: 0 !important;
-                order: 1 !important;
+                margin-left: auto !important;
             }
         }
 
@@ -1629,6 +1619,7 @@
                 margin-top: 12px !important;
             }
 
+            /* DESKTOP: Make description text paragraph as wide as the photo for About */
             #about .section-text {
                 max-width: 720px !important;
                 font-size: 1.45rem !important;
@@ -1636,6 +1627,7 @@
                 margin-top: 0 !important;
             }
 
+            /* Photo container spans full paragraph width */
             #about .about-media-container {
                 width: 100% !important;
                 max-width: 720px !important;
@@ -1645,12 +1637,14 @@
                 margin-bottom: 0 !important;
             }
 
+            /* Displays entire uncropped photo */
             #about .about-media-image {
                 width: 100% !important;
                 height: auto !important;
                 object-fit: contain !important;
             }
 
+            /* EXACT Desktop Grid Alignment for Special Guest Section matching Agenda bounds */
             #guests {
                 display: grid !important;
                 grid-template-columns: 480px 1fr !important;
@@ -1672,10 +1666,12 @@
                 margin-top: 0 !important;
             }
 
+            /* Make the Special Guest description paragraph wider (matching photo width: 720px) */
             #guests .guest-intro-text {
                 max-width: 720px !important;
             }
 
+            /* Make Special Guest photo wider, matching About section width (720px) and auto height to show the entire uncropped image */
             #guests .guest-media-container {
                 width: 100% !important;
                 max-width: 720px !important;
@@ -1689,6 +1685,7 @@
                 object-fit: contain !important;
             }
 
+            /* EXACT Desktop Grid Alignment for Sponsors Section matching Special Guest & Agenda bounds */
             #sponsors {
                 display: grid !important;
                 grid-template-columns: 480px 1fr !important;
@@ -1731,6 +1728,7 @@
                 max-width: 720px !important;
             }
 
+            /* DESKTOP: FAQ section layout to make FAQ accordion skinnier and move it to the RIGHT so it starts in the same place as the content in the section above */
             .content-section:has(#faqs) {
                 display: grid !important;
                 grid-template-columns: 480px 1fr !important;
@@ -1756,6 +1754,7 @@
                 max-width: 720px !important;
             }
 
+            /* Exact CSS Grid layout for Agenda matching photo container bounds */
             #agenda {
                 display: grid !important;
                 grid-template-columns: 480px 1fr !important;
@@ -1790,23 +1789,19 @@
                 flex: 0 0 200px !important;
             }
 
-            /* DESKTOP FOOTER: footer should look like the third screenshot in terms of arrangement */
             .site-footer {
                 padding: 40px 16px 40px 16px !important;
                 min-height: auto !important;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: space-between !important;
             }
 
-            .site-footer .footer-top-row {
+            .footer-top-row {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
                 margin-bottom: 80px !important;
             }
 
-            .site-footer .footer-right-top {
+            .footer-right-top {
                 display: grid !important;
                 grid-template-columns: 140px 240px !important;
                 gap: 32px !important;
@@ -1815,23 +1810,21 @@
                 width: auto !important;
             }
 
-            .site-footer .footer-bottom-row {
+            .footer-bottom-row {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-end !important;
             }
 
-            .site-footer .footer-headline {
+            .footer-headline {
                 font-size: clamp(2.8rem, 4vw, 3.6rem) !important;
                 line-height: 1.05 !important;
                 max-width: 500px !important;
-                order: unset !important;
             }
 
-            .site-footer .footer-right-col {
+            .footer-right-col {
                 width: 320px !important;
                 margin-left: auto !important;
-                order: unset !important;
             }
         }
     </style>
